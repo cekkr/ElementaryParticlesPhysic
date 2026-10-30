@@ -1,4 +1,4 @@
-# ElementaryParticlePhysics
+# ElementaryParticlesPhysics
 An elementary particles "periodic table" in one web page
 
 Run `node serve.js`, then open http://127.0.0.1:3000 in your browser.
