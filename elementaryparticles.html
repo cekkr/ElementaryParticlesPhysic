@@ -34,6 +34,10 @@
             --text-secondary: #8892b0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--section-bg) 100%);
@@ -77,6 +81,7 @@
         }
 
         .nav-dot {
+            display: block;
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -87,7 +92,8 @@
             position: relative;
         }
 
-        .nav-dot:hover {
+        .nav-dot:hover,
+        .nav-dot:focus-visible {
             transform: scale(1.5);
             background: var(--primary);
         }
@@ -112,7 +118,8 @@
             font-size: 0.9rem;
         }
 
-        .nav-dot:hover .nav-tooltip {
+        .nav-dot:hover .nav-tooltip,
+        .nav-dot:focus-visible .nav-tooltip {
             opacity: 1;
         }
 
@@ -232,7 +239,7 @@
         }
 
         .expandable.expanded {
-            max-height: 3000px;
+            max-height: none;
             opacity: 1;
         }
 
@@ -392,13 +399,145 @@
         .depth-basic { background: rgba(6, 255, 165, 0.2); color: var(--accent); }
         .depth-intermediate { background: rgba(255, 183, 0, 0.2); color: var(--warning); }
         .depth-advanced { background: rgba(255, 0, 110, 0.2); color: var(--secondary); }
+        .depth-expert { background: rgba(147, 51, 234, 0.2); color: #c4a0ff; }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        th {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .equation {
+            overflow-x: auto;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-sidebar { display: none; }
-            .container { padding-right: 2rem; }
+            .nav-sidebar {
+                display: flex;
+                gap: 0.5rem;
+                top: auto;
+                bottom: 0.5rem;
+                left: 0.5rem;
+                right: 0.5rem;
+                transform: none;
+                overflow-x: auto;
+                padding: 0.5rem;
+            }
+            .nav-dot {
+                flex: 0 0 auto;
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 0.5rem 0.75rem;
+                border-radius: 20px;
+                color: var(--text-primary);
+                text-decoration: none;
+            }
+            .nav-dot:hover, .nav-dot:focus-visible { transform: none; }
+            .nav-dot.active { color: var(--dark-bg); }
+            .nav-tooltip {
+                position: static;
+                transform: none;
+                padding: 0;
+                background: transparent;
+                opacity: 1;
+            }
+            .container { padding-right: 2rem; padding-bottom: 6rem; }
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 1.8rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+        /* Shared particle catalog and learning explorers */
+        a { color: #7aeaff; text-underline-offset: 0.2em; }
+        a:hover { color: var(--accent); }
+        button, input, select { font: inherit; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+            outline: 3px solid var(--warning); outline-offset: 4px;
+        }
+        [hidden] { display: none !important; }
+        .concept-card h3 { font-size: 1.5rem; line-height: 1.35; margin-bottom: 1rem; }
+        .concept-card h4 { color: #e0e6ed; margin-bottom: 0.5rem; }
+        .concept-card p + p { margin-top: 0.8rem; }
+        .eyebrow { text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-size: 0.75rem; margin-bottom: 0.6rem; }
+        .concept-columns, .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .concept-columns > div, .property-grid > div { background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 12px; padding: 1rem; min-width: 0; }
+        .hint, .source-note { color: #b0bfd0; font-size: 0.85rem; margin: 1rem 0; }
+        .source-note { border-left: 2px solid #52698b; padding-left: 1rem; }
+        .explorer-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+        label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; max-width: 100%; }
+        input, select { background: #101930; border: 1px solid #52698b; border-radius: 8px; padding: 0.7rem; color: #e0e6ed; max-width: 100%; min-width: 0; }
+        select { cursor: pointer; }
+        .action-btn { color: var(--text-primary); background: #16394d; border: 1px solid #38b5cc; border-radius: 9px; padding: 0.7rem 1rem; cursor: pointer; }
+        .action-btn:hover { background: #215269; }
+        .catalog-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+        .family-group { min-width: 0; }
+        .family-group .particle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 1rem 0; }
+        .particle-tile { font: inherit; color: var(--text-primary); padding: 0.85rem 0.5rem; min-width: 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .particle-tile[aria-pressed="true"] { border-color: var(--warning); background-color: rgba(255, 183, 0, 0.13); }
+        .particle-tile:hover { transform: translateY(-3px); }
+        .particle-tile .particle-symbol { line-height: 1.2; }
+        .particle-name { color: #e0e6ed; font-weight: 600; font-size: 0.9rem; }
+        .tile-mass, .tile-meta { display: block; font-size: 0.7rem; margin-top: 0.45rem; overflow-wrap: anywhere; }
+        .tile-meta { color: #b0bfd0; }
+        .gauge { background: rgba(6, 255, 165, 0.09); }
+        .scalar { background: rgba(255, 183, 0, 0.1); }
+        .table-particle { text-align: left; color: #7aeaff; background: none; border: 0; text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; padding: 0.3rem; }
+        .table-particle[aria-pressed="true"] { color: var(--warning); }
+        caption { text-align: left; padding: 0.5rem 0; font-size: 0.85rem; color: #b0bfd0; }
+        .table-scroll { overscroll-behavior-x: contain; }
+        #particle-table { min-width: 800px; font-size: 0.88rem; }
+        #particle-table th, #particle-table td { padding: 0.7rem 0.5rem; }
+        #particle-table th:first-child { min-width: 135px; }
+        .deep-dive { background: rgba(0, 0, 0, 0.15); border: 1px solid #3a4e6f; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; }
+        .deep-dive summary { cursor: pointer; color: #7aeaff; font-weight: 600; }
+        .deep-dive[open] summary { margin-bottom: 1rem; }
+        .inspector { border-color: #426d81; scroll-margin-top: 1.5rem; }
+        .property-grid strong { display: block; color: #aabbd0; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .property-grid span { font-size: 1.05rem; }
+        .detail-list dt, .glossary dt { font-weight: 700; color: #e0e6ed; margin-top: 1rem; }
+        .detail-list dd, .glossary dd { margin: 0.4rem 0 0; }
+        .learning-paths, .button-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.5rem 0; }
+        .learning-paths a { display: inline-block; padding: 0.5rem 0.85rem; border: 1px solid #3a5b76; border-radius: 30px; font-size: 0.85rem; }
+        .state-count { display: block; font-size: 2.5rem; color: var(--accent); }
+        .detector-layers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+        .detector-layer { border: 1px solid #3f7290; background: rgba(0, 212, 255, 0.05); padding: 1rem; border-radius: 10px; min-width: 0; }
+        .layer-step { display: block; color: var(--accent); margin-bottom: 0.75rem; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        @media (max-width: 1000px) {
+            .catalog-groups { grid-template-columns: 1fr; }
+            .family-group .particle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .detector-layers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 600px) {
+            .container { padding-left: 1rem; padding-right: 1rem; }
+            .concept-card { padding: 1.25rem; }
+            .explorer-controls > label { flex: 1 1 130px; }
+            .explorer-controls input, .explorer-controls select { width: 100%; }
+            .family-group .particle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .state-lab { padding: 1rem; }
+            .concept-card h3 { font-size: 1.25rem; }
         }
     </style>
 </head>
@@ -409,55 +548,59 @@
     </div>
 
     <!-- Navigation Sidebar -->
-    <nav class="nav-sidebar">
-        <div class="nav-dot active" data-section="0">
+    <nav class="nav-sidebar" aria-label="Sections">
+        <a class="nav-dot active" href="#introduction" data-section="0" aria-label="Introduction" aria-current="location">
             <span class="nav-tooltip">Introduction</span>
-        </div>
-        <div class="nav-dot" data-section="1">
+        </a>
+        <a class="nav-dot" href="#scale" data-section="1" aria-label="Scale of Universe">
             <span class="nav-tooltip">Scale of Universe</span>
-        </div>
-        <div class="nav-dot" data-section="2">
+        </a>
+        <a class="nav-dot" href="#matter" data-section="2" aria-label="What is Matter?">
             <span class="nav-tooltip">What is Matter?</span>
-        </div>
-        <div class="nav-dot" data-section="3">
+        </a>
+        <a class="nav-dot" href="#particle-zoo" data-section="3" aria-label="Particle Zoo">
             <span class="nav-tooltip">Particle Zoo</span>
-        </div>
-        <div class="nav-dot" data-section="4">
+        </a>
+        <a class="nav-dot" href="#fermions" data-section="4" aria-label="Fermions">
             <span class="nav-tooltip">Fermions</span>
-        </div>
-        <div class="nav-dot" data-section="5">
-            <span class="nav-tooltip">Forces & Bosons</span>
-        </div>
-        <div class="nav-dot" data-section="6">
+        </a>
+        <a class="nav-dot" href="#forces" data-section="5" aria-label="Forces &amp; Bosons">
+            <span class="nav-tooltip">Forces &amp; Bosons</span>
+        </a>
+        <a class="nav-dot" href="#higgs" data-section="6" aria-label="Higgs Mechanism">
             <span class="nav-tooltip">Higgs Mechanism</span>
-        </div>
-        <div class="nav-dot" data-section="7">
+        </a>
+        <a class="nav-dot" href="#quantum" data-section="7" aria-label="Quantum Properties">
             <span class="nav-tooltip">Quantum Properties</span>
-        </div>
-        <div class="nav-dot" data-section="8">
+        </a>
+        <a class="nav-dot" href="#interactions" data-section="8" aria-label="Interactions">
             <span class="nav-tooltip">Interactions</span>
-        </div>
-        <div class="nav-dot" data-section="9">
+        </a>
+        <a class="nav-dot" href="#detection" data-section="9" aria-label="Detection">
             <span class="nav-tooltip">Detection</span>
-        </div>
-        <div class="nav-dot" data-section="10">
+        </a>
+        <a class="nav-dot" href="#mathematics" data-section="10" aria-label="Mathematics">
             <span class="nav-tooltip">Mathematics</span>
-        </div>
-        <div class="nav-dot" data-section="11">
+        </a>
+        <a class="nav-dot" href="#beyond" data-section="11" aria-label="Beyond">
             <span class="nav-tooltip">Beyond</span>
-        </div>
+        </a>
+        <a class="nav-dot" href="#summary" data-section="12" aria-label="Summary">
+            <span class="nav-tooltip">Summary</span>
+        </a>
     </nav>
 
     <!-- Main Content Container -->
     <div class="container">
         <!-- Hero Section -->
-        <section class="hero content-section" data-section="0">
+        <section id="introduction" class="hero content-section" data-section="0">
             <div>
                 <h1><i class="fas fa-atom"></i> Elementary Particle Physics</h1>
                 <p class="hero-subtitle">A Journey from the Universe to Its Smallest Building Blocks</p>
                 <div class="interactive-demo">
                     <p>Welcome to an interactive exploration of the fundamental nature of reality.<br>
-                    Scroll down to begin your journey through scales, particles, and forces.</p>
+                    Follow a learning path, or scroll from familiar matter to fields and open questions.</p>
+                    <div class="learning-paths"><a href="#matter">Start with atoms</a><a href="#particle-zoo">Explore the Standard Model</a><a href="#quantum">Try the exclusion principle</a></div>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -466,7 +609,7 @@
         </section>
 
         <!-- Section 1: Scale of the Universe -->
-        <section class="content-section" data-section="1">
+        <section id="scale" class="content-section" data-section="1">
             <div class="section-header">
                 <span class="section-number">1</span>
                 <h2 class="section-title">The Universe at Different Scales</h2>
@@ -474,17 +617,17 @@
 
             <div class="concept-card">
                 <h3>From Cosmos to Quarks: A Journey of Scale</h3>
-                <p>The universe spans an incredible range of scales. From the observable universe at 10²⁶ meters to the smallest meaningful length (Planck length) at 10⁻³⁵ meters, we traverse 61 orders of magnitude!</p>
+                <p>The universe spans an incredible range of scales. From the observable universe near 10²⁶ meters to the Planck scale near 10⁻³⁵ meters, the span is about 61 orders of magnitude. The Planck length marks a quantum-gravity scale, not an experimentally established minimum distance.</p>
                 
                 <div class="interactive-demo">
                     <canvas id="scaleVisualization" class="demo-canvas"></canvas>
                 </div>
 
-                <button class="expand-btn" onclick="toggleExpand(this)">
+                <button class="expand-btn" onclick="toggleExpand(this)" aria-expanded="false" aria-controls="details-1">
                     Explore Scale Details <i class="fas fa-chevron-down"></i>
                 </button>
                 
-                <div class="expandable">
+                <div class="expandable" id="details-1" inert>
                     <div class="depth-indicator depth-intermediate">Deeper Understanding</div>
                     <p>Each step down in scale reveals new physics:</p>
                     <ul style="line-height: 2; margin-left: 2rem;">
@@ -492,14 +635,14 @@
                         <li><strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable</li>
                         <li><strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here</li>
                         <li><strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined</li>
-                        <li><strong>10⁻¹⁸ m (Deep inelastic):</strong> Quarks behave as free particles</li>
+                        <li><strong>10⁻¹⁸ m (high-resolution probes):</strong> Quarks can be treated as weakly coupled in suitable high-momentum-transfer calculations; they still do not emerge as isolated particles.</li>
                     </ul>
 
                     <div class="equation-box">
                         <div class="depth-indicator depth-advanced">Mathematical Framework</div>
                         <p>The de Broglie wavelength sets the quantum scale:</p>
-                        <div class="equation">λ = h / p = h / (mv)</div>
-                        <p>When λ ≈ size of system, quantum mechanics is essential!</p>
+                        <div class="equation">λ = h / p; p ≈ mv only at nonrelativistic speeds</div>
+                        <p>Resolving finer structure requires shorter wavelengths and larger momentum. This motivates high-energy accelerators. <a href="#mathematics">Connect wavelength, momentum, and energy</a>.</p>
                     </div>
                 </div>
             </div>
@@ -512,7 +655,7 @@
         </section>
 
         <!-- Section 2: What is Matter? -->
-        <section class="content-section" data-section="2">
+        <section id="matter" class="content-section" data-section="2">
             <div class="section-header">
                 <span class="section-number">2</span>
                 <h2 class="section-title">What is Matter?</h2>
@@ -530,257 +673,443 @@
                 <ul style="line-height: 2; margin-left: 2rem;">
                     <li><strong>Nucleus:</strong> Protons and neutrons (made of quarks!)</li>
                     <li><strong>Electron cloud:</strong> Electrons in quantum orbitals</li>
-                    <li><strong>Empty space:</strong> 99.9999999999996% of an atom is empty!</li>
+                    <li><strong>Scale:</strong> The nucleus is much smaller than the atom. The electron cloud is a quantum probability distribution, not little planets on fixed tracks.</li>
                 </ul>
 
-                <button class="expand-btn" onclick="toggleExpand(this)">
+                <button class="expand-btn" onclick="toggleExpand(this)" aria-expanded="false" aria-controls="details-2">
                     Historical Journey <i class="fas fa-chevron-down"></i>
                 </button>
                 
-                <div class="expandable">
+                <div class="expandable" id="details-2" inert>
                     <div class="depth-indicator depth-intermediate">Discovery Timeline</div>
                     <ul style="line-height: 2.5; margin: 1rem 0;">
                         <li><strong>1897:</strong> J.J. Thomson discovers the electron</li>
                         <li><strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus</li>
                         <li><strong>1932:</strong> Chadwick discovers the neutron</li>
                         <li><strong>1964:</strong> Gell-Mann and Zweig propose quarks</li>
-                        <li><strong>1974:</strong> J/ψ particle confirms quark model</li>
+                        <li><strong>1974:</strong> J/ψ discovery provides evidence for charm</li>
                         <li><strong>2012:</strong> Higgs boson discovered at CERN</li>
                     </ul>
 
                     <div class="cern-reference">
                         <h4>CERN Connection</h4>
-                        <p>The Large Hadron Collider recreates conditions from 10⁻¹² seconds after the Big Bang, when quarks roamed free before being confined into protons and neutrons!</p>
+                        <p>Colliders probe subnuclear structure through high-energy scattering. Heavy-ion collisions can produce quark–gluon plasma; this is different from the static orbital sketch above. <a href="#fermions">Explore quarks and confinement</a>.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Section 3: The Particle Zoo -->
-        <section class="content-section" data-section="3">
+        <section id="particle-zoo" class="content-section" data-section="3">
             <div class="section-header">
                 <span class="section-number">3</span>
                 <h2 class="section-title">The Particle Zoo</h2>
             </div>
-
-            <div class="concept-card">
+            <div class="concept-card catalog-card">
+                <p class="eyebrow">Explore the building blocks</p>
                 <h3>The Standard Model: Nature's LEGO Set</h3>
-                <p>All matter and forces (except gravity) arise from just 17 fundamental particles. Think of them as nature's LEGO blocks!</p>
-
-                <div class="particle-grid">
-                    <!-- Quarks -->
-                    <div class="particle-tile quark" onclick="showParticleDetail('up')">
-                        <div class="particle-symbol">u</div>
-                        <div class="particle-name">Up</div>
-                    </div>
-                    <div class="particle-tile quark" onclick="showParticleDetail('down')">
-                        <div class="particle-symbol">d</div>
-                        <div class="particle-name">Down</div>
-                    </div>
-                    <div class="particle-tile quark" onclick="showParticleDetail('charm')">
-                        <div class="particle-symbol">c</div>
-                        <div class="particle-name">Charm</div>
-                    </div>
-                    <div class="particle-tile quark" onclick="showParticleDetail('strange')">
-                        <div class="particle-symbol">s</div>
-                        <div class="particle-name">Strange</div>
-                    </div>
-                    <div class="particle-tile quark" onclick="showParticleDetail('top')">
-                        <div class="particle-symbol">t</div>
-                        <div class="particle-name">Top</div>
-                    </div>
-                    <div class="particle-tile quark" onclick="showParticleDetail('bottom')">
-                        <div class="particle-symbol">b</div>
-                        <div class="particle-name">Bottom</div>
-                    </div>
-
-                    <!-- Leptons -->
-                    <div class="particle-tile lepton" onclick="showParticleDetail('electron')">
-                        <div class="particle-symbol">e⁻</div>
-                        <div class="particle-name">Electron</div>
-                    </div>
-                    <div class="particle-tile lepton" onclick="showParticleDetail('muon')">
-                        <div class="particle-symbol">μ⁻</div>
-                        <div class="particle-name">Muon</div>
-                    </div>
-                    <div class="particle-tile lepton" onclick="showParticleDetail('tau')">
-                        <div class="particle-symbol">τ⁻</div>
-                        <div class="particle-name">Tau</div>
-                    </div>
-                    <div class="particle-tile lepton" onclick="showParticleDetail('e_neutrino')">
-                        <div class="particle-symbol">νₑ</div>
-                        <div class="particle-name">e-neutrino</div>
-                    </div>
-                    <div class="particle-tile lepton" onclick="showParticleDetail('mu_neutrino')">
-                        <div class="particle-symbol">νᵤ</div>
-                        <div class="particle-name">μ-neutrino</div>
-                    </div>
-                    <div class="particle-tile lepton" onclick="showParticleDetail('tau_neutrino')">
-                        <div class="particle-symbol">νᵧ</div>
-                        <div class="particle-name">τ-neutrino</div>
-                    </div>
-
-                    <!-- Bosons -->
-                    <div class="particle-tile boson" onclick="showParticleDetail('photon')">
-                        <div class="particle-symbol">γ</div>
-                        <div class="particle-name">Photon</div>
-                    </div>
-                    <div class="particle-tile boson" onclick="showParticleDetail('w_boson')">
-                        <div class="particle-symbol">W±</div>
-                        <div class="particle-name">W Boson</div>
-                    </div>
-                    <div class="particle-tile boson" onclick="showParticleDetail('z_boson')">
-                        <div class="particle-symbol">Z⁰</div>
-                        <div class="particle-name">Z Boson</div>
-                    </div>
-                    <div class="particle-tile boson" onclick="showParticleDetail('gluon')">
-                        <div class="particle-symbol">g</div>
-                        <div class="particle-name">Gluon</div>
-                    </div>
-                    <div class="particle-tile boson" onclick="showParticleDetail('higgs')">
-                        <div class="particle-symbol">H</div>
-                        <div class="particle-name">Higgs</div>
-                    </div>
+                <p>An <strong>electron</strong> in an atom, a <strong>photon</strong> in a beam of light, and the <strong>quarks</strong> inside a proton are examples of different elementary particles. Each is an excitation of a quantum field. “Elementary” means no internal structure has been resolved; protons and atoms are composite.</p>
+                <div class="concept-columns">
+                    <div><h4>Fermions · matter</h4><p>Six quarks and six leptons, all spin ½. Identical fermions obey <a href="#quantum">Pauli exclusion</a>. Electrons make shells; up and down quarks build nuclei.</p></div>
+                    <div><h4>Gauge bosons · interactions</h4><p>Spin-1 photons, gluons, W and Z bosons mediate electromagnetic, strong, and weak interactions. Identical bosons can share a quantum state.</p></div>
+                    <div><h4>Higgs · a scalar boson</h4><p>The spin-0 Higgs is an excitation of the <a href="#higgs">Higgs field</a>. It is a boson but is not an additional gauge force carrier.</p></div>
                 </div>
-
-                <div class="mnemonic">
-                    <h4>Memory Trick: Particle Categories</h4>
-                    <p><strong>Fermions</strong> (matter particles): "Frankly, Every Real Material Is Obviously Numerous"</p>
-                    <p><strong>Bosons</strong> (force carriers): "Big Objects Send Out Notifications"</p>
+                <p class="source-note">The familiar “17 particles” counts grouped entries: W⁺/W⁻ share a tile and eight gluon color states share another. Antiparticles and quark colors are not separately tiled. Gravity is outside this model. <a href="https://home.cern/science/physics/standard-model">CERN: the Standard Model</a>.</p>
+                <div class="explorer-controls" role="group" aria-label="Particle filters">
+                    <label>Find a particle<input id="particle-search" type="search" placeholder="Try electron, light, or proton"></label>
+                    <label>Family<select id="particle-family"><option value="all">All families</option><option value="quark">Quarks</option><option value="lepton">Leptons</option><option value="gauge">Gauge bosons</option><option value="scalar">Higgs scalar</option></select></label>
+                    <label>Interaction<select id="particle-interaction"><option value="all">All interactions</option><option value="strong">Strong</option><option value="em">Electromagnetic</option><option value="weak">Weak</option><option value="higgs">Higgs sector</option></select></label>
+                    <label>Order<select id="particle-sort"><option value="model">Standard Model order</option><option value="mass">Rest mass: low to high</option><option value="name">Name: A–Z</option></select></label>
+                    <button class="action-btn" id="reset-particles" type="button">Reset filters</button>
                 </div>
+                <p id="particle-count" role="status" aria-live="polite"></p>
+                <p class="hint">Choose a tile or a name in the table to inspect it. Compare two particles below.</p>
+                <div id="particle-grid" class="catalog-groups"></div>
+                <noscript><p>The interactive catalog requires JavaScript. The explanations, linked topics, and reference material remain readable.</p></noscript>
+                <details class="deep-dive" open>
+                    <summary>Particle property table</summary>
+                    <div class="table-scroll" role="region" aria-label="Particle property table" tabindex="0">
+                        <table id="particle-table"><caption>Same particles and filters as the tiles. Spin is in units of ℏ; charge is in units of the positive elementary charge e.</caption><thead><tr><th scope="col">Particle</th><th scope="col">Type</th><th scope="col">Generation</th><th scope="col">Rest mass</th><th scope="col">Charge / e</th><th scope="col">Spin / ℏ</th><th scope="col">Interactions</th></tr></thead><tbody id="particle-rows"></tbody></table>
+                    </div>
+                </details>
+                <p class="source-note">Rounded teaching values, using the <a href="https://pdg.lbl.gov/2025/tables/contents_tables.html">PDG 2025 tables</a>. MeV/c² and GeV/c² are mass units: 1 GeV/c² = 1000 MeV/c². Quark masses depend on definition and scale. Neutrino flavor states have no single rest mass; unknown values sort last.</p>
+                <p class="hint">Interaction filters show the principal gauge interactions and identify the Higgs sector; they are not a complete vertex list. Gravity is omitted. Massive charged fermions and W/Z also couple to the Higgs field; photons and gluons can couple to the Higgs through loops.</p>
+            </div>
+            <div id="particle-inspector" class="concept-card inspector" aria-labelledby="particle-detail-title">
+                <p class="eyebrow">Particle field guide</p>
+                <h3 id="particle-detail-title" tabindex="-1">Electron</h3>
+                <p id="particle-selection-status" class="sr-only" role="status"></p>
+                <div id="particle-detail"></div>
+            </div>
+            <div class="concept-card">
+                <h3>Compare two particles</h3>
+                <p>Start with electron versus photon: similar experimental importance, different masses, charges, spins, and statistics.</p>
+                <div class="explorer-controls"><label>First particle<select id="compare-a"></select></label><label>Second particle<select id="compare-b"></select></label></div>
+                <div class="table-scroll" role="region" aria-label="Particle comparison" tabindex="0"><table><caption>Properties come from the same catalog as the tiles.</caption><thead id="comparison-head"></thead><tbody id="comparison-body"></tbody></table></div>
+                <p id="mass-comparison" role="status"></p>
             </div>
         </section>
 
-        <!-- Continue with remaining sections... -->
-        <!-- I'll add a summary card at the end -->
-
-        <section class="content-section" data-section="11">
-            <div class="section-header">
-                <span class="section-number">∞</span>
-                <h2 class="section-title">Your Journey Continues</h2>
+        <section id="fermions" class="content-section" data-section="4">
+            <div class="section-header"><span class="section-number">4</span><h2 class="section-title">Building Blocks: Fermions</h2></div>
+            <div class="concept-card">
+                <h3>From quarks to the matter around you</h3>
+                <p><a href="#particle-inspector" data-particle="up">Up</a> and <a href="#particle-inspector" data-particle="down">down quarks</a> carry electric charge and strong-interaction color charge. Color is a quantum label, not a visible color. Observable hadrons are color-neutral combinations. Baryons have three valence quarks; mesons have a valence quark–antiquark pair. Exotic hadrons can have more complex arrangements.</p>
+                <div class="table-scroll" role="region" aria-label="Composite particle examples" tabindex="0"><table><caption>Valence content identifies a hadron; it is not a complete picture of its quarks, antiquarks, and gluons.</caption><thead><tr><th scope="col">Composite</th><th scope="col">Valence content</th><th scope="col">Charge / e</th><th scope="col">Explore</th></tr></thead><tbody>
+                <tr><th scope="row">Proton</th><td>uud</td><td>⅔ + ⅔ − ⅓ = +1</td><td><a href="#particle-inspector" data-particle="up">Inspect an up quark</a></td></tr>
+                <tr><th scope="row">Neutron</th><td>udd</td><td>⅔ − ⅓ − ⅓ = 0</td><td><a href="#interactions">Follow beta decay</a></td></tr>
+                <tr><th scope="row">Positive pion</th><td>u d̄</td><td>⅔ + ⅓ = +1</td><td><a href="#quantum">Composite bosons</a></td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>Go deeper: confinement and the origin of proton mass</summary>
+                    <p>Pulling quarks apart builds a color field; sufficient energy produces new hadrons rather than an isolated quark. At high momentum transfer the strong coupling becomes smaller (asymptotic freedom), allowing perturbative calculations. Confinement dominates at low energies.</p>
+                    <p>A proton has a mass near 938 MeV/c², far larger than the sum of its light valence-quark masses. Most of that mass comes from the dynamics of quarks and gluon fields. The Higgs gives quarks their masses, but does not directly account for most of a proton's mass.</p>
+                    <p class="source-note"><a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf">PDG: quantum chromodynamics</a>; <a href="https://cms.cern/node/1380">CMS: Higgs and ordinary matter</a>.</p>
+                </details>
             </div>
-
-            <div class="concept-card" style="background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(255, 0, 110, 0.1));">
-                <h3>🎯 Quick Reference Summary</h3>
-                <div style="margin-top: 2rem;">
-                    <ul style="line-height: 2;">
-                        <li>✅ 6 Quarks (up, down, charm, strange, top, bottom)</li>
-                        <li>✅ 6 Leptons (electron, muon, tau + their neutrinos)</li>
-                        <li>✅ 5 Bosons (photon, W±, Z, gluon, Higgs)</li>
-                        <li>✅ 4 Forces (strong, electromagnetic, weak, gravity*)</li>
-                    </ul>
+            <div class="concept-card"><h3>Leptons and three generations</h3>
+                <p>The <a href="#particle-inspector" data-particle="electron">electron</a>, <a href="#particle-inspector" data-particle="muon">muon</a>, and <a href="#particle-inspector" data-particle="tau">tau</a> have the same electric charge and spin, but very different masses and lifetimes. They do not carry color. Their neutral partners are neutrinos. Generation labels organize families; they are not stages through which a particle ages.</p>
+                <details class="deep-dive"><summary>Go deeper: why neutrino “mass” is different</summary><p>Electron-, muon-, and tau-flavor neutrinos are superpositions of mass states ν₁, ν₂, ν₃. Their relative phases evolve during flight, changing detection probabilities. Oscillations establish nonzero mass-squared differences, not three separately measured flavor masses. They change lepton flavor; they do not by themselves establish violation of total lepton number.</p><div class="equation">|νₐ⟩ = Σᵢ U*ₐᵢ |νᵢ⟩</div><p>The mixing matrix U connects flavor labels to mass labels. The minimal Standard Model has massless neutrinos, so measured oscillations require an extension.</p><p class="source-note"><a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf">PDG: neutrino masses, mixing, and oscillations</a>.</p></details>
+            </div>
+        </section>
+        <section id="forces" class="content-section" data-section="5">
+            <div class="section-header"><span class="section-number">5</span><h2 class="section-title">Forces and Their Messengers</h2></div>
+            <div class="concept-card"><h3>Charge tells you which interaction is possible</h3>
+                <p>Electric charge couples to electromagnetism; color charge couples to the strong interaction. Weak interactions involve quarks and leptons, including electrically neutral neutrinos. “Neutral” therefore does not mean “non-interacting.” Select a carrier to connect the force to an actual particle.</p>
+                <div class="table-scroll" role="region" aria-label="Forces and carriers" tabindex="0"><table><caption>Ranges describe very different physical mechanisms; there is no universal, energy-independent strength ranking for every process.</caption><thead><tr><th scope="col">Interaction</th><th scope="col">Carrier</th><th scope="col">Acts on / example</th><th scope="col">Range and caveat</th></tr></thead><tbody>
+                <tr><th scope="row">Electromagnetic</th><td><a href="#particle-inspector" data-particle="photon">Photon γ</a></td><td>Electric charge; atoms, light</td><td>Long range; massless carrier</td></tr>
+                <tr><th scope="row">Strong</th><td><a href="#particle-inspector" data-particle="gluon">Gluon g</a></td><td>Color; quarks and gluons</td><td>Massless gluons are confined; residual nuclear forces are short range</td></tr>
+                <tr><th scope="row">Weak</th><td><a href="#particle-inspector" data-particle="w_boson">W±</a>, <a href="#particle-inspector" data-particle="z_boson">Z⁰</a></td><td>Quarks/leptons; beta decay, neutrino scattering</td><td>Very short range, about 10⁻¹⁸ m</td></tr>
+                <tr><th scope="row">Gravity</th><td>No observed quantum carrier</td><td>Energy and momentum</td><td>Long range; outside the Standard Model</td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>Go deeper: exchange diagrams and virtual particles</summary><p>A Feynman diagram is a contribution to an amplitude, not a literal movie of tiny balls. Internal lines are propagators, often called virtual particles. Four-momentum is conserved at every vertex; virtual lines need not satisfy the free-particle relation E² = p²c² + m²c⁴. The uncertainty principle does not license temporary violations of energy conservation.</p><div class="equation">Range scale for a massive mediator: ℓ ∼ ℏ / (Mc)</div><p>This scale helps explain weak forces. Massless gluons require the separate physics of confinement; a massless carrier alone does not guarantee an observable long-range force.</p><p class="source-note"><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html">David Tong: interacting fields and Feynman diagrams</a>.</p></details>
+            </div>
+        </section>
+        <section id="higgs" class="content-section" data-section="6">
+            <div class="section-header"><span class="section-number">6</span><h2 class="section-title">The Higgs Mechanism</h2></div>
+            <div class="concept-card"><h3>Mass without friction</h3>
+                <p>The Higgs field has a nonzero vacuum value. Its couplings give masses to W/Z bosons and, through Yukawa couplings, charged leptons and quarks. This changes their energy–momentum relation; it does not slow moving particles through drag. The <a href="#particle-inspector" data-particle="higgs">Higgs boson</a> is an excitation of the field, not a cloud of particles that must surround every electron.</p>
+                <p><a href="#particle-inspector" data-particle="photon">Photons</a> remain massless, but carry energy and momentum. The origin of neutrino masses is not settled. Most ordinary matter's mass comes from strong-interaction dynamics inside nuclei, rather than the sum of its elementary constituent masses.</p>
+                <details class="deep-dive"><summary>Go deeper: the field value and Yukawa coupling</summary><div class="equation">mᶠ = yᶠ v / √2, with v ≈ 246 GeV (ℏ = c = 1)</div><p>A larger Yukawa coupling yᶠ gives a larger fermion mass for the same field value. W/Z masses arise from gauge couplings to the Higgs field. In a common convention, V(Φ) = −μ²Φ†Φ + λ(Φ†Φ)² and ⟨Φ⟩ = (0, v/√2), with v² = μ²/λ. Excitations around this vacuum include the physical spin-0 Higgs.</p><p>Experiments infer a Higgs from its decay products and test its couplings, rather than observing the field directly. <a href="#interactions">Explore H → γγ</a>.</p></details>
+                <p class="source-note"><a href="https://home.cern/science/physics/higgs-boson">CERN: the Higgs boson</a>; <a href="https://cms.cern/node/1380">CMS: where ordinary matter's mass comes from</a>.</p>
+            </div>
+        </section>
+        <section id="quantum" class="content-section" data-section="7">
+            <div class="section-header"><span class="section-number">7</span><h2 class="section-title">Quantum Properties</h2></div>
+            <div class="concept-card"><h3>Spin, identity, and the exclusion principle</h3>
+                <p>Spin is intrinsic angular momentum, not rotation of a tiny solid ball. Identical half-integer-spin particles are <strong>fermions</strong>; identical integer-spin particles are <strong>bosons</strong>. Pauli exclusion forbids two identical fermions from occupying the same complete one-particle state. It applies to electrons, quarks, and neutrinos, regardless of their mass or charge.</p>
+                <p>Two electrons can occupy one spatial orbital if their spin states differ. Many photons can occupy one mode with the same polarization. This contrast helps explain atomic shell structure and the occupation of light modes. Composite particles also have statistics: protons are fermions and pions are bosons.</p>
+                <div class="interactive-demo state-lab"><h4>Try to fill one spatial mode</h4><label>Particle<select id="state-particle"><option value="electron">Electrons · fermions</option><option value="photon">Photons · bosons</option></select></label>
+                    <p id="state-assumption">The spatial wavefunction is fixed. The two boxes represent distinct spin states.</p>
+                    <div id="state-boxes" class="concept-columns"></div>
+                    <div class="button-row"><button id="add-state-0" class="action-btn" type="button">Add spin ↑</button><button id="add-state-1" class="action-btn" type="button">Add spin ↓</button><button id="reset-state" class="action-btn" type="button">Empty the mode</button></div>
+                    <p id="state-result" role="status" aria-live="polite"></p>
                 </div>
-                <p style="margin-top: 2rem; text-align: center;">Keep exploring! Physics is the poetry of reality.</p>
+                <details class="deep-dive"><summary>Go deeper: exchange symmetry and spin measurements</summary><div class="equation">Ψ(1, 2) = −Ψ(2, 1) for identical fermions; + for identical bosons</div><p>Putting two identical fermions into exactly the same one-particle state makes the antisymmetric amplitude vanish. This is a statement about quantum states, not a repulsive force or a ban on being at the same position.</p><div class="equation">S² = ℏ²s(s + 1); S𝓏 = ℏm, with m = −s, …, s</div><p>Spin quantum number s and its measured projection m are different. A massive spin-1 particle has three projections; a real massless photon has two transverse helicities, +1 and −1. The photon boxes above represent two independent polarizations, not a third longitudinal mode.</p><p class="source-note"><a href="https://ocw.mit.edu/courses/18-238-geometry-and-quantum-field-theory-spring-2023/mit18_238_s23_lec_full.pdf">MIT: bosons, fermions, and Pauli exclusion</a>; <a href="https://www.rle.mit.edu/cua_pub/ketterle_group/Theses/Chin%20Jit%20Kee%20Thesis.pdf">MIT: identical particles and statistics</a>.</p></details>
             </div>
+        </section>
+        <section id="interactions" class="content-section" data-section="8">
+            <div class="section-header"><span class="section-number">8</span><h2 class="section-title">How Particles Interact</h2></div>
+            <div class="concept-card"><h3>Follow a reaction, not just a particle name</h3>
+                <p>A reaction must conserve electric charge, energy, momentum, and angular momentum, and use the available couplings. Decays can proceed through strong, electromagnetic, or weak interactions. Lifetime depends on couplings and phase space, not just mass.</p>
+                <label>Choose a process<select id="process-choice"><option value="beta">Free-neutron beta decay</option><option value="annihilation">Electron–positron annihilation</option><option value="higgs">Higgs to two photons</option><option value="forbidden">A forbidden electron decay</option></select></label>
+                <div id="process-result" class="interactive-demo" aria-live="polite"></div>
+                <p class="hint">The charge check is necessary, not sufficient. It does not calculate a rate or establish every conservation law.</p>
+                <details class="deep-dive"><summary>Go deeper: how diagrams become predictions</summary><p>Each diagram supplies an amplitude. Add the relevant amplitudes coherently, including their phases, then square the total and integrate over the allowed final-state momenta. A diagram is not an alternative classical path with a separate probability.</p><div class="equation">Probability ∝ |Σ diagrams ℳ|²; decay width Γ ∝ ∫ dΦ |ℳ|²</div><p>The phase-space measure dΦ enforces energy–momentum balance. In natural units τ = 1/Γ; restoring units gives τ = ℏ/Γ. Perturbation theory organizes diagrams in powers of couplings; it becomes unreliable for low-energy strong interactions.</p></details>
+                <p class="source-note"><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html">Tong: amplitudes, cross sections, and decays</a>; <a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf">PDG: Higgs decays</a>.</p>
+            </div>
+        </section>
+        <section id="detection" class="content-section" data-section="9">
+            <div class="section-header"><span class="section-number">9</span><h2 class="section-title">Detecting the Invisible</h2></div>
+            <div class="concept-card"><h3>Read the signature in detector layers</h3>
+                <p>Detectors combine tracks, energy deposits, and decay products to infer particle identities. Charged particles bend in magnetic fields; calorimeters measure deposited energy. Short-lived W, Z, Higgs, and top particles are reconstructed from their products.</p>
+                <label>Send a particle through a schematic detector<select id="detector-choice"><option value="electron">Electron</option><option value="photon">Photon</option><option value="muon">Muon</option><option value="hadron">Charged hadron</option><option value="neutrino">Neutrino</option></select></label>
+                <div id="detector-layers" class="detector-layers" aria-label="Detector signature"></div>
+                <p id="detector-explanation" role="status"></p>
+                <p id="detector-particle-link"></p>
+                <details class="deep-dive"><summary>Go deeper: reconstruction has ambiguities</summary><p>A shower is a cascade of secondary particles, not the original particle growing larger. Electron and photon showers look similar; matching a tracker trajectory helps distinguish them. Hadronic showers fluctuate, muons can radiate, and detector acceptance is incomplete. No single layer perfectly identifies every particle.</p><p>At a hadron collider the incoming partons' longitudinal momenta are unknown. Missing <em>transverse</em> momentum is therefore especially useful. A missing signal alone is not proof of a neutrino or dark matter.</p></details>
+                <p class="source-note"><a href="https://home.cern/how-detector-works">CERN: how a detector works</a>; <a href="https://cms.cern/detector">CMS: detector and particle identification</a>. This diagram is qualitative, not a detector simulation.</p>
+            </div>
+        </section>
+        <section id="mathematics" class="content-section" data-section="10">
+            <div class="section-header"><span class="section-number">10</span><h2 class="section-title">Mathematical Foundation</h2></div>
+            <div class="concept-card"><h3>Translate a property into an equation</h3>
+                <p>Equations connect the measured properties in the <a href="#particle-zoo">particle table</a> to predictions. Here are useful entry points; natural units set ℏ = c = 1 only where explicitly indicated.</p>
+                <div class="table-scroll" role="region" aria-label="Physics equation guide" tabindex="0"><table><caption>Follow each equation to its physical example.</caption><thead><tr><th scope="col">Relation</th><th scope="col">Meaning</th><th scope="col">Explore</th></tr></thead><tbody>
+                <tr><th scope="row">E² = p²c² + m²c⁴</th><td>Rest mass, momentum, and energy</td><td><a href="#particle-inspector" data-particle="photon">Massless photon: E = pc</a></td></tr>
+                <tr><th scope="row">λ = h / p</th><td>Wavelength and resolving power</td><td><a href="#scale">Probe smaller distances</a></td></tr>
+                <tr><th scope="row">mᶠ = yᶠv / √2</th><td>Fermion mass from a Yukawa coupling; natural units</td><td><a href="#higgs">Higgs mechanism</a></td></tr>
+                <tr><th scope="row">τ = ℏ / Γ</th><td>Mean lifetime from total decay width</td><td><a href="#interactions">Follow a decay</a></td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>Go deeper: fields, symmetries, and the Lagrangian</summary><p>A Lagrangian density specifies fields and their couplings. Schematically the Standard Model has gauge-field terms, fermion motion and gauge couplings, the Higgs kinetic term and potential, and Yukawa interactions. This is an organizational guide, not a fully indexed expression.</p><div class="equation">ℒSM = ℒgauge + ℒfermion + (DμΦ)†DμΦ − V(Φ) + ℒYukawa</div><p>The covariant derivative Dμ packages gauge interactions. The symmetry group SU(3)color × SU(2)left × U(1)hypercharge gives strong and electroweak structure. Electroweak symmetry breaking mixes neutral fields to produce the photon and Z. A photon is not simply an extra, independent unbroken SU(2) carrier.</p><p>Locality and symmetries constrain allowed terms; experiments determine parameters such as masses and couplings. A symbolic formula alone does not supply their numerical values.</p></details>
+                <p class="source-note"><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf">Tong: quantum field theory lecture notes</a>; <a href="https://pdg.lbl.gov/2025/reviews/contents_sports.html">PDG: technical reviews</a>.</p>
+            </div>
+        </section>
+        <section id="beyond" class="content-section" data-section="11">
+            <div class="section-header"><span class="section-number">11</span><h2 class="section-title">Beyond the Standard Model</h2></div>
+            <div class="concept-card"><h3>Separate evidence from proposed explanations</h3>
+                <p>The Standard Model is remarkably successful, but is not a complete theory of nature. Neutrino oscillations, dark matter evidence, and the matter–antimatter asymmetry motivate further work; gravity also needs a consistent quantum description.</p>
+                <div class="table-scroll" role="region" aria-label="Open questions" tabindex="0"><table><caption>Established observations do not establish a particular new-particle explanation.</caption><thead><tr><th scope="col">Question</th><th scope="col">What is established</th><th scope="col">What is unresolved</th></tr></thead><tbody>
+                <tr><th scope="row">Neutrinos</th><td>Flavor oscillation and nonzero mass differences</td><td>Absolute mass scale and mass-generating mechanism</td></tr>
+                <tr><th scope="row">Dark matter</th><td>Gravitational evidence for additional matter</td><td>Its microscopic identity; candidates are not discoveries</td></tr>
+                <tr><th scope="row">Antimatter</th><td>Antiparticles exist; the observable universe favors matter</td><td>The mechanism producing the cosmic asymmetry</td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>Go deeper: how a proposed extension is tested</summary><p>Hypotheses such as axions, supersymmetry, or sterile neutrinos make different predictions. A candidate must fit existing constraints and produce testable consequences; none is confirmed merely because it fills a gap. Collider searches, neutrino experiments, and direct or indirect dark-matter searches probe different assumptions.</p><p>Antiparticles have the same mass and spin as their partners and opposite additive charges. The positron is an anti-electron; it is not a negative-mass electron. Whether neutrinos are their own antiparticles remains open.</p></details>
+                <p class="source-note"><a href="https://home.cern/science/physics/dark-matter">CERN: dark matter</a>; <a href="https://home.cern/science/physics/antimatter">CERN: antimatter</a>; <a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf">PDG: neutrinos</a>.</p>
+            </div>
+        </section>
+        <section id="summary" class="content-section" data-section="12">
+            <div class="section-header"><span class="section-number">∞</span><h2 class="section-title">Your Journey Continues</h2></div>
+            <div class="concept-card"><h3>Build your own route through the subject</h3>
+                <p>For any particle, ask: Is it elementary or composite? What are its mass, charges, and spin? Which interactions can produce or detect it? What does its quantum identity allow?</p>
+                <div class="learning-paths"><a href="#particle-inspector" data-particle="electron">Electron → charge &amp; exclusion</a><a href="#particle-inspector" data-particle="photon">Photon → light &amp; massless energy</a><a href="#fermions">Quarks → protons &amp; confinement</a><a href="#higgs">Higgs → origin of elementary masses</a><a href="#detection">Signatures → experimental evidence</a></div>
+                <details class="deep-dive"><summary>Quick glossary</summary><dl class="glossary"><dt>Field / particle</dt><dd>A field has degrees of freedom throughout spacetime; a particle is a quantized excitation.</dd><dt>Mass / energy</dt><dd>Rest mass is an invariant property; energy also depends on motion and the reference frame.</dd><dt>Charge</dt><dd>A quantum property governing a coupling; electric charge is only one kind.</dd><dt>State / species</dt><dd>“Electron” names a species. A state also specifies its spatial and spin degrees of freedom.</dd><dt>Flavor / generation</dt><dd>Flavor labels distinguish quarks or leptons; generations group related species.</dd><dt>Gauge / scalar boson</dt><dd>Gauge bosons here have spin 1; the Higgs is a spin-0 scalar.</dd></dl></details>
+            </div>
+            <div class="concept-card" id="references"><h3>References and further study</h3><p>Masses are deliberately rounded, not a precision fit or a live data feed. The catalog uses the fixed PDG 2025 edition so its conventions remain traceable.</p><ul class="reference-list">
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf">PDG 2025: quark properties and mass conventions</a></li>
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-leptons.pdf">PDG 2025: leptons</a></li>
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf">PDG 2025: gauge and Higgs bosons</a></li>
+                <li><a href="https://home.cern/science/physics/standard-model">CERN: an introduction to the Standard Model</a></li>
+                <li><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf">David Tong: quantum field theory, for a mathematical next step</a></li>
+            </ul></div>
         </section>
     </div>
+
+    <script id="physics-model">
+        // Rounded teaching values from the PDG 2025 summary tables; masses in MeV/c².
+        // Null means a flavor state has no single mass, never a measured zero.
+        const PARTICLES = [
+            { id: 'up', name: 'Up quark', symbol: 'u', family: 'quark', generation: 1, mass: 2.16, massLabel: '≈ 2.16 MeV/c²', charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Two up and one down valence quarks make a proton.', massNote: 'Running mass at a scale of 2 GeV; not the mass of a free quark.' },
+            { id: 'down', name: 'Down quark', symbol: 'd', family: 'quark', generation: 1, mass: 4.70, massLabel: '≈ 4.70 MeV/c²', charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Two down and one up valence quarks make a neutron.', massNote: 'Running mass at a scale of 2 GeV; confinement prevents isolation.' },
+            { id: 'charm', name: 'Charm quark', symbol: 'c', family: 'quark', generation: 2, mass: 1273, massLabel: '≈ 1.273 GeV/c²', charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Charm and anticharm form the J/ψ meson.', massNote: 'Running mass evaluated at its own mass scale.' },
+            { id: 'strange', name: 'Strange quark', symbol: 's', family: 'quark', generation: 2, mass: 93.5, massLabel: '≈ 93.5 MeV/c²', charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Strange quarks appear in kaons and strange baryons.', massNote: 'Running mass at a scale of 2 GeV.' },
+            { id: 'top', name: 'Top quark', symbol: 't', family: 'quark', generation: 3, mass: 172560, massLabel: '≈ 172.6 GeV/c²', charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Decays predominantly to a W boson and a bottom quark before forming hadrons.', massNote: 'Rounded direct-reconstruction mass; different mass definitions must not be mixed at high precision.' },
+            { id: 'bottom', name: 'Bottom quark', symbol: 'b', family: 'quark', generation: 3, mass: 4183, massLabel: '≈ 4.183 GeV/c²', charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], example: 'Bottom hadrons produce displaced decay vertices in detectors.', massNote: 'Running mass evaluated at its own mass scale.' },
+            { id: 'electron', name: 'Electron', symbol: 'e⁻', family: 'lepton', generation: 1, mass: 0.510999, massLabel: '≈ 0.511 MeV/c²', charge: '−1', spin: '1/2', interactions: ['em', 'weak'], example: 'Atomic electrons form shells and chemical bonds; moving electrons carry electric current.', massNote: 'Rest mass, independent of its speed. An electron is elementary; a proton is composite.' },
+            { id: 'muon', name: 'Muon', symbol: 'μ⁻', family: 'lepton', generation: 2, mass: 105.658, massLabel: '≈ 105.66 MeV/c²', charge: '−1', spin: '1/2', interactions: ['em', 'weak'], example: 'Cosmic-ray muons reach the ground and often traverse an entire collider detector.', massNote: 'About 207 electron masses; mean lifetime approximately 2.2 μs.' },
+            { id: 'tau', name: 'Tau', symbol: 'τ⁻', family: 'lepton', generation: 3, mass: 1776.93, massLabel: '≈ 1.777 GeV/c²', charge: '−1', spin: '1/2', interactions: ['em', 'weak'], example: 'Produces electrons, muons, or hadrons in its weak decays.', massNote: 'Mean lifetime approximately 290 femtoseconds.' },
+            { id: 'e_neutrino', name: 'Electron neutrino', symbol: 'νₑ', family: 'lepton', generation: 1, mass: null, massLabel: 'Flavor mixture; masses unknown', charge: '0', spin: '1/2', interactions: ['weak'], example: 'Produced in solar fusion and electron-flavor weak interactions.', massNote: 'νₑ is a superposition of mass states ν₁, ν₂, ν₃. Oscillations measure mass-squared differences, not one mass for each flavor.' },
+            { id: 'mu_neutrino', name: 'Muon neutrino', symbol: 'νμ', family: 'lepton', generation: 2, mass: null, massLabel: 'Flavor mixture; masses unknown', charge: '0', spin: '1/2', interactions: ['weak'], example: 'Produced with muons in charged-pion decays.', massNote: 'Flavor and mass states differ. At least two neutrino mass states have nonzero mass; the lightest could be massless.' },
+            { id: 'tau_neutrino', name: 'Tau neutrino', symbol: 'ντ', family: 'lepton', generation: 3, mass: null, massLabel: 'Flavor mixture; masses unknown', charge: '0', spin: '1/2', interactions: ['weak'], example: 'Identified through interactions that produce tau leptons when enough energy is available.', massNote: 'There is no separate measured rest mass to assign to the tau flavor. Neutrino mass generation requires physics beyond the minimal Standard Model.' },
+            { id: 'photon', name: 'Photon', symbol: 'γ', family: 'gauge', generation: null, mass: 0, massLabel: '0 in the Standard Model', charge: '0', spin: '1', interactions: ['em'], example: 'Visible light, radio waves, and X-rays consist of photons. Photons mediate electromagnetic interactions.', massNote: 'Zero rest mass does not mean zero energy: E = hf = pc. No rest frame exists for a photon.' },
+            { id: 'gluon', name: 'Gluon', symbol: 'g', family: 'gauge', generation: null, mass: 0, massLabel: '0 in the Standard Model', charge: '0', spin: '1', interactions: ['strong'], example: 'Eight color states mediate the strong interaction; gluons also interact with other gluons.', massNote: 'Massless but confined: hadronization produces jets rather than isolated gluons.' },
+            { id: 'w_boson', name: 'W boson', symbol: 'W±', family: 'gauge', generation: null, mass: 80369, massLabel: '≈ 80.37 GeV/c²', charge: '±1', spin: '1', interactions: ['em', 'weak'], example: 'W⁺ and W⁻ mediate charged-current weak processes, including beta decay.', massNote: 'Its large mass helps set the short range of the weak interaction. W bosons also couple to the Higgs field.' },
+            { id: 'z_boson', name: 'Z boson', symbol: 'Z⁰', family: 'gauge', generation: null, mass: 91187.6, massLabel: '≈ 91.19 GeV/c²', charge: '0', spin: '1', interactions: ['weak'], example: 'Mediates neutral-current weak scattering, including neutrino scattering without producing a charged lepton.', massNote: 'Electrically neutral but not non-interacting; couples to the Higgs field and weak currents.' },
+            { id: 'higgs', name: 'Higgs boson', symbol: 'H', family: 'scalar', generation: null, mass: 125200, massLabel: '≈ 125.2 GeV/c²', charge: '0', spin: '0', interactions: ['higgs'], example: 'The observed excitation of the Higgs field; reconstructed from its decay products.', massNote: 'A scalar boson, not a gauge force carrier. Its own mass comes from the Higgs potential; photon/gluon couplings occur through loops.' }
+        ];
+        const INTERACTION_NAMES = { strong: 'Strong', em: 'Electromagnetic', weak: 'Weak', higgs: 'Higgs sector' };
+        const FAMILY_NAMES = { quark: 'Quark · fermion', lepton: 'Lepton · fermion', gauge: 'Gauge boson', scalar: 'Scalar boson' };
+        function selectParticles({ family = 'all', interaction = 'all', query = '', sort = 'model' } = {}) {
+            const term = query.trim().toLowerCase();
+            const result = PARTICLES.filter(p => (family === 'all' || p.family === family)
+                && (interaction === 'all' || p.interactions.includes(interaction))
+                && `${p.name} ${p.symbol} ${p.example}`.toLowerCase().includes(term));
+            if (sort === 'mass') result.sort((a, b) => (a.mass ?? Infinity) - (b.mass ?? Infinity));
+            if (sort === 'name') result.sort((a, b) => a.name.localeCompare(b.name));
+            return result;
+        }
+        function massRatio(a, b) {
+            if (a.mass === null || b.mass === null || b.mass === 0) return null;
+            return a.mass / b.mass;
+        }
+        // One fixed spatial mode; indices distinguish spin states or photon polarizations.
+        function addToQuantumState(particleId, counts, state) {
+            const particle = PARTICLES.find(p => p.id === particleId);
+            if (!particle || ![0, 1].includes(state) || counts.length !== 2) throw new Error('Invalid state');
+            const next = [...counts];
+            const fermion = ['quark', 'lepton'].includes(particle.family);
+            if (fermion && next[state] > 0) return { accepted: false, counts: next };
+            next[state] += 1;
+            return { accepted: true, counts: next };
+        }
+        const PROCESSES = {
+            beta: { equation: 'n → p + e⁻ + ν̄ₑ', before: [0], after: [1, -1, 0], label: 'Free-neutron beta decay · weak', explanation: 'A down valence quark changes into an up quark through a virtual W⁻. The electron and antineutrino share the released energy; the proton recoils. A bound neutron can be stable if nuclear energy balance prevents decay.', particles: ['down', 'up', 'w_boson', 'electron', 'e_neutrino'] },
+            annihilation: { equation: 'e⁻ + e⁺ → γ + γ', before: [-1, 1], after: [0, 0], label: 'Annihilation · electromagnetic', explanation: 'An electron and positron can turn into two photons. Rest energy becomes photon energy while total energy and momentum remain conserved. The positron has the electron mass and the opposite electric charge.', particles: ['electron', 'photon'] },
+            higgs: { equation: 'H → γ + γ', before: [0], after: [0, 0], label: 'Higgs decay · loop-induced', explanation: 'The Higgs can decay to two photons through charged-particle loops, despite the photon having no direct mass-generating Higgs coupling. Photon pairs help reconstruct the Higgs mass.', particles: ['higgs', 'photon', 'w_boson', 'top'] },
+            forbidden: { equation: 'e⁻ → γ + γ', before: [-1], after: [0, 0], label: 'Forbidden · electric charge would change', explanation: 'Charge conservation rules this out: −1 cannot become 0. Passing a charge check alone would still not prove a reaction is possible; energy, momentum, angular momentum, and the available couplings also matter.', particles: ['electron', 'photon'] }
+        };
+        function chargeBalance(process) {
+            return { before: process.before.reduce((a, b) => a + b, 0), after: process.after.reduce((a, b) => a + b, 0) };
+        }
+        const DETECTOR_SIGNATURES = {
+            electron: { name: 'Electron', particle: 'electron', layers: ['Track', 'EM shower', 'Little beyond ECAL', 'No muon track'], why: 'A charged track matched to an electromagnetic shower is a typical electron signature.' },
+            photon: { name: 'Photon', particle: 'photon', layers: ['No primary track', 'EM shower', 'Little beyond ECAL', 'No muon track'], why: 'A photon is neutral and usually starts a shower in the electromagnetic calorimeter. Conversion to an electron–positron pair in tracker material is an important exception.' },
+            muon: { name: 'Muon', particle: 'muon', layers: ['Track', 'Small deposit', 'Small deposit', 'Muon track'], why: 'A penetrating track connects the inner tracker to outer muon chambers.' },
+            hadron: { name: 'Charged hadron', particle: 'up', layers: ['Track', 'Some energy', 'Hadronic shower', 'Usually stops'], why: 'A pion or proton is composite. Quarks and gluons hadronize, so experiments reconstruct jets of hadrons rather than free quarks.' },
+            neutrino: { name: 'Neutrino', particle: 'e_neutrino', layers: ['No track', 'No deposit', 'No deposit', 'No track'], why: 'Usually escapes a collider detector. Missing transverse momentum is inferred from the measured imbalance; it can also arise from other invisible particles or measurement errors.' }
+        };
+    </script>
 
     <script>
         /* ============================================
            PART 2: JAVASCRIPT
            ============================================ */
 
-        // Progress bar update
-        window.addEventListener('scroll', () => {
+        // Native fragment links own navigation; scrolling only updates its state.
+        function updateNavigation() {
             const scrolled = window.scrollY;
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrolled / maxScroll) * 100;
+            const progress = maxScroll > 0 ? (scrolled / maxScroll) * 100 : 0;
             document.getElementById('progressBar').style.width = progress + '%';
-            
-            // Update active nav dot
+
             const sections = document.querySelectorAll('.content-section');
-            const navDots = document.querySelectorAll('.nav-dot');
-            
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                    navDots.forEach(dot => dot.classList.remove('active'));
-                    if (navDots[index]) navDots[index].classList.add('active');
+            let activeSection = sections[0];
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+                    activeSection = section;
                 }
             });
-        });
+            if (maxScroll > 0 && scrolled >= maxScroll - 1) {
+                activeSection = sections[sections.length - 1];
+            }
 
-        // Navigation dots click
-        document.querySelectorAll('.nav-dot').forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                const sectionIndex = e.currentTarget.getAttribute('data-section');
-                const section = document.querySelector(`[data-section="${sectionIndex}"]`);
-                section.scrollIntoView({ behavior: 'smooth' });
+            document.querySelectorAll('.nav-dot').forEach(link => {
+                const active = link.getAttribute('href') === '#' + activeSection.id;
+                link.classList.toggle('active', active);
+                if (active) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
             });
-        });
+        }
+
+        window.addEventListener('scroll', updateNavigation, { passive: true });
+        window.addEventListener('resize', updateNavigation);
 
         // Expand/Collapse functionality
         function toggleExpand(button) {
             const expandable = button.nextElementSibling;
             expandable.classList.toggle('expanded');
             button.classList.toggle('expanded');
-            
-            if (expandable.classList.contains('expanded')) {
-                button.innerHTML = button.innerHTML.replace('fa-chevron-up', 'fa-chevron-down');
-            }
+            const expanded = expandable.classList.contains('expanded');
+            expandable.inert = !expanded;
+            button.setAttribute('aria-expanded', expanded);
+            updateNavigation();
         }
 
-        // Particle detail display
-        function showParticleDetail(particle) {
-            const details = {
-                up: { name: "Up Quark", mass: "2.2 MeV/c²", charge: "+2/3", spin: "1/2", discovered: "1968", info: "Lightest quark, found in protons and neutrons" },
-                down: { name: "Down Quark", mass: "4.7 MeV/c²", charge: "-1/3", spin: "1/2", discovered: "1968", info: "Second lightest quark, essential for nuclear stability" },
-                charm: { name: "Charm Quark", mass: "1.28 GeV/c²", charge: "+2/3", spin: "1/2", discovered: "1974", info: "Second generation quark, found in J/ψ meson" },
-                strange: { name: "Strange Quark", mass: "95 MeV/c²", charge: "-1/3", spin: "1/2", discovered: "1964", info: "Creates 'strange' particles in cosmic rays" },
-                top: { name: "Top Quark", mass: "173 GeV/c²", charge: "+2/3", spin: "1/2", discovered: "1995", info: "Heaviest elementary particle, as heavy as a gold atom!" },
-                bottom: { name: "Bottom Quark", mass: "4.18 GeV/c²", charge: "-1/3", spin: "1/2", discovered: "1977", info: "Also called 'beauty', important for CP violation studies" },
-                electron: { name: "Electron", mass: "0.511 MeV/c²", charge: "-1", spin: "1/2", discovered: "1897", info: "First elementary particle discovered, makes chemistry possible" },
-                muon: { name: "Muon", mass: "105.7 MeV/c²", charge: "-1", spin: "1/2", discovered: "1936", info: "Heavy electron, penetrates matter deeply" },
-                tau: { name: "Tau", mass: "1.777 GeV/c²", charge: "-1", spin: "1/2", discovered: "1975", info: "Heaviest lepton, decays in 10⁻¹³ seconds" },
-                e_neutrino: { name: "Electron Neutrino", mass: "< 2 eV/c²", charge: "0", spin: "1/2", discovered: "1956", info: "Ghostly particle that barely interacts" },
-                mu_neutrino: { name: "Muon Neutrino", mass: "< 0.19 MeV/c²", charge: "0", spin: "1/2", discovered: "1962", info: "Second neutrino flavor discovered" },
-                tau_neutrino: { name: "Tau Neutrino", mass: "< 18.2 MeV/c²", charge: "0", spin: "1/2", discovered: "2000", info: "Last Standard Model particle to be directly observed" },
-                photon: { name: "Photon", mass: "0", charge: "0", spin: "1", discovered: "1905", info: "Quantum of light, mediates electromagnetic force" },
-                gluon: { name: "Gluon", mass: "0", charge: "0 (color)", spin: "1", discovered: "1979", info: "Carries strong force, self-interacting!" },
-                w_boson: { name: "W Boson", mass: "80.4 GeV/c²", charge: "±1", spin: "1", discovered: "1983", info: "Mediates weak force, causes beta decay" },
-                z_boson: { name: "Z Boson", mass: "91.2 GeV/c²", charge: "0", spin: "1", discovered: "1983", info: "Neutral weak force carrier" },
-                higgs: { name: "Higgs Boson", mass: "125 GeV/c²", charge: "0", spin: "0", discovered: "2012", info: "Gives mass to other particles, Nobel Prize 2013" }
+        let selectedParticle = 'electron';
+        let stateCounts = [0, 0];
+        const particleById = id => PARTICLES.find(p => p.id === id);
+        const isFermion = p => ['quark', 'lepton'].includes(p.family);
+        const interactionText = p => p.interactions.map(key => INTERACTION_NAMES[key]).join(', ');
+        const statisticsText = p => isFermion(p)
+            ? 'Fermion: identical particles cannot share a complete quantum state (Pauli exclusion).'
+            : 'Boson: identical particles can share a complete quantum state; no Pauli occupancy limit.';
+        function particleLink(id, label) {
+            return `<a href="#particle-inspector" data-particle="${id}">${label || particleById(id).name}</a>`;
+        }
+        function renderParticleExplorer() {
+            const controls = {
+                family: document.getElementById('particle-family').value,
+                interaction: document.getElementById('particle-interaction').value,
+                query: document.getElementById('particle-search').value,
+                sort: document.getElementById('particle-sort').value
             };
-            
-            const p = details[particle] || details.electron;
-            
-            // Create a nice popup instead of alert
-            const popup = document.createElement('div');
-            popup.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(135deg, #1a1f3a, #0a0e27);
-                border: 2px solid #00d4ff;
-                border-radius: 20px;
-                padding: 2rem;
-                z-index: 10000;
-                max-width: 400px;
-                box-shadow: 0 20px 60px rgba(0, 212, 255, 0.5);
-            `;
-            
-            popup.innerHTML = `
-                <h2 style="color: #00d4ff; margin-bottom: 1rem;">${p.name}</h2>
-                <div style="color: #e0e6ed; line-height: 1.8;">
-                    <p><strong>Mass:</strong> ${p.mass}</p>
-                    <p><strong>Charge:</strong> ${p.charge}e</p>
-                    <p><strong>Spin:</strong> ${p.spin}</p>
-                    <p><strong>Discovered:</strong> ${p.discovered}</p>
-                    <p style="margin-top: 1rem; color: #8892b0;">${p.info}</p>
-                </div>
-                <button onclick="this.parentElement.remove()" style="
-                    margin-top: 1rem;
-                    padding: 0.5rem 1rem;
-                    background: linear-gradient(45deg, #00d4ff, #06ffa5);
-                    border: none;
-                    border-radius: 10px;
-                    color: white;
-                    cursor: pointer;
-                ">Close</button>
-            `;
-            
-            document.body.appendChild(popup);
+            const visible = selectParticles(controls);
+            document.getElementById('particle-count').textContent = `${visible.length} of ${PARTICLES.length} particle entries shown${visible.length ? '.' : '. No matches; try resetting the filters.'}`;
+            const groups = [
+                { title: 'Quarks', subtitle: 'Fermions · spin ½ · three colors', families: ['quark'] },
+                { title: 'Leptons', subtitle: 'Fermions · spin ½ · no color', families: ['lepton'] },
+                { title: 'Bosons', subtitle: 'Gauge carriers · spin 1 / Higgs · spin 0', families: ['gauge', 'scalar'] }
+            ];
+            document.getElementById('particle-grid').innerHTML = groups.map(group => {
+                const members = visible.filter(p => group.families.includes(p.family));
+                if (!members.length) return '';
+                return `<div class="family-group"><h4>${group.title}</h4><p class="hint">${group.subtitle}</p><div class="particle-grid">${members.map(p => `<button type="button" class="particle-tile ${p.family}" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}"><span class="particle-symbol">${p.symbol}</span><span class="particle-name">${p.name}</span><span class="tile-mass">${p.mass === null ? 'Mixed mass states' : p.massLabel}</span><span class="tile-meta">${p.generation ? `Gen ${p.generation} · ` : ''}Q ${p.charge} · spin ${p.spin}</span></button>`).join('')}</div></div>`;
+            }).join('');
+            document.getElementById('particle-rows').innerHTML = visible.map(p => `<tr><th scope="row"><button type="button" class="table-particle" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}">${p.symbol} ${p.name}</button></th><td>${FAMILY_NAMES[p.family]}</td><td>${p.generation || '—'}</td><td>${p.massLabel}</td><td>${p.charge}</td><td>${p.spin}</td><td>${interactionText(p)}</td></tr>`).join('');
+            updateNavigation();
+        }
+        function showParticleDetail(id) {
+            const p = particleById(id);
+            if (!p) return;
+            selectedParticle = id;
+            const source = p.family === 'quark' ? 'quarks' : p.family === 'lepton' ? 'leptons' : 'gauge-higgs-bosons';
+            const higgsNote = p.family === 'quark' || (p.family === 'lepton' && p.charge !== '0')
+                ? 'Its elementary mass is associated with a Yukawa coupling to the Higgs field.'
+                : p.family === 'lepton' ? 'Neutrino mass generation is not explained by the minimal Standard Model.'
+                : p.id === 'higgs' ? 'Its mass is set by the Higgs potential, not a Yukawa term.'
+                : ['photon', 'gluon'].includes(p.id) ? 'It has no mass-generating Higgs coupling; effective Higgs couplings can arise through loops.'
+                : 'Its mass arises through electroweak symmetry breaking and coupling to the Higgs field.';
+            document.getElementById('particle-detail-title').textContent = `${p.symbol} · ${p.name}`;
+            document.getElementById('particle-selection-status').textContent = `${p.name} selected. Details updated.`;
+            document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>Type</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>Rest mass</strong><span>${p.massLabel}</span></div><div><strong>Electric charge</strong><span>${p.charge} e</span></div><div><strong>Spin</strong><span>${p.spin} (in units of ℏ)</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>Mass and its origin</dt><dd>${p.massNote} ${higgsNote}</dd><dt>Interactions</dt><dd>${interactionText(p)}. ${p.family === 'quark' ? 'Carries color as well as electric charge.' : p.id === 'gluon' ? 'Electrically neutral but carries color.' : p.charge === '0' ? 'Zero electric charge does not imply the absence of all couplings.' : 'Electric charge permits coupling to photons.'}</dd><dt>Quantum rule</dt><dd>${statisticsText(p)}</dd></dl><div class="learning-paths"><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${isFermion(p) ? 'Matter families' : 'Forces & carriers'}</a><a href="#higgs">Mass & Higgs</a><a href="#quantum">Spin & exclusion</a><a href="#interactions">Follow a reaction</a><a href="#detection">Detection</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">PDG 2025 property reference</a> · <a href="#references">Conventions and further study</a></p>`;
+            document.querySelectorAll('button[data-particle]').forEach(button => button.setAttribute('aria-pressed', button.dataset.particle === id));
+        }
+        function renderComparison() {
+            const a = particleById(document.getElementById('compare-a').value);
+            const b = particleById(document.getElementById('compare-b').value);
+            const properties = [ ['Type', p => FAMILY_NAMES[p.family]], ['Rest mass', p => p.massLabel], ['Charge / e', p => p.charge], ['Spin / ℏ', p => p.spin], ['Interactions', interactionText], ['Statistics', statisticsText], ['Example', p => p.example] ];
+            document.getElementById('comparison-head').innerHTML = `<tr><th scope="col">Property</th><th scope="col">${a.name}</th><th scope="col">${b.name}</th></tr>`;
+            document.getElementById('comparison-body').innerHTML = properties.map(([name, getter]) => `<tr><th scope="row">${name}</th><td>${getter(a)}</td><td>${getter(b)}</td></tr>`).join('');
+            const ratio = massRatio(a, b);
+            document.getElementById('mass-comparison').textContent = ratio === null
+                ? 'A finite mass ratio is not shown: a denominator is massless, or a neutrino flavor has no single mass. Compare the energy–momentum relation instead.'
+                : `${a.name} / ${b.name}: mass ratio ≈ ${Number(ratio.toPrecision(4))}. Rounded values and quark mass conventions apply.`;
+        }
+        function renderQuantumState(message) {
+            const electron = document.getElementById('state-particle').value === 'electron';
+            const labels = electron ? ['Spin ↑', 'Spin ↓'] : ['Polarization A', 'Polarization B'];
+            document.getElementById('state-assumption').textContent = electron ? 'One fixed spatial orbital; two distinct spin states. Each full state can hold at most one electron.' : 'One fixed light mode; two independent polarizations. Any number of identical photons can occupy either polarization state.';
+            document.getElementById('state-boxes').innerHTML = labels.map((label, i) => `<div class="state-box"><strong>${label}</strong><span class="state-count">${stateCounts[i]}</span><span>${electron ? 'electron' : 'photon'}${stateCounts[i] === 1 ? '' : 's'}</span></div>`).join('');
+            labels.forEach((label, i) => document.getElementById(`add-state-${i}`).textContent = `Add ${label.toLowerCase()}`);
+            document.getElementById('state-result').textContent = message || 'Choose a state to add the first particle.';
+        }
+        function addQuantumParticle(state) {
+            const id = document.getElementById('state-particle').value;
+            const result = addToQuantumState(id, stateCounts, state);
+            stateCounts = result.counts;
+            renderQuantumState(result.accepted ? `Added. This complete state now contains ${stateCounts[state]} ${id === 'electron' ? 'electron' : 'photon'}${stateCounts[state] === 1 ? '' : 's'}. Try adding another.` : 'Blocked by Pauli exclusion: that complete electron state is occupied. Try the other spin state.');
+        }
+        function renderProcess() {
+            const process = PROCESSES[document.getElementById('process-choice').value];
+            const charge = chargeBalance(process);
+            document.getElementById('process-result').innerHTML = `<h4>${process.label}</h4><div class="equation">${process.equation}</div><p class="charge-check">Charge / e: initial ${charge.before} → final ${charge.after} · ${charge.before === charge.after ? 'balanced' : 'NOT conserved'}</p><p>${process.explanation}</p><div class="learning-paths">${process.particles.map(id => particleLink(id)).join('')}</div>`;
+        }
+        function renderDetector() {
+            const signature = DETECTOR_SIGNATURES[document.getElementById('detector-choice').value];
+            const names = ['Tracker', 'Electromagnetic calorimeter', 'Hadronic calorimeter', 'Muon chambers'];
+            document.getElementById('detector-layers').innerHTML = names.map((name, i) => `<div class="detector-layer"><span class="layer-step">${i + 1}</span><h4>${name}</h4><p>${signature.layers[i]}</p></div>`).join('');
+            document.getElementById('detector-explanation').textContent = signature.why;
+            document.getElementById('detector-particle-link').innerHTML = `Connect to the catalog: ${particleLink(signature.particle, signature.name === 'Charged hadron' ? 'a constituent up quark' : signature.name)}.`;
+        }
+        function initParticleExplorers() {
+            ['particle-family', 'particle-interaction', 'particle-sort'].forEach(id => document.getElementById(id).addEventListener('change', renderParticleExplorer));
+            document.getElementById('particle-search').addEventListener('input', renderParticleExplorer);
+            document.getElementById('reset-particles').addEventListener('click', () => {
+                document.getElementById('particle-search').value = '';
+                ['particle-family', 'particle-interaction'].forEach(id => document.getElementById(id).value = 'all');
+                document.getElementById('particle-sort').value = 'model';
+                renderParticleExplorer();
+            });
+            document.addEventListener('click', event => {
+                const control = event.target.closest('[data-particle]');
+                if (!control) return;
+                showParticleDetail(control.dataset.particle);
+                if (control.tagName === 'BUTTON') {
+                    document.getElementById('particle-inspector').scrollIntoView({ behavior: 'auto', block: 'start' });
+                }
+                // Native links keep their fragment/history behavior; focus announces the detail title.
+                document.getElementById('particle-detail-title').focus({ preventScroll: true });
+            });
+            const options = PARTICLES.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+            ['compare-a', 'compare-b'].forEach(id => {
+                document.getElementById(id).innerHTML = options;
+                document.getElementById(id).addEventListener('change', renderComparison);
+            });
+            document.getElementById('compare-a').value = 'electron';
+            document.getElementById('compare-b').value = 'photon';
+            ['reset-state', 'state-particle'].forEach(id => document.getElementById(id).addEventListener(id === 'state-particle' ? 'change' : 'click', () => { stateCounts = [0, 0]; renderQuantumState(); }));
+            [0, 1].forEach(i => document.getElementById(`add-state-${i}`).addEventListener('click', () => addQuantumParticle(i)));
+            document.getElementById('process-choice').addEventListener('change', renderProcess);
+            document.getElementById('detector-choice').addEventListener('change', renderDetector);
+            document.querySelectorAll('details').forEach(details => details.addEventListener('toggle', updateNavigation));
+            renderParticleExplorer();
+            showParticleDetail(selectedParticle);
+            renderComparison();
+            renderQuantumState();
+            renderProcess();
+            renderDetector();
         }
 
         // Canvas Visualizations
@@ -794,6 +1123,7 @@
             // Atom model
             const atomCanvas = document.getElementById('atomModel');
             if (atomCanvas) {
+                atomCanvas.setAttribute('aria-label', 'Schematic atom animation; circular paths are not physical electron orbitals');
                 animateAtom(atomCanvas);
             }
         }
@@ -944,7 +1274,7 @@
                 ctx.fillStyle = '#e0e6ed';
                 ctx.font = '12px Arial';
                 ctx.fillText('Nucleus', centerX - 25, centerY + 45);
-                ctx.fillText('Electron orbitals', centerX + 100, centerY - 100);
+                ctx.fillText('Schematic electron paths', centerX + 100, centerY - 100);
                 
                 time += 0.02;
                 requestAnimationFrame(draw);
@@ -1038,6 +1368,8 @@
 
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
+            updateNavigation();
+            initParticleExplorers();
             initVisualizations();
             
             // Add particle collision to hero section
