@@ -7,8 +7,8 @@ const vm = require('node:vm');
 const html = fs.readFileSync(path.join(__dirname, '..', 'elementaryparticles.html'), 'utf8');
 const modelSource = html.match(/<script id="physics-model">([\s\S]*?)<\/script>/)[1];
 const context = vm.createContext({});
-vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES };`, context);
-const { PARTICLES, selectParticles, massRatio, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES } = context.model;
+vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES };`, context);
+const { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES } = context.model;
 const particle = id => PARTICLES.find(p => p.id === id);
 
 test('catalog distinguishes matter, carriers, and the scalar Higgs', () => {
@@ -54,6 +54,49 @@ test('mass sorting handles mixed units and puts unknown neutrino flavors last', 
   assert.ok(known.every((p, i) => i === 0 || p.mass >= known[i - 1].mass));
   assert.equal(known.at(-1).id, 'top');
   assert.equal(PARTICLES[0].id, 'up', 'sorting must not mutate the canonical catalog');
+});
+
+test('pair matrix covers both ordered axes consistently, including self-pairs', () => {
+  for (const a of PARTICLES) {
+    for (const b of PARTICLES) {
+      const pair = pairInteraction(a.id, b.id);
+      const reverse = pairInteraction(b.id, a.id);
+      assert.ok(pair.explanation && pair.channels.length);
+      assert.ok(pair.channels.every(channel => PAIR_CHANNELS[channel]));
+      assert.equal(new Set(pair.channels).size, pair.channels.length);
+      assert.equal(pair.channels.join(','), reverse.channels.join(','), `${a.id} × ${b.id} must be symmetric`);
+      assert.equal(pair.treeLevel, reverse.treeLevel);
+      assert.equal(pair.treeLevel, !pair.channels.includes('loop'));
+      assert.equal(pair.sameFermion, a.id === b.id && ['quark', 'lepton'].includes(a.family));
+    }
+  }
+  assert.throws(() => pairInteraction('unknown', 'electron'), /Unknown particle pair/);
+});
+
+test('pair routes distinguish charge, color, weak currents, and Higgs vertices', () => {
+  const channels = (a, b) => pairInteraction(a, b).channels.join(',');
+  assert.equal(channels('electron', 'photon'), 'em', 'Compton scattering needs no photon charge');
+  assert.equal(channels('up', 'gluon'), 'strong');
+  assert.equal(channels('gluon', 'gluon'), 'strong', 'gluon self-couplings are tree-level');
+  assert.equal(channels('e_neutrino', 'mu_neutrino'), 'weak');
+  assert.equal(channels('electron', 'e_neutrino'), 'weak', 'neutral does not mean non-interacting');
+  assert.equal(channels('electron', 'electron'), 'em,weak,higgs');
+  assert.equal(channels('higgs', 'electron'), 'higgs');
+  assert.equal(channels('higgs', 'higgs'), 'higgs');
+  assert.equal(channels('z_boson', 'z_boson'), 'higgs', 'no three-Z or four-Z gauge vertex');
+  assert.equal(channels('w_boson', 'photon'), 'em');
+  assert.equal(channels('w_boson', 'z_boson'), 'weak,higgs');
+});
+
+test('no tree-level route does not label higher-order scattering impossible', () => {
+  for (const [a, b] of [['photon', 'photon'], ['photon', 'higgs'], ['gluon', 'higgs'], ['electron', 'gluon'], ['e_neutrino', 'photon'], ['e_neutrino', 'higgs']]) {
+    const pair = pairInteraction(a, b);
+    assert.equal(pair.treeLevel, false);
+    assert.equal(pair.channels.join(','), 'loop');
+    assert.match(pair.status, /higher order/);
+    assert.doesNotMatch(pair.status, /impossible|forbidden/i);
+  }
+  assert.match(pairInteraction('photon', 'photon').explanation, /charged-particle loops/);
 });
 
 test('Pauli exclusion checks the complete state and leaves rejected counts unchanged', () => {

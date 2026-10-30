@@ -125,7 +125,7 @@
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1680px;
             margin: 0 auto;
             padding: 2rem;
             padding-right: 100px;
@@ -175,6 +175,8 @@
 
         /* Content Sections */
         .content-section {
+            max-width: 1120px;
+            margin-inline: auto;
             min-height: 100vh;
             padding: 4rem 0;
             position: relative;
@@ -525,6 +527,64 @@
         .detector-layer { border: 1px solid #3f7290; background: rgba(0, 212, 255, 0.05); padding: 1rem; border-radius: 10px; min-width: 0; }
         .layer-step { display: block; color: var(--accent); margin-bottom: 0.75rem; }
         .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        #particle-zoo { max-width: none; }
+        .comparison-section { scroll-margin-top: 1.5rem; }
+        .comparison-intro { max-width: 85ch; }
+        .comparison-controls { padding: 0.8rem 1rem; border: 1px solid #3a4e6f; border-radius: 12px; }
+        .comparison-controls .hint { margin: 0 0 auto; padding-top: 0.25rem; }
+        .comparison-preview { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+        .pair-particle, .pair-explanation { min-width: 0; padding: 1rem; border: 1px solid #3a4e6f; border-radius: 12px; background: #131e35; }
+        .pair-particle { border-top: 3px solid var(--family-color); }
+        .pair-particle h4 { display: flex; align-items: center; gap: 0.65rem; font-size: 1rem; }
+        .pair-symbol { color: var(--family-color); font-size: 1.8rem; line-height: 1; }
+        .pair-particle p, .pair-explanation p { font-size: 0.8rem; line-height: 1.5; }
+        .pair-particle .pair-axis { color: var(--family-color); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem; }
+        .family-quark { --family-color: #ff82b6; }
+        .family-lepton { --family-color: #83b6ff; }
+        .family-gauge { --family-color: #63efba; }
+        .family-scalar { --family-color: #ffcf69; }
+        .pair-explanation { border-top: 3px solid #52698b; }
+        .pair-explanation h4 { font-size: 0.95rem; }
+        .channel-tags, .matrix-legend { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+        .channel-tags { margin: 0.6rem 0; }
+        .channel-tag { color: var(--channel-color); border: 1px solid var(--channel-color); background: var(--channel-bg); padding: 0.15rem 0.4rem; border-radius: 5px; font-size: 0.7rem; line-height: 1.2; }
+        .channel-strong { --channel-color: #ff91bc; --channel-bg: #4b2039; }
+        .channel-em { --channel-color: #83e6ff; --channel-bg: #153b4f; }
+        .channel-weak { --channel-color: #d0b1ff; --channel-bg: #33254d; }
+        .channel-higgs { --channel-color: #ffcf69; --channel-bg: #473a20; }
+        .channel-loop { --channel-color: #c2cbd8; --channel-bg: #293345; }
+        .matrix-legend { margin: 1rem 0 0.7rem; font-size: 0.75rem; color: #bac6d5; gap: 0.6rem 1rem; }
+        .matrix-legend > span { display: inline-flex; align-items: center; gap: 0.35rem; }
+        .matrix-scroll { overflow: auto; max-height: 640px; border: 1px solid #3a4e6f; border-radius: 10px; overscroll-behavior: contain; }
+        #interaction-matrix { width: 100%; min-width: 1080px; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+        #interaction-matrix caption { padding: 0.6rem; background: #131e35; }
+        #interaction-matrix th, #interaction-matrix td { padding: 0; text-align: center; border: 0; border-right: 1px solid #26374d; border-bottom: 1px solid #26374d; }
+        #interaction-matrix thead th { position: sticky; top: 0; z-index: 3; background: #18253e; height: 64px; }
+        #interaction-matrix th:first-child { width: 140px; position: sticky; left: 0; z-index: 2; background: #18253e; }
+        #interaction-matrix thead th:first-child { z-index: 4; }
+        .matrix-corner { font-size: 0.75rem; line-height: 1.6; color: #b5c5d9; }
+        .matrix-axis { width: 100%; min-height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.15rem; padding: 0.35rem; background: transparent; border: 0; border-top: 2px solid var(--family-color); color: #e0e6ed; cursor: pointer; }
+        .matrix-axis .axis-symbol { color: var(--family-color); font-size: 1.05rem; font-weight: 700; }
+        .matrix-axis .axis-name { font-size: 0.62rem; line-height: 1.1; font-weight: 400; }
+        .matrix-row-axis { flex-direction: row; justify-content: start; gap: 0.5rem; padding: 0.5rem; border-top: 0; border-left: 3px solid var(--family-color); text-align: left; }
+        .matrix-row-axis .axis-name { font-size: 0.75rem; }
+        .matrix-axis[aria-pressed="true"] { background: #30415e; box-shadow: inset 0 -2px #ffcf69; }
+        .matrix-cell { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.25rem; width: 100%; min-height: 48px; padding: 0.3rem 0.15rem; border: 2px solid transparent; background: var(--channel-bg); color: var(--channel-color); cursor: pointer; }
+        .matrix-cell .matrix-codes { display: flex; justify-content: center; gap: 0.15rem; flex-wrap: wrap; }
+        .matrix-code { color: var(--channel-color); font-size: 0.65rem; font-weight: 700; line-height: 1; }
+        .matrix-order { font-size: 0.58rem; line-height: 1; color: #c3cddd; }
+        .matrix-cell.in-selected-axis { box-shadow: inset 0 0 0 1px #8c9ebc; }
+        .matrix-cell:hover { filter: brightness(1.3); }
+        .matrix-cell[aria-pressed="true"] { border-color: #ffcf69; box-shadow: inset 0 0 0 1px #101930; }
+        #interaction-matrix button:focus-visible { position: relative; z-index: 5; outline-offset: -3px; }
+        .comparison-properties { margin-bottom: 0; }
+        @media (max-width: 900px) {
+            .comparison-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .pair-explanation { grid-column: 1 / -1; grid-row: 2; }
+            .matrix-scroll { max-height: 480px; }
+            .comparison-controls { align-items: stretch; }
+            .comparison-controls .hint { flex-basis: 100%; }
+        }
         @media (max-width: 1000px) {
             .catalog-groups { grid-template-columns: 1fr; }
             .family-group .particle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -741,12 +801,25 @@
                 <p id="particle-selection-status" class="sr-only" role="status"></p>
                 <div id="particle-detail"></div>
             </div>
-            <div class="concept-card">
+            <div class="concept-card comparison-section" id="particle-comparison">
+                <p class="eyebrow">A × B · explore a pair</p>
                 <h3>Compare two particles</h3>
-                <p>Start with electron versus photon: similar experimental importance, different masses, charges, spins, and statistics.</p>
-                <div class="explorer-controls"><label>First particle<select id="compare-a"></select></label><label>Second particle<select id="compare-b"></select></label></div>
-                <div class="table-scroll" role="region" aria-label="Particle comparison" tabindex="0"><table><caption>Properties come from the same catalog as the tiles.</caption><thead id="comparison-head"></thead><tbody id="comparison-body"></tbody></table></div>
-                <p id="mass-comparison" role="status"></p>
+                <p class="comparison-intro">Select a row A, column B, or their intersection. Colors show channels for <strong>elastic scattering, A + B → A + B</strong>; “tree” uses basic Standard Model vertices, while “loop” requires higher-order effects.</p>
+                <div class="explorer-controls comparison-controls"><p class="hint">Quick access · also useful on small screens</p><label>First particle · row A<select id="compare-a"></select></label><label>Second particle · column B<select id="compare-b"></select></label></div>
+                <p id="pair-selection-status" class="sr-only" role="status" aria-live="polite"></p>
+                <div id="comparison-preview" class="comparison-preview" aria-label="Selected particle pair"></div>
+                <div class="matrix-legend" aria-label="Interaction color legend">
+                    <span><b class="channel-tag channel-strong">S</b> Strong</span><span><b class="channel-tag channel-em">E</b> Electromagnetic</span><span><b class="channel-tag channel-weak">W</b> Weak</span><span><b class="channel-tag channel-higgs">H</b> Higgs sector</span><span><b class="channel-tag channel-loop">L</b> Higher order / loop</span>
+                </div>
+                <p id="matrix-instructions" class="hint">Same particle list on both axes. Colors label channels, not their strength. Scroll inside the matrix; labels stay visible. Use arrow keys within cells, then Enter or Space to select.</p>
+                <div class="matrix-scroll" id="interaction-matrix-scroll" role="region" aria-label="Particle interaction matrix" tabindex="0" aria-describedby="matrix-instructions">
+                    <table id="interaction-matrix"><caption>Elastic-scattering overview · row A × column B</caption><thead id="interaction-matrix-head"></thead><tbody id="interaction-matrix-body"></tbody></table>
+                </div>
+                <p class="source-note">This is a schematic map of perturbative channels, not a rate calculation or a verdict on every reaction. Energy, quantum states, and polarizations matter; quarks/gluons are confined and heavy particles decay. Neutrino mass-generation effects and gravity are omitted. In particular, “no tree-level route” does not mean “impossible.” Channel assignments are inferred from <a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-standard-model.pdf">PDG electroweak couplings</a>, <a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-higgs-boson.pdf">Higgs couplings</a>, and <a href="https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf">quantum chromodynamics</a>.</p>
+                <details class="deep-dive comparison-properties"><summary>Compare all properties and masses</summary>
+                    <div class="table-scroll" role="region" aria-label="Particle comparison" tabindex="0"><table><caption>Properties come from the same catalog as the tiles.</caption><thead id="comparison-head"></thead><tbody id="comparison-body"></tbody></table></div>
+                    <p id="mass-comparison" role="status"></p>
+                </details>
             </div>
         </section>
 
@@ -911,6 +984,72 @@
             if (a.mass === null || b.mass === null || b.mass === 0) return null;
             return a.mass / b.mass;
         }
+        const PAIR_CHANNELS = {
+            strong: { code: 'S', label: 'Strong' }, em: { code: 'E', label: 'Electromagnetic' },
+            weak: { code: 'W', label: 'Weak' }, higgs: { code: 'H', label: 'Higgs sector' },
+            loop: { code: 'L', label: 'Higher order / loop' }
+        };
+        // Qualitative A+B → A+B channels, not an intersection of the catalog's filter tags.
+        // Neutrino Yukawa couplings are omitted in the minimal-SM approximation.
+        function pairInteraction(aId, bId) {
+            const a = PARTICLES.find(p => p.id === aId);
+            const b = PARTICLES.find(p => p.id === bId);
+            if (!a || !b) throw new Error('Unknown particle pair');
+            const fermion = p => ['quark', 'lepton'].includes(p.family);
+            const charged = p => p.charge !== '0';
+            const channels = [];
+            let explanation;
+            if (fermion(a) && fermion(b)) {
+                if (a.family === 'quark' && b.family === 'quark') channels.push('strong');
+                if (charged(a) && charged(b)) channels.push('em');
+                channels.push('weak');
+                if (charged(a) && charged(b)) channels.push('higgs');
+                explanation = 'Neutral-current Z exchange connects the fermions. Charged pairs also exchange photons and can exchange a Higgs; two quarks can exchange gluons.';
+            } else if (fermion(a) || fermion(b)) {
+                const f = fermion(a) ? a : b;
+                const boson = fermion(a) ? b : a;
+                if (boson.id === 'photon' && charged(f)) {
+                    channels.push('em');
+                    explanation = 'Compton-type scattering uses the photon coupling to the charged fermion. The photon itself does not need electric charge.';
+                } else if (boson.id === 'gluon' && f.family === 'quark') {
+                    channels.push('strong');
+                    explanation = 'Quark–gluon scattering uses color couplings, including gluon self-interactions. Observable outgoing states hadronize into jets.';
+                } else if (['w_boson', 'z_boson'].includes(boson.id)) {
+                    if (boson.id === 'w_boson' && charged(f)) channels.push('em');
+                    channels.push('weak');
+                    if (charged(f)) channels.push('higgs');
+                    explanation = 'Electroweak vertices allow fermion–vector-boson scattering. Massive charged fermions also admit Higgs exchange; a charged fermion and W can exchange a photon.';
+                } else if (boson.id === 'higgs' && charged(f)) {
+                    channels.push('higgs');
+                    explanation = 'The fermion Yukawa coupling permits Higgs–fermion scattering. Its coupling scales with the fermion mass; a listed channel need not be large.';
+                }
+            } else {
+                const ids = [a.id, b.id].sort().join(':');
+                const bosonChannels = {
+                    'gluon:gluon': ['strong'], 'photon:w_boson': ['em'],
+                    'w_boson:w_boson': ['em', 'weak', 'higgs'],
+                    'w_boson:z_boson': ['weak', 'higgs'], 'z_boson:z_boson': ['higgs'],
+                    'higgs:w_boson': ['higgs'], 'higgs:z_boson': ['higgs'], 'higgs:higgs': ['higgs']
+                };
+                channels.push(...(bosonChannels[ids] || []));
+                explanation = channels.includes('strong') ? 'Gluons carry color and have three- and four-gluon vertices, so they scatter already at tree level.'
+                    : ids === 'photon:w_boson' ? 'The W is electrically charged. Photon–W scattering has charged-vector exchange and a contact vertex.'
+                    : ids === 'z_boson:z_boson' ? 'Higgs exchange supplies tree-level Z–Z scattering. There is no elementary three-Z or four-Z gauge vertex.'
+                    : ids === 'higgs:higgs' ? 'The Higgs potential contains cubic and quartic self-couplings, allowing Higgs–Higgs scattering.'
+                    : channels.length ? 'Gauge–Higgs vertices and, where listed, gauge exchange/contact vertices permit scattering. The H label includes couplings of W/Z to the Higgs sector.' : undefined;
+            }
+            const treeLevel = channels.length > 0;
+            if (!treeLevel) {
+                channels.push('loop');
+                explanation = a.id === 'photon' && b.id === 'photon'
+                    ? 'Light-by-light elastic scattering has no tree-level photon self-coupling. Virtual charged-particle loops allow it; it is not forbidden.'
+                    : 'No tree-level elastic route is present in this approximation. Higher-order diagrams can connect the particles through virtual states; their size and leading order depend on the pair and energy.';
+            }
+            return {
+                channels, treeLevel, status: treeLevel ? 'Tree-level route available' : 'No tree-level route · higher order',
+                explanation, sameFermion: a.id === b.id && fermion(a)
+            };
+        }
         // One fixed spatial mode; indices distinguish spin states or photon polarizations.
         function addToQuantumState(particleId, counts, state) {
             const particle = PARTICLES.find(p => p.id === particleId);
@@ -1036,9 +1175,56 @@
             document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>Type</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>Rest mass</strong><span>${p.massLabel}</span></div><div><strong>Electric charge</strong><span>${p.charge} e</span></div><div><strong>Spin</strong><span>${p.spin} (in units of ℏ)</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>Mass and its origin</dt><dd>${p.massNote} ${higgsNote}</dd><dt>Interactions</dt><dd>${interactionText(p)}. ${p.family === 'quark' ? 'Carries color as well as electric charge.' : p.id === 'gluon' ? 'Electrically neutral but carries color.' : p.charge === '0' ? 'Zero electric charge does not imply the absence of all couplings.' : 'Electric charge permits coupling to photons.'}</dd><dt>Quantum rule</dt><dd>${statisticsText(p)}</dd></dl><div class="learning-paths"><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${isFermion(p) ? 'Matter families' : 'Forces & carriers'}</a><a href="#higgs">Mass & Higgs</a><a href="#quantum">Spin & exclusion</a><a href="#interactions">Follow a reaction</a><a href="#detection">Detection</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">PDG 2025 property reference</a> · <a href="#references">Conventions and further study</a></p>`;
             document.querySelectorAll('button[data-particle]').forEach(button => button.setAttribute('aria-pressed', button.dataset.particle === id));
         }
+        function renderInteractionMatrix() {
+            const axis = (p, dimension) => `<button type="button" class="matrix-axis family-${p.family} ${dimension === 'a' ? 'matrix-row-axis' : ''}" data-pair-axis="${dimension}" data-axis-particle="${p.id}" aria-label="${dimension === 'a' ? 'Row A' : 'Column B'}: ${p.name}" aria-pressed="false" aria-controls="comparison-preview"><span class="axis-symbol">${p.symbol}</span><span class="axis-name">${p.name}</span></button>`;
+            document.getElementById('interaction-matrix-head').innerHTML = `<tr><th scope="col" class="matrix-corner">Column B →<br>Row A ↓</th>${PARTICLES.map(p => `<th scope="col" id="pair-column-${p.id}">${axis(p, 'b')}</th>`).join('')}</tr>`;
+            document.getElementById('interaction-matrix-body').innerHTML = PARTICLES.map(a => `<tr><th scope="row" id="pair-row-${a.id}">${axis(a, 'a')}</th>${PARTICLES.map(b => {
+                const pair = pairInteraction(a.id, b.id);
+                const description = `${a.name} × ${b.name}: ${pair.channels.map(c => PAIR_CHANNELS[c].label).join(', ')}. ${pair.status}`;
+                return `<td headers="pair-row-${a.id} pair-column-${b.id}"><button type="button" class="matrix-cell channel-${pair.channels[0]}" data-pair-a="${a.id}" data-pair-b="${b.id}" aria-label="${description}" title="${description}" aria-pressed="false" aria-controls="comparison-preview" tabindex="-1"><span class="matrix-codes" aria-hidden="true">${pair.channels.map(c => `<span class="matrix-code channel-${c}">${PAIR_CHANNELS[c].code}</span>`).join('')}</span><span class="matrix-order" aria-hidden="true">${pair.treeLevel ? 'tree' : 'loop'}</span></button></td>`;
+            }).join('')}</tr>`).join('');
+        }
+        function selectComparisonPair(aId, bId) {
+            if (!particleById(aId) || !particleById(bId)) return;
+            document.getElementById('compare-a').value = aId;
+            document.getElementById('compare-b').value = bId;
+            renderComparison();
+        }
+        function handleMatrixKeydown(event) {
+            const cell = event.target.closest('.matrix-cell');
+            if (!cell) return;
+            let row = PARTICLES.findIndex(p => p.id === cell.dataset.pairA);
+            let col = PARTICLES.findIndex(p => p.id === cell.dataset.pairB);
+            if (event.key === 'ArrowUp') row--;
+            else if (event.key === 'ArrowDown') row++;
+            else if (event.key === 'ArrowLeft') col--;
+            else if (event.key === 'ArrowRight') col++;
+            else if (event.key === 'Home') { col = 0; if (event.ctrlKey) row = 0; }
+            else if (event.key === 'End') { col = PARTICLES.length - 1; if (event.ctrlKey) row = PARTICLES.length - 1; }
+            else return;
+            event.preventDefault();
+            row = Math.max(0, Math.min(PARTICLES.length - 1, row));
+            col = Math.max(0, Math.min(PARTICLES.length - 1, col));
+            const next = document.querySelector(`.matrix-cell[data-pair-a="${PARTICLES[row].id}"][data-pair-b="${PARTICLES[col].id}"]`);
+            cell.tabIndex = -1;
+            next.tabIndex = 0;
+            next.focus();
+        }
         function renderComparison() {
             const a = particleById(document.getElementById('compare-a').value);
             const b = particleById(document.getElementById('compare-b').value);
+            const pair = pairInteraction(a.id, b.id);
+            const previewCard = (p, axis) => `<div class="pair-particle family-${p.family}"><p class="pair-axis">${axis === 'a' ? 'Row A' : 'Column B'} · ${FAMILY_NAMES[p.family]}</p><h4><span class="pair-symbol">${p.symbol}</span>${p.name}</h4><p>${p.massLabel}<br>Q = ${p.charge} e · spin ${p.spin} ℏ</p><p>${isFermion(p) ? 'Fermion · Pauli exclusion applies' : 'Boson · shared states allowed'}</p>${particleLink(p.id, 'Open field guide')}</div>`;
+            document.getElementById('comparison-preview').innerHTML = `${previewCard(a, 'a')}<div class="pair-explanation"><h4>${pair.status}</h4><div class="channel-tags">${pair.channels.map(c => `<span class="channel-tag channel-${c}">${PAIR_CHANNELS[c].label}</span>`).join('')}</div><p>${pair.explanation}</p>${pair.sameFermion ? '<p>Identical fermions must occupy different complete states, including spin/color. Exclusion does not prohibit their scattering.</p>' : ''}</div>${previewCard(b, 'b')}`;
+            document.getElementById('pair-selection-status').textContent = `${a.name} × ${b.name}. ${pair.status}.`;
+            document.querySelectorAll('.matrix-cell').forEach(cell => {
+                const rowSelected = cell.dataset.pairA === a.id;
+                const colSelected = cell.dataset.pairB === b.id;
+                cell.setAttribute('aria-pressed', rowSelected && colSelected);
+                cell.classList.toggle('in-selected-axis', rowSelected || colSelected);
+                cell.tabIndex = rowSelected && colSelected ? 0 : -1;
+            });
+            document.querySelectorAll('.matrix-axis').forEach(axis => axis.setAttribute('aria-pressed', axis.dataset.axisParticle === (axis.dataset.pairAxis === 'a' ? a.id : b.id)));
             const properties = [ ['Type', p => FAMILY_NAMES[p.family]], ['Rest mass', p => p.massLabel], ['Charge / e', p => p.charge], ['Spin / ℏ', p => p.spin], ['Interactions', interactionText], ['Statistics', statisticsText], ['Example', p => p.example] ];
             document.getElementById('comparison-head').innerHTML = `<tr><th scope="col">Property</th><th scope="col">${a.name}</th><th scope="col">${b.name}</th></tr>`;
             document.getElementById('comparison-body').innerHTML = properties.map(([name, getter]) => `<tr><th scope="row">${name}</th><td>${getter(a)}</td><td>${getter(b)}</td></tr>`).join('');
@@ -1099,6 +1285,17 @@
             });
             document.getElementById('compare-a').value = 'electron';
             document.getElementById('compare-b').value = 'photon';
+            renderInteractionMatrix();
+            document.getElementById('interaction-matrix').addEventListener('click', event => {
+                const cell = event.target.closest('.matrix-cell');
+                const axis = event.target.closest('.matrix-axis');
+                if (cell) selectComparisonPair(cell.dataset.pairA, cell.dataset.pairB);
+                else if (axis) selectComparisonPair(
+                    axis.dataset.pairAxis === 'a' ? axis.dataset.axisParticle : document.getElementById('compare-a').value,
+                    axis.dataset.pairAxis === 'b' ? axis.dataset.axisParticle : document.getElementById('compare-b').value
+                );
+            });
+            document.getElementById('interaction-matrix').addEventListener('keydown', handleMatrixKeydown);
             ['reset-state', 'state-particle'].forEach(id => document.getElementById(id).addEventListener(id === 'state-particle' ? 'change' : 'click', () => { stateCounts = [0, 0]; renderQuantumState(); }));
             [0, 1].forEach(i => document.getElementById(`add-state-${i}`).addEventListener('click', () => addQuantumParticle(i)));
             document.getElementById('process-choice').addEventListener('change', renderProcess);

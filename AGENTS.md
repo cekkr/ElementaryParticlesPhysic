@@ -16,7 +16,8 @@ do not confuse it with the page served by the project server.
    standalone navigation, disclosure markup, and inline-script syntax contracts.
    [tests/physics-model.test.js](tests/physics-model.test.js) checks particle
    catalog semantics, filters, mass handling, occupancy rules, reactions, detector
-   signatures, and cross-topic references. Scientific statements follow the
+   signatures, pair-channel symmetry/coverage, tree-versus-loop distinctions,
+   and cross-topic references. Scientific statements follow the
    primary references linked in the page, including the fixed PDG 2025 edition;
    tests are not a substitute for those references.
 3. [elementaryparticles.html](elementaryparticles.html) defines the served UI;
@@ -104,6 +105,25 @@ manifest, or nested `AGENTS.md` exists in this checkout.
   gauge interactions/Higgs sector, not every tree-level or loop vertex. Preserve
   its visible scope explanation. [Model tests](tests/physics-model.test.js) cover
   these distinctions.
+- **Pair matrix semantics:** `pairInteraction(aId, bId)` in the pure
+  `physics-model` script describes schematic elastic `A + B → A + B` channels.
+  Do not derive it by intersecting the catalog's interaction filter tags. It
+  distinguishes tree-level routes from higher-order/loop routes, including
+  photon–photon scattering. “No tree-level route” MUST NOT be rendered as
+  “impossible.” Gravity and neutrino mass-generation couplings are omitted;
+  rates, thresholds, polarization dependence, and arbitrary final states are not
+  computed. Identical-fermion exclusion does not forbid their scattering.
+  [Pair tests](tests/physics-model.test.js) cover symmetry, self-pairs, color,
+  electric charge, weak currents, Higgs vertices, and higher-order examples.
+- **Matrix selection/accessibility:** both matrix axes use the complete
+  `PARTICLES` list in the same order, independent of catalog filters. Cells,
+  row/column header buttons, and `#compare-a`/`#compare-b` select the same ordered
+  pair via `selectComparisonPair`/`renderComparison`. Exactly one cell is pressed
+  and one cell participates in tab navigation. Arrow/Home/End keys move focus;
+  Enter/Space activates the focused cell. Preserve row/column header associations,
+  text channel codes and accessible labels; color alone must not carry meaning.
+  Confine matrix overflow to its scroll region on narrow screens, retain sticky
+  axes and quick dropdowns, and keep the expanded desktop layout for the hub.
 - **Quantum-state teaching model:** `addToQuantumState` tests occupancy of one
   fixed spatial mode and a selected spin/polarization state. Identical fermions
   cannot share a full state; opposite electron spins may share an orbital, and
@@ -134,7 +154,9 @@ navigation/progress. Buttons invoke `toggleExpand` or delegated particle
 selection. Native `details`/`summary` elements own deeper explanations. The pure `physics-model`
 script defines catalog and learning rules; `initParticleExplorers` connects them
 with controls and renders the catalog, comparison, occupancy lab, process check,
-and detector view. Those features share authored data, not remote fetches.
+and detector view. The comparison includes a pair-channel matrix and compact
+preview, with synchronized axis/cell/dropdown selection. These features share
+authored data, not remote fetches.
 `DOMContentLoaded` initializes navigation, explorers, and Canvas 2D animations using
 `requestAnimationFrame`. There is no application database, authentication,
 background worker, or application API.
@@ -168,7 +190,11 @@ the modular renderer at runtime.
   `.expandable`/`.expanded` control the scale/matter disclosures; native
   `.deep-dive` details own later explanations and the property table.
   `.catalog-groups`, `.property-grid`, `.state-box`, and `.detector-layers` style
-  explorers. The responsive media query owns the
+  explorers. The main container allows 1680px; ordinary sections remain capped
+  at 1120px while `#particle-zoo` uses the full available width.
+  `.comparison-preview`, `.family-*`, `.channel-*`, `.matrix-axis`, and
+  `.matrix-cell` style pair cards, channel codes, sticky axes, and selection.
+  `#interaction-matrix-scroll` owns both-axis scrolling. The responsive media query owns the
   bottom navigation; `prefers-reduced-motion` disables smooth anchor scrolling.
 - **`updateNavigation`:** computes progress and the current section; scroll,
   resize, disclosure changes, and DOM initialization call it.
@@ -177,7 +203,10 @@ the modular renderer at runtime.
 - **Pure `physics-model` script:** `PARTICLES` holds authored particle records;
   `INTERACTION_NAMES` and `FAMILY_NAMES` label them. `selectParticles` combines
   family/interaction/search filters and nonmutating mass/name sorting;
-  `massRatio` handles zero and unknown masses. `addToQuantumState` returns a new
+  `massRatio` handles zero and unknown masses. `PAIR_CHANNELS` maps channel codes
+  to labels; `pairInteraction` classifies elastic pairs symmetrically through
+  fermion/boson coupling rules and boson-pair exceptions, with a higher-order
+  fallback and an identical-fermion flag. `addToQuantumState` returns a new
   occupancy result without changing its input. `PROCESSES` contains equations,
   charge lists, explanations, and particle references; `chargeBalance` totals
   the initial/final charges. `DETECTOR_SIGNATURES` provides four qualitative
@@ -187,7 +216,13 @@ the modular renderer at runtime.
   `isFermion`, `interactionText`, `statisticsText`, and `particleLink` resolve
   catalog identities, labels, rules, and links. `showParticleDetail(id)` updates
   the inline inspector and pressed state of tile/table buttons. `renderComparison`
-  uses `#compare-a`/`#compare-b` and the same catalog for properties/mass ratios.
+  uses `#compare-a`/`#compare-b` and the same catalog for properties/mass ratios,
+  compact color-coded pair preview, selected axes/cell, and live status.
+  `renderInteractionMatrix` builds matching axes and cells using `pairInteraction`;
+  `selectComparisonPair` updates both dropdowns from matrix controls without
+  rebuilding focused cells. `handleMatrixKeydown` manages bounded arrow/Home/End
+  focus movement with one cell tab stop. The comparison's native details panel
+  retains the full property table and mass ratio.
 - **Other learning explorers:** `renderQuantumState` displays `stateCounts`;
   `addQuantumParticle` invokes the pure occupancy rule. `renderProcess` connects
   `#process-choice` to the charge check and reaction links. `renderDetector`
@@ -195,7 +230,8 @@ the modular renderer at runtime.
   `initParticleExplorers` binds all controls, reset actions, delegated selection,
   and native-details toggle updates, then renders initial states.
 - **Content/reference landmarks:** `#particle-zoo` is the catalog hub,
-  `#particle-inspector` is its inline field guide; `#fermions` has composite and
+  `#particle-inspector` is its inline field guide; `#particle-comparison` owns
+  the matrix, quick access, preview, and full property disclosure. `#fermions` has composite and
   neutrino explanations, `#forces` links carriers, `#higgs` explains mass,
   `#quantum` hosts the occupancy experiment, `#interactions` hosts reaction checks,
   `#detection` hosts signatures, `#mathematics` links equations to examples, and
@@ -320,7 +356,9 @@ uses the actual model functions. Tests cover particle family/spin invariants,
 unknown neutrino masses, zero/unknown mass ratios, combined filters, numeric mass
 sorting without catalog mutation, identical-fermion exclusion and boson
 occupancy, reaction charge balance, detector signatures, and static cross-topic
-anchors/particle keys. It also validates reaction/detector catalog references.
+anchors/particle keys. Pair tests traverse both axes and validate symmetry,
+self-pairs, channel labels, representative tree-level routes, and higher-order
+exceptions. It also validates reaction/detector catalog references.
 It has no browser DOM or external dependencies; UI rendering, event wiring, and
 scientific completeness still require browser/source review. Keep the pure
 script independent of `document` so these checks remain focused and executable.
@@ -364,7 +402,13 @@ must cover clicks, keyboard activation, fragments/history, and mobile overflow.
 [HTML](elementaryparticles.html) filters → `selectParticles` →
 `renderParticleExplorer` tiles/property table → `showParticleDetail` field guide
 and cross-topic links. `renderComparison` compares any pair, including the
-massless/unknown cases, from the same `PARTICLES` catalog. Family, principal
+massless/unknown cases, from the same `PARTICLES` catalog. The full ordered
+A × B matrix uses `pairInteraction` for compact channel codes/tree-versus-loop
+status and `renderInteractionMatrix` for both axes. Clicking a cell, row, column,
+or quick dropdown updates the same preview and full property disclosure.
+`handleMatrixKeydown` supplies roving cell focus and native activation; sticky
+headers and internal scrolling preserve access on small screens. Particle family
+colors and channel colors have separate legends/roles. Family, principal
 interaction, search, and sort choices are transient; reset restores all entries.
 Native buttons are keyboard-activatable, selection focuses the inspector title,
 and status messages announce updates. [Model tests](tests/physics-model.test.js)
@@ -440,6 +484,16 @@ Pauli exclusion tied to the full state rather than mass or position.
 [Model tests](tests/physics-model.test.js) protect these data/logic boundaries;
 primary references linked in the HTML govern scientific content beyond tests.
 
+### Pair compatibility is not a filter intersection — Fixed regression risk
+
+A photon can scatter from a charged particle without being charged itself, and
+photons can scatter from photons through loops. The Higgs is not a gauge carrier,
+and neutral Z–Z tree scattering uses Higgs exchange rather than a three-Z/four-Z
+vertex. Keep these cases in `pairInteraction`, not ad hoc UI conditionals or shared
+filter-tag intersections. Use [pair tests](tests/physics-model.test.js) and the
+linked PDG coupling references. A matrix cell describes a qualitative elastic
+channel, not whether every possible reaction of those incoming species is allowed.
+
 ## Interface Ownership Map
 
 | Surface | Authoritative owner |
@@ -504,6 +558,8 @@ Unknown — verify before changing deployment or publishing behavior.
 | Server routing, fresh reads, status codes | Manual loopback HTTP checks; no automated server suite |
 | Prototype code/data | Node syntax diagnostic and JSON parse check; no runtime suite/schema |
 | Catalog semantics/filtering/mass ratios, occupancy, charge checks, detector data/references | [tests/physics-model.test.js](tests/physics-model.test.js) |
+| Pair-channel symmetry/coverage, tree/loop exceptions and same-fermion semantics | [tests/physics-model.test.js](tests/physics-model.test.js), pair tests |
+| Matrix cell/axis/dropdown synchronization, roving focus, sticky axes, mobile overflow | Browser inspection; no automated browser suite |
 | Explorer event wiring, inspector keyboard focus, responsive tables/controls | Browser inspection; no automated browser suite |
 | Scientific completeness, canvas drawing/lifecycle | Primary-source review/manual inspection; no comprehensive automated coverage |
 
@@ -540,7 +596,8 @@ There are no shared fixtures, test helper packages, or generated test data.
 The loopback server serves the standalone educational page with all topic
 destinations, separate summary, keyboard-capable fragment navigation, a mobile
 navigation bar, a shared particle catalog with filters/property table/inline
-inspection/comparison, occupancy/reaction/detector explorers, contextual links,
+inspection/comparison with a selectable pair matrix and synchronized quick
+controls, occupancy/reaction/detector explorers, contextual links,
 primary references, native deeper explanations, and scale/atom/hero canvases.
 Source regression checks cover navigation and the pure learning model.
 
@@ -562,7 +619,10 @@ configuration but is not a working substitute for the standalone page.
 - No automated browser/server suite, comprehensive scientific-content validation,
   formal compatibility matrix, or release/deployment workflow exists. The catalog
   uses rounded fixed-edition PDG 2025 values, not a live feed. Check references
-  before scientific updates; tests cannot certify every explanation.
+  before scientific updates; tests cannot certify every explanation. Pair matrix
+  routes are qualitative perturbative summaries, not amplitude/rate calculations;
+  color, polarization, kinematics, neutrino mass effects, and final-state choices
+  require an explicit process calculation beyond the matrix.
 - The catalog requires JavaScript; surrounding learning content stays readable
   without it. There is no URL persistence for selected particle/filter state.
   Canvas loops have no general cleanup mechanism; reduced-motion styles disable
