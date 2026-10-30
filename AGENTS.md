@@ -222,7 +222,7 @@ the modular renderer at runtime.
   `selectComparisonPair` updates both dropdowns from matrix controls without
   rebuilding focused cells. `handleMatrixKeydown` manages bounded arrow/Home/End
   focus movement with one cell tab stop. The comparison's native details panel
-  retains the full property table and mass ratio.
+  opens by default and retains the full property table and mass ratio.
 - **Other learning explorers:** `renderQuantumState` displays `stateCounts`;
   `addQuantumParticle` invokes the pure occupancy rule. `renderProcess` connects
   `#process-choice` to the charge check and reaction links. `renderDetector`
