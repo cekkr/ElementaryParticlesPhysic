@@ -1354,27 +1354,60 @@
                 const centerX = canvas.width / 2;
                 const centerY = canvas.height / 2;
                 
+                const visibleLabels = [];
+
                 // Draw scales
-                scales.forEach((scale, index) => {
+                scales.forEach((scale) => {
                     const radius = Math.max(10, (scale.size + 20) * zoom * 5);
-                    
+                    const alpha = Math.max(0.3, 1 - Math.abs(radius - 100) / 200);
+
                     ctx.strokeStyle = scale.color;
                     ctx.lineWidth = 2;
-                    ctx.globalAlpha = Math.max(0.3, 1 - Math.abs(radius - 100) / 200);
-                    
+                    ctx.globalAlpha = alpha;
+
                     ctx.beginPath();
                     ctx.arc(centerX, centerY, Math.abs(radius), 0, Math.PI * 2);
                     ctx.stroke();
-                    
-                    // Label
+
                     if (Math.abs(radius - 100) < 50) {
-                        ctx.fillStyle = scale.color;
-                        ctx.font = '14px Arial';
-                        ctx.fillText(scale.label, centerX + radius + 10, centerY);
-                        ctx.fillText(`10^${scale.size} m`, centerX + radius + 10, centerY + 20);
+                        visibleLabels.push({ scale, radius, alpha });
                     }
                 });
-                
+
+                // Labels: give each visible ring its own row so text never overlaps.
+                // Outer rings sit higher; a leader line joins each label to its ring.
+                const rowHeight = 40;
+                const firstRowY = centerY - ((visibleLabels.length - 1) * rowHeight) / 2;
+                ctx.font = '14px Arial';
+                const widestLabel = Math.max(0, ...visibleLabels.map(l => ctx.measureText(l.scale.label).width));
+                const labelX = Math.min(
+                    centerX + Math.max(0, ...visibleLabels.map(l => l.radius)) + 30,
+                    canvas.width - widestLabel - 8
+                );
+                visibleLabels.forEach(({ scale, radius, alpha }, row) => {
+                    const y = firstRowY + row * rowHeight;
+                    ctx.globalAlpha = alpha;
+                    ctx.strokeStyle = scale.color;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(centerX + radius, centerY);
+                    ctx.lineTo(labelX - 6, y - 4);
+                    ctx.stroke();
+
+                    // Backing plate keeps text legible where it crosses rings (narrow canvases)
+                    ctx.globalAlpha = 0.85;
+                    ctx.fillStyle = 'rgb(10, 14, 39)';
+                    ctx.fillRect(labelX - 4, y - 14, widestLabel + 8, 34);
+                    ctx.globalAlpha = alpha;
+
+                    ctx.fillStyle = scale.color;
+                    ctx.textBaseline = 'alphabetic';
+                    ctx.font = '14px Arial';
+                    ctx.fillText(scale.label, labelX, y);
+                    ctx.font = '12px Arial';
+                    ctx.fillText(`10^${scale.size} m`, labelX, y + 16);
+                });
+
                 ctx.globalAlpha = 1;
                 
                 // Smooth zoom
