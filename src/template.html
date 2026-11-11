@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!---
+    Page structure for the standalone guide. Do not open this file directly:
+    run `node generate.js` to build elementaryparticles.html.
+    This triple-dash comment is template-only; generate.js removes it.
+
+    Template syntax handled by generate.js:
+    - Element content "{{key}}": the placeholder must be the element's only content.
+      Output gets data-i18n="key" plus the default-language (English) HTML.
+    - Attribute value "{{key}}": output gets data-i18n-attr="attribute:key" plus plain text.
+    - Comment directive "@include:file": inlines src/file (styles and scripts).
+    - Comment directive "@languages": option list built from src/i18n/*.json (meta.languageName).
+    Keys are dotted paths into src/i18n/LANGUAGE.json. Language-neutral text
+    (symbols, equations, quark content) stays literal here.
+--->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page.meta.title}}</title>
+
+    <!-- External Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+
+    <style>
+<!-- @include:styles.css -->
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Language switcher: options come from the locale files; app.js applies the choice. -->
+    <div class="language-switcher">
+        <i class="fas fa-language" aria-hidden="true"></i>
+        <label class="sr-only" for="language-choice">{{ui.language.label}}</label>
+        <select id="language-choice"><!-- @languages --></select>
+    </div>
+
+    <!-- Navigation Sidebar: every link targets exactly one .content-section below. -->
+    <nav class="nav-sidebar" aria-label="{{nav.label}}">
+        <a class="nav-dot active" href="#introduction" data-section="0" aria-label="{{nav.introduction}}" aria-current="location">
+            <span class="nav-tooltip">{{nav.introduction}}</span>
+        </a>
+        <a class="nav-dot" href="#scale" data-section="1" aria-label="{{nav.scale}}">
+            <span class="nav-tooltip">{{nav.scale}}</span>
+        </a>
+        <a class="nav-dot" href="#matter" data-section="2" aria-label="{{nav.matter}}">
+            <span class="nav-tooltip">{{nav.matter}}</span>
+        </a>
+        <a class="nav-dot" href="#particle-zoo" data-section="3" aria-label="{{nav.particleZoo}}">
+            <span class="nav-tooltip">{{nav.particleZoo}}</span>
+        </a>
+        <a class="nav-dot" href="#fermions" data-section="4" aria-label="{{nav.fermions}}">
+            <span class="nav-tooltip">{{nav.fermions}}</span>
+        </a>
+        <a class="nav-dot" href="#forces" data-section="5" aria-label="{{nav.forces}}">
+            <span class="nav-tooltip">{{nav.forces}}</span>
+        </a>
+        <a class="nav-dot" href="#higgs" data-section="6" aria-label="{{nav.higgs}}">
+            <span class="nav-tooltip">{{nav.higgs}}</span>
+        </a>
+        <a class="nav-dot" href="#quantum" data-section="7" aria-label="{{nav.quantum}}">
+            <span class="nav-tooltip">{{nav.quantum}}</span>
+        </a>
+        <a class="nav-dot" href="#interactions" data-section="8" aria-label="{{nav.interactions}}">
+            <span class="nav-tooltip">{{nav.interactions}}</span>
+        </a>
+        <a class="nav-dot" href="#detection" data-section="9" aria-label="{{nav.detection}}">
+            <span class="nav-tooltip">{{nav.detection}}</span>
+        </a>
+        <a class="nav-dot" href="#mathematics" data-section="10" aria-label="{{nav.mathematics}}">
+            <span class="nav-tooltip">{{nav.mathematics}}</span>
+        </a>
+        <a class="nav-dot" href="#beyond" data-section="11" aria-label="{{nav.beyond}}">
+            <span class="nav-tooltip">{{nav.beyond}}</span>
+        </a>
+        <a class="nav-dot" href="#summary" data-section="12" aria-label="{{nav.summary}}">
+            <span class="nav-tooltip">{{nav.summary}}</span>
+        </a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Hero Section: app.js appends the collision canvas to .interactive-demo. -->
+        <section id="introduction" class="hero content-section" data-section="0">
+            <div>
+                <h1><i class="fas fa-atom"></i> <span>{{page.hero.title}}</span></h1>
+                <p class="hero-subtitle">{{page.hero.subtitle}}</p>
+                <div class="interactive-demo">
+                    <p>{{page.hero.welcome}}</p>
+                    <div class="learning-paths"><a href="#matter">{{page.hero.paths.atoms}}</a><a href="#particle-zoo">{{page.hero.paths.standardModel}}</a><a href="#quantum">{{page.hero.paths.exclusion}}</a></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down fa-2x" style="color: var(--primary);"></i>
+            </div>
+        </section>
+
+        <!-- Section 1: Scale of the Universe (wheel-zoom canvas + toggleExpand disclosure) -->
+        <section id="scale" class="content-section" data-section="1">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2 class="section-title">{{page.scale.title}}</h2>
+            </div>
+
+            <div class="concept-card">
+                <h3>{{page.scale.card.title}}</h3>
+                <p>{{page.scale.card.intro}}</p>
+
+                <div class="interactive-demo">
+                    <canvas id="scaleVisualization" class="demo-canvas"></canvas>
+                </div>
+
+                <!-- The button must immediately precede its .expandable panel. -->
+                <button class="expand-btn" onclick="toggleExpand(this)" aria-expanded="false" aria-controls="details-1">
+                    <span>{{page.scale.details.button}}</span> <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <div class="expandable" id="details-1" inert>
+                    <div class="depth-indicator depth-intermediate">{{page.scale.details.depth}}</div>
+                    <p>{{page.scale.details.intro}}</p>
+                    <ul style="line-height: 2; margin-left: 2rem;">
+                        <li>{{page.scale.details.levels.human}}</li>
+                        <li>{{page.scale.details.levels.nano}}</li>
+                        <li>{{page.scale.details.levels.atomic}}</li>
+                        <li>{{page.scale.details.levels.nuclear}}</li>
+                        <li>{{page.scale.details.levels.probes}}</li>
+                    </ul>
+
+                    <div class="equation-box">
+                        <div class="depth-indicator depth-advanced">{{page.scale.details.math.depth}}</div>
+                        <p>{{page.scale.details.math.intro}}</p>
+                        <div class="equation">{{page.scale.details.math.equation}}</div>
+                        <p>{{page.scale.details.math.text}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mnemonic">
+                <h4>{{page.scale.mnemonic.title}}</h4>
+                <p>{{page.scale.mnemonic.phrase}}</p>
+                <p>{{page.scale.mnemonic.prefixes}}</p>
+            </div>
+        </section>
+
+        <!-- Section 2: What is Matter? (schematic atom canvas + timeline disclosure) -->
+        <section id="matter" class="content-section" data-section="2">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2 class="section-title">{{page.matter.title}}</h2>
+            </div>
+
+            <div class="concept-card">
+                <h3>{{page.matter.card.title}}</h3>
+                <p>{{page.matter.card.intro}}</p>
+
+                <div class="interactive-demo">
+                    <canvas id="atomModel" class="demo-canvas" aria-label="{{page.matter.card.canvasLabel}}"></canvas>
+                </div>
+
+                <p>{{page.matter.card.consistsOf}}</p>
+                <ul style="line-height: 2; margin-left: 2rem;">
+                    <li>{{page.matter.card.parts.nucleus}}</li>
+                    <li>{{page.matter.card.parts.cloud}}</li>
+                    <li>{{page.matter.card.parts.scale}}</li>
+                </ul>
+
+                <button class="expand-btn" onclick="toggleExpand(this)" aria-expanded="false" aria-controls="details-2">
+                    <span>{{page.matter.details.button}}</span> <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <div class="expandable" id="details-2" inert>
+                    <div class="depth-indicator depth-intermediate">{{page.matter.details.depth}}</div>
+                    <ul style="line-height: 2.5; margin: 1rem 0;">
+                        <li>{{page.matter.details.timeline.electron}}</li>
+                        <li>{{page.matter.details.timeline.nucleus}}</li>
+                        <li>{{page.matter.details.timeline.neutron}}</li>
+                        <li>{{page.matter.details.timeline.quarks}}</li>
+                        <li>{{page.matter.details.timeline.charm}}</li>
+                        <li>{{page.matter.details.timeline.higgs}}</li>
+                    </ul>
+
+                    <div class="cern-reference">
+                        <h4>{{page.matter.details.cern.title}}</h4>
+                        <p>{{page.matter.details.cern.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Particle Zoo (catalog hub, inline inspector, pair comparison matrix) -->
+        <section id="particle-zoo" class="content-section" data-section="3">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2 class="section-title">{{page.zoo.title}}</h2>
+            </div>
+            <div class="concept-card catalog-card">
+                <p class="eyebrow">{{page.zoo.catalog.eyebrow}}</p>
+                <h3>{{page.zoo.catalog.title}}</h3>
+                <p>{{page.zoo.catalog.intro}}</p>
+                <div class="concept-columns">
+                    <div><h4>{{page.zoo.catalog.columns.fermions.title}}</h4><p>{{page.zoo.catalog.columns.fermions.text}}</p></div>
+                    <div><h4>{{page.zoo.catalog.columns.gauge.title}}</h4><p>{{page.zoo.catalog.columns.gauge.text}}</p></div>
+                    <div><h4>{{page.zoo.catalog.columns.higgs.title}}</h4><p>{{page.zoo.catalog.columns.higgs.text}}</p></div>
+                </div>
+                <p class="source-note">{{page.zoo.catalog.countNote}}</p>
+                <!-- Filter controls; option values are stable model keys, labels are translated. -->
+                <div class="explorer-controls" role="group" aria-label="{{page.zoo.controls.label}}">
+                    <label><span>{{page.zoo.controls.search}}</span><input id="particle-search" type="search" placeholder="{{page.zoo.controls.searchPlaceholder}}"></label>
+                    <label><span>{{page.zoo.controls.family}}</span><select id="particle-family"><option value="all">{{page.zoo.controls.families.all}}</option><option value="quark">{{page.zoo.controls.families.quark}}</option><option value="lepton">{{page.zoo.controls.families.lepton}}</option><option value="gauge">{{page.zoo.controls.families.gauge}}</option><option value="scalar">{{page.zoo.controls.families.scalar}}</option></select></label>
+                    <label><span>{{page.zoo.controls.interaction}}</span><select id="particle-interaction"><option value="all">{{page.zoo.controls.interactions.all}}</option><option value="strong">{{model.interactions.strong}}</option><option value="em">{{model.interactions.em}}</option><option value="weak">{{model.interactions.weak}}</option><option value="higgs">{{model.interactions.higgs}}</option></select></label>
+                    <label><span>{{page.zoo.controls.order}}</span><select id="particle-sort"><option value="model">{{page.zoo.controls.orders.model}}</option><option value="mass">{{page.zoo.controls.orders.mass}}</option><option value="name">{{page.zoo.controls.orders.name}}</option></select></label>
+                    <button class="action-btn" id="reset-particles" type="button">{{page.zoo.controls.reset}}</button>
+                </div>
+                <p id="particle-count" role="status" aria-live="polite"></p>
+                <p class="hint">{{page.zoo.catalog.hint}}</p>
+                <div id="particle-grid" class="catalog-groups"></div>
+                <noscript><p>{{page.zoo.catalog.noscript}}</p></noscript>
+                <details class="deep-dive" open>
+                    <summary>{{page.zoo.table.summary}}</summary>
+                    <div class="table-scroll" role="region" aria-label="{{page.zoo.table.summary}}" tabindex="0">
+                        <table id="particle-table"><caption>{{page.zoo.table.caption}}</caption><thead><tr><th scope="col">{{page.zoo.table.columns.particle}}</th><th scope="col">{{ui.properties.type}}</th><th scope="col">{{page.zoo.table.columns.generation}}</th><th scope="col">{{ui.properties.restMass}}</th><th scope="col">{{ui.properties.chargeUnit}}</th><th scope="col">{{ui.properties.spinUnit}}</th><th scope="col">{{ui.properties.interactions}}</th></tr></thead><tbody id="particle-rows"></tbody></table>
+                    </div>
+                </details>
+                <p class="source-note">{{page.zoo.catalog.massNote}}</p>
+                <p class="hint">{{page.zoo.catalog.filterNote}}</p>
+            </div>
+            <!-- Inline field guide filled by showParticleDetail(); never a popup. -->
+            <div id="particle-inspector" class="concept-card inspector" aria-labelledby="particle-detail-title">
+                <p class="eyebrow">{{page.zoo.inspector.eyebrow}}</p>
+                <h3 id="particle-detail-title" tabindex="-1">{{model.particles.electron.name}}</h3>
+                <p id="particle-selection-status" class="sr-only" role="status"></p>
+                <div id="particle-detail"></div>
+            </div>
+            <!-- Pair comparison: matrix axes, quick dropdowns, preview, and full property table. -->
+            <div class="concept-card comparison-section" id="particle-comparison">
+                <p class="eyebrow">{{page.zoo.comparison.eyebrow}}</p>
+                <h3>{{page.zoo.comparison.title}}</h3>
+                <p class="comparison-intro">{{page.zoo.comparison.intro}}</p>
+                <div class="explorer-controls comparison-controls"><p class="hint">{{page.zoo.comparison.quickAccess}}</p><label><span>{{page.zoo.comparison.first}}</span><select id="compare-a"></select></label><label><span>{{page.zoo.comparison.second}}</span><select id="compare-b"></select></label></div>
+                <p id="pair-selection-status" class="sr-only" role="status" aria-live="polite"></p>
+                <div id="comparison-preview" class="comparison-preview" aria-label="{{page.zoo.comparison.previewLabel}}"></div>
+                <div class="matrix-legend" aria-label="{{page.zoo.comparison.legendLabel}}">
+                    <span><b class="channel-tag channel-strong">S</b> <span>{{model.channels.strong.label}}</span></span><span><b class="channel-tag channel-em">E</b> <span>{{model.channels.em.label}}</span></span><span><b class="channel-tag channel-weak">W</b> <span>{{model.channels.weak.label}}</span></span><span><b class="channel-tag channel-higgs">H</b> <span>{{model.channels.higgs.label}}</span></span><span><b class="channel-tag channel-loop">L</b> <span>{{model.channels.loop.label}}</span></span>
+                </div>
+                <p id="matrix-instructions" class="hint">{{page.zoo.comparison.instructions}}</p>
+                <div class="matrix-scroll" id="interaction-matrix-scroll" role="region" aria-label="{{page.zoo.comparison.matrixLabel}}" tabindex="0" aria-describedby="matrix-instructions">
+                    <table id="interaction-matrix"><caption>{{page.zoo.comparison.matrixCaption}}</caption><thead id="interaction-matrix-head"></thead><tbody id="interaction-matrix-body"></tbody></table>
+                </div>
+                <p class="source-note">{{page.zoo.comparison.sourceNote}}</p>
+                <details class="deep-dive comparison-properties" open><summary>{{page.zoo.comparison.propertiesSummary}}</summary>
+                    <div class="table-scroll" role="region" aria-label="{{page.zoo.comparison.propertiesLabel}}" tabindex="0"><table><caption>{{page.zoo.comparison.propertiesCaption}}</caption><thead id="comparison-head"></thead><tbody id="comparison-body"></tbody></table></div>
+                    <p id="mass-comparison" role="status"></p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 4: Fermions (composites, confinement, leptons, neutrino mixing) -->
+        <section id="fermions" class="content-section" data-section="4">
+            <div class="section-header"><span class="section-number">4</span><h2 class="section-title">{{page.fermions.title}}</h2></div>
+            <div class="concept-card">
+                <h3>{{page.fermions.quarks.title}}</h3>
+                <p>{{page.fermions.quarks.intro}}</p>
+                <div class="table-scroll" role="region" aria-label="{{page.fermions.quarks.table.label}}" tabindex="0"><table><caption>{{page.fermions.quarks.table.caption}}</caption><thead><tr><th scope="col">{{page.fermions.quarks.table.columns.composite}}</th><th scope="col">{{page.fermions.quarks.table.columns.valence}}</th><th scope="col">{{ui.properties.chargeUnit}}</th><th scope="col">{{page.fermions.quarks.table.columns.explore}}</th></tr></thead><tbody>
+                <tr><th scope="row">{{page.fermions.quarks.table.proton}}</th><td>uud</td><td>⅔ + ⅔ − ⅓ = +1</td><td><a href="#particle-inspector" data-particle="up">{{page.fermions.quarks.table.protonLink}}</a></td></tr>
+                <tr><th scope="row">{{page.fermions.quarks.table.neutron}}</th><td>udd</td><td>⅔ − ⅓ − ⅓ = 0</td><td><a href="#interactions">{{page.fermions.quarks.table.neutronLink}}</a></td></tr>
+                <tr><th scope="row">{{page.fermions.quarks.table.pion}}</th><td>u d̄</td><td>⅔ + ⅓ = +1</td><td><a href="#quantum">{{page.fermions.quarks.table.pionLink}}</a></td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>{{page.fermions.quarks.deep.summary}}</summary>
+                    <p>{{page.fermions.quarks.deep.confinement}}</p>
+                    <p>{{page.fermions.quarks.deep.protonMass}}</p>
+                    <p class="source-note">{{page.fermions.quarks.deep.sources}}</p>
+                </details>
+            </div>
+            <div class="concept-card"><h3>{{page.fermions.leptons.title}}</h3>
+                <p>{{page.fermions.leptons.intro}}</p>
+                <details class="deep-dive"><summary>{{page.fermions.leptons.deep.summary}}</summary><p>{{page.fermions.leptons.deep.mixing}}</p><div class="equation">|νₐ⟩ = Σᵢ U*ₐᵢ |νᵢ⟩</div><p>{{page.fermions.leptons.deep.matrix}}</p><p class="source-note">{{page.fermions.leptons.deep.sources}}</p></details>
+            </div>
+        </section>
+
+        <!-- Section 5: Forces and carriers -->
+        <section id="forces" class="content-section" data-section="5">
+            <div class="section-header"><span class="section-number">5</span><h2 class="section-title">{{page.forces.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.forces.card.title}}</h3>
+                <p>{{page.forces.card.intro}}</p>
+                <div class="table-scroll" role="region" aria-label="{{page.forces.table.label}}" tabindex="0"><table><caption>{{page.forces.table.caption}}</caption><thead><tr><th scope="col">{{page.forces.table.columns.interaction}}</th><th scope="col">{{page.forces.table.columns.carrier}}</th><th scope="col">{{page.forces.table.columns.actsOn}}</th><th scope="col">{{page.forces.table.columns.range}}</th></tr></thead><tbody>
+                <tr><th scope="row">{{model.interactions.em}}</th><td><a href="#particle-inspector" data-particle="photon">{{page.forces.table.em.carrier}}</a></td><td>{{page.forces.table.em.actsOn}}</td><td>{{page.forces.table.em.range}}</td></tr>
+                <tr><th scope="row">{{model.interactions.strong}}</th><td><a href="#particle-inspector" data-particle="gluon">{{page.forces.table.strong.carrier}}</a></td><td>{{page.forces.table.strong.actsOn}}</td><td>{{page.forces.table.strong.range}}</td></tr>
+                <tr><th scope="row">{{model.interactions.weak}}</th><td><a href="#particle-inspector" data-particle="w_boson">W±</a>, <a href="#particle-inspector" data-particle="z_boson">Z⁰</a></td><td>{{page.forces.table.weak.actsOn}}</td><td>{{page.forces.table.weak.range}}</td></tr>
+                <tr><th scope="row">{{page.forces.table.gravity.name}}</th><td>{{page.forces.table.gravity.carrier}}</td><td>{{page.forces.table.gravity.actsOn}}</td><td>{{page.forces.table.gravity.range}}</td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>{{page.forces.deep.summary}}</summary><p>{{page.forces.deep.diagrams}}</p><div class="equation">{{page.forces.deep.equation}}</div><p>{{page.forces.deep.range}}</p><p class="source-note">{{page.forces.deep.sources}}</p></details>
+            </div>
+        </section>
+
+        <!-- Section 6: Higgs mechanism -->
+        <section id="higgs" class="content-section" data-section="6">
+            <div class="section-header"><span class="section-number">6</span><h2 class="section-title">{{page.higgs.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.higgs.card.title}}</h3>
+                <p>{{page.higgs.card.field}}</p>
+                <p>{{page.higgs.card.photons}}</p>
+                <details class="deep-dive"><summary>{{page.higgs.deep.summary}}</summary><div class="equation">{{page.higgs.deep.equation}}</div><p>{{page.higgs.deep.yukawa}}</p><p>{{page.higgs.deep.experiments}}</p></details>
+                <p class="source-note">{{page.higgs.card.sources}}</p>
+            </div>
+        </section>
+
+        <!-- Section 7: Quantum properties and the occupancy experiment -->
+        <section id="quantum" class="content-section" data-section="7">
+            <div class="section-header"><span class="section-number">7</span><h2 class="section-title">{{page.quantum.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.quantum.card.title}}</h3>
+                <p>{{page.quantum.card.spin}}</p>
+                <p>{{page.quantum.card.orbitals}}</p>
+                <div class="interactive-demo state-lab"><h4>{{page.quantum.lab.title}}</h4><label><span>{{page.quantum.lab.particle}}</span><select id="state-particle"><option value="electron">{{page.quantum.lab.electrons}}</option><option value="photon">{{page.quantum.lab.photons}}</option></select></label>
+                    <p id="state-assumption">{{page.quantum.lab.assumption}}</p>
+                    <div id="state-boxes" class="concept-columns"></div>
+                    <div class="button-row"><button id="add-state-0" class="action-btn" type="button">{{page.quantum.lab.addUp}}</button><button id="add-state-1" class="action-btn" type="button">{{page.quantum.lab.addDown}}</button><button id="reset-state" class="action-btn" type="button">{{page.quantum.lab.reset}}</button></div>
+                    <p id="state-result" role="status" aria-live="polite"></p>
+                </div>
+                <details class="deep-dive"><summary>{{page.quantum.deep.summary}}</summary><div class="equation">{{page.quantum.deep.symmetryEquation}}</div><p>{{page.quantum.deep.symmetry}}</p><div class="equation">{{page.quantum.deep.spinEquation}}</div><p>{{page.quantum.deep.spin}}</p><p class="source-note">{{page.quantum.deep.sources}}</p></details>
+            </div>
+        </section>
+
+        <!-- Section 8: Interactions and the reaction charge check -->
+        <section id="interactions" class="content-section" data-section="8">
+            <div class="section-header"><span class="section-number">8</span><h2 class="section-title">{{page.interactions.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.interactions.card.title}}</h3>
+                <p>{{page.interactions.card.intro}}</p>
+                <label><span>{{page.interactions.card.choose}}</span><select id="process-choice"><option value="beta">{{page.interactions.card.options.beta}}</option><option value="annihilation">{{page.interactions.card.options.annihilation}}</option><option value="higgs">{{page.interactions.card.options.higgs}}</option><option value="forbidden">{{page.interactions.card.options.forbidden}}</option></select></label>
+                <div id="process-result" class="interactive-demo" aria-live="polite"></div>
+                <p class="hint">{{page.interactions.card.hint}}</p>
+                <details class="deep-dive"><summary>{{page.interactions.deep.summary}}</summary><p>{{page.interactions.deep.amplitudes}}</p><div class="equation">{{page.interactions.deep.equation}}</div><p>{{page.interactions.deep.phaseSpace}}</p></details>
+                <p class="source-note">{{page.interactions.card.sources}}</p>
+            </div>
+        </section>
+
+        <!-- Section 9: Detection and detector signatures -->
+        <section id="detection" class="content-section" data-section="9">
+            <div class="section-header"><span class="section-number">9</span><h2 class="section-title">{{page.detection.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.detection.card.title}}</h3>
+                <p>{{page.detection.card.intro}}</p>
+                <label><span>{{page.detection.card.choose}}</span><select id="detector-choice"><option value="electron">{{model.detector.electron.name}}</option><option value="photon">{{model.detector.photon.name}}</option><option value="muon">{{model.detector.muon.name}}</option><option value="hadron">{{model.detector.hadron.name}}</option><option value="neutrino">{{model.detector.neutrino.name}}</option></select></label>
+                <div id="detector-layers" class="detector-layers" aria-label="{{page.detection.card.layersLabel}}"></div>
+                <p id="detector-explanation" role="status"></p>
+                <p id="detector-particle-link"></p>
+                <details class="deep-dive"><summary>{{page.detection.deep.summary}}</summary><p>{{page.detection.deep.showers}}</p><p>{{page.detection.deep.missing}}</p></details>
+                <p class="source-note">{{page.detection.card.sources}}</p>
+            </div>
+        </section>
+
+        <!-- Section 10: Mathematical foundation -->
+        <section id="mathematics" class="content-section" data-section="10">
+            <div class="section-header"><span class="section-number">10</span><h2 class="section-title">{{page.mathematics.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.mathematics.card.title}}</h3>
+                <p>{{page.mathematics.card.intro}}</p>
+                <div class="table-scroll" role="region" aria-label="{{page.mathematics.table.label}}" tabindex="0"><table><caption>{{page.mathematics.table.caption}}</caption><thead><tr><th scope="col">{{page.mathematics.table.columns.relation}}</th><th scope="col">{{page.mathematics.table.columns.meaning}}</th><th scope="col">{{page.mathematics.table.columns.explore}}</th></tr></thead><tbody>
+                <tr><th scope="row">E² = p²c² + m²c⁴</th><td>{{page.mathematics.table.energy.meaning}}</td><td><a href="#particle-inspector" data-particle="photon">{{page.mathematics.table.energy.link}}</a></td></tr>
+                <tr><th scope="row">λ = h / p</th><td>{{page.mathematics.table.wavelength.meaning}}</td><td><a href="#scale">{{page.mathematics.table.wavelength.link}}</a></td></tr>
+                <tr><th scope="row">mᶠ = yᶠv / √2</th><td>{{page.mathematics.table.yukawa.meaning}}</td><td><a href="#higgs">{{page.mathematics.table.yukawa.link}}</a></td></tr>
+                <tr><th scope="row">τ = ℏ / Γ</th><td>{{page.mathematics.table.lifetime.meaning}}</td><td><a href="#interactions">{{page.mathematics.table.lifetime.link}}</a></td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>{{page.mathematics.deep.summary}}</summary><p>{{page.mathematics.deep.lagrangian}}</p><div class="equation">ℒSM = ℒgauge + ℒfermion + (DμΦ)†DμΦ − V(Φ) + ℒYukawa</div><p>{{page.mathematics.deep.symmetry}}</p><p>{{page.mathematics.deep.parameters}}</p></details>
+                <p class="source-note">{{page.mathematics.card.sources}}</p>
+            </div>
+        </section>
+
+        <!-- Section 11: Beyond the Standard Model (keep separate from the summary) -->
+        <section id="beyond" class="content-section" data-section="11">
+            <div class="section-header"><span class="section-number">11</span><h2 class="section-title">{{page.beyond.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.beyond.card.title}}</h3>
+                <p>{{page.beyond.card.intro}}</p>
+                <div class="table-scroll" role="region" aria-label="{{page.beyond.table.label}}" tabindex="0"><table><caption>{{page.beyond.table.caption}}</caption><thead><tr><th scope="col">{{page.beyond.table.columns.question}}</th><th scope="col">{{page.beyond.table.columns.established}}</th><th scope="col">{{page.beyond.table.columns.unresolved}}</th></tr></thead><tbody>
+                <tr><th scope="row">{{page.beyond.table.neutrinos.question}}</th><td>{{page.beyond.table.neutrinos.established}}</td><td>{{page.beyond.table.neutrinos.unresolved}}</td></tr>
+                <tr><th scope="row">{{page.beyond.table.darkMatter.question}}</th><td>{{page.beyond.table.darkMatter.established}}</td><td>{{page.beyond.table.darkMatter.unresolved}}</td></tr>
+                <tr><th scope="row">{{page.beyond.table.antimatter.question}}</th><td>{{page.beyond.table.antimatter.established}}</td><td>{{page.beyond.table.antimatter.unresolved}}</td></tr>
+                </tbody></table></div>
+                <details class="deep-dive"><summary>{{page.beyond.deep.summary}}</summary><p>{{page.beyond.deep.hypotheses}}</p><p>{{page.beyond.deep.antiparticles}}</p></details>
+                <p class="source-note">{{page.beyond.card.sources}}</p>
+            </div>
+        </section>
+
+        <!-- Section 12: Summary, glossary, and references -->
+        <section id="summary" class="content-section" data-section="12">
+            <div class="section-header"><span class="section-number">∞</span><h2 class="section-title">{{page.summary.title}}</h2></div>
+            <div class="concept-card"><h3>{{page.summary.card.title}}</h3>
+                <p>{{page.summary.card.intro}}</p>
+                <div class="learning-paths"><a href="#particle-inspector" data-particle="electron">{{page.summary.card.paths.electron}}</a><a href="#particle-inspector" data-particle="photon">{{page.summary.card.paths.photon}}</a><a href="#fermions">{{page.summary.card.paths.quarks}}</a><a href="#higgs">{{page.summary.card.paths.higgs}}</a><a href="#detection">{{page.summary.card.paths.signatures}}</a></div>
+                <details class="deep-dive"><summary>{{page.summary.glossary.summary}}</summary><dl class="glossary"><dt>{{page.summary.glossary.field.term}}</dt><dd>{{page.summary.glossary.field.definition}}</dd><dt>{{page.summary.glossary.mass.term}}</dt><dd>{{page.summary.glossary.mass.definition}}</dd><dt>{{page.summary.glossary.charge.term}}</dt><dd>{{page.summary.glossary.charge.definition}}</dd><dt>{{page.summary.glossary.state.term}}</dt><dd>{{page.summary.glossary.state.definition}}</dd><dt>{{page.summary.glossary.flavor.term}}</dt><dd>{{page.summary.glossary.flavor.definition}}</dd><dt>{{page.summary.glossary.boson.term}}</dt><dd>{{page.summary.glossary.boson.definition}}</dd></dl></details>
+            </div>
+            <div class="concept-card" id="references"><h3>{{page.summary.references.title}}</h3><p>{{page.summary.references.intro}}</p><ul class="reference-list">
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf">{{page.summary.references.quarks}}</a></li>
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-leptons.pdf">{{page.summary.references.leptons}}</a></li>
+                <li><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf">{{page.summary.references.bosons}}</a></li>
+                <li><a href="https://home.cern/science/physics/standard-model">{{page.summary.references.cern}}</a></li>
+                <li><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf">{{page.summary.references.tong}}</a></li>
+            </ul></div>
+        </section>
+    </div>
+
+    <!-- Pure model: catalog data and learning rules, tested in isolation (no DOM access). -->
+    <script id="physics-model">
+<!-- @include:physics-model.js -->
+    </script>
+
+    <!-- Browser behavior: navigation, language switching, explorers, and canvases. -->
+    <script>
+<!-- @include:app.js -->
+    </script>
+</body>
+</html>

@@ -1,0 +1,804 @@
+{
+  "meta": {
+    "languageName": "English"
+  },
+  "nav": {
+    "label": "Sections",
+    "introduction": "Introduction",
+    "scale": "Scale of Universe",
+    "matter": "What is Matter?",
+    "particleZoo": "Particle Zoo",
+    "fermions": "Fermions",
+    "forces": "Forces & Bosons",
+    "higgs": "Higgs Mechanism",
+    "quantum": "Quantum Properties",
+    "interactions": "Interactions",
+    "detection": "Detection",
+    "mathematics": "Mathematics",
+    "beyond": "Beyond",
+    "summary": "Summary"
+  },
+  "page": {
+    "meta": {
+      "title": "Journey Through Elementary Particle Physics"
+    },
+    "hero": {
+      "title": "Elementary Particle Physics",
+      "subtitle": "A Journey from the Universe to Its Smallest Building Blocks",
+      "welcome": "Welcome to an interactive exploration of the fundamental nature of reality.<br>\nFollow a learning path, or scroll from familiar matter to fields and open questions.",
+      "paths": {
+        "atoms": "Start with atoms",
+        "standardModel": "Explore the Standard Model",
+        "exclusion": "Try the exclusion principle"
+      }
+    },
+    "scale": {
+      "title": "The Universe at Different Scales",
+      "card": {
+        "title": "From Cosmos to Quarks: A Journey of Scale",
+        "intro": "The universe spans an incredible range of scales. From the observable universe near 10²⁶ meters to the Planck scale near 10⁻³⁵ meters, the span is about 61 orders of magnitude. The Planck length marks a quantum-gravity scale, not an experimentally established minimum distance."
+      },
+      "details": {
+        "button": "Explore Scale Details",
+        "depth": "Deeper Understanding",
+        "intro": "Each step down in scale reveals new physics:",
+        "levels": {
+          "human": "<strong>10⁰ m (Human scale):</strong> Classical mechanics dominates",
+          "nano": "<strong>10⁻⁹ m (Nanoscale):</strong> Quantum effects become noticeable",
+          "atomic": "<strong>10⁻¹⁰ m (Atomic):</strong> Electron orbitals, chemistry happens here",
+          "nuclear": "<strong>10⁻¹⁵ m (Nuclear):</strong> Strong force dominates, quarks confined",
+          "probes": "<strong>10⁻¹⁸ m (high-resolution probes):</strong> Quarks can be treated as weakly coupled in suitable high-momentum-transfer calculations; they still do not emerge as isolated particles."
+        },
+        "math": {
+          "depth": "Mathematical Framework",
+          "intro": "The de Broglie wavelength sets the quantum scale:",
+          "equation": "λ = h / p; p ≈ mv only at nonrelativistic speeds",
+          "text": "Resolving finer structure requires shorter wavelengths and larger momentum. This motivates high-energy accelerators. <a href=\"#mathematics\">Connect wavelength, momentum, and energy</a>."
+        }
+      },
+      "mnemonic": {
+        "title": "Memory Trick: Powers of Ten",
+        "phrase": "\"<strong>M</strong>ega <strong>K</strong>ittens <strong>H</strong>ave <strong>D</strong>ancing <strong>C</strong>ats, <strong>M</strong>iniature <strong>μ</strong>nicorns <strong>N</strong>ap <strong>P</strong>eacefully\"",
+        "prefixes": "Mega (10⁶), Kilo (10³), Hecto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²)"
+      }
+    },
+    "matter": {
+      "title": "What is Matter?",
+      "card": {
+        "title": "The Atomic Theory Evolution",
+        "intro": "For centuries, we believed atoms were indivisible - the word literally means \"uncuttable\" in Greek. But the discovery of radioactivity in 1896 changed everything!",
+        "canvasLabel": "Schematic atom animation; circular paths are not physical electron orbitals",
+        "consistsOf": "Today we know that atoms consist of:",
+        "parts": {
+          "nucleus": "<strong>Nucleus:</strong> Protons and neutrons (made of quarks!)",
+          "cloud": "<strong>Electron cloud:</strong> Electrons in quantum orbitals",
+          "scale": "<strong>Scale:</strong> The nucleus is much smaller than the atom. The electron cloud is a quantum probability distribution, not little planets on fixed tracks."
+        }
+      },
+      "details": {
+        "button": "Historical Journey",
+        "depth": "Discovery Timeline",
+        "timeline": {
+          "electron": "<strong>1897:</strong> J.J. Thomson discovers the electron",
+          "nucleus": "<strong>1911:</strong> Rutherford's gold foil experiment reveals the nucleus",
+          "neutron": "<strong>1932:</strong> Chadwick discovers the neutron",
+          "quarks": "<strong>1964:</strong> Gell-Mann and Zweig propose quarks",
+          "charm": "<strong>1974:</strong> J/ψ discovery provides evidence for charm",
+          "higgs": "<strong>2012:</strong> Higgs boson discovered at CERN"
+        },
+        "cern": {
+          "title": "CERN Connection",
+          "text": "Colliders probe subnuclear structure through high-energy scattering. Heavy-ion collisions can produce quark–gluon plasma; this is different from the static orbital sketch above. <a href=\"#fermions\">Explore quarks and confinement</a>."
+        }
+      }
+    },
+    "zoo": {
+      "title": "The Particle Zoo",
+      "catalog": {
+        "eyebrow": "Explore the building blocks",
+        "title": "The Standard Model: Nature's LEGO Set",
+        "intro": "An <strong>electron</strong> in an atom, a <strong>photon</strong> in a beam of light, and the <strong>quarks</strong> inside a proton are examples of different elementary particles. Each is an excitation of a quantum field. “Elementary” means no internal structure has been resolved; protons and atoms are composite.",
+        "columns": {
+          "fermions": {
+            "title": "Fermions · matter",
+            "text": "Six quarks and six leptons, all spin ½. Identical fermions obey <a href=\"#quantum\">Pauli exclusion</a>. Electrons make shells; up and down quarks build nuclei."
+          },
+          "gauge": {
+            "title": "Gauge bosons · interactions",
+            "text": "Spin-1 photons, gluons, W and Z bosons mediate electromagnetic, strong, and weak interactions. Identical bosons can share a quantum state."
+          },
+          "higgs": {
+            "title": "Higgs · a scalar boson",
+            "text": "The spin-0 Higgs is an excitation of the <a href=\"#higgs\">Higgs field</a>. It is a boson but is not an additional gauge force carrier."
+          }
+        },
+        "countNote": "The familiar “17 particles” counts grouped entries: W⁺/W⁻ share a tile and eight gluon color states share another. Antiparticles and quark colors are not separately tiled. Gravity is outside this model. <a href=\"https://home.cern/science/physics/standard-model\">CERN: the Standard Model</a>.",
+        "hint": "Choose a tile or a name in the table to inspect it. Compare two particles below.",
+        "noscript": "The interactive catalog requires JavaScript. The explanations, linked topics, and reference material remain readable.",
+        "massNote": "Rounded teaching values, using the <a href=\"https://pdg.lbl.gov/2025/tables/contents_tables.html\">PDG 2025 tables</a>. MeV/c² and GeV/c² are mass units: 1 GeV/c² = 1000 MeV/c². Quark masses depend on definition and scale. Neutrino flavor states have no single rest mass; unknown values sort last.",
+        "filterNote": "Interaction filters show the principal gauge interactions and identify the Higgs sector; they are not a complete vertex list. Gravity is omitted. Massive charged fermions and W/Z also couple to the Higgs field; photons and gluons can couple to the Higgs through loops."
+      },
+      "controls": {
+        "label": "Particle filters",
+        "search": "Find a particle",
+        "searchPlaceholder": "Try electron, light, or proton",
+        "family": "Family",
+        "families": {
+          "all": "All families",
+          "quark": "Quarks",
+          "lepton": "Leptons",
+          "gauge": "Gauge bosons",
+          "scalar": "Higgs scalar"
+        },
+        "interaction": "Interaction",
+        "interactions": {
+          "all": "All interactions"
+        },
+        "order": "Order",
+        "orders": {
+          "model": "Standard Model order",
+          "mass": "Rest mass: low to high",
+          "name": "Name: A–Z"
+        },
+        "reset": "Reset filters"
+      },
+      "table": {
+        "summary": "Particle property table",
+        "caption": "Same particles and filters as the tiles. Spin is in units of ℏ; charge is in units of the positive elementary charge e.",
+        "columns": {
+          "particle": "Particle",
+          "generation": "Generation"
+        }
+      },
+      "inspector": {
+        "eyebrow": "Particle field guide"
+      },
+      "comparison": {
+        "eyebrow": "A × B · explore a pair",
+        "title": "Compare two particles",
+        "intro": "Select a row A, column B, or their intersection. Colors show channels for <strong>elastic scattering, A + B → A + B</strong>; “tree” uses basic Standard Model vertices, while “loop” requires higher-order effects.",
+        "quickAccess": "Quick access · also useful on small screens",
+        "first": "First particle · row A",
+        "second": "Second particle · column B",
+        "previewLabel": "Selected particle pair",
+        "legendLabel": "Interaction color legend",
+        "instructions": "Same particle list on both axes. Colors label channels, not their strength. Scroll inside the matrix; labels stay visible. Use arrow keys within cells, then Enter or Space to select.",
+        "matrixLabel": "Particle interaction matrix",
+        "matrixCaption": "Elastic-scattering overview · row A × column B",
+        "sourceNote": "This is a schematic map of perturbative channels, not a rate calculation or a verdict on every reaction. Energy, quantum states, and polarizations matter; quarks/gluons are confined and heavy particles decay. Neutrino mass-generation effects and gravity are omitted. In particular, “no tree-level route” does not mean “impossible.” Channel assignments are inferred from <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-standard-model.pdf\">PDG electroweak couplings</a>, <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-higgs-boson.pdf\">Higgs couplings</a>, and <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">quantum chromodynamics</a>.",
+        "propertiesSummary": "Compare all properties and masses",
+        "propertiesLabel": "Particle comparison",
+        "propertiesCaption": "Properties come from the same catalog as the tiles."
+      }
+    },
+    "fermions": {
+      "title": "Building Blocks: Fermions",
+      "quarks": {
+        "title": "From quarks to the matter around you",
+        "intro": "<a href=\"#particle-inspector\" data-particle=\"up\">Up</a> and <a href=\"#particle-inspector\" data-particle=\"down\">down quarks</a> carry electric charge and strong-interaction color charge. Color is a quantum label, not a visible color. Observable hadrons are color-neutral combinations. Baryons have three valence quarks; mesons have a valence quark–antiquark pair. Exotic hadrons can have more complex arrangements.",
+        "table": {
+          "label": "Composite particle examples",
+          "caption": "Valence content identifies a hadron; it is not a complete picture of its quarks, antiquarks, and gluons.",
+          "columns": {
+            "composite": "Composite",
+            "valence": "Valence content",
+            "explore": "Explore"
+          },
+          "proton": "Proton",
+          "protonLink": "Inspect an up quark",
+          "neutron": "Neutron",
+          "neutronLink": "Follow beta decay",
+          "pion": "Positive pion",
+          "pionLink": "Composite bosons"
+        },
+        "deep": {
+          "summary": "Go deeper: confinement and the origin of proton mass",
+          "confinement": "Pulling quarks apart builds a color field; sufficient energy produces new hadrons rather than an isolated quark. At high momentum transfer the strong coupling becomes smaller (asymptotic freedom), allowing perturbative calculations. Confinement dominates at low energies.",
+          "protonMass": "A proton has a mass near 938 MeV/c², far larger than the sum of its light valence-quark masses. Most of that mass comes from the dynamics of quarks and gluon fields. The Higgs gives quarks their masses, but does not directly account for most of a proton's mass.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: quantum chromodynamics</a>; <a href=\"https://cms.cern/node/1380\">CMS: Higgs and ordinary matter</a>."
+        }
+      },
+      "leptons": {
+        "title": "Leptons and three generations",
+        "intro": "The <a href=\"#particle-inspector\" data-particle=\"electron\">electron</a>, <a href=\"#particle-inspector\" data-particle=\"muon\">muon</a>, and <a href=\"#particle-inspector\" data-particle=\"tau\">tau</a> have the same electric charge and spin, but very different masses and lifetimes. They do not carry color. Their neutral partners are neutrinos. Generation labels organize families; they are not stages through which a particle ages.",
+        "deep": {
+          "summary": "Go deeper: why neutrino “mass” is different",
+          "mixing": "Electron-, muon-, and tau-flavor neutrinos are superpositions of mass states ν₁, ν₂, ν₃. Their relative phases evolve during flight, changing detection probabilities. Oscillations establish nonzero mass-squared differences, not three separately measured flavor masses. They change lepton flavor; they do not by themselves establish violation of total lepton number.",
+          "matrix": "The mixing matrix U connects flavor labels to mass labels. The minimal Standard Model has massless neutrinos, so measured oscillations require an extension.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: neutrino masses, mixing, and oscillations</a>."
+        }
+      }
+    },
+    "forces": {
+      "title": "Forces and Their Messengers",
+      "card": {
+        "title": "Charge tells you which interaction is possible",
+        "intro": "Electric charge couples to electromagnetism; color charge couples to the strong interaction. Weak interactions involve quarks and leptons, including electrically neutral neutrinos. “Neutral” therefore does not mean “non-interacting.” Select a carrier to connect the force to an actual particle."
+      },
+      "table": {
+        "label": "Forces and carriers",
+        "caption": "Ranges describe very different physical mechanisms; there is no universal, energy-independent strength ranking for every process.",
+        "columns": {
+          "interaction": "Interaction",
+          "carrier": "Carrier",
+          "actsOn": "Acts on / example",
+          "range": "Range and caveat"
+        },
+        "em": {
+          "carrier": "Photon γ",
+          "actsOn": "Electric charge; atoms, light",
+          "range": "Long range; massless carrier"
+        },
+        "strong": {
+          "carrier": "Gluon g",
+          "actsOn": "Color; quarks and gluons",
+          "range": "Massless gluons are confined; residual nuclear forces are short range"
+        },
+        "weak": {
+          "actsOn": "Quarks/leptons; beta decay, neutrino scattering",
+          "range": "Very short range, about 10⁻¹⁸ m"
+        },
+        "gravity": {
+          "name": "Gravity",
+          "carrier": "No observed quantum carrier",
+          "actsOn": "Energy and momentum",
+          "range": "Long range; outside the Standard Model"
+        }
+      },
+      "deep": {
+        "summary": "Go deeper: exchange diagrams and virtual particles",
+        "diagrams": "A Feynman diagram is a contribution to an amplitude, not a literal movie of tiny balls. Internal lines are propagators, often called virtual particles. Four-momentum is conserved at every vertex; virtual lines need not satisfy the free-particle relation E² = p²c² + m²c⁴. The uncertainty principle does not license temporary violations of energy conservation.",
+        "equation": "Range scale for a massive mediator: ℓ ∼ ℏ / (Mc)",
+        "range": "This scale helps explain weak forces. Massless gluons require the separate physics of confinement; a massless carrier alone does not guarantee an observable long-range force.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html\">David Tong: interacting fields and Feynman diagrams</a>."
+      }
+    },
+    "higgs": {
+      "title": "The Higgs Mechanism",
+      "card": {
+        "title": "Mass without friction",
+        "field": "The Higgs field has a nonzero vacuum value. Its couplings give masses to W/Z bosons and, through Yukawa couplings, charged leptons and quarks. This changes their energy–momentum relation; it does not slow moving particles through drag. The <a href=\"#particle-inspector\" data-particle=\"higgs\">Higgs boson</a> is an excitation of the field, not a cloud of particles that must surround every electron.",
+        "photons": "<a href=\"#particle-inspector\" data-particle=\"photon\">Photons</a> remain massless, but carry energy and momentum. The origin of neutrino masses is not settled. Most ordinary matter's mass comes from strong-interaction dynamics inside nuclei, rather than the sum of its elementary constituent masses.",
+        "sources": "<a href=\"https://home.cern/science/physics/higgs-boson\">CERN: the Higgs boson</a>; <a href=\"https://cms.cern/node/1380\">CMS: where ordinary matter's mass comes from</a>."
+      },
+      "deep": {
+        "summary": "Go deeper: the field value and Yukawa coupling",
+        "equation": "mᶠ = yᶠ v / √2, with v ≈ 246 GeV (ℏ = c = 1)",
+        "yukawa": "A larger Yukawa coupling yᶠ gives a larger fermion mass for the same field value. W/Z masses arise from gauge couplings to the Higgs field. In a common convention, V(Φ) = −μ²Φ†Φ + λ(Φ†Φ)² and ⟨Φ⟩ = (0, v/√2), with v² = μ²/λ. Excitations around this vacuum include the physical spin-0 Higgs.",
+        "experiments": "Experiments infer a Higgs from its decay products and test its couplings, rather than observing the field directly. <a href=\"#interactions\">Explore H → γγ</a>."
+      }
+    },
+    "quantum": {
+      "title": "Quantum Properties",
+      "card": {
+        "title": "Spin, identity, and the exclusion principle",
+        "spin": "Spin is intrinsic angular momentum, not rotation of a tiny solid ball. Identical half-integer-spin particles are <strong>fermions</strong>; identical integer-spin particles are <strong>bosons</strong>. Pauli exclusion forbids two identical fermions from occupying the same complete one-particle state. It applies to electrons, quarks, and neutrinos, regardless of their mass or charge.",
+        "orbitals": "Two electrons can occupy one spatial orbital if their spin states differ. Many photons can occupy one mode with the same polarization. This contrast helps explain atomic shell structure and the occupation of light modes. Composite particles also have statistics: protons are fermions and pions are bosons."
+      },
+      "lab": {
+        "title": "Try to fill one spatial mode",
+        "particle": "Particle",
+        "electrons": "Electrons · fermions",
+        "photons": "Photons · bosons",
+        "assumption": "The spatial wavefunction is fixed. The two boxes represent distinct spin states.",
+        "addUp": "Add spin ↑",
+        "addDown": "Add spin ↓",
+        "reset": "Empty the mode"
+      },
+      "deep": {
+        "summary": "Go deeper: exchange symmetry and spin measurements",
+        "symmetryEquation": "Ψ(1, 2) = −Ψ(2, 1) for identical fermions; + for identical bosons",
+        "symmetry": "Putting two identical fermions into exactly the same one-particle state makes the antisymmetric amplitude vanish. This is a statement about quantum states, not a repulsive force or a ban on being at the same position.",
+        "spinEquation": "S² = ℏ²s(s + 1); S𝓏 = ℏm, with m = −s, …, s",
+        "spin": "Spin quantum number s and its measured projection m are different. A massive spin-1 particle has three projections; a real massless photon has two transverse helicities, +1 and −1. The photon boxes above represent two independent polarizations, not a third longitudinal mode.",
+        "sources": "<a href=\"https://ocw.mit.edu/courses/18-238-geometry-and-quantum-field-theory-spring-2023/mit18_238_s23_lec_full.pdf\">MIT: bosons, fermions, and Pauli exclusion</a>; <a href=\"https://www.rle.mit.edu/cua_pub/ketterle_group/Theses/Chin%20Jit%20Kee%20Thesis.pdf\">MIT: identical particles and statistics</a>."
+      }
+    },
+    "interactions": {
+      "title": "How Particles Interact",
+      "card": {
+        "title": "Follow a reaction, not just a particle name",
+        "intro": "A reaction must conserve electric charge, energy, momentum, and angular momentum, and use the available couplings. Decays can proceed through strong, electromagnetic, or weak interactions. Lifetime depends on couplings and phase space, not just mass.",
+        "choose": "Choose a process",
+        "options": {
+          "beta": "Free-neutron beta decay",
+          "annihilation": "Electron–positron annihilation",
+          "higgs": "Higgs to two photons",
+          "forbidden": "A forbidden electron decay"
+        },
+        "hint": "The charge check is necessary, not sufficient. It does not calculate a rate or establish every conservation law.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html\">Tong: amplitudes, cross sections, and decays</a>; <a href=\"https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf\">PDG: Higgs decays</a>."
+      },
+      "deep": {
+        "summary": "Go deeper: how diagrams become predictions",
+        "amplitudes": "Each diagram supplies an amplitude. Add the relevant amplitudes coherently, including their phases, then square the total and integrate over the allowed final-state momenta. A diagram is not an alternative classical path with a separate probability.",
+        "equation": "Probability ∝ |Σ diagrams ℳ|²; decay width Γ ∝ ∫ dΦ |ℳ|²",
+        "phaseSpace": "The phase-space measure dΦ enforces energy–momentum balance. In natural units τ = 1/Γ; restoring units gives τ = ℏ/Γ. Perturbation theory organizes diagrams in powers of couplings; it becomes unreliable for low-energy strong interactions."
+      }
+    },
+    "detection": {
+      "title": "Detecting the Invisible",
+      "card": {
+        "title": "Read the signature in detector layers",
+        "intro": "Detectors combine tracks, energy deposits, and decay products to infer particle identities. Charged particles bend in magnetic fields; calorimeters measure deposited energy. Short-lived W, Z, Higgs, and top particles are reconstructed from their products.",
+        "choose": "Send a particle through a schematic detector",
+        "layersLabel": "Detector signature",
+        "sources": "<a href=\"https://home.cern/how-detector-works\">CERN: how a detector works</a>; <a href=\"https://cms.cern/detector\">CMS: detector and particle identification</a>. This diagram is qualitative, not a detector simulation."
+      },
+      "deep": {
+        "summary": "Go deeper: reconstruction has ambiguities",
+        "showers": "A shower is a cascade of secondary particles, not the original particle growing larger. Electron and photon showers look similar; matching a tracker trajectory helps distinguish them. Hadronic showers fluctuate, muons can radiate, and detector acceptance is incomplete. No single layer perfectly identifies every particle.",
+        "missing": "At a hadron collider the incoming partons' longitudinal momenta are unknown. Missing <em>transverse</em> momentum is therefore especially useful. A missing signal alone is not proof of a neutrino or dark matter."
+      }
+    },
+    "mathematics": {
+      "title": "Mathematical Foundation",
+      "card": {
+        "title": "Translate a property into an equation",
+        "intro": "Equations connect the measured properties in the <a href=\"#particle-zoo\">particle table</a> to predictions. Here are useful entry points; natural units set ℏ = c = 1 only where explicitly indicated.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf\">Tong: quantum field theory lecture notes</a>; <a href=\"https://pdg.lbl.gov/2025/reviews/contents_sports.html\">PDG: technical reviews</a>."
+      },
+      "table": {
+        "label": "Physics equation guide",
+        "caption": "Follow each equation to its physical example.",
+        "columns": {
+          "relation": "Relation",
+          "meaning": "Meaning",
+          "explore": "Explore"
+        },
+        "energy": {
+          "meaning": "Rest mass, momentum, and energy",
+          "link": "Massless photon: E = pc"
+        },
+        "wavelength": {
+          "meaning": "Wavelength and resolving power",
+          "link": "Probe smaller distances"
+        },
+        "yukawa": {
+          "meaning": "Fermion mass from a Yukawa coupling; natural units",
+          "link": "Higgs mechanism"
+        },
+        "lifetime": {
+          "meaning": "Mean lifetime from total decay width",
+          "link": "Follow a decay"
+        }
+      },
+      "deep": {
+        "summary": "Go deeper: fields, symmetries, and the Lagrangian",
+        "lagrangian": "A Lagrangian density specifies fields and their couplings. Schematically the Standard Model has gauge-field terms, fermion motion and gauge couplings, the Higgs kinetic term and potential, and Yukawa interactions. This is an organizational guide, not a fully indexed expression.",
+        "symmetry": "The covariant derivative Dμ packages gauge interactions. The symmetry group SU(3)color × SU(2)left × U(1)hypercharge gives strong and electroweak structure. Electroweak symmetry breaking mixes neutral fields to produce the photon and Z. A photon is not simply an extra, independent unbroken SU(2) carrier.",
+        "parameters": "Locality and symmetries constrain allowed terms; experiments determine parameters such as masses and couplings. A symbolic formula alone does not supply their numerical values."
+      }
+    },
+    "beyond": {
+      "title": "Beyond the Standard Model",
+      "card": {
+        "title": "Separate evidence from proposed explanations",
+        "intro": "The Standard Model is remarkably successful, but is not a complete theory of nature. Neutrino oscillations, dark matter evidence, and the matter–antimatter asymmetry motivate further work; gravity also needs a consistent quantum description.",
+        "sources": "<a href=\"https://home.cern/science/physics/dark-matter\">CERN: dark matter</a>; <a href=\"https://home.cern/science/physics/antimatter\">CERN: antimatter</a>; <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: neutrinos</a>."
+      },
+      "table": {
+        "label": "Open questions",
+        "caption": "Established observations do not establish a particular new-particle explanation.",
+        "columns": {
+          "question": "Question",
+          "established": "What is established",
+          "unresolved": "What is unresolved"
+        },
+        "neutrinos": {
+          "question": "Neutrinos",
+          "established": "Flavor oscillation and nonzero mass differences",
+          "unresolved": "Absolute mass scale and mass-generating mechanism"
+        },
+        "darkMatter": {
+          "question": "Dark matter",
+          "established": "Gravitational evidence for additional matter",
+          "unresolved": "Its microscopic identity; candidates are not discoveries"
+        },
+        "antimatter": {
+          "question": "Antimatter",
+          "established": "Antiparticles exist; the observable universe favors matter",
+          "unresolved": "The mechanism producing the cosmic asymmetry"
+        }
+      },
+      "deep": {
+        "summary": "Go deeper: how a proposed extension is tested",
+        "hypotheses": "Hypotheses such as axions, supersymmetry, or sterile neutrinos make different predictions. A candidate must fit existing constraints and produce testable consequences; none is confirmed merely because it fills a gap. Collider searches, neutrino experiments, and direct or indirect dark-matter searches probe different assumptions.",
+        "antiparticles": "Antiparticles have the same mass and spin as their partners and opposite additive charges. The positron is an anti-electron; it is not a negative-mass electron. Whether neutrinos are their own antiparticles remains open."
+      }
+    },
+    "summary": {
+      "title": "Your Journey Continues",
+      "card": {
+        "title": "Build your own route through the subject",
+        "intro": "For any particle, ask: Is it elementary or composite? What are its mass, charges, and spin? Which interactions can produce or detect it? What does its quantum identity allow?",
+        "paths": {
+          "electron": "Electron → charge & exclusion",
+          "photon": "Photon → light & massless energy",
+          "quarks": "Quarks → protons & confinement",
+          "higgs": "Higgs → origin of elementary masses",
+          "signatures": "Signatures → experimental evidence"
+        }
+      },
+      "glossary": {
+        "summary": "Quick glossary",
+        "field": {
+          "term": "Field / particle",
+          "definition": "A field has degrees of freedom throughout spacetime; a particle is a quantized excitation."
+        },
+        "mass": {
+          "term": "Mass / energy",
+          "definition": "Rest mass is an invariant property; energy also depends on motion and the reference frame."
+        },
+        "charge": {
+          "term": "Charge",
+          "definition": "A quantum property governing a coupling; electric charge is only one kind."
+        },
+        "state": {
+          "term": "State / species",
+          "definition": "“Electron” names a species. A state also specifies its spatial and spin degrees of freedom."
+        },
+        "flavor": {
+          "term": "Flavor / generation",
+          "definition": "Flavor labels distinguish quarks or leptons; generations group related species."
+        },
+        "boson": {
+          "term": "Gauge / scalar boson",
+          "definition": "Gauge bosons here have spin 1; the Higgs is a spin-0 scalar."
+        }
+      },
+      "references": {
+        "title": "References and further study",
+        "intro": "Masses are deliberately rounded, not a precision fit or a live data feed. The catalog uses the fixed PDG 2025 edition so its conventions remain traceable.",
+        "quarks": "PDG 2025: quark properties and mass conventions",
+        "leptons": "PDG 2025: leptons",
+        "bosons": "PDG 2025: gauge and Higgs bosons",
+        "cern": "CERN: an introduction to the Standard Model",
+        "tong": "David Tong: quantum field theory, for a mathematical next step"
+      }
+    }
+  },
+  "ui": {
+    "language": {
+      "label": "Language"
+    },
+    "statistics": {
+      "fermion": "Fermion: identical particles cannot share a complete quantum state (Pauli exclusion).",
+      "boson": "Boson: identical particles can share a complete quantum state; no Pauli occupancy limit."
+    },
+    "properties": {
+      "property": "Property",
+      "type": "Type",
+      "restMass": "Rest mass",
+      "electricCharge": "Electric charge",
+      "spin": "Spin",
+      "chargeUnit": "Charge / e",
+      "spinUnit": "Spin / ℏ",
+      "interactions": "Interactions",
+      "statistics": "Statistics",
+      "example": "Example"
+    },
+    "catalog": {
+      "count": "{shown} of {total} particle entries shown.",
+      "countNone": "{shown} of {total} particle entries shown. No matches; try resetting the filters.",
+      "groups": {
+        "quarks": {
+          "title": "Quarks",
+          "subtitle": "Fermions · spin ½ · three colors"
+        },
+        "leptons": {
+          "title": "Leptons",
+          "subtitle": "Fermions · spin ½ · no color"
+        },
+        "bosons": {
+          "title": "Bosons",
+          "subtitle": "Gauge carriers · spin 1 / Higgs · spin 0"
+        }
+      },
+      "mixedMass": "Mixed mass states",
+      "generationShort": "Gen {generation}",
+      "spin": "spin"
+    },
+    "inspector": {
+      "selected": "{name} selected. Details updated.",
+      "spinValue": "{spin} (in units of ℏ)",
+      "massOrigin": "Mass and its origin",
+      "quantumRule": "Quantum rule",
+      "higgsNote": {
+        "yukawa": "Its elementary mass is associated with a Yukawa coupling to the Higgs field.",
+        "neutrino": "Neutrino mass generation is not explained by the minimal Standard Model.",
+        "higgs": "Its mass is set by the Higgs potential, not a Yukawa term.",
+        "massless": "It has no mass-generating Higgs coupling; effective Higgs couplings can arise through loops.",
+        "electroweak": "Its mass arises through electroweak symmetry breaking and coupling to the Higgs field."
+      },
+      "chargeNote": {
+        "quark": "Carries color as well as electric charge.",
+        "gluon": "Electrically neutral but carries color.",
+        "neutral": "Zero electric charge does not imply the absence of all couplings.",
+        "charged": "Electric charge permits coupling to photons."
+      },
+      "paths": {
+        "matter": "Matter families",
+        "forces": "Forces & carriers",
+        "higgs": "Mass & Higgs",
+        "quantum": "Spin & exclusion",
+        "reaction": "Follow a reaction",
+        "detection": "Detection"
+      },
+      "pdgReference": "PDG 2025 property reference",
+      "conventions": "Conventions and further study"
+    },
+    "comparison": {
+      "rowA": "Row A",
+      "columnB": "Column B",
+      "corner": "Column B →<br>Row A ↓",
+      "tree": "tree",
+      "loop": "loop",
+      "fermionNote": "Fermion · Pauli exclusion applies",
+      "bosonNote": "Boson · shared states allowed",
+      "openGuide": "Open field guide",
+      "sameFermion": "Identical fermions must occupy different complete states, including spin/color. Exclusion does not prohibit their scattering.",
+      "noRatio": "A finite mass ratio is not shown: a denominator is massless, or a neutrino flavor has no single mass. Compare the energy–momentum relation instead.",
+      "ratio": "{a} / {b}: mass ratio ≈ {ratio}. Rounded values and quark mass conventions apply."
+    },
+    "state": {
+      "spinUp": "Spin ↑",
+      "spinDown": "Spin ↓",
+      "polarizationA": "Polarization A",
+      "polarizationB": "Polarization B",
+      "assumption": {
+        "electron": "One fixed spatial orbital; two distinct spin states. Each full state can hold at most one electron.",
+        "photon": "One fixed light mode; two independent polarizations. Any number of identical photons can occupy either polarization state."
+      },
+      "unit": {
+        "electron": {
+          "one": "electron",
+          "other": "electrons"
+        },
+        "photon": {
+          "one": "photon",
+          "other": "photons"
+        }
+      },
+      "add": "Add {state}",
+      "start": "Choose a state to add the first particle.",
+      "added": "Added. This complete state now contains {count} {unit}. Try adding another.",
+      "blocked": "Blocked by Pauli exclusion: that complete electron state is occupied. Try the other spin state."
+    },
+    "process": {
+      "chargeCheck": "Charge / e: initial {before} → final {after} · {verdict}",
+      "balanced": "balanced",
+      "notConserved": "NOT conserved"
+    },
+    "detector": {
+      "layers": [
+        "Tracker",
+        "Electromagnetic calorimeter",
+        "Hadronic calorimeter",
+        "Muon chambers"
+      ],
+      "catalogLink": "Connect to the catalog: {link}."
+    },
+    "scaleCanvas": {
+      "observableUniverse": "Observable Universe",
+      "galaxy": "Galaxy",
+      "solarSystem": "Solar System",
+      "earth": "Earth",
+      "human": "Human",
+      "millimeter": "Millimeter",
+      "micrometer": "Micrometer",
+      "nanometer": "Nanometer",
+      "atom": "Atom",
+      "nucleus": "Nucleus",
+      "quark": "Quark"
+    },
+    "atomCanvas": {
+      "nucleus": "Nucleus",
+      "paths": "Schematic electron paths"
+    },
+    "console": {
+      "welcome": "⚛️ Welcome to the Quantum Realm! ⚛️",
+      "intro": "You've discovered the hidden console! Here are some particle physics facts:",
+      "facts": [
+        "A teaspoon of neutron star material would weigh 6 billion tons",
+        "The LHC accelerates protons to 99.9999991% the speed of light",
+        "There are more atoms in a glass of water than glasses of water in all the oceans"
+      ]
+    }
+  },
+  "model": {
+    "particles": {
+      "up": {
+        "name": "Up quark",
+        "massLabel": "≈ 2.16 MeV/c²",
+        "example": "Two up and one down valence quarks make a proton.",
+        "massNote": "Running mass at a scale of 2 GeV; not the mass of a free quark."
+      },
+      "down": {
+        "name": "Down quark",
+        "massLabel": "≈ 4.70 MeV/c²",
+        "example": "Two down and one up valence quarks make a neutron.",
+        "massNote": "Running mass at a scale of 2 GeV; confinement prevents isolation."
+      },
+      "charm": {
+        "name": "Charm quark",
+        "massLabel": "≈ 1.273 GeV/c²",
+        "example": "Charm and anticharm form the J/ψ meson.",
+        "massNote": "Running mass evaluated at its own mass scale."
+      },
+      "strange": {
+        "name": "Strange quark",
+        "massLabel": "≈ 93.5 MeV/c²",
+        "example": "Strange quarks appear in kaons and strange baryons.",
+        "massNote": "Running mass at a scale of 2 GeV."
+      },
+      "top": {
+        "name": "Top quark",
+        "massLabel": "≈ 172.6 GeV/c²",
+        "example": "Decays predominantly to a W boson and a bottom quark before forming hadrons.",
+        "massNote": "Rounded direct-reconstruction mass; different mass definitions must not be mixed at high precision."
+      },
+      "bottom": {
+        "name": "Bottom quark",
+        "massLabel": "≈ 4.183 GeV/c²",
+        "example": "Bottom hadrons produce displaced decay vertices in detectors.",
+        "massNote": "Running mass evaluated at its own mass scale."
+      },
+      "electron": {
+        "name": "Electron",
+        "massLabel": "≈ 0.511 MeV/c²",
+        "example": "Atomic electrons form shells and chemical bonds; moving electrons carry electric current.",
+        "massNote": "Rest mass, independent of its speed. An electron is elementary; a proton is composite."
+      },
+      "muon": {
+        "name": "Muon",
+        "massLabel": "≈ 105.66 MeV/c²",
+        "example": "Cosmic-ray muons reach the ground and often traverse an entire collider detector.",
+        "massNote": "About 207 electron masses; mean lifetime approximately 2.2 μs."
+      },
+      "tau": {
+        "name": "Tau",
+        "massLabel": "≈ 1.777 GeV/c²",
+        "example": "Produces electrons, muons, or hadrons in its weak decays.",
+        "massNote": "Mean lifetime approximately 290 femtoseconds."
+      },
+      "e_neutrino": {
+        "name": "Electron neutrino",
+        "massLabel": "Flavor mixture; masses unknown",
+        "example": "Produced in solar fusion and electron-flavor weak interactions.",
+        "massNote": "νₑ is a superposition of mass states ν₁, ν₂, ν₃. Oscillations measure mass-squared differences, not one mass for each flavor."
+      },
+      "mu_neutrino": {
+        "name": "Muon neutrino",
+        "massLabel": "Flavor mixture; masses unknown",
+        "example": "Produced with muons in charged-pion decays.",
+        "massNote": "Flavor and mass states differ. At least two neutrino mass states have nonzero mass; the lightest could be massless."
+      },
+      "tau_neutrino": {
+        "name": "Tau neutrino",
+        "massLabel": "Flavor mixture; masses unknown",
+        "example": "Identified through interactions that produce tau leptons when enough energy is available.",
+        "massNote": "There is no separate measured rest mass to assign to the tau flavor. Neutrino mass generation requires physics beyond the minimal Standard Model."
+      },
+      "photon": {
+        "name": "Photon",
+        "massLabel": "0 in the Standard Model",
+        "example": "Visible light, radio waves, and X-rays consist of photons. Photons mediate electromagnetic interactions.",
+        "massNote": "Zero rest mass does not mean zero energy: E = hf = pc. No rest frame exists for a photon."
+      },
+      "gluon": {
+        "name": "Gluon",
+        "massLabel": "0 in the Standard Model",
+        "example": "Eight color states mediate the strong interaction; gluons also interact with other gluons.",
+        "massNote": "Massless but confined: hadronization produces jets rather than isolated gluons."
+      },
+      "w_boson": {
+        "name": "W boson",
+        "massLabel": "≈ 80.37 GeV/c²",
+        "example": "W⁺ and W⁻ mediate charged-current weak processes, including beta decay.",
+        "massNote": "Its large mass helps set the short range of the weak interaction. W bosons also couple to the Higgs field."
+      },
+      "z_boson": {
+        "name": "Z boson",
+        "massLabel": "≈ 91.19 GeV/c²",
+        "example": "Mediates neutral-current weak scattering, including neutrino scattering without producing a charged lepton.",
+        "massNote": "Electrically neutral but not non-interacting; couples to the Higgs field and weak currents."
+      },
+      "higgs": {
+        "name": "Higgs boson",
+        "massLabel": "≈ 125.2 GeV/c²",
+        "example": "The observed excitation of the Higgs field; reconstructed from its decay products.",
+        "massNote": "A scalar boson, not a gauge force carrier. Its own mass comes from the Higgs potential; photon/gluon couplings occur through loops."
+      }
+    },
+    "interactions": {
+      "strong": "Strong",
+      "em": "Electromagnetic",
+      "weak": "Weak",
+      "higgs": "Higgs sector"
+    },
+    "families": {
+      "quark": "Quark · fermion",
+      "lepton": "Lepton · fermion",
+      "gauge": "Gauge boson",
+      "scalar": "Scalar boson"
+    },
+    "channels": {
+      "strong": { "label": "Strong" },
+      "em": { "label": "Electromagnetic" },
+      "weak": { "label": "Weak" },
+      "higgs": { "label": "Higgs sector" },
+      "loop": { "label": "Higher order / loop" }
+    },
+    "pair": {
+      "status": {
+        "tree": "Tree-level route available",
+        "loop": "No tree-level route · higher order"
+      },
+      "explanation": {
+        "fermionPair": "Neutral-current Z exchange connects the fermions. Charged pairs also exchange photons and can exchange a Higgs; two quarks can exchange gluons.",
+        "compton": "Compton-type scattering uses the photon coupling to the charged fermion. The photon itself does not need electric charge.",
+        "quarkGluon": "Quark–gluon scattering uses color couplings, including gluon self-interactions. Observable outgoing states hadronize into jets.",
+        "fermionVector": "Electroweak vertices allow fermion–vector-boson scattering. Massive charged fermions also admit Higgs exchange; a charged fermion and W can exchange a photon.",
+        "yukawa": "The fermion Yukawa coupling permits Higgs–fermion scattering. Its coupling scales with the fermion mass; a listed channel need not be large.",
+        "gluonGluon": "Gluons carry color and have three- and four-gluon vertices, so they scatter already at tree level.",
+        "photonW": "The W is electrically charged. Photon–W scattering has charged-vector exchange and a contact vertex.",
+        "zz": "Higgs exchange supplies tree-level Z–Z scattering. There is no elementary three-Z or four-Z gauge vertex.",
+        "higgsHiggs": "The Higgs potential contains cubic and quartic self-couplings, allowing Higgs–Higgs scattering.",
+        "gaugeHiggs": "Gauge–Higgs vertices and, where listed, gauge exchange/contact vertices permit scattering. The H label includes couplings of W/Z to the Higgs sector.",
+        "lightByLight": "Light-by-light elastic scattering has no tree-level photon self-coupling. Virtual charged-particle loops allow it; it is not forbidden.",
+        "higherOrder": "No tree-level elastic route is present in this approximation. Higher-order diagrams can connect the particles through virtual states; their size and leading order depend on the pair and energy."
+      }
+    },
+    "processes": {
+      "beta": {
+        "label": "Free-neutron beta decay · weak",
+        "explanation": "A down valence quark changes into an up quark through a virtual W⁻. The electron and antineutrino share the released energy; the proton recoils. A bound neutron can be stable if nuclear energy balance prevents decay."
+      },
+      "annihilation": {
+        "label": "Annihilation · electromagnetic",
+        "explanation": "An electron and positron can turn into two photons. Rest energy becomes photon energy while total energy and momentum remain conserved. The positron has the electron mass and the opposite electric charge."
+      },
+      "higgs": {
+        "label": "Higgs decay · loop-induced",
+        "explanation": "The Higgs can decay to two photons through charged-particle loops, despite the photon having no direct mass-generating Higgs coupling. Photon pairs help reconstruct the Higgs mass."
+      },
+      "forbidden": {
+        "label": "Forbidden · electric charge would change",
+        "explanation": "Charge conservation rules this out: −1 cannot become 0. Passing a charge check alone would still not prove a reaction is possible; energy, momentum, angular momentum, and the available couplings also matter."
+      }
+    },
+    "detector": {
+      "electron": {
+        "name": "Electron",
+        "catalogLabel": "Electron",
+        "layers": ["Track", "EM shower", "Little beyond ECAL", "No muon track"],
+        "why": "A charged track matched to an electromagnetic shower is a typical electron signature."
+      },
+      "photon": {
+        "name": "Photon",
+        "catalogLabel": "Photon",
+        "layers": ["No primary track", "EM shower", "Little beyond ECAL", "No muon track"],
+        "why": "A photon is neutral and usually starts a shower in the electromagnetic calorimeter. Conversion to an electron–positron pair in tracker material is an important exception."
+      },
+      "muon": {
+        "name": "Muon",
+        "catalogLabel": "Muon",
+        "layers": ["Track", "Small deposit", "Small deposit", "Muon track"],
+        "why": "A penetrating track connects the inner tracker to outer muon chambers."
+      },
+      "hadron": {
+        "name": "Charged hadron",
+        "catalogLabel": "a constituent up quark",
+        "layers": ["Track", "Some energy", "Hadronic shower", "Usually stops"],
+        "why": "A pion or proton is composite. Quarks and gluons hadronize, so experiments reconstruct jets of hadrons rather than free quarks."
+      },
+      "neutrino": {
+        "name": "Neutrino",
+        "catalogLabel": "Neutrino",
+        "layers": ["No track", "No deposit", "No deposit", "No track"],
+        "why": "Usually escapes a collider detector. Missing transverse momentum is inferred from the measured imbalance; it can also arise from other invisible particles or measurement errors."
+      }
+    }
+  }
+}

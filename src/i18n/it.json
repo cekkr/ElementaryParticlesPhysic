@@ -1,0 +1,804 @@
+{
+  "meta": {
+    "languageName": "Italiano"
+  },
+  "nav": {
+    "label": "Sezioni",
+    "introduction": "Introduzione",
+    "scale": "Scale dell'Universo",
+    "matter": "Che cos'è la materia?",
+    "particleZoo": "Zoo delle particelle",
+    "fermions": "Fermioni",
+    "forces": "Forze e bosoni",
+    "higgs": "Meccanismo di Higgs",
+    "quantum": "Proprietà quantistiche",
+    "interactions": "Interazioni",
+    "detection": "Rivelazione",
+    "mathematics": "Matematica",
+    "beyond": "Oltre",
+    "summary": "Riepilogo"
+  },
+  "page": {
+    "meta": {
+      "title": "Viaggio nella fisica delle particelle elementari"
+    },
+    "hero": {
+      "title": "Fisica delle particelle elementari",
+      "subtitle": "Un viaggio dall'Universo ai suoi mattoni più piccoli",
+      "welcome": "Benvenuti in un'esplorazione interattiva della natura fondamentale della realtà.<br>\nSegui un percorso di apprendimento, oppure scorri dalla materia familiare fino ai campi e alle domande aperte.",
+      "paths": {
+        "atoms": "Inizia dagli atomi",
+        "standardModel": "Esplora il Modello Standard",
+        "exclusion": "Prova il principio di esclusione"
+      }
+    },
+    "scale": {
+      "title": "L'Universo a scale diverse",
+      "card": {
+        "title": "Dal cosmo ai quark: un viaggio tra le scale",
+        "intro": "L'universo abbraccia un intervallo di scale incredibile. Dall'universo osservabile, intorno a 10²⁶ metri, alla scala di Planck, intorno a 10⁻³⁵ metri, l'intervallo è di circa 61 ordini di grandezza. La lunghezza di Planck indica una scala di gravità quantistica, non una distanza minima stabilita sperimentalmente."
+      },
+      "details": {
+        "button": "Esplora i dettagli delle scale",
+        "depth": "Approfondimento",
+        "intro": "Ogni passo verso scale più piccole rivela nuova fisica:",
+        "levels": {
+          "human": "<strong>10⁰ m (scala umana):</strong> domina la meccanica classica",
+          "nano": "<strong>10⁻⁹ m (nanoscala):</strong> gli effetti quantistici diventano evidenti",
+          "atomic": "<strong>10⁻¹⁰ m (atomica):</strong> orbitali elettronici; qui avviene la chimica",
+          "nuclear": "<strong>10⁻¹⁵ m (nucleare):</strong> domina la forza forte, i quark sono confinati",
+          "probes": "<strong>10⁻¹⁸ m (sonde ad alta risoluzione):</strong> nei calcoli ad alto trasferimento di impulso i quark possono essere trattati come debolmente accoppiati; tuttavia non emergono come particelle isolate."
+        },
+        "math": {
+          "depth": "Quadro matematico",
+          "intro": "La lunghezza d'onda di de Broglie fissa la scala quantistica:",
+          "equation": "λ = h / p; p ≈ mv solo a velocità non relativistiche",
+          "text": "Per risolvere strutture più fini servono lunghezze d'onda più corte e impulsi maggiori. Per questo si costruiscono acceleratori ad alta energia. <a href=\"#mathematics\">Collega lunghezza d'onda, impulso ed energia</a>."
+        }
+      },
+      "mnemonic": {
+        "title": "Trucco mnemonico: le potenze di dieci",
+        "phrase": "“<strong>M</strong>olti <strong>K</strong>oala <strong>E</strong>leganti <strong>D</strong>anzano <strong>C</strong>on <strong>M</strong>ille <strong>μ</strong>nicorni <strong>N</strong>ani <strong>P</strong>ensierosi”",
+        "prefixes": "Mega (10⁶), Kilo (10³), Etto (10²), Deca (10¹), Centi (10⁻²), Milli (10⁻³), Micro (10⁻⁶), Nano (10⁻⁹), Pico (10⁻¹²)"
+      }
+    },
+    "matter": {
+      "title": "Che cos'è la materia?",
+      "card": {
+        "title": "L'evoluzione della teoria atomica",
+        "intro": "Per secoli abbiamo creduto che gli atomi fossero indivisibili: in greco la parola significa letteralmente “che non si può tagliare”. Ma la scoperta della radioattività nel 1896 cambiò tutto!",
+        "canvasLabel": "Animazione schematica di un atomo; le traiettorie circolari non sono veri orbitali elettronici",
+        "consistsOf": "Oggi sappiamo che gli atomi sono costituiti da:",
+        "parts": {
+          "nucleus": "<strong>Nucleo:</strong> protoni e neutroni (fatti di quark!)",
+          "cloud": "<strong>Nube elettronica:</strong> elettroni in orbitali quantistici",
+          "scale": "<strong>Scala:</strong> il nucleo è molto più piccolo dell'atomo. La nube elettronica è una distribuzione di probabilità quantistica, non un insieme di pianetini su orbite fisse."
+        }
+      },
+      "details": {
+        "button": "Viaggio storico",
+        "depth": "Cronologia delle scoperte",
+        "timeline": {
+          "electron": "<strong>1897:</strong> J.J. Thomson scopre l'elettrone",
+          "nucleus": "<strong>1911:</strong> l'esperimento della lamina d'oro di Rutherford rivela il nucleo",
+          "neutron": "<strong>1932:</strong> Chadwick scopre il neutrone",
+          "quarks": "<strong>1964:</strong> Gell-Mann e Zweig propongono i quark",
+          "charm": "<strong>1974:</strong> la scoperta della J/ψ fornisce prove del charm",
+          "higgs": "<strong>2012:</strong> il bosone di Higgs viene scoperto al CERN"
+        },
+        "cern": {
+          "title": "Il legame con il CERN",
+          "text": "I collisori sondano la struttura subnucleare tramite urti ad alta energia. Le collisioni di ioni pesanti possono produrre plasma di quark e gluoni, ben diverso dallo schizzo statico di orbite qui sopra. <a href=\"#fermions\">Esplora i quark e il confinamento</a>."
+        }
+      }
+    },
+    "zoo": {
+      "title": "Lo zoo delle particelle",
+      "catalog": {
+        "eyebrow": "Esplora i mattoni fondamentali",
+        "title": "Il Modello Standard: i LEGO della natura",
+        "intro": "Un <strong>elettrone</strong> in un atomo, un <strong>fotone</strong> in un fascio di luce e i <strong>quark</strong> dentro un protone sono esempi di particelle elementari diverse. Ciascuna è un'eccitazione di un campo quantistico. “Elementare” significa che non è stata risolta alcuna struttura interna; protoni e atomi sono composti.",
+        "columns": {
+          "fermions": {
+            "title": "Fermioni · materia",
+            "text": "Sei quark e sei leptoni, tutti con spin ½. I fermioni identici obbediscono all'<a href=\"#quantum\">esclusione di Pauli</a>. Gli elettroni formano i gusci atomici; i quark up e down costruiscono i nuclei."
+          },
+          "gauge": {
+            "title": "Bosoni di gauge · interazioni",
+            "text": "Fotoni, gluoni e bosoni W e Z, con spin 1, mediano le interazioni elettromagnetica, forte e debole. Bosoni identici possono condividere uno stato quantistico."
+          },
+          "higgs": {
+            "title": "Higgs · un bosone scalare",
+            "text": "L'Higgs, con spin 0, è un'eccitazione del <a href=\"#higgs\">campo di Higgs</a>. È un bosone, ma non è un ulteriore portatore di forza di gauge."
+          }
+        },
+        "countNote": "Le familiari “17 particelle” contano voci raggruppate: W⁺/W⁻ condividono una casella e gli otto stati di colore del gluone ne condividono un'altra. Antiparticelle e colori dei quark non hanno caselle separate. La gravità è esclusa da questo modello. <a href=\"https://home.cern/science/physics/standard-model\">CERN: il Modello Standard</a>.",
+        "hint": "Scegli una casella o un nome nella tabella per esaminarlo. Più sotto puoi confrontare due particelle.",
+        "noscript": "Il catalogo interattivo richiede JavaScript. Le spiegazioni, gli argomenti collegati e il materiale di riferimento restano leggibili.",
+        "massNote": "Valori didattici arrotondati, tratti dalle <a href=\"https://pdg.lbl.gov/2025/tables/contents_tables.html\">tabelle PDG 2025</a>. MeV/c² e GeV/c² sono unità di massa: 1 GeV/c² = 1000 MeV/c². Le masse dei quark dipendono dalla definizione e dalla scala. Gli stati di sapore dei neutrini non hanno un'unica massa a riposo; i valori ignoti vengono ordinati per ultimi.",
+        "filterNote": "I filtri per interazione mostrano le principali interazioni di gauge e identificano il settore di Higgs; non sono un elenco completo dei vertici. La gravità è omessa. Anche i fermioni carichi massivi e i bosoni W/Z si accoppiano al campo di Higgs; fotoni e gluoni possono accoppiarsi all'Higgs tramite loop."
+      },
+      "controls": {
+        "label": "Filtri delle particelle",
+        "search": "Trova una particella",
+        "searchPlaceholder": "Prova elettrone, luce o protone",
+        "family": "Famiglia",
+        "families": {
+          "all": "Tutte le famiglie",
+          "quark": "Quark",
+          "lepton": "Leptoni",
+          "gauge": "Bosoni di gauge",
+          "scalar": "Scalare di Higgs"
+        },
+        "interaction": "Interazione",
+        "interactions": {
+          "all": "Tutte le interazioni"
+        },
+        "order": "Ordine",
+        "orders": {
+          "model": "Ordine del Modello Standard",
+          "mass": "Massa a riposo: crescente",
+          "name": "Nome: A–Z"
+        },
+        "reset": "Azzera i filtri"
+      },
+      "table": {
+        "summary": "Tabella delle proprietà delle particelle",
+        "caption": "Stesse particelle e stessi filtri delle caselle. Lo spin è in unità di ℏ; la carica è in unità della carica elementare positiva e.",
+        "columns": {
+          "particle": "Particella",
+          "generation": "Generazione"
+        }
+      },
+      "inspector": {
+        "eyebrow": "Guida alle particelle"
+      },
+      "comparison": {
+        "eyebrow": "A × B · esplora una coppia",
+        "title": "Confronta due particelle",
+        "intro": "Seleziona una riga A, una colonna B o la loro intersezione. I colori indicano i canali di <strong>diffusione elastica, A + B → A + B</strong>; “tree” usa i vertici di base del Modello Standard, mentre “loop” richiede effetti di ordine superiore.",
+        "quickAccess": "Accesso rapido · utile anche su schermi piccoli",
+        "first": "Prima particella · riga A",
+        "second": "Seconda particella · colonna B",
+        "previewLabel": "Coppia di particelle selezionata",
+        "legendLabel": "Legenda dei colori delle interazioni",
+        "instructions": "Stesso elenco di particelle su entrambi gli assi. I colori indicano i canali, non la loro intensità. Scorri all'interno della matrice; le etichette restano visibili. Usa i tasti freccia tra le celle, poi Invio o Spazio per selezionare.",
+        "matrixLabel": "Matrice delle interazioni tra particelle",
+        "matrixCaption": "Panoramica della diffusione elastica · riga A × colonna B",
+        "sourceNote": "Questa è una mappa schematica dei canali perturbativi, non un calcolo dei tassi né un verdetto su ogni reazione. Contano l'energia, gli stati quantistici e le polarizzazioni; quark e gluoni sono confinati e le particelle pesanti decadono. Sono omessi gli effetti di generazione della massa dei neutrini e la gravità. In particolare, “nessun percorso ad albero” non significa “impossibile”. L'assegnazione dei canali si basa su <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-standard-model.pdf\">accoppiamenti elettrodeboli PDG</a>, <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-higgs-boson.pdf\">accoppiamenti dell'Higgs</a> e <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">cromodinamica quantistica</a>.",
+        "propertiesSummary": "Confronta tutte le proprietà e le masse",
+        "propertiesLabel": "Confronto tra particelle",
+        "propertiesCaption": "Le proprietà provengono dallo stesso catalogo delle caselle."
+      }
+    },
+    "fermions": {
+      "title": "Mattoni fondamentali: i fermioni",
+      "quarks": {
+        "title": "Dai quark alla materia che ti circonda",
+        "intro": "I quark <a href=\"#particle-inspector\" data-particle=\"up\">up</a> e <a href=\"#particle-inspector\" data-particle=\"down\">down</a> portano carica elettrica e carica di colore dell'interazione forte. Il colore è un'etichetta quantistica, non un colore visibile. Gli adroni osservabili sono combinazioni neutre di colore. I barioni hanno tre quark di valenza; i mesoni hanno una coppia quark–antiquark di valenza. Gli adroni esotici possono avere configurazioni più complesse.",
+        "table": {
+          "label": "Esempi di particelle composte",
+          "caption": "Il contenuto di valenza identifica un adrone; non è un quadro completo dei suoi quark, antiquark e gluoni.",
+          "columns": {
+            "composite": "Particella composta",
+            "valence": "Contenuto di valenza",
+            "explore": "Esplora"
+          },
+          "proton": "Protone",
+          "protonLink": "Esamina un quark up",
+          "neutron": "Neutrone",
+          "neutronLink": "Segui il decadimento beta",
+          "pion": "Pione positivo",
+          "pionLink": "Bosoni composti"
+        },
+        "deep": {
+          "summary": "Approfondisci: il confinamento e l'origine della massa del protone",
+          "confinement": "Separare i quark crea un campo di colore; con energia sufficiente si producono nuovi adroni anziché un quark isolato. Ad alto trasferimento di impulso l'accoppiamento forte diminuisce (libertà asintotica), rendendo possibili i calcoli perturbativi. A basse energie domina il confinamento.",
+          "protonMass": "Un protone ha una massa di circa 938 MeV/c², molto maggiore della somma delle masse dei suoi quark leggeri di valenza. La maggior parte di quella massa deriva dalla dinamica dei quark e dei campi gluonici. L'Higgs dà ai quark le loro masse, ma non spiega direttamente la maggior parte della massa del protone.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: cromodinamica quantistica</a>; <a href=\"https://cms.cern/node/1380\">CMS: l'Higgs e la materia ordinaria</a>."
+        }
+      },
+      "leptons": {
+        "title": "I leptoni e le tre generazioni",
+        "intro": "L'<a href=\"#particle-inspector\" data-particle=\"electron\">elettrone</a>, il <a href=\"#particle-inspector\" data-particle=\"muon\">muone</a> e il <a href=\"#particle-inspector\" data-particle=\"tau\">tau</a> hanno la stessa carica elettrica e lo stesso spin, ma masse e vite medie molto diverse. Non portano colore. I loro partner neutri sono i neutrini. Le generazioni organizzano le famiglie; non sono fasi attraverso cui una particella invecchia.",
+        "deep": {
+          "summary": "Approfondisci: perché la “massa” dei neutrini è diversa",
+          "mixing": "I neutrini di sapore elettronico, muonico e tauonico sono sovrapposizioni degli stati di massa ν₁, ν₂, ν₃. Le loro fasi relative evolvono durante il volo, cambiando le probabilità di rivelazione. Le oscillazioni stabiliscono differenze non nulle dei quadrati delle masse, non tre masse di sapore misurate separatamente. Cambiano il sapore leptonico; da sole non dimostrano la violazione del numero leptonico totale.",
+          "matrix": "La matrice di mescolamento U collega le etichette di sapore a quelle di massa. Il Modello Standard minimo prevede neutrini privi di massa, quindi le oscillazioni misurate richiedono un'estensione.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: masse, mescolamento e oscillazioni dei neutrini</a>."
+        }
+      }
+    },
+    "forces": {
+      "title": "Le forze e i loro messaggeri",
+      "card": {
+        "title": "La carica ti dice quale interazione è possibile",
+        "intro": "La carica elettrica si accoppia all'elettromagnetismo; la carica di colore si accoppia all'interazione forte. Le interazioni deboli coinvolgono quark e leptoni, compresi i neutrini elettricamente neutri. “Neutro” quindi non significa “privo di interazioni”. Seleziona un mediatore per collegare la forza a una particella reale."
+      },
+      "table": {
+        "label": "Forze e mediatori",
+        "caption": "Le portate descrivono meccanismi fisici molto diversi; non esiste una classifica universale delle intensità, indipendente dall'energia, valida per ogni processo.",
+        "columns": {
+          "interaction": "Interazione",
+          "carrier": "Mediatore",
+          "actsOn": "Agisce su / esempio",
+          "range": "Portata e avvertenze"
+        },
+        "em": {
+          "carrier": "Fotone γ",
+          "actsOn": "Carica elettrica; atomi, luce",
+          "range": "Lunga portata; mediatore privo di massa"
+        },
+        "strong": {
+          "carrier": "Gluone g",
+          "actsOn": "Colore; quark e gluoni",
+          "range": "I gluoni privi di massa sono confinati; le forze nucleari residue sono a corto raggio"
+        },
+        "weak": {
+          "actsOn": "Quark/leptoni; decadimento beta, diffusione di neutrini",
+          "range": "Portata molto breve, circa 10⁻¹⁸ m"
+        },
+        "gravity": {
+          "name": "Gravità",
+          "carrier": "Nessun mediatore quantistico osservato",
+          "actsOn": "Energia e impulso",
+          "range": "Lunga portata; fuori dal Modello Standard"
+        }
+      },
+      "deep": {
+        "summary": "Approfondisci: diagrammi di scambio e particelle virtuali",
+        "diagrams": "Un diagramma di Feynman è un contributo a un'ampiezza, non il filmato letterale di palline minuscole. Le linee interne sono propagatori, spesso chiamati particelle virtuali. Il quadrimpulso si conserva in ogni vertice; le linee virtuali non devono soddisfare la relazione della particella libera E² = p²c² + m²c⁴. Il principio di indeterminazione non autorizza violazioni temporanee della conservazione dell'energia.",
+        "equation": "Scala di portata per un mediatore massivo: ℓ ∼ ℏ / (Mc)",
+        "range": "Questa scala aiuta a spiegare le forze deboli. I gluoni privi di massa richiedono la fisica distinta del confinamento; un mediatore privo di massa non garantisce da solo una forza osservabile a lunga portata.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html\">David Tong: campi interagenti e diagrammi di Feynman</a>."
+      }
+    },
+    "higgs": {
+      "title": "Il meccanismo di Higgs",
+      "card": {
+        "title": "Massa senza attrito",
+        "field": "Il campo di Higgs ha un valore di vuoto non nullo. I suoi accoppiamenti danno massa ai bosoni W/Z e, tramite gli accoppiamenti di Yukawa, ai leptoni carichi e ai quark. Questo cambia la loro relazione energia–impulso; non rallenta le particelle in moto tramite un attrito. Il <a href=\"#particle-inspector\" data-particle=\"higgs\">bosone di Higgs</a> è un'eccitazione del campo, non una nube di particelle che deve circondare ogni elettrone.",
+        "photons": "I <a href=\"#particle-inspector\" data-particle=\"photon\">fotoni</a> restano privi di massa, ma trasportano energia e impulso. L'origine delle masse dei neutrini non è chiarita. La maggior parte della massa della materia ordinaria deriva dalla dinamica dell'interazione forte nei nuclei, non dalla somma delle masse dei suoi costituenti elementari.",
+        "sources": "<a href=\"https://home.cern/science/physics/higgs-boson\">CERN: il bosone di Higgs</a>; <a href=\"https://cms.cern/node/1380\">CMS: da dove viene la massa della materia ordinaria</a>."
+      },
+      "deep": {
+        "summary": "Approfondisci: il valore del campo e l'accoppiamento di Yukawa",
+        "equation": "mᶠ = yᶠ v / √2, con v ≈ 246 GeV (ℏ = c = 1)",
+        "yukawa": "Un accoppiamento di Yukawa yᶠ più grande dà una massa fermionica maggiore a parità di valore del campo. Le masse di W/Z nascono dagli accoppiamenti di gauge con il campo di Higgs. In una convenzione comune, V(Φ) = −μ²Φ†Φ + λ(Φ†Φ)² e ⟨Φ⟩ = (0, v/√2), con v² = μ²/λ. Le eccitazioni attorno a questo vuoto includono l'Higgs fisico di spin 0.",
+        "experiments": "Gli esperimenti deducono la presenza di un Higgs dai suoi prodotti di decadimento e ne verificano gli accoppiamenti, invece di osservare direttamente il campo. <a href=\"#interactions\">Esplora H → γγ</a>."
+      }
+    },
+    "quantum": {
+      "title": "Proprietà quantistiche",
+      "card": {
+        "title": "Spin, identità e principio di esclusione",
+        "spin": "Lo spin è un momento angolare intrinseco, non la rotazione di una minuscola pallina solida. Le particelle identiche con spin semintero sono <strong>fermioni</strong>; quelle con spin intero sono <strong>bosoni</strong>. L'esclusione di Pauli vieta a due fermioni identici di occupare lo stesso stato completo di singola particella. Vale per elettroni, quark e neutrini, indipendentemente dalla loro massa o carica.",
+        "orbitals": "Due elettroni possono occupare un unico orbitale spaziale se i loro stati di spin sono diversi. Molti fotoni possono occupare un unico modo con la stessa polarizzazione. Questo contrasto aiuta a spiegare la struttura a gusci degli atomi e l'occupazione dei modi della luce. Anche le particelle composte hanno una statistica: i protoni sono fermioni e i pioni sono bosoni."
+      },
+      "lab": {
+        "title": "Prova a riempire un modo spaziale",
+        "particle": "Particella",
+        "electrons": "Elettroni · fermioni",
+        "photons": "Fotoni · bosoni",
+        "assumption": "La funzione d'onda spaziale è fissata. Le due caselle rappresentano stati di spin distinti.",
+        "addUp": "Aggiungi spin ↑",
+        "addDown": "Aggiungi spin ↓",
+        "reset": "Svuota il modo"
+      },
+      "deep": {
+        "summary": "Approfondisci: simmetria di scambio e misure di spin",
+        "symmetryEquation": "Ψ(1, 2) = −Ψ(2, 1) per fermioni identici; + per bosoni identici",
+        "symmetry": "Mettere due fermioni identici esattamente nello stesso stato di singola particella annulla l'ampiezza antisimmetrica. È un'affermazione sugli stati quantistici, non una forza repulsiva né un divieto di trovarsi nella stessa posizione.",
+        "spinEquation": "S² = ℏ²s(s + 1); S𝓏 = ℏm, con m = −s, …, s",
+        "spin": "Il numero quantico di spin s e la sua proiezione misurata m sono cose diverse. Una particella massiva di spin 1 ha tre proiezioni; un fotone reale privo di massa ha due elicità trasverse, +1 e −1. Le caselle del fotone qui sopra rappresentano due polarizzazioni indipendenti, non un terzo modo longitudinale.",
+        "sources": "<a href=\"https://ocw.mit.edu/courses/18-238-geometry-and-quantum-field-theory-spring-2023/mit18_238_s23_lec_full.pdf\">MIT: bosoni, fermioni ed esclusione di Pauli</a>; <a href=\"https://www.rle.mit.edu/cua_pub/ketterle_group/Theses/Chin%20Jit%20Kee%20Thesis.pdf\">MIT: particelle identiche e statistica</a>."
+      }
+    },
+    "interactions": {
+      "title": "Come interagiscono le particelle",
+      "card": {
+        "title": "Segui una reazione, non solo il nome di una particella",
+        "intro": "Una reazione deve conservare carica elettrica, energia, impulso e momento angolare, e deve usare gli accoppiamenti disponibili. I decadimenti possono avvenire tramite interazioni forti, elettromagnetiche o deboli. La vita media dipende dagli accoppiamenti e dallo spazio delle fasi, non solo dalla massa.",
+        "choose": "Scegli un processo",
+        "options": {
+          "beta": "Decadimento beta del neutrone libero",
+          "annihilation": "Annichilazione elettrone–positrone",
+          "higgs": "Higgs in due fotoni",
+          "forbidden": "Un decadimento proibito dell'elettrone"
+        },
+        "hint": "Il controllo della carica è necessario, non sufficiente. Non calcola un tasso né verifica ogni legge di conservazione.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qfthtml/S3.html\">Tong: ampiezze, sezioni d'urto e decadimenti</a>; <a href=\"https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf\">PDG: decadimenti dell'Higgs</a>."
+      },
+      "deep": {
+        "summary": "Approfondisci: come i diagrammi diventano previsioni",
+        "amplitudes": "Ogni diagramma fornisce un'ampiezza. Si sommano coerentemente le ampiezze rilevanti, comprese le loro fasi, poi si eleva al quadrato il totale e si integra sugli impulsi finali consentiti. Un diagramma non è un percorso classico alternativo con una propria probabilità.",
+        "equation": "Probabilità ∝ |Σ diagrammi ℳ|²; larghezza di decadimento Γ ∝ ∫ dΦ |ℳ|²",
+        "phaseSpace": "La misura dello spazio delle fasi dΦ impone il bilancio di energia e impulso. In unità naturali τ = 1/Γ; ripristinando le unità si ottiene τ = ℏ/Γ. La teoria perturbativa organizza i diagrammi in potenze degli accoppiamenti; diventa inaffidabile per le interazioni forti a bassa energia."
+      }
+    },
+    "detection": {
+      "title": "Rivelare l'invisibile",
+      "card": {
+        "title": "Leggi la firma negli strati del rivelatore",
+        "intro": "I rivelatori combinano tracce, depositi di energia e prodotti di decadimento per dedurre l'identità delle particelle. Le particelle cariche curvano nei campi magnetici; i calorimetri misurano l'energia depositata. Le particelle a vita breve W, Z, Higgs e top vengono ricostruite dai loro prodotti.",
+        "choose": "Invia una particella attraverso un rivelatore schematico",
+        "layersLabel": "Firma nel rivelatore",
+        "sources": "<a href=\"https://home.cern/how-detector-works\">CERN: come funziona un rivelatore</a>; <a href=\"https://cms.cern/detector\">CMS: rivelatore e identificazione delle particelle</a>. Questo schema è qualitativo, non una simulazione del rivelatore."
+      },
+      "deep": {
+        "summary": "Approfondisci: la ricostruzione ha delle ambiguità",
+        "showers": "Uno sciame è una cascata di particelle secondarie, non la particella originale che si ingrandisce. Gli sciami di elettroni e fotoni si somigliano; associare una traccia nel tracciatore aiuta a distinguerli. Gli sciami adronici fluttuano, i muoni possono irraggiare e l'accettanza del rivelatore è incompleta. Nessuno strato da solo identifica perfettamente ogni particella.",
+        "missing": "In un collisore adronico gli impulsi longitudinali dei partoni incidenti sono ignoti. Per questo l'impulso <em>trasverso</em> mancante è particolarmente utile. Un segnale mancante, da solo, non prova la presenza di un neutrino o di materia oscura."
+      }
+    },
+    "mathematics": {
+      "title": "Fondamenti matematici",
+      "card": {
+        "title": "Traduci una proprietà in un'equazione",
+        "intro": "Le equazioni collegano le proprietà misurate nella <a href=\"#particle-zoo\">tabella delle particelle</a> alle previsioni. Ecco alcuni utili punti di partenza; le unità naturali pongono ℏ = c = 1 solo dove indicato esplicitamente.",
+        "sources": "<a href=\"https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf\">Tong: appunti di teoria quantistica dei campi</a>; <a href=\"https://pdg.lbl.gov/2025/reviews/contents_sports.html\">PDG: rassegne tecniche</a>."
+      },
+      "table": {
+        "label": "Guida alle equazioni della fisica",
+        "caption": "Segui ogni equazione fino al suo esempio fisico.",
+        "columns": {
+          "relation": "Relazione",
+          "meaning": "Significato",
+          "explore": "Esplora"
+        },
+        "energy": {
+          "meaning": "Massa a riposo, impulso ed energia",
+          "link": "Fotone privo di massa: E = pc"
+        },
+        "wavelength": {
+          "meaning": "Lunghezza d'onda e potere risolutivo",
+          "link": "Sonda distanze più piccole"
+        },
+        "yukawa": {
+          "meaning": "Massa di un fermione da un accoppiamento di Yukawa; unità naturali",
+          "link": "Meccanismo di Higgs"
+        },
+        "lifetime": {
+          "meaning": "Vita media dalla larghezza totale di decadimento",
+          "link": "Segui un decadimento"
+        }
+      },
+      "deep": {
+        "summary": "Approfondisci: campi, simmetrie e lagrangiana",
+        "lagrangian": "Una densità di lagrangiana specifica i campi e i loro accoppiamenti. Schematicamente, il Modello Standard contiene termini dei campi di gauge, il moto dei fermioni e i loro accoppiamenti di gauge, il termine cinetico e il potenziale dell'Higgs e le interazioni di Yukawa. È una guida organizzativa, non un'espressione con tutti gli indici.",
+        "symmetry": "La derivata covariante Dμ racchiude le interazioni di gauge. Il gruppo di simmetria SU(3)colore × SU(2)sinistro × U(1)ipercarica dà la struttura forte ed elettrodebole. La rottura della simmetria elettrodebole mescola i campi neutri producendo il fotone e la Z. Il fotone non è semplicemente un ulteriore mediatore SU(2) indipendente e non rotto.",
+        "parameters": "La località e le simmetrie vincolano i termini ammessi; gli esperimenti determinano parametri come masse e accoppiamenti. Una formula simbolica da sola non ne fornisce i valori numerici."
+      }
+    },
+    "beyond": {
+      "title": "Oltre il Modello Standard",
+      "card": {
+        "title": "Distinguere le prove dalle spiegazioni proposte",
+        "intro": "Il Modello Standard ha un successo notevole, ma non è una teoria completa della natura. Le oscillazioni dei neutrini, le prove della materia oscura e l'asimmetria materia–antimateria motivano ulteriori ricerche; anche la gravità richiede una descrizione quantistica coerente.",
+        "sources": "<a href=\"https://home.cern/science/physics/dark-matter\">CERN: materia oscura</a>; <a href=\"https://home.cern/science/physics/antimatter\">CERN: antimateria</a>; <a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: neutrini</a>."
+      },
+      "table": {
+        "label": "Domande aperte",
+        "caption": "Le osservazioni accertate non accertano una particolare spiegazione basata su nuove particelle.",
+        "columns": {
+          "question": "Domanda",
+          "established": "Che cosa è accertato",
+          "unresolved": "Che cosa resta aperto"
+        },
+        "neutrinos": {
+          "question": "Neutrini",
+          "established": "Oscillazione di sapore e differenze di massa non nulle",
+          "unresolved": "Scala assoluta delle masse e meccanismo che le genera"
+        },
+        "darkMatter": {
+          "question": "Materia oscura",
+          "established": "Prove gravitazionali di materia aggiuntiva",
+          "unresolved": "La sua identità microscopica; i candidati non sono scoperte"
+        },
+        "antimatter": {
+          "question": "Antimateria",
+          "established": "Le antiparticelle esistono; l'universo osservabile è dominato dalla materia",
+          "unresolved": "Il meccanismo che produce l'asimmetria cosmica"
+        }
+      },
+      "deep": {
+        "summary": "Approfondisci: come si mette alla prova un'estensione proposta",
+        "hypotheses": "Ipotesi come gli assioni, la supersimmetria o i neutrini sterili fanno previsioni diverse. Un candidato deve rispettare i vincoli esistenti e produrre conseguenze verificabili; nessuno è confermato solo perché colma una lacuna. Le ricerche ai collisori, gli esperimenti sui neutrini e le ricerche dirette o indirette di materia oscura mettono alla prova ipotesi diverse.",
+        "antiparticles": "Le antiparticelle hanno la stessa massa e lo stesso spin delle loro partner e cariche additive opposte. Il positrone è un anti-elettrone; non è un elettrone di massa negativa. Resta aperta la questione se i neutrini siano antiparticelle di sé stessi."
+      }
+    },
+    "summary": {
+      "title": "Il tuo viaggio continua",
+      "card": {
+        "title": "Costruisci il tuo percorso nella materia",
+        "intro": "Per ogni particella chiediti: è elementare o composta? Quali sono la sua massa, le sue cariche e il suo spin? Quali interazioni possono produrla o rivelarla? Che cosa consente la sua identità quantistica?",
+        "paths": {
+          "electron": "Elettrone → carica ed esclusione",
+          "photon": "Fotone → luce ed energia senza massa",
+          "quarks": "Quark → protoni e confinamento",
+          "higgs": "Higgs → origine delle masse elementari",
+          "signatures": "Firme → prove sperimentali"
+        }
+      },
+      "glossary": {
+        "summary": "Glossario rapido",
+        "field": {
+          "term": "Campo / particella",
+          "definition": "Un campo ha gradi di libertà in tutto lo spaziotempo; una particella è un'eccitazione quantizzata."
+        },
+        "mass": {
+          "term": "Massa / energia",
+          "definition": "La massa a riposo è una proprietà invariante; l'energia dipende anche dal moto e dal sistema di riferimento."
+        },
+        "charge": {
+          "term": "Carica",
+          "definition": "Una proprietà quantistica che regola un accoppiamento; la carica elettrica è solo uno dei tipi."
+        },
+        "state": {
+          "term": "Stato / specie",
+          "definition": "“Elettrone” indica una specie. Uno stato specifica anche i suoi gradi di libertà spaziali e di spin."
+        },
+        "flavor": {
+          "term": "Sapore / generazione",
+          "definition": "Le etichette di sapore distinguono quark o leptoni; le generazioni raggruppano specie affini."
+        },
+        "boson": {
+          "term": "Bosone di gauge / scalare",
+          "definition": "Qui i bosoni di gauge hanno spin 1; l'Higgs è uno scalare di spin 0."
+        }
+      },
+      "references": {
+        "title": "Riferimenti e approfondimenti",
+        "intro": "Le masse sono volutamente arrotondate: non sono un fit di precisione né un flusso di dati in tempo reale. Il catalogo usa l'edizione fissa PDG 2025, così che le sue convenzioni restino tracciabili.",
+        "quarks": "PDG 2025: proprietà dei quark e convenzioni sulle masse",
+        "leptons": "PDG 2025: leptoni",
+        "bosons": "PDG 2025: bosoni di gauge e di Higgs",
+        "cern": "CERN: un'introduzione al Modello Standard",
+        "tong": "David Tong: teoria quantistica dei campi, come passo matematico successivo"
+      }
+    }
+  },
+  "ui": {
+    "language": {
+      "label": "Lingua"
+    },
+    "statistics": {
+      "fermion": "Fermione: particelle identiche non possono condividere uno stato quantistico completo (esclusione di Pauli).",
+      "boson": "Bosone: particelle identiche possono condividere uno stato quantistico completo; nessun limite di occupazione di Pauli."
+    },
+    "properties": {
+      "property": "Proprietà",
+      "type": "Tipo",
+      "restMass": "Massa a riposo",
+      "electricCharge": "Carica elettrica",
+      "spin": "Spin",
+      "chargeUnit": "Carica / e",
+      "spinUnit": "Spin / ℏ",
+      "interactions": "Interazioni",
+      "statistics": "Statistica",
+      "example": "Esempio"
+    },
+    "catalog": {
+      "count": "{shown} di {total} voci di particelle mostrate.",
+      "countNone": "{shown} di {total} voci di particelle mostrate. Nessun risultato; prova ad azzerare i filtri.",
+      "groups": {
+        "quarks": {
+          "title": "Quark",
+          "subtitle": "Fermioni · spin ½ · tre colori"
+        },
+        "leptons": {
+          "title": "Leptoni",
+          "subtitle": "Fermioni · spin ½ · nessun colore"
+        },
+        "bosons": {
+          "title": "Bosoni",
+          "subtitle": "Mediatori di gauge · spin 1 / Higgs · spin 0"
+        }
+      },
+      "mixedMass": "Stati di massa mescolati",
+      "generationShort": "Gen {generation}",
+      "spin": "spin"
+    },
+    "inspector": {
+      "selected": "{name} selezionato. Dettagli aggiornati.",
+      "spinValue": "{spin} (in unità di ℏ)",
+      "massOrigin": "La massa e la sua origine",
+      "quantumRule": "Regola quantistica",
+      "higgsNote": {
+        "yukawa": "La sua massa elementare è associata a un accoppiamento di Yukawa con il campo di Higgs.",
+        "neutrino": "La generazione della massa dei neutrini non è spiegata dal Modello Standard minimo.",
+        "higgs": "La sua massa è fissata dal potenziale di Higgs, non da un termine di Yukawa.",
+        "massless": "Non ha un accoppiamento con l'Higgs che generi massa; accoppiamenti efficaci con l'Higgs possono nascere tramite loop.",
+        "electroweak": "La sua massa nasce dalla rottura della simmetria elettrodebole e dall'accoppiamento con il campo di Higgs."
+      },
+      "chargeNote": {
+        "quark": "Porta colore oltre alla carica elettrica.",
+        "gluon": "Elettricamente neutro ma porta colore.",
+        "neutral": "Carica elettrica nulla non implica l'assenza di ogni accoppiamento.",
+        "charged": "La carica elettrica permette l'accoppiamento con i fotoni."
+      },
+      "paths": {
+        "matter": "Famiglie di materia",
+        "forces": "Forze e mediatori",
+        "higgs": "Massa e Higgs",
+        "quantum": "Spin ed esclusione",
+        "reaction": "Segui una reazione",
+        "detection": "Rivelazione"
+      },
+      "pdgReference": "Riferimento PDG 2025 per le proprietà",
+      "conventions": "Convenzioni e approfondimenti"
+    },
+    "comparison": {
+      "rowA": "Riga A",
+      "columnB": "Colonna B",
+      "corner": "Colonna B →<br>Riga A ↓",
+      "tree": "tree",
+      "loop": "loop",
+      "fermionNote": "Fermione · vale l'esclusione di Pauli",
+      "bosonNote": "Bosone · stati condivisi ammessi",
+      "openGuide": "Apri la guida",
+      "sameFermion": "Fermioni identici devono occupare stati completi diversi, inclusi spin e colore. L'esclusione non impedisce la loro diffusione.",
+      "noRatio": "Non viene mostrato un rapporto di massa finito: un denominatore è privo di massa, oppure un sapore di neutrino non ha un'unica massa. Confronta invece la relazione energia–impulso.",
+      "ratio": "{a} / {b}: rapporto di massa ≈ {ratio}. Valgono i valori arrotondati e le convenzioni sulle masse dei quark."
+    },
+    "state": {
+      "spinUp": "Spin ↑",
+      "spinDown": "Spin ↓",
+      "polarizationA": "Polarizzazione A",
+      "polarizationB": "Polarizzazione B",
+      "assumption": {
+        "electron": "Un orbitale spaziale fissato; due stati di spin distinti. Ogni stato completo può contenere al massimo un elettrone.",
+        "photon": "Un modo della luce fissato; due polarizzazioni indipendenti. Qualunque numero di fotoni identici può occupare ciascuno stato di polarizzazione."
+      },
+      "unit": {
+        "electron": {
+          "one": "elettrone",
+          "other": "elettroni"
+        },
+        "photon": {
+          "one": "fotone",
+          "other": "fotoni"
+        }
+      },
+      "add": "Aggiungi {state}",
+      "start": "Scegli uno stato per aggiungere la prima particella.",
+      "added": "Aggiunto. Questo stato completo ora contiene {count} {unit}. Prova ad aggiungerne un altro.",
+      "blocked": "Bloccato dall'esclusione di Pauli: quello stato completo dell'elettrone è occupato. Prova l'altro stato di spin."
+    },
+    "process": {
+      "chargeCheck": "Carica / e: iniziale {before} → finale {after} · {verdict}",
+      "balanced": "bilanciata",
+      "notConserved": "NON conservata"
+    },
+    "detector": {
+      "layers": [
+        "Tracciatore",
+        "Calorimetro elettromagnetico",
+        "Calorimetro adronico",
+        "Camere a muoni"
+      ],
+      "catalogLink": "Collega al catalogo: {link}."
+    },
+    "scaleCanvas": {
+      "observableUniverse": "Universo osservabile",
+      "galaxy": "Galassia",
+      "solarSystem": "Sistema solare",
+      "earth": "Terra",
+      "human": "Essere umano",
+      "millimeter": "Millimetro",
+      "micrometer": "Micrometro",
+      "nanometer": "Nanometro",
+      "atom": "Atomo",
+      "nucleus": "Nucleo",
+      "quark": "Quark"
+    },
+    "atomCanvas": {
+      "nucleus": "Nucleo",
+      "paths": "Traiettorie schematiche degli elettroni"
+    },
+    "console": {
+      "welcome": "⚛️ Benvenuti nel regno quantistico! ⚛️",
+      "intro": "Hai scoperto la console nascosta! Ecco alcune curiosità sulla fisica delle particelle:",
+      "facts": [
+        "Un cucchiaino di materia di una stella di neutroni peserebbe 6 miliardi di tonnellate",
+        "LHC accelera i protoni fino al 99,9999991% della velocità della luce",
+        "In un bicchiere d'acqua ci sono più atomi di quanti bicchieri d'acqua ci siano in tutti gli oceani"
+      ]
+    }
+  },
+  "model": {
+    "particles": {
+      "up": {
+        "name": "Quark up",
+        "massLabel": "≈ 2,16 MeV/c²",
+        "example": "Due quark di valenza up e uno down formano un protone.",
+        "massNote": "Massa running alla scala di 2 GeV; non è la massa di un quark libero."
+      },
+      "down": {
+        "name": "Quark down",
+        "massLabel": "≈ 4,70 MeV/c²",
+        "example": "Due quark di valenza down e uno up formano un neutrone.",
+        "massNote": "Massa running alla scala di 2 GeV; il confinamento ne impedisce l'isolamento."
+      },
+      "charm": {
+        "name": "Quark charm",
+        "massLabel": "≈ 1,273 GeV/c²",
+        "example": "Charm e anticharm formano il mesone J/ψ.",
+        "massNote": "Massa running valutata alla sua stessa scala di massa."
+      },
+      "strange": {
+        "name": "Quark strange",
+        "massLabel": "≈ 93,5 MeV/c²",
+        "example": "I quark strange compaiono nei kaoni e nei barioni strani.",
+        "massNote": "Massa running alla scala di 2 GeV."
+      },
+      "top": {
+        "name": "Quark top",
+        "massLabel": "≈ 172,6 GeV/c²",
+        "example": "Decade prevalentemente in un bosone W e un quark bottom prima di formare adroni.",
+        "massNote": "Massa da ricostruzione diretta, arrotondata; ad alta precisione non si devono mescolare definizioni di massa diverse."
+      },
+      "bottom": {
+        "name": "Quark bottom",
+        "massLabel": "≈ 4,183 GeV/c²",
+        "example": "Gli adroni con quark bottom producono vertici di decadimento spostati nei rivelatori.",
+        "massNote": "Massa running valutata alla sua stessa scala di massa."
+      },
+      "electron": {
+        "name": "Elettrone",
+        "massLabel": "≈ 0,511 MeV/c²",
+        "example": "Gli elettroni atomici formano gusci e legami chimici; gli elettroni in moto trasportano la corrente elettrica.",
+        "massNote": "Massa a riposo, indipendente dalla velocità. L'elettrone è elementare; il protone è composto."
+      },
+      "muon": {
+        "name": "Muone",
+        "massLabel": "≈ 105,66 MeV/c²",
+        "example": "I muoni dei raggi cosmici raggiungono il suolo e spesso attraversano un intero rivelatore di un collisore.",
+        "massNote": "Circa 207 masse elettroniche; vita media di circa 2,2 μs."
+      },
+      "tau": {
+        "name": "Tau",
+        "massLabel": "≈ 1,777 GeV/c²",
+        "example": "Nei suoi decadimenti deboli produce elettroni, muoni o adroni.",
+        "massNote": "Vita media di circa 290 femtosecondi."
+      },
+      "e_neutrino": {
+        "name": "Neutrino elettronico",
+        "massLabel": "Miscela di sapore; masse ignote",
+        "example": "Prodotto nella fusione solare e nelle interazioni deboli di sapore elettronico.",
+        "massNote": "νₑ è una sovrapposizione degli stati di massa ν₁, ν₂, ν₃. Le oscillazioni misurano differenze dei quadrati delle masse, non una massa per ciascun sapore."
+      },
+      "mu_neutrino": {
+        "name": "Neutrino muonico",
+        "massLabel": "Miscela di sapore; masse ignote",
+        "example": "Prodotto insieme ai muoni nei decadimenti dei pioni carichi.",
+        "massNote": "Stati di sapore e stati di massa sono diversi. Almeno due stati di massa dei neutrini hanno massa non nulla; il più leggero potrebbe essere privo di massa."
+      },
+      "tau_neutrino": {
+        "name": "Neutrino tauonico",
+        "massLabel": "Miscela di sapore; masse ignote",
+        "example": "Identificato tramite interazioni che producono leptoni tau quando l'energia disponibile è sufficiente.",
+        "massNote": "Non esiste una massa a riposo misurata separatamente da assegnare al sapore tau. La generazione della massa dei neutrini richiede fisica oltre il Modello Standard minimo."
+      },
+      "photon": {
+        "name": "Fotone",
+        "massLabel": "0 nel Modello Standard",
+        "example": "Luce visibile, onde radio e raggi X sono fatti di fotoni. I fotoni mediano le interazioni elettromagnetiche.",
+        "massNote": "Massa a riposo nulla non significa energia nulla: E = hf = pc. Per un fotone non esiste un sistema di riposo."
+      },
+      "gluon": {
+        "name": "Gluone",
+        "massLabel": "0 nel Modello Standard",
+        "example": "Otto stati di colore mediano l'interazione forte; i gluoni interagiscono anche con altri gluoni.",
+        "massNote": "Privo di massa ma confinato: l'adronizzazione produce getti anziché gluoni isolati."
+      },
+      "w_boson": {
+        "name": "Bosone W",
+        "massLabel": "≈ 80,37 GeV/c²",
+        "example": "W⁺ e W⁻ mediano i processi deboli di corrente carica, compreso il decadimento beta.",
+        "massNote": "La sua grande massa contribuisce a fissare la breve portata dell'interazione debole. Anche i bosoni W si accoppiano al campo di Higgs."
+      },
+      "z_boson": {
+        "name": "Bosone Z",
+        "massLabel": "≈ 91,19 GeV/c²",
+        "example": "Media la diffusione debole di corrente neutra, compresa la diffusione di neutrini senza produzione di un leptone carico.",
+        "massNote": "Elettricamente neutro ma non privo di interazioni; si accoppia al campo di Higgs e alle correnti deboli."
+      },
+      "higgs": {
+        "name": "Bosone di Higgs",
+        "massLabel": "≈ 125,2 GeV/c²",
+        "example": "L'eccitazione osservata del campo di Higgs; ricostruita dai suoi prodotti di decadimento.",
+        "massNote": "Un bosone scalare, non un mediatore di forza di gauge. La sua massa deriva dal potenziale di Higgs; gli accoppiamenti con fotoni e gluoni avvengono tramite loop."
+      }
+    },
+    "interactions": {
+      "strong": "Forte",
+      "em": "Elettromagnetica",
+      "weak": "Debole",
+      "higgs": "Settore di Higgs"
+    },
+    "families": {
+      "quark": "Quark · fermione",
+      "lepton": "Leptone · fermione",
+      "gauge": "Bosone di gauge",
+      "scalar": "Bosone scalare"
+    },
+    "channels": {
+      "strong": { "label": "Forte" },
+      "em": { "label": "Elettromagnetica" },
+      "weak": { "label": "Debole" },
+      "higgs": { "label": "Settore di Higgs" },
+      "loop": { "label": "Ordine superiore / loop" }
+    },
+    "pair": {
+      "status": {
+        "tree": "Percorso ad albero disponibile",
+        "loop": "Nessun percorso ad albero · ordine superiore"
+      },
+      "explanation": {
+        "fermionPair": "Lo scambio di Z in corrente neutra collega i fermioni. Le coppie cariche si scambiano anche fotoni e possono scambiarsi un Higgs; due quark possono scambiarsi gluoni.",
+        "compton": "La diffusione di tipo Compton usa l'accoppiamento del fotone con il fermione carico. Il fotone stesso non ha bisogno di carica elettrica.",
+        "quarkGluon": "La diffusione quark–gluone usa gli accoppiamenti di colore, comprese le autointerazioni dei gluoni. Gli stati uscenti osservabili adronizzano in getti.",
+        "fermionVector": "I vertici elettrodeboli permettono la diffusione fermione–bosone vettore. I fermioni carichi massivi ammettono anche lo scambio di un Higgs; un fermione carico e un W possono scambiarsi un fotone.",
+        "yukawa": "L'accoppiamento di Yukawa del fermione permette la diffusione Higgs–fermione. L'accoppiamento cresce con la massa del fermione; un canale elencato non è necessariamente grande.",
+        "gluonGluon": "I gluoni portano colore e hanno vertici a tre e a quattro gluoni, quindi diffondono già al livello ad albero.",
+        "photonW": "Il W è elettricamente carico. La diffusione fotone–W prevede lo scambio di un vettore carico e un vertice di contatto.",
+        "zz": "Lo scambio di un Higgs fornisce la diffusione Z–Z ad albero. Non esiste un vertice di gauge elementare a tre Z o a quattro Z.",
+        "higgsHiggs": "Il potenziale di Higgs contiene autoaccoppiamenti cubici e quartici, che permettono la diffusione Higgs–Higgs.",
+        "gaugeHiggs": "I vertici gauge–Higgs e, dove elencati, i vertici di scambio/contatto di gauge permettono la diffusione. L'etichetta H include gli accoppiamenti di W/Z con il settore di Higgs.",
+        "lightByLight": "La diffusione elastica luce–luce non ha un autoaccoppiamento del fotone ad albero. Loop virtuali di particelle cariche la rendono possibile; non è proibita.",
+        "higherOrder": "In questa approssimazione non c'è un percorso elastico ad albero. Diagrammi di ordine superiore possono collegare le particelle tramite stati virtuali; la loro entità e l'ordine dominante dipendono dalla coppia e dall'energia."
+      }
+    },
+    "processes": {
+      "beta": {
+        "label": "Decadimento beta del neutrone libero · debole",
+        "explanation": "Un quark down di valenza si trasforma in un quark up tramite un W⁻ virtuale. L'elettrone e l'antineutrino si dividono l'energia rilasciata; il protone rincula. Un neutrone legato può essere stabile se il bilancio energetico nucleare impedisce il decadimento."
+      },
+      "annihilation": {
+        "label": "Annichilazione · elettromagnetica",
+        "explanation": "Un elettrone e un positrone possono trasformarsi in due fotoni. L'energia a riposo diventa energia dei fotoni, mentre energia e impulso totali restano conservati. Il positrone ha la massa dell'elettrone e carica elettrica opposta."
+      },
+      "higgs": {
+        "label": "Decadimento dell'Higgs · indotto da loop",
+        "explanation": "L'Higgs può decadere in due fotoni tramite loop di particelle cariche, sebbene il fotone non abbia un accoppiamento diretto con l'Higgs che generi massa. Le coppie di fotoni aiutano a ricostruire la massa dell'Higgs."
+      },
+      "forbidden": {
+        "label": "Proibito · la carica elettrica cambierebbe",
+        "explanation": "La conservazione della carica lo esclude: −1 non può diventare 0. Superare il solo controllo della carica non dimostrerebbe comunque che una reazione è possibile; contano anche energia, impulso, momento angolare e gli accoppiamenti disponibili."
+      }
+    },
+    "detector": {
+      "electron": {
+        "name": "Elettrone",
+        "catalogLabel": "Elettrone",
+        "layers": ["Traccia", "Sciame EM", "Poco oltre l'ECAL", "Nessuna traccia di muone"],
+        "why": "Una traccia carica associata a uno sciame elettromagnetico è una tipica firma di un elettrone."
+      },
+      "photon": {
+        "name": "Fotone",
+        "catalogLabel": "Fotone",
+        "layers": ["Nessuna traccia primaria", "Sciame EM", "Poco oltre l'ECAL", "Nessuna traccia di muone"],
+        "why": "Un fotone è neutro e di solito inizia uno sciame nel calorimetro elettromagnetico. La conversione in una coppia elettrone–positrone nel materiale del tracciatore è un'eccezione importante."
+      },
+      "muon": {
+        "name": "Muone",
+        "catalogLabel": "Muone",
+        "layers": ["Traccia", "Piccolo deposito", "Piccolo deposito", "Traccia di muone"],
+        "why": "Una traccia penetrante collega il tracciatore interno alle camere a muoni esterne."
+      },
+      "hadron": {
+        "name": "Adrone carico",
+        "catalogLabel": "un quark up costituente",
+        "layers": ["Traccia", "Un po' di energia", "Sciame adronico", "Di solito si ferma"],
+        "why": "Un pione o un protone è composto. Quark e gluoni adronizzano, quindi gli esperimenti ricostruiscono getti di adroni anziché quark liberi."
+      },
+      "neutrino": {
+        "name": "Neutrino",
+        "catalogLabel": "Neutrino",
+        "layers": ["Nessuna traccia", "Nessun deposito", "Nessun deposito", "Nessuna traccia"],
+        "why": "Di solito sfugge al rivelatore di un collisore. L'impulso trasverso mancante si deduce dallo squilibrio misurato; può nascere anche da altre particelle invisibili o da errori di misura."
+      }
+    }
+  }
+}

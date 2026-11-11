@@ -2,8 +2,18 @@
 An elementary particles "periodic table" in one web page
 
 Run `node serve.js`, then open http://127.0.0.1:3000 in your browser.
-Refresh the browser after editing the HTML. Set `PORT` to use a different port
-(for example, `PORT=8080 node serve.js`).
+Set `PORT` to use a different port (for example, `PORT=8080 node serve.js`).
+
+The page is available in English and Italian. Use the language menu in the
+top-right corner, or open `?lang=it` / `?lang=en`; the choice is remembered in
+the browser.
+
+`elementaryparticles.html` is generated — do not edit it directly. Edit the
+sources in `src/` (`template.html` for structure, `styles.css`, `physics-model.js`,
+`app.js`, and the translations in `src/i18n/en.json` and `src/i18n/it.json`), then
+run `node generate.js` and refresh the browser. Every text change must be made in
+every supported language; the generator refuses to build if a translation is
+missing. `node generate.js --check` reports whether the page is up to date.
 
 The section navigation links to every topic, from the introduction through the
 summary. On small screens, swipe the navigation bar at the bottom to reach more
