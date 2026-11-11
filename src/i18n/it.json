@@ -148,7 +148,8 @@
         "columns": {
           "particle": "Particella",
           "generation": "Generazione"
-        }
+        },
+        "historyHint": "Le intestazioni delle colonne e gli anni di scoperta rimandano al passo della storia che li spiega."
       },
       "inspector": {
         "eyebrow": "Guida alle particelle"
@@ -456,6 +457,314 @@
         "cern": "CERN: un'introduzione al Modello Standard",
         "tong": "David Tong: teoria quantistica dei campi, come passo matematico successivo"
       }
+    },
+    "history": {
+      "labels": {
+        "puzzle": "Il problema",
+        "discovery": "La scoperta",
+        "classification": "Come fu classificato",
+        "fullStory": "Leggi la storia completa di questo passo",
+        "explore": "Esplora nel catalogo:",
+        "previous": "← Passo precedente:",
+        "next": "Passo successivo →",
+        "stepper": "Passi della storia",
+        "heroPath": "Segui la storia delle scoperte",
+        "indexTitle": "I 18 passi della storia",
+        "sectionLink": "Storia di questo argomento:"
+      },
+      "steps": {
+        "intro": {
+          "eyebrow": "Storia · passo 1 di 18 · 1897–2026",
+          "short": "Come leggere questa storia",
+          "title": "Dall'atomo al Modello Standard: come e perché è stata trovata ogni particella",
+          "lead": "Ogni particella elementare che conosciamo è stata trovata perché una scoperta precedente aveva lasciato una domanda senza risposta. Questa storia segue quella catena in 18 passi distribuiti lungo la pagina, dalla prima crepa nell'atomo (1897) al bosone di Higgs (2012) e alle domande ancora aperte nel 2026. Ogni passo si trova accanto alla fisica che spiega, così incontri la storia mentre scopri l'argomento.",
+          "puzzle": "Quale esperimento o teoria non tornava? Ogni passo parte dalla domanda che costrinse i fisici a guardare più a fondo.",
+          "discovery": "Chi trovò la nuova particella, con quale strumento e come la riconobbe.",
+          "classification": "In quale famiglia fu collocata la particella, e perché. Le etichette che usiamo oggi sono state tutte apprese così.",
+          "story": [
+            "<h4>Dove finisce la storia</h4><p>Il Modello Standard di oggi ha 17 particelle fondamentali: 6 quark, 6 leptoni, 4 bosoni portatori di forza (fotone, gluone, W, Z) e il bosone di Higgs. Ognuna ha un'antiparticella, e alcune (come il fotone) sono antiparticella di sé stesse. Tutto il resto (protoni, neutroni, pioni e centinaia di altre particelle) è costruito con i quark.</p>",
+            "<h4>Tre idee da tenere a mente prima di iniziare</h4><ul><li><strong>La massa si misura come energia.</strong> Poiché E = mc², i fisici esprimono le masse in elettronvolt (eV). L'elettrone vale 0,511 MeV, il protone 938 MeV, l'Higgs circa 125 GeV (1 GeV = 1.000 MeV). Una particella più pesante richiede più energia per essere creata, per questo ogni generazione di macchine più grandi ha trovato particelle più pesanti.</li><li><strong>Nessuno vede direttamente una particella.</strong> I rivelatori registrano tracce: una particella carica lascia una scia di atomi ionizzati. Un campo magnetico curva la traccia, e la curvatura dà l'impulso e il segno della carica. Spessore, lunghezza e prodotti di decadimento rivelano la massa e la vita media.</li><li><strong>\"Elementare\" è una parola provvisoria.</strong> L'atomo, il nucleo e il protone furono tutti chiamati elementari finché non si trovò qualcosa al loro interno. Oggi significa che non si è vista alcuna struttura interna, fino a dimensioni almeno mille volte più piccole di un protone.</li></ul>",
+            "<h4>Due motori guidano la storia</h4><p>Le scoperte alternano sorprese e previsioni confermate. Nessuno aveva previsto il muone, le particelle strane o il tau. Il positrone, il neutrino, il pione, l'Ω⁻, il quark charm, W e Z, il quark top e l'Higgs furono tutti previsti prima di essere osservati. Una sorpresa costringe la teoria a crescere; una teoria più ampia prevede qualcosa di nuovo da cercare.</p>"
+          ]
+        },
+        "atom": {
+          "eyebrow": "Storia · passo 2 di 18 · 1808–1908",
+          "short": "L'atomo diventa reale",
+          "title": "Prima delle particelle: l'atomo diventa reale",
+          "lead": "Nel 1900 i chimici usavano gli atomi ogni giorno, ma nessuno sapeva di cosa fosse fatto un atomo, e alcuni fisici dubitavano perfino che esistessero. Quattro indizi suggerivano che l'atomo avesse un interno.",
+          "puzzle": "Le proprietà chimiche si ripetono periodicamente, gli atomi emettono luce solo a colori netti e strani \"raggi catodici\" brillano nei tubi a vuoto. Una pallina davvero indivisibile non spiega nulla di tutto questo.",
+          "discovery": "Einstein (1905) spiegò il moto browniano come urti con molecole invisibili; Jean Perrin lo confermò nel 1908 e contò gli atomi in una data quantità di materia.",
+          "classification": "Dopo il 1908 quasi nessuno dubitava più degli atomi. La domanda aperta divenne: che cosa c'è dentro?",
+          "story": [
+            "<h4>Quattro indizi</h4><ul><li><strong>Chimica.</strong> John Dalton (1808) spiegò perché i composti si formano in proporzioni fisse: ogni elemento è fatto di atomi identici con un peso caratteristico. Dmitri Mendeleev (1869) ordinò gli elementi per peso e trovò che le loro proprietà si ripetono periodicamente. Una pallina indivisibile non ha motivo di ripetere uno schema.</li><li><strong>La luce degli atomi.</strong> Gustav Kirchhoff e Robert Bunsen (1859–60) mostrarono che ogni elemento emette luce solo a colori netti e specifici, un'impronta chiamata spettro. Johann Balmer (1885) trovò una formula semplice per le righe dell'idrogeno. Qualcosa dentro l'atomo vibra solo in pochi modi fissi.</li><li><strong>Elettricità e luce.</strong> James Clerk Maxwell (1865) mostrò che la luce è un'onda elettromagnetica prodotta da cariche in movimento. Se gli atomi emettono luce, devono contenere cariche elettriche in movimento.</li><li><strong>Strani raggi nei tubi di vetro.</strong> Nei tubi a vuoto ad alta tensione un bagliore partiva dall'elettrodo negativo (il catodo). Molti fisici tedeschi pensavano che questi \"raggi catodici\" fossero onde nell'etere; molti fisici britannici pensavano fossero flussi di particelle cariche.</li></ul>",
+            "<h4>Le domande aperte intorno al 1900</h4><ul><li>Che cosa sono i raggi catodici?</li><li>Perché gli atomi emettono solo certi colori?</li><li>Perché le proprietà chimiche si ripetono?</li><li>Che cosa alimenta il Sole, che brilla molto più a lungo di quanto potrebbe durare qualsiasi fuoco chimico?</li></ul><p>Ognuna di queste domande portò, entro trent'anni, a una nuova particella o a una nuova teoria. Il passo successivo apre l'atomo.</p>"
+          ]
+        },
+        "breakingAtom": {
+          "eyebrow": "Storia · passo 3 di 18 · 1895–1919",
+          "short": "Elettrone, nucleo, protone",
+          "title": "Rompere l'atomo: elettrone, nucleo, protone",
+          "lead": "In venticinque anni l'atomo indivisibile fu diviso in un elettrone leggero e negativo e in un nucleo minuscolo, pesante e positivo fatto di protoni. Ogni passo venne dallo studio dei raggi.",
+          "puzzle": "Raggi X (Röntgen, 1895), radioattività (Becquerel, 1896; i Curie, 1898) e raggi catodici: di che cosa sono fatti questi raggi?",
+          "discovery": "J. J. Thomson trovò l'elettrone (1897); Geiger, Marsden e Rutherford trovarono il nucleo (1909–1911); Rutherford trovò il protone (1917–1919).",
+          "classification": "L'elettrone è un componente universale di ogni atomo; il nucleo contiene la carica positiva e quasi tutta la massa; il nucleo di idrogeno, il protone, è un mattone degli altri nuclei.",
+          "story": [
+            "<h4>Il problema: raggi misteriosi</h4><p>Wilhelm Röntgen scoprì i raggi X nel 1895 studiando i tubi a raggi catodici. Cercando un legame tra raggi X e minerali luminescenti, Henri Becquerel trovò nel 1896 che l'uranio emette spontaneamente radiazione penetrante. Marie e Pierre Curie (1898) trovarono due elementi molto più attivi, il polonio e il radio, e coniarono la parola <em>radioattività</em>. Ernest Rutherford classificò la radiazione in base a quanto penetra: i raggi <strong>alfa</strong> si fermano in un foglio di carta, i raggi <strong>beta</strong> attraversano un sottile metallo, i raggi <strong>gamma</strong> (Paul Villard, 1900) attraversano centimetri di piombo. Per queste lettere greche tante particelle hanno nomi greci.</p>",
+            "<h4>La scoperta dell'elettrone (1897)</h4><p>J. J. Thomson deviò i raggi catodici con un campo elettrico e uno magnetico. Bilanciando i due ottenne il rapporto tra carica e massa: circa mille volte più grande che per uno ione idrogeno, e identico qualunque fosse il metallo del catodo.</p><p><strong>Perché ne fece una particella, ed elementare:</strong> i raggi portavano una carica fissa per unità di massa, come proiettili identici, e ogni elemento produceva gli stessi proiettili. Quindi l'<a href=\"#particle-inspector\" data-particle=\"electron\">elettrone</a> doveva essere un componente universale di tutti gli atomi. L'esperimento della goccia d'olio di Robert Millikan (1909–1913) ne misurò direttamente la carica: l'elettrone pesa circa 1/1836 di un atomo di idrogeno. Anche i raggi beta risultarono essere elettroni.</p><p><strong>Il nuovo problema:</strong> gli atomi sono neutri, quindi qualcosa di positivo deve bilanciare gli elettroni. Thomson immaginò un \"panettone\": elettroni sparsi dentro una sfera positiva diffusa.</p>",
+            "<h4>La scoperta del nucleo (1909–1911)</h4><p>Hans Geiger ed Ernest Marsden spararono particelle alfa su una sottile lamina d'oro. La maggior parte passava dritta, ma circa 1 su 8.000 rimbalzava indietro. Un panettone diffuso non avrebbe mai potuto farlo. Rutherford concluse nel 1911 che tutta la carica positiva e quasi tutta la massa stanno in un minuscolo <strong>nucleo</strong>, circa 100.000 volte più piccolo dell'atomo. L'atomo è soprattutto spazio vuoto. Henry Moseley (1913) mostrò poi che ogni elemento è definito dalla carica del suo nucleo, il <strong>numero atomico</strong> Z, che spiegava la tavola periodica meglio del peso atomico.</p>",
+            "<h4>La scoperta del protone (1917–1919)</h4><p>Rutherford sparò particelle alfa nell'azoto gassoso e rivelò nuclei di idrogeno in uscita. Il nucleo di idrogeno è dunque un mattone degli altri nuclei. Nel 1920 lo chiamò <strong>protone</strong>, dal greco <em>protos</em>, \"primo\".</p>",
+            "<h4>Che cosa lasciò aperto questo passo</h4><ul><li><strong>Il problema della massa.</strong> L'elio ha carica 2 ma massa 4. L'ipotesi preferita era protoni più elettroni dentro il nucleo. Il <a href=\"#history-neutron\">passo 4</a> mostra perché fallì.</li><li><strong>Il problema della colla.</strong> I protoni si respingono elettricamente. Che cosa li tiene insieme? Questo porta al <a href=\"#history-pion\">passo 6</a>.</li><li><strong>Il problema della stabilità.</strong> Secondo la fisica classica un elettrone in orbita dovrebbe irraggiare e precipitare nel nucleo in una frazione di secondo. Perché gli atomi sono stabili? Questo porta alla meccanica quantistica (<a href=\"#history-neutron\">passo 4</a>).</li></ul>"
+          ]
+        },
+        "neutron": {
+          "eyebrow": "Storia · passo 4 di 18 · 1913–1932",
+          "short": "Atomi quantistici e il neutrone",
+          "title": "Atomi quantistici e il neutrone",
+          "lead": "La meccanica quantistica risolse i problemi della stabilità atomica e delle righe spettrali. Mostrò anche che il nucleo non poteva contenere elettroni, e questo portò al neutrone.",
+          "puzzle": "Un elettrone compresso in un nucleo richiederebbe molta più energia di quella degli elettroni beta, e lo spin misurato dell'azoto-14 (Rasetti, 1929) contraddiceva il modello protoni + elettroni.",
+          "discovery": "Dopo Bothe e Becker (1930) e i Joliot-Curie (1932), James Chadwick (febbraio 1932) identificò una particella neutra con quasi la massa del protone: il neutrone.",
+          "classification": "Il nucleo divenne protoni + neutroni (nucleoni). Heisenberg li trattò come due stati di una sola particella, distinti dall'isospin: la prima simmetria interna.",
+          "story": [
+            "<h4>La meccanica quantistica risponde ai problemi dell'atomo</h4><ul><li><strong>Niels Bohr, 1913:</strong> gli elettroni possono occupare solo certe orbite. Quando un elettrone salta tra le orbite emette un fotone la cui energia è pari alla differenza. Questo riproduceva esattamente la formula di Balmer per l'idrogeno.</li><li><strong>Louis de Broglie, 1924:</strong> se le onde di luce sono particelle, le particelle possono essere onde. La diffrazione degli elettroni lo confermò nel 1927.</li><li><strong>Werner Heisenberg (1925) ed Erwin Schrödinger (1926)</strong> costruirono la teoria completa. Il principio di indeterminazione di Heisenberg (1927) dice che una particella confinata in un piccolo spazio deve avere un impulso grande e incerto.</li></ul><p>La meccanica quantistica introdusse anche lo <strong>spin</strong>, che divide tutte le particelle in fermioni e bosoni (<a href=\"#history-spin\">passo 12</a>).</p>",
+            "<h4>Il problema: gli elettroni non possono vivere nel nucleo</h4><ol><li><strong>Indeterminazione.</strong> Un elettrone confinato in un nucleo avrebbe bisogno di un'energia enorme, molto più di quella che gli elettroni emessi nel decadimento beta trasportano davvero.</li><li><strong>La \"catastrofe dell'azoto\".</strong> Nel vecchio modello l'azoto-14 contiene 14 protoni + 7 elettroni = 21 particelle di spin ½, quindi il suo spin totale dovrebbe essere semintero. Franco Rasetti lo misurò nel 1929 e lo trovò intero.</li></ol><p>Rutherford aveva già suggerito nel 1920 che nei nuclei potesse esistere una particella neutra con la massa del protone.</p>",
+            "<h4>La scoperta del neutrone (1932)</h4><p>Walther Bothe e Herbert Becker (1930) trovarono che il berillio colpito da particelle alfa emette una radiazione neutra molto penetrante, che interpretarono come raggi gamma. Irène Joliot-Curie e Frédéric Joliot (gennaio 1932) mostrarono che strappa protoni alla paraffina con alta energia; i raggi gamma avrebbero richiesto un'energia inverosimile per farlo. James Chadwick ripeté l'esperimento nel febbraio 1932, misurando il rinculo di nuclei di idrogeno e di azoto. Una sola spiegazione funzionava: una <strong>particella neutra con quasi la massa del protone</strong>, il <strong>neutrone</strong>.</p>",
+            "<h4>Come fu classificato il neutrone</h4><ul><li>Il nucleo divenne <strong>protoni + neutroni</strong>, chiamati insieme <strong>nucleoni</strong>. Azoto-14 = 7 protoni + 7 neutroni = 14 particelle di spin ½, quindi il suo spin è intero, come misurato. Entrambi i problemi furono risolti in un colpo.</li><li>Heisenberg (1932) notò che protone e neutrone hanno quasi la stessa massa e sentono allo stesso modo la forza nucleare. Li trattò come due stati di una sola particella, distinti da un'etichetta chiamata <strong>isospin</strong>: la prima simmetria interna, antenata diretta dei \"sapori\" dei quark del <a href=\"#history-quarks\">passo 8</a>.</li><li>Un neutrone libero decade in circa 15 minuti in un protone e un elettrone. Questo decadimento beta divenne la crisi successiva (<a href=\"#history-neutrino\">passo 14</a>).</li></ul><p>A metà del 1932 il mondo sembrava semplice: protoni, neutroni ed elettroni per la materia, fotoni per la luce. Quella semplicità durò solo pochi mesi.</p>"
+          ]
+        },
+        "map": {
+          "eyebrow": "Storia · passo 5 di 18 · 1897–2012",
+          "short": "La mappa finale e quando fu trovato ogni pezzo",
+          "title": "La classificazione finale: quattro domande e diciassette scoperte",
+          "lead": "Il catalogo qui sopra è il punto d'arrivo della storia. Ogni particella si colloca rispondendo a quattro domande in ordine, e ogni domanda fu appresa in un momento diverso: lo spin nel 1925, la forza forte nel 1947, le famiglie tra il 1962 e il 1975, il ruolo dei bosoni nel 1973. La tabella qui sotto dice quando e come ciascuna delle 17 fu vista per la prima volta, e rimanda al passo che ne racconta la storia.",
+          "puzzle": "Perché queste 17 particelle, ordinate in queste famiglie? Ogni etichetta del catalogo risponde a una domanda sollevata dalla storia.",
+          "discovery": "Dall'elettrone (1897) al bosone di Higgs (2012), più di un secolo di raggi, raggi cosmici, acceleratori e collisori.",
+          "classification": "Lo spin separa la materia dalle forze; la forza forte separa i quark dai leptoni; le famiglie sono copie più pesanti; i portatori di spin 1 si distinguono dall'Higgs di spin 0.",
+          "story": [
+            "<h4>Quattro domande, in ordine</h4><ol><li><strong>Qual è il suo spin?</strong> Un valore semintero ne fa un <strong>fermione</strong> (materia); un valore intero un <strong>bosone</strong> (forze e massa). Vedi il <a href=\"#history-spin\">passo 12</a>.</li><li><strong>Se è un fermione, sente la forza forte?</strong> Sì: <strong>quark</strong>. No: <strong>leptone</strong>. Vedi il <a href=\"#history-pion\">passo 6</a> e il <a href=\"#history-zoo\">passo 7</a>.</li><li><strong>Quale famiglia (generazione)?</strong> Ogni famiglia è una copia più pesante della prima, con cariche identiche. Vedi il <a href=\"#history-mirrors\">passo 15</a> e il <a href=\"#history-completion\">passo 16</a>.</li><li><strong>Se è un bosone, ha spin 1 o 0?</strong> Spin 1: un <strong>bosone di gauge</strong> che trasporta una forza. Spin 0: il <strong>bosone di Higgs</strong>. Vedi il <a href=\"#history-gauge\">passo 10</a> e il <a href=\"#history-higgs\">passo 11</a>.</li></ol><p>Le particelle composte si classificano a parte. Sono tutte <strong>adroni</strong>, e prendono il nome dai quark che contengono.</p>",
+            "<h4>Convenzioni di conteggio</h4><p>Il conteggio di 17 tratta ogni quark come una voce (non tre colori), W⁺ e W⁻ come una sola, e gli 8 gluoni come una sola. Le masse dei neutrini non sono note singolarmente: l'esperimento KATRIN ha posto nel 2025 un limite superiore di 0,45 eV, e poiché le tre masse differiscono di pochissimo il limite vale per tutte e tre. Ogni particella ha anche un'antiparticella (<a href=\"#history-antimatter\">passo 13</a>).</p>",
+            "<h4>Cinque regole che tengono insieme il quadro</h4><ol><li><strong>La materia è fatta di fermioni; le forze sono trasportate da bosoni.</strong></li><li><strong>La forza forte divide i fermioni</strong> in quark e leptoni.</li><li><strong>Tre famiglie, ognuna una copia più pesante.</strong> La materia di tutti i giorni usa solo la prima famiglia: quark up e down, elettroni e neutrini elettronici dal Sole e dalla radioattività. Le particelle della seconda e terza famiglia decadono in una frazione di secondo, quindi compaiono solo nei raggi cosmici e negli acceleratori. Nessuno sa perché ce ne siano tre, né perché le loro masse siano così diverse.</li><li><strong>I quark non compaiono mai da soli</strong>; esistono liberi solo adroni senza colore.</li><li><strong>Ogni particella ha un'antiparticella</strong> con la stessa massa e cariche opposte.</li></ol><p>Un'altra regolarità lega quark e leptoni. In ogni famiglia le cariche elettriche si sommano a zero: tre colori × (+2/3 − 1/3) per i quark, più −1 per il leptone carico, più 0 per il neutrino. Questa cancellazione mantiene la teoria matematicamente coerente, e suggerisce che quark e leptoni possano avere un'origine comune.</p>"
+          ]
+        },
+        "pion": {
+          "eyebrow": "Storia · passo 6 di 18 · 1935–1947",
+          "short": "Yukawa, l'equivoco del muone e il pione",
+          "title": "La colla nucleare: il mesone di Yukawa, l'equivoco del muone e il pione",
+          "lead": "Un portatore previsto della forza nucleare fu cercato, apparentemente trovato, poi dimostrato essere la particella sbagliata da un esperimento nella Roma in guerra. Quello vero, il pione, fu trovato nel 1947. L'impostore, il muone, divenne il primo segno che la natura si ripete in copie.",
+          "puzzle": "I protoni nel nucleo si respingono, eppure i nuclei sono stabili. Deve esistere una forza molto più intensa con un raggio d'azione di circa 10⁻¹⁵ m: la forza nucleare forte.",
+          "discovery": "Yukawa previde un portatore di circa 200 masse elettroniche (1935). Il \"mesotrone\" dei raggi cosmici del 1936–37 si rivelò il muone; il gruppo di Powell trovò il vero pione nel 1947.",
+          "classification": "Massa simile non significa natura simile: conta quali forze sente una particella. Il pione divenne un adrone (mesone); il muone raggiunse l'elettrone tra i leptoni.",
+          "story": [
+            "<h4>La previsione di Yukawa (1935)</h4><p>Hideki Yukawa copiò l'idea del fotone (<a href=\"#history-photon\">passo 9</a>): la forza nucleare è trasportata da una particella scambiata tra nucleoni. Il principio di indeterminazione lega la massa del portatore al raggio d'azione della forza: un fotone senza massa dà un raggio infinito, un portatore pesante un raggio corto. Dalle dimensioni dei nuclei Yukawa stimò circa 200 masse elettroniche, tra l'elettrone e il protone. Queste particelle furono presto chiamate <strong>mesoni</strong>, dal greco <em>mesos</em>, \"di mezzo\".</p>",
+            "<h4>La particella sbagliata (1936–1947)</h4><p>Carl Anderson e Seth Neddermeyer, e separatamente J. C. Street ed E. C. Stevenson, trovarono nei raggi cosmici una particella di circa 200 masse elettroniche, con entrambe le cariche. Tutti pensarono che fosse il mesone di Yukawa.</p><p>A Roma, durante la guerra, nascosti e sotto occupazione, Marcello Conversi, Ettore Pancini e Oreste Piccioni separarono i mesoni cosmici positivi e negativi con ferro magnetizzato e li fermarono in materiali diversi. Una vera particella di Yukawa, una volta ferma, dovrebbe essere inghiottita da un nucleo quasi istantaneamente. Nel ferro i mesoni negativi venivano catturati, ma nel carbonio leggero semplicemente decadevano, come se i nuclei non ci fossero. Fermi, Teller e Weisskopf calcolarono che la particella interagiva con i nuclei circa mille miliardi di volte più debolmente di quanto dovesse fare il mesone di Yukawa: non sentiva affatto la forza forte. Luis Alvarez indicò poi questo esperimento come l'inizio della fisica delle particelle moderna.</p>",
+            "<h4>La scoperta del pione (1947)</h4><p>Il gruppo di Cecil Powell a Bristol (con César Lattes e Giuseppe Occhialini) usò l'<strong>emulsione fotografica</strong>, pellicole spesse che registrano una traccia come una fila di grani d'argento. Esposte in alta montagna (Pic du Midi, Chacaltaya), le lastre mostrarono una particella più pesante, circa 270 masse elettroniche, che si fermava e decadeva in quella più leggera. La più pesante fu chiamata <strong>mesone pi, o pione (π)</strong>; la più leggera <strong>mesone mu, poi <a href=\"#particle-inspector\" data-particle=\"muon\">muone</a> (μ)</strong>. Nel 1948 i pioni furono prodotti al ciclotrone di Berkeley, le prime particelle create in laboratorio. Yukawa ricevette il Nobel nel 1949, Powell nel 1950.</p>",
+            "<h4>Come furono classificati</h4><table><thead><tr><th></th><th>Pione (π)</th><th>Muone (μ)</th></tr></thead><tbody><tr><th>Massa</th><td>circa 273 masse elettroniche (140 MeV)</td><td>circa 207 masse elettroniche (106 MeV)</td></tr><tr><th>Spin</th><td>0 (un bosone)</td><td>½ (un fermione)</td></tr><tr><th>Sente la forza forte?</th><td>Sì</td><td>No</td></tr><tr><th>Cariche</th><td>+, 0, − (un tripletto di isospin)</td><td>− (e + per l'antimuone)</td></tr><tr><th>Raggruppato con</th><td>adroni, in particolare mesoni</td><td>elettrone e neutrino: i leptoni</td></tr></tbody></table><p>Il \"mesone mu\" perse il nome di mesone, riservato alle particelle a interazione forte con spin intero. Il muone si comporta esattamente come un elettrone pesante, salvo che decade in 2,2 microsecondi. Divenne famosa la reazione di Isidor Rabi: \"Chi l'ha ordinato?\". La risposta, le generazioni di particelle, richiese altri trent'anni (<a href=\"#history-mirrors\">passo 15</a> e <a href=\"#history-completion\">passo 16</a>). Il quadro della forza nucleare mediata dai pioni fu poi capito come un'approssimazione: il pione è fatto di quark, e la forza forte è in realtà trasportata dai gluoni.</p>"
+          ]
+        },
+        "zoo": {
+          "eyebrow": "Storia · passo 7 di 18 · 1947–1964",
+          "short": "Lo zoo delle particelle",
+          "title": "Lo zoo delle particelle: stranezza, risonanze e nuove famiglie",
+          "lead": "In meno di vent'anni il numero di particelle \"elementari\" note passò da una manciata a più di cento. Questa esplosione costrinse i fisici a ordinare le particelle in famiglie, e fece sospettare che la maggior parte di esse non potesse affatto essere elementare.",
+          "puzzle": "Le \"particelle V\" del 1947 (kaoni, la Λ) erano prodotte rapidamente dalla forza forte ma vivevano circa 10⁻¹⁰ s, un tempo tipico della forza debole. Perché create in modo forte ma distrutte in modo debole?",
+          "discovery": "Rochester e Butler videro i primi eventi V nel 1947; Gell-Mann e Nishijima li spiegarono con la stranezza (1953). Acceleratori e camere a bolle trovarono poi l'antiprotone e decine di risonanze di vita brevissima.",
+          "classification": "Le particelle furono ordinate prima per massa (leptoni, mesoni, barioni), poi per le forze che sentono e il loro spin. Le particelle a interazione forte divennero adroni.",
+          "story": [
+            "<h4>La sorpresa: le particelle strane (1947–1953)</h4><p>Nel dicembre 1947 George Rochester e Clifford Butler a Manchester fotografarono due eventi in camera a nebbia a forma di \"V\": una particella neutra invisibile era decaduta in due cariche. Negli anni seguenti queste divennero i <strong>kaoni (K)</strong> e una particella più pesante del protone, la <strong>lambda (Λ)</strong>. Le particelle più pesanti dei nucleoni furono chiamate <strong>iperoni</strong> (Λ, Σ, Ξ).</p><p><strong>La soluzione: la stranezza (1953).</strong> Abraham Pais notò che sono sempre prodotte in coppia. Murray Gell-Mann e, indipendentemente, Kazuhiko Nishijima proposero una nuova grandezza conservata, la <strong>stranezza</strong>. La forza forte la conserva, quindi crea particelle strane in coppia (+1 e −1); solo la forza debole può cambiarla, quindi il decadimento è lento. Oggi la stranezza conta il <a href=\"#particle-inspector\" data-particle=\"strange\">quark strange</a>.</p>",
+            "<h4>Gli acceleratori prendono il sopravvento</h4><ul><li><strong>Cosmotron</strong> (Brookhaven, 1953, 3,3 GeV): il primo a produrre particelle strane a volontà, confermando la produzione in coppia.</li><li><strong>Bevatron</strong> (Berkeley, 1954, 6,2 GeV): costruito con energia appena sufficiente per creare coppie protone–antiprotone. Nel 1955 Emilio Segrè, Owen Chamberlain, Clyde Wiegand e Thomas Ypsilantis trovarono l'<strong>antiprotone</strong>; l'antineutrone seguì nel 1956.</li><li><strong>Camera a bolle</strong> (Donald Glaser, 1952): una vasca di liquido surriscaldato in cui le particelle lasciano scie di bolle. Le grandi camere a idrogeno liquido di Luis Alvarez registrarono milioni di fotografie.</li></ul>",
+            "<h4>Risonanze: particelle che vivono troppo poco per lasciare una traccia</h4><p>Nel 1952 il gruppo di Fermi a Chicago fece urtare pioni su protoni. La frequenza delle collisioni aveva un picco netto a un'energia totale di circa 1.232 MeV. Questo picco è una particella, oggi chiamata <strong>Δ (Delta)</strong>, che vive solo circa 10⁻²³ s: non lascia tracce e appare solo come una gobba in un grafico delle energie. Negli anni Sessanta le camere a bolle rivelarono decine di queste <strong>risonanze</strong> (ρ, ω, K*, Σ*, …). Si racconta che Fermi scherzasse dicendo che, se avesse ricordato tutti i loro nomi, sarebbe diventato botanico.</p>",
+            "<h4>La prima classificazione: per massa, poi per forza</h4><table><thead><tr><th>Gruppo</th><th>Radice greca</th><th>Definizione moderna</th><th>Esempi</th></tr></thead><tbody><tr><th>Leptoni</th><td><em>leptos</em>, leggero o piccolo</td><td>particelle di spin ½ che <strong>non</strong> sentono la forza forte</td><td>elettrone, muone, neutrini</td></tr><tr><th>Mesoni</th><td><em>mesos</em>, di mezzo</td><td>particelle a interazione forte con spin intero (numero barionico 0)</td><td>π, K, ρ</td></tr><tr><th>Barioni</th><td><em>barys</em>, pesante</td><td>particelle a interazione forte con spin semintero (numero barionico 1)</td><td>protone, neutrone, Λ, Σ, Ξ, Δ</td></tr><tr><th>Adroni</th><td><em>hadros</em>, spesso o forte (Lev Okun, 1962)</td><td>tutto ciò che sente la forza forte: mesoni + barioni</td><td>tutti i precedenti tranne i leptoni</td></tr></tbody></table><p>I nomi basati sulla massa divennero presto fuorvianti: il leptone tau è più pesante del protone, e alcuni mesoni sono più pesanti della maggior parte dei barioni. I nomi rimasero, ma le definizioni passarono da <strong>\"quanto pesa\"</strong> a <strong>\"quali forze sente e che spin ha\"</strong>. Anche nuove leggi di conservazione divennero strumenti di classificazione: il <strong>numero barionico</strong> (per questo il protone, il barione più leggero, non può decadere), il <strong>numero leptonico</strong>, la <strong>stranezza</strong> e l'<strong>isospin</strong>.</p>",
+            "<h4>L'indizio di qualcosa di più profondo</h4><ol><li><strong>Troppe particelle.</strong> Cento particelle \"elementari\" ricordavano i tanti elementi chimici prima della tavola periodica: segno di mattoni nascosti.</li><li><strong>Hanno una dimensione.</strong> Robert Hofstadter (Stanford, anni Cinquanta) fece rimbalzare elettroni sui protoni e misurò un raggio di circa 0,8 × 10⁻¹⁵ m, con la carica distribuita all'interno. I leptoni, invece, si comportavano come punti.</li></ol><p>La ricerca di un ordine tra gli adroni è il passo successivo.</p>"
+          ]
+        },
+        "quarks": {
+          "eyebrow": "Storia · passo 8 di 18 · 1961–1973",
+          "short": "Ottuplice via, quark e colore",
+          "title": "Ordine dal caos: l'Ottuplice via, i quark e il colore",
+          "lead": "I cento adroni si rivelarono combinazioni di sole tre particelle più piccole, i quark, tenute insieme da un nuovo tipo di carica chiamato colore. La prova arrivò in cinque tappe: uno schema, una previsione, un modello, una correzione e uno sguardo diretto dentro il protone.",
+          "puzzle": "C'è un ordine tra gli adroni? E se sono fatti di pezzi più piccoli, perché nessuno ha mai visto uno di quei pezzi da solo?",
+          "discovery": "Gell-Mann e Ne'eman trovarono l'Ottuplice via (1961); l'Ω⁻ la confermò (1964); Gell-Mann e Zweig proposero i quark (1964); SLAC vide partoni puntiformi dentro il protone (1968).",
+          "classification": "I barioni sono tre quark, i mesoni un quark e un antiquark. Ogni quark porta uno di tre colori, e solo le combinazioni senza colore esistono libere.",
+          "story": [
+            "<h4>Tappa 1: lo schema (1961)</h4><p>Murray Gell-Mann e Yuval Ne'eman, indipendentemente, disposero gli adroni dello stesso spin su un grafico di stranezza contro carica elettrica. Le particelle formavano figure regolari: esagoni di 8 (<strong>ottetti</strong>) e triangoli di 10 (<strong>decupletti</strong>). La matematica dietro le figure è il gruppo di simmetria SU(3). Gell-Mann chiamò lo schema <strong>Ottuplice via</strong>. L'ottetto dei barioni di spin ½ è p, n, Λ, Σ⁺, Σ⁰, Σ⁻, Ξ⁰, Ξ⁻; l'ottetto dei mesoni di spin 0 è π⁺, π⁰, π⁻, K⁺, K⁰, anti-K⁰, K⁻, η.</p>",
+            "<h4>Tappa 2: la previsione dell'Ω⁻ (1962–1964)</h4><p>I barioni di spin 3/2 formavano un triangolo di 10 posti, ma si conoscevano solo 9 particelle. A una conferenza al CERN nel 1962 Gell-Mann previde quella mancante: carica −1, stranezza −3, una massa circa 150 MeV sopra la riga precedente e una vita lunga, perché poteva decadere solo tramite la forza debole. Nel febbraio 1964 un gruppo di Brookhaven con camera a bolle guidato da Nicholas Samios la trovò in una sola fotografia tra decine di migliaia: l'equivalente, in fisica delle particelle, di Mendeleev che prevedeva elementi ignoti dalle caselle vuote della sua tavola. Nel decupletto qui sotto, ogni riga verso il basso sostituisce un quark leggero con un quark strange più pesante.</p>",
+            "<h4>Tappa 3: i quark (1964)</h4><p>Gell-Mann e George Zweig (al CERN) proposero, indipendentemente, che tutti gli adroni siano costruiti da tre particelle più piccole con <strong>carica elettrica frazionaria</strong>. Gell-Mann le chiamò <strong>quark</strong>, da un verso del <em>Finnegans Wake</em> di James Joyce; Zweig le chiamò \"assi\".</p><table><thead><tr><th>Quark</th><th>Simbolo</th><th>Carica elettrica</th><th>Stranezza</th></tr></thead><tbody><tr><th><a href=\"#particle-inspector\" data-particle=\"up\">up</a></th><td>u</td><td>+2/3</td><td>0</td></tr><tr><th><a href=\"#particle-inspector\" data-particle=\"down\">down</a></th><td>d</td><td>−1/3</td><td>0</td></tr><tr><th><a href=\"#particle-inspector\" data-particle=\"strange\">strange</a></th><td>s</td><td>−1/3</td><td>−1</td></tr></tbody></table><ul><li><strong>Barioni = tre quark:</strong> protone = uud (2/3 + 2/3 − 1/3 = +1), neutrone = udd (0), Λ = uds, Ω⁻ = sss.</li><li><strong>Mesoni = un quark + un antiquark:</strong> π⁺ = u + anti-d, K⁺ = u + anti-s.</li></ul><p>Vecchie etichette trovarono un significato: la stranezza conta i quark strange, l'isospin riflette le masse quasi uguali di u e d, il numero barionico vale +1/3 per quark. Ma nessuna particella libera con carica frazionaria fu mai trovata, e molti fisici, Gell-Mann compreso, trattavano i quark come un espediente contabile.</p>",
+            "<h4>Tappa 4: il colore (1964–1965)</h4><p><strong>Il problema:</strong> la Δ⁺⁺ è uuu e l'Ω⁻ è sss, con i tre spin tutti nello stesso verso. Questo mette tre fermioni identici nello stesso stato, cosa vietata dal principio di esclusione di Pauli. Oscar Greenberg (1964), poi Moo-Young Han e Yoichiro Nambu (1965), proposero che ogni quark porti una carica in più con tre valori possibili, poi chiamata <strong>colore</strong>: rosso, verde e blu. I tre quark s dell'Ω⁻ hanno colori diversi, quindi non sono identici. Esistono libere solo combinazioni <strong>senza colore</strong>: rosso + verde + blu (un barione) o un colore più il suo anticolore (un mesone). Gli esperimenti contarono poi i colori: il decadimento del pione neutro in due fotoni e la frequenza di produzione di adroni nelle collisioni elettrone–positrone (ad ADONE a Frascati e a SLAC) richiedono entrambi esattamente tre colori.</p>",
+            "<h4>Tappa 5: vedere dentro il protone (1967–1973)</h4><p>A SLAC un acceleratore lineare di 3 km sparava elettroni da 20 GeV sui protoni. Jerome Friedman, Henry Kendall e Richard Taylor trovarono molti più elettroni rimbalzati a grandi angoli di quanto permetta un protone uniforme: l'esperimento della lamina d'oro di Rutherford ripetuto un livello più in profondità. Richard Feynman (1969) interpretò il risultato: il protone contiene pezzi puntiformi, che chiamò <strong>partoni</strong>. Risultarono avere spin ½, e gli esperimenti con neutrini nella camera a bolle Gargamelle al CERN (1973) confermarono le loro cariche frazionarie e che il protone ne contiene tre. <strong>I partoni erano i quark.</strong> Premio Nobel 1990.</p><p>Una misura non tornava: i quark portano solo circa metà dell'impulso del protone. L'altra metà appartiene a partoni elettricamente neutri, poi identificati come <a href=\"#particle-inspector\" data-particle=\"gluon\">gluoni</a>. E un nuovo problema: colpiti con forza, i quark si comportano come quasi liberi, eppure nessun quark sfugge mai. Il <a href=\"#history-gauge\">passo 10</a> dà la risposta.</p>"
+          ]
+        },
+        "photon": {
+          "eyebrow": "Storia · passo 9 di 18 · 1900–1948",
+          "short": "La luce diventa particella: il fotone",
+          "title": "La luce diventa particella: il fotone",
+          "lead": "Il fotone fu la prima particella scoperta dalla teoria prima di essere accettata dall'esperimento, e divenne il modello di ogni portatore di forza trovato in seguito.",
+          "puzzle": "La fisica classica prevedeva che un corpo caldo irraggiasse energia infinita alle lunghezze d'onda corte. Planck (1900) corresse la formula supponendo che l'energia sia emessa in pacchetti, E = h × f.",
+          "discovery": "Einstein (1905) propose che la luce stessa sia fatta di quanti; Millikan (1914–16) confermò la previsione fotoelettrica; Compton (1923) mostrò che i raggi X urtano gli elettroni come palle da biliardo.",
+          "classification": "Senza massa, neutro, spin 1. Nella QED la forza elettrica è uno scambio di fotoni: ogni forza ha la propria particella portatrice, un bosone di gauge.",
+          "story": [
+            "<h4>La scoperta</h4><ul><li><strong>Einstein, 1905:</strong> la luce è fatta di quanti. Questo spiegava l'effetto fotoelettrico: la luce strappa elettroni a un metallo, ma la loro energia dipende dal colore della luce, non dalla sua intensità, e la luce rossa sotto una soglia non libera alcun elettrone, per quanto intensa. Un'onda non potrebbe farlo; un flusso di pacchetti sì.</li><li><strong>Millikan, 1914–1916:</strong> cercò di smentire Einstein e invece ne confermò con precisione la previsione.</li><li><strong>Arthur Compton, 1923:</strong> i raggi X che rimbalzano sugli elettroni perdono energia esattamente come in un urto tra due palle da biliardo, con la luce che trasporta impulso. Questo convinse la maggior parte dei fisici. Il nome <strong>fotone</strong> fu coniato da Gilbert Lewis nel 1926.</li></ul><p>La luce è sia onda sia particella; questo <strong>dualismo onda–particella</strong> vale per tutte le particelle.</p>",
+            "<h4>Perché il fotone conta per la classificazione</h4><p>Il <a href=\"#particle-inspector\" data-particle=\"photon\">fotone</a> non ha massa, non ha carica elettrica e ha spin 1. Nell'elettrodinamica quantistica (QED), completata intorno al 1948 da Richard Feynman, Julian Schwinger, Sin-Itiro Tomonaga e Freeman Dyson, la forza elettrica tra due cariche è uno scambio di fotoni. È l'idea chiave per tutto ciò che segue: <strong>ogni forza è trasportata da una propria particella.</strong> Un portatore senza massa dà una forza di raggio infinito. Nel 1935 questa idea portò Yukawa a prevedere un portatore della forza nucleare (<a href=\"#history-pion\">passo 6</a>); in seguito portò a W, Z e gluone. Tutti i portatori di forza sono oggi raggruppati come <strong>bosoni di gauge</strong>.</p>"
+          ]
+        },
+        "gauge": {
+          "eyebrow": "Storia · passo 10 di 18 · 1954–1973",
+          "short": "Le forze come teorie di gauge",
+          "title": "Le forze come teorie di gauge",
+          "lead": "Tra il 1954 e il 1973 i teorici riscrissero tutte e tre le forze delle particelle in un linguaggio comune, la teoria di gauge, in cui una simmetria detta sia la forza sia le sue particelle portatrici. Questo quadro previde il quark charm, i bosoni W e Z, i gluoni e il bosone di Higgs prima che venissero osservati.",
+          "puzzle": "L'interazione debole puntiforme di Fermi dà probabilità impossibili ad alta energia, e la simmetria di Yang–Mills richiede portatori senza massa, mentre la forza debole ha un raggio minuscolo.",
+          "discovery": "Unificazione elettrodebole (Glashow, Weinberg, Salam, 1961–68), correnti neutre in Gargamelle (CERN, 1973), e QCD con la libertà asintotica (Gross, Wilczek, Politzer, 1973).",
+          "classification": "Forte: 8 gluoni del colore SU(3). Elettrodebole: W⁺, W⁻, Z⁰ e il fotone di SU(2) × U(1). Insieme: SU(3) × SU(2) × U(1), il nucleo del Modello Standard.",
+          "story": [
+            "<h4>L'idea: la simmetria crea le forze</h4><p>Nella QED l'onda quantistica dell'elettrone ha una fase, una specie di lancetta interna. Le equazioni restano uguali se si ruota quella lancetta della stessa quantità ovunque: una simmetria <em>globale</em>. Se si pretende di poterla ruotare di una quantità diversa in ogni punto (una simmetria <em>locale</em> o <strong>di gauge</strong>), le equazioni funzionano solo aggiungendo un nuovo campo che compensi. Quel campo è esattamente il campo elettromagnetico, e il suo quanto è il fotone. <strong>La simmetria richiede il portatore della forza.</strong> Chen-Ning Yang e Robert Mills (1954) applicarono la stessa ricetta a simmetrie più ricche. I loro portatori, a differenza del fotone, hanno carica propria e interagiscono tra loro. Il difetto: la simmetria richiedeva portatori senza massa, ma la forza debole ne richiede di pesanti. La via d'uscita, il meccanismo di Higgs, è il <a href=\"#history-higgs\">passo 11</a>.</p>",
+            "<h4>Unificazione elettrodebole (1961–1971)</h4><ul><li><strong>Sheldon Glashow (1961)</strong> unì le forze debole ed elettromagnetica in un unico gruppo di simmetria con quattro portatori: W⁺, W⁻, uno Z⁰ neutro e il fotone.</li><li><strong>Steven Weinberg (1967) e Abdus Salam (1968)</strong> aggiunsero il meccanismo di Higgs. W e Z diventano pesanti, circa 85–100 volte la massa del protone, e questo rende la forza debole di corto raggio e \"debole\". Il fotone resta senza massa.</li><li><strong>Gerard 't Hooft e Martinus Veltman (1971)</strong> dimostrarono che la teoria dà previsioni finite e calcolabili (è <em>rinormalizzabile</em>). Premi Nobel 1979 e 1999.</li></ul><p>La teoria prevedeva le <strong>correnti neutre</strong>: interazioni deboli trasportate dallo Z in cui un neutrino viene diffuso e resta un neutrino.</p>",
+            "<h4>Il charm viene previsto (1970)</h4><p>Alcuni decadimenti dei kaoni che cambiano la stranezza senza cambiare la carica erano molto più rari di quanto prevedesse la teoria a tre quark. Sheldon Glashow, John Iliopoulos e Luciano Maiani (il <strong>meccanismo GIM</strong>) mostrarono che il problema scompare se esiste un quarto quark. Chiamato <strong>charm</strong>, si sarebbe accoppiato allo strange come l'up al down, dando due famiglie di quark (u, d) e (c, s) in corrispondenza delle due famiglie di leptoni.</p>",
+            "<h4>Le correnti neutre vengono trovate (1973)</h4><p>La camera a bolle Gargamelle al CERN, esposta a un fascio di neutrini, registrò eventi in cui un neutrino colpiva un elettrone o un nucleo e ne usciva solo il neutrino: nessun muone. Erano le correnti neutre previste, la prima prova diretta dello <a href=\"#particle-inspector\" data-particle=\"z_boson\">Z</a>, e la prima grande scoperta del CERN.</p>",
+            "<h4>Cromodinamica quantistica (1973)</h4><p>Il colore (<a href=\"#history-quarks\">passo 8</a>) fu trasformato in una simmetria di gauge. La teoria della forza forte che ne risulta è la <strong>cromodinamica quantistica (QCD)</strong>, formulata da Harald Fritzsch, Gell-Mann e Heinrich Leutwyler. Ha <strong>8 gluoni</strong>, e poiché i gluoni portano essi stessi colore, i gluoni attraggono altri gluoni. David Gross e Frank Wilczek, e indipendentemente David Politzer, mostrarono che la forza forte diventa <strong>più debole a piccole distanze</strong>: la <strong>libertà asintotica</strong>, che spiega perché i quark colpiti con forza a SLAC sembravano quasi liberi (Premio Nobel 2004). A grandi distanze la forza non si indebolisce: allontanare due quark stira un tubo di campo gluonico finché l'energia accumulata crea una nuova coppia quark–antiquark e il tubo si spezza in due adroni. Questo è il <strong>confinamento</strong>. In una collisione ad alta energia un quark colpito appare come uno stretto getto di adroni, un <strong>jet</strong>.</p>",
+            "<h4>Il risultato: le forze del Modello Standard</h4><table><thead><tr><th>Forza</th><th>Simmetria</th><th>Portatori</th><th>Massa del portatore</th><th>Raggio</th><th>Agisce su</th></tr></thead><tbody><tr><th>Forte</th><td>SU(3) di colore</td><td>8 gluoni</td><td>0</td><td>circa 10⁻¹⁵ m (confinata)</td><td>quark, gluoni</td></tr><tr><th>Elettromagnetica</th><td>U(1), ciò che resta dopo la rottura di simmetria</td><td>fotone</td><td>0</td><td>infinito</td><td>particelle elettricamente cariche</td></tr><tr><th>Debole</th><td>SU(2) × U(1), rotta dal campo di Higgs</td><td>W⁺, W⁻, Z⁰</td><td>80,4 e 91,2 GeV</td><td>circa 10⁻¹⁸ m</td><td>tutti i quark e i leptoni</td></tr><tr><th>Gravità</th><td>non fa parte del Modello Standard</td><td>gravitone (ipotetico)</td><td>0</td><td>infinito</td><td>tutto ciò che ha energia</td></tr></tbody></table><p>Nel 1973 gli ingredienti chiave erano ancora previsioni: il charm, W e Z, il gluone, il bosone di Higgs e (da Kobayashi e Maskawa, <a href=\"#history-mirrors\">passo 15</a>) una terza famiglia. I quarant'anni successivi servirono a trovarli.</p>"
+          ]
+        },
+        "higgs": {
+          "eyebrow": "Storia · passo 11 di 18 · 1964–2013",
+          "short": "Il meccanismo di Higgs e il bosone di Higgs",
+          "title": "Il meccanismo di Higgs (1964) e il bosone di Higgs (2012)",
+          "lead": "La simmetria di gauge richiedeva portatori senza massa, eppure W e Z sono pesanti. La risposta, un campo che riempie tutto lo spazio, fu proposta nel 1964 e confermata 48 anni dopo, quando il bosone di Higgs divenne l'ultima particella del Modello Standard a essere osservata.",
+          "puzzle": "Come può una teoria di gauge avere portatori pesanti senza rompere la simmetria che la fa funzionare?",
+          "discovery": "Englert e Brout; Higgs; Guralnik, Hagen e Kibble (1964). ATLAS e CMS a LHC annunciarono un bosone di circa 125 GeV il 4 luglio 2012.",
+          "classification": "Spin 0, nessuna carica: l'unico scalare fondamentale. Non è un portatore di forza come i bosoni di gauge; i suoi accoppiamenti crescono con la massa di ogni particella.",
+          "story": [
+            "<h4>Il meccanismo di Higgs (1964)</h4><p>Ispirati dal lavoro di Yoichiro Nambu sulla superconduttività, tre gruppi trovarono la via d'uscita nel 1964: François Englert e Robert Brout; Peter Higgs; e Gerald Guralnik, Carl Hagen e Tom Kibble. Si supponga che un nuovo campo riempia tutto lo spazio e abbia un valore non nullo anche nel vuoto. La simmetria vale ancora nelle equazioni ma è nascosta nello stato del vuoto (<strong>rottura spontanea di simmetria</strong>). I portatori che interagiscono con questo campo acquistano massa; quelli che non interagiscono restano senza massa. Higgs fece notare che la teoria lascia una traccia fisica: una nuova particella, l'increspatura del campo stesso, il <strong>bosone di Higgs</strong>. Weinberg e Salam usarono il meccanismo nella teoria elettrodebole (<a href=\"#history-gauge\">passo 10</a>), dove anche l'elettrone e le altre particelle di materia ottengono la massa dal campo di Higgs.</p>",
+            "<h4>Il bosone di Higgs (2012)</h4><p>LEP al CERN aveva escluso un Higgs più leggero di 114 GeV. Il <strong>Large Hadron Collider (LHC)</strong>, che fa collidere protoni nel vecchio tunnel di LEP, iniziò la presa dati nel 2010. Il 4 luglio 2012 l'esperimento <strong>ATLAS</strong> (portavoce Fabiola Gianotti) e l'esperimento <strong>CMS</strong> (portavoce Joe Incandela) annunciarono un nuovo bosone di circa 125 GeV, visto decadere in due fotoni e in quattro leptoni. Misure successive mostrarono spin 0 e accoppiamenti proporzionali alla massa, come richiede il meccanismo di Higgs. François Englert e Peter Higgs ricevettero il Premio Nobel nel 2013. Con l'<a href=\"#particle-inspector\" data-particle=\"higgs\">Higgs</a>, ogni particella del Modello Standard era stata osservata.</p>"
+          ]
+        },
+        "spin": {
+          "eyebrow": "Storia · passo 12 di 18 · 1922–1940",
+          "short": "Spin, Pauli e la grande divisione",
+          "title": "Spin, Pauli e la grande divisione: fermioni e bosoni",
+          "lead": "Lo spin produsse la divisione più profonda di tutta la fisica delle particelle. L'esperimento di occupazione qui sopra è la regola che Pauli scoprì nel 1925, ed è il motivo per cui la materia occupa spazio.",
+          "puzzle": "Stern e Gerlach (1922) fecero passare atomi d'argento in un campo magnetico e videro il fascio dividersi esattamente in due. E perché gli elettroni riempiono gli atomi guscio per guscio?",
+          "discovery": "Uhlenbeck e Goudsmit (1925): l'elettrone ha un momento angolare intrinseco, lo spin ½. Pauli (1925): due elettroni non possono condividere lo stesso stato quantistico.",
+          "classification": "Spin semintero: fermioni (materia). Spin intero: bosoni (forze e campi). Pauli dimostrò nel 1940 che spin e comportamento sono sempre legati in questo modo.",
+          "story": [
+            "<h4>Lo spin: una nuova carta d'identità per le particelle</h4><p>Nel 1925 George Uhlenbeck e Samuel Goudsmit spiegarono la divisione di Stern–Gerlach: l'elettrone ha un proprio momento angolare intrinseco, chiamato <strong>spin</strong>, di valore ½ in unità quantistiche. Lo spin è un'etichetta fondamentale quanto la massa o la carica, e può essere solo un numero intero o semintero: 0, ½, 1, 3/2, 2.</p>",
+            "<h4>Il principio di esclusione di Pauli e la grande divisione</h4><p>Wolfgang Pauli (1925) stabilì che due elettroni non possono occupare lo stesso stato quantistico. Gli elettroni riempiono quindi gli atomi guscio per guscio, e i gusci esterni ripetono il loro schema: questo spiegò finalmente la tavola periodica di Mendeleev. Nel 1926 Enrico Fermi e Paul Dirac mostrarono che tutte le particelle di spin semintero obbediscono a questa regola; prima, Satyendra Bose ed Einstein (1924–25) avevano descritto il comportamento opposto delle particelle di spin intero.</p><table><thead><tr><th>Classe</th><th>Spin</th><th>Comportamento</th><th>Ruolo in natura</th><th>Nome da</th></tr></thead><tbody><tr><th>Fermioni</th><td>½, 3/2, …</td><td>rifiutano di condividere uno stato; \"occupano spazio\"</td><td>materia</td><td>Enrico Fermi</td></tr><tr><th>Bosoni</th><td>0, 1, 2, …</td><td>si accumulano volentieri nello stesso stato</td><td>forze e campi (un laser è miliardi di fotoni in un solo stato)</td><td>Satyendra Bose</td></tr></tbody></table><p>Per questo, oggi, le particelle di materia (quark, leptoni) sono tutte fermioni e i portatori di forza sono tutti bosoni. Nel <a href=\"#history-antimatter\">passo 13</a>, lo spin ½ emerge automaticamente dall'equazione di Dirac.</p>"
+          ]
+        },
+        "antimatter": {
+          "eyebrow": "Storia · passo 13 di 18 · 1912–1956",
+          "short": "Antimateria: Dirac e il positrone",
+          "title": "Antimateria: l'equazione di Dirac e il positrone",
+          "lead": "Il positrone, la prima antiparticella, fu previsto dalla pura matematica e trovato nei raggi cosmici quattro anni dopo. Raddoppiò in un colpo il numero delle particelle: ogni particella ha un'antiparticella.",
+          "puzzle": "L'equazione di Schrödinger ignora la relatività, ma gli elettroni negli atomi pesanti si muovono vicino alla velocità della luce. L'equazione relativistica di Dirac (1928) produceva soluzioni a energia negativa.",
+          "discovery": "Dirac previde un anti-elettrone (1931). Carl Anderson lo fotografò nei raggi cosmici nel 1932; Blackett e Occhialini videro raggi gamma trasformarsi in coppie elettrone–positrone (1933).",
+          "classification": "Ogni particella ha un'antiparticella con la stessa massa e lo stesso spin e cariche opposte; alcune particelle neutre, come il fotone, sono antiparticella di sé stesse.",
+          "story": [
+            "<h4>Il problema: la meccanica quantistica ignorava la relatività</h4><p>Paul Dirac (1928) scrisse un'equazione per l'elettrone che rispetta la relatività di Einstein. Produsse due sorprese: <strong>lo spin ½ usciva automaticamente</strong>, come conseguenza dell'unione di relatività e meccanica quantistica, e c'erano <strong>soluzioni a energia negativa</strong>. Dirac interpretò dapprima gli stati mancanti a energia negativa come protoni, ma altri mostrarono che la \"lacuna\" doveva avere esattamente la massa dell'elettrone. Nel 1931 Dirac previde un <strong>anti-elettrone</strong>: stessa massa, carica opposta.</p>",
+            "<h4>Dove cercare: i raggi cosmici</h4><p>Nel 1912 Victor Hess portò rivelatori in volo su palloni e trovò che la radiazione aumenta con la quota: viene dallo spazio. Questi <strong>raggi cosmici</strong> colpiscono l'atmosfera con energie che nessun laboratorio poteva produrre, e fino agli anni Cinquanta furono la principale fonte di nuove particelle.</p>",
+            "<h4>La scoperta del positrone (1932)</h4><p>Carl Anderson al Caltech fotografò raggi cosmici in una <strong>camera a nebbia</strong> (vapore soprassaturo in cui una particella carica lascia una scia di goccioline) dentro un forte magnete. Una lastra di piombo di 6 mm mostrava in che verso viaggiava ogni particella, perché attraversandola perde energia e poi curva di più. Una traccia curvava come una carica positiva, ma era troppo sottile e troppo lunga per un protone: un elettrone positivo, il <strong>positrone</strong>. Nel 1933 Patrick Blackett e l'italiano Giuseppe Occhialini lo confermarono, facendo scattare la camera con contatori Geiger, e fotografarono raggi gamma che si trasformavano in coppie elettrone–positrone. Anderson e Hess condivisero il Nobel del 1936.</p>",
+            "<h4>Come la scoperta cambiò la classificazione</h4><ul><li><strong>Ogni particella ha un'antiparticella.</strong> Seguirono l'antiprotone (1955) e l'antineutrone (1956).</li><li><strong>Le particelle possono essere create e distrutte.</strong> Una particella che incontra la sua antiparticella si annichila in fotoni, e un fotone con energia sufficiente può creare una coppia: E = mc² funziona in entrambi i sensi.</li><li><strong>I campi diventano gli oggetti fondamentali.</strong> Poiché il numero di particelle non è fisso, i fisici passarono alla <strong>teoria quantistica dei campi</strong>: ogni tipo di particella è un'increspatura di un campo sottostante che riempie lo spazio.</li></ul><p><strong>Il problema che resta:</strong> se materia e antimateria si comportano in modo quasi identico, perché l'universo è fatto quasi tutto di materia? È ancora irrisolto (<a href=\"#history-open\">passo 17</a>).</p>"
+          ]
+        },
+        "neutrino": {
+          "eyebrow": "Storia · passo 14 di 18 · 1914–1956",
+          "short": "La crisi del decadimento beta e il neutrino",
+          "title": "La crisi del decadimento beta e il neutrino",
+          "lead": "Il neutrino fu inventato nel 1930 per salvare la legge di conservazione dell'energia, e rivelato 26 anni dopo. Spiegare come viene prodotto richiese una terza forza della natura: la forza debole. La reazione di decadimento beta qui sopra è esattamente il processo al centro di questa storia.",
+          "puzzle": "Nel decadimento beta gli elettroni escono con qualsiasi energia fino a un massimo (Chadwick, 1914), e gli spin non tornano. Bohr era pronto a rinunciare alla conservazione dell'energia.",
+          "discovery": "Pauli propose una particella neutra leggera (1930); Fermi le diede il nome e costruì la teoria della forza debole (1933–34); Cowan e Reines la rivelarono presso un reattore nucleare (1956).",
+          "classification": "Spin ½, nessuna carica, quasi nessuna massa: un fermione che sente solo la forza debole. Raggruppato con l'elettrone tra i leptoni, con un numero leptonico conservato.",
+          "story": [
+            "<h4>Il problema: l'energia sembra sparire</h4><p>Quando un nucleo emette una particella alfa, questa ha sempre la stessa energia, come ci si aspetta quando un oggetto si divide in due. Nel decadimento beta, invece, James Chadwick (1914) trovò che gli elettroni escono con <em>qualsiasi</em> energia da zero fino a un massimo, e Charles Ellis e William Wooster (1927) confermarono che l'energia mancante non era nascosta in raggi gamma. C'era anche un problema di spin: un neutrone (spin ½) non può diventare un protone (½) più un elettrone (½), perché due metà si sommano a 0 o 1, mai a ½.</p>",
+            "<h4>Il \"rimedio disperato\" di Pauli (1930)</h4><p>In una lettera ai colleghi riuniti a Tubinga nel dicembre 1930, Pauli propose una terza particella emessa nel decadimento beta: elettricamente neutra, molto leggera e di spin ½. Avrebbe portato via l'energia mancante e sistemato il conto degli spin, invisibilmente. Dopo che Chadwick prese il nome \"neutrone\" nel 1932, Enrico Fermi a Roma chiamò la particella di Pauli <strong>neutrino</strong>, \"piccolo neutro\" in italiano.</p>",
+            "<h4>La teoria di Fermi: una nuova forza (1933–1934)</h4><p>Fermi modellò il decadimento beta sul modo in cui un atomo emette un fotone: un neutrone si trasforma in protone e <em>crea</em> sul momento un elettrone e un antineutrino. <em>Nature</em> rifiutò l'articolo come troppo lontano dalla realtà fisica; uscì su riviste italiane e tedesche nel 1934. L'interazione è debolissima e agisce solo a distanze brevissime: la <strong>forza debole</strong>, l'unica forza che trasforma un tipo di particella in un altro. Risponde anche alla vecchia domanda sul Sole: la fusione dell'idrogeno nel nucleo solare richiede la forza debole per trasformare protoni in neutroni (Hans Bethe, 1938). La teoria prevedeva anche il problema: un neutrino potrebbe attraversare anni luce di piombo senza fermarsi.</p>",
+            "<h4>La rivelazione (1956)</h4><p>Clyde Cowan e Frederick Reines trovarono un flusso enorme di neutrini accanto al reattore nucleare di Savannah River. Cercarono l'inverso del decadimento beta: antineutrino + protone → neutrone + positrone. Le loro vasche di acqua e cadmio registrarono un doppio segnale: il positrone si annichila subito, dando due raggi gamma; pochi microsecondi dopo il neutrone viene catturato dal cadmio, dando un secondo lampo. Questo doppio segnale ritardato è un'impronta che il fondo imita di rado. Nel giugno 1956 telegrafarono a Pauli. Reines ricevette il Nobel nel 1995; Cowan era morto nel 1974.</p>",
+            "<h4>Come fu classificato il neutrino</h4><ul><li><strong>Spin ½, nessuna carica, quasi nessuna massa</strong>: un fermione che sente solo la forza debole (e la gravità).</li><li>Fu raggruppato con l'elettrone come particella che <strong>non</strong> sente la forza nucleare: poi i <strong>leptoni</strong> (<a href=\"#history-zoo\">passo 7</a>).</li><li>Neutrino e antineutrino si comportano in modo diverso, e questo portò a una nuova regola di conservazione, il <strong>numero leptonico</strong>.</li></ul><p><strong>Il problema lasciato dalla teoria di Fermi:</strong> descrive l'interazione debole in un solo punto, e ad altissime energie le sue probabilità superano il 100%. La forza debole, come l'elettromagnetismo, deve avere un portatore: il bosone W (<a href=\"#history-gauge\">passo 10</a> e <a href=\"#history-completion\">passo 16</a>).</p>"
+          ]
+        },
+        "mirrors": {
+          "eyebrow": "Storia · passo 15 di 18 · 1956–1973",
+          "short": "Specchi rotti: parità, due neutrini, CP",
+          "title": "Specchi rotti: parità, due neutrini e violazione di CP",
+          "lead": "Tra il 1956 e il 1964, tre esperimenti mostrarono che la forza debole distingue la sinistra dalla destra e la materia dall'antimateria, e che i leptoni formano famiglie separate. Questi risultati divennero le regole che plasmarono il Modello Standard.",
+          "puzzle": "Il problema θ–τ: due particelle strane con massa e vita media identiche decadevano in stati di parità opposta. E perché un muone non decade mai in un elettrone e un fotone?",
+          "discovery": "Wu (1957) mostrò la violazione della parità nel cobalto-60; Lederman, Schwartz e Steinberger trovarono il neutrino muonico (1962); Cronin e Fitch trovarono la violazione di CP nei kaoni (1964).",
+          "classification": "La forza debole agisce solo su particelle levogire, raggruppate in doppietti. I leptoni formano famiglie, (e, νe) e (μ, νμ). La violazione di CP richiede almeno tre famiglie di quark (Kobayashi–Maskawa, 1973).",
+          "story": [
+            "<h4>Violazione della parità (1956–1957)</h4><p>Due particelle strane, θ e τ (non legata all'odierno leptone tau), avevano massa e vita media identiche, ma decadevano in due e in tre pioni, stati di <strong>parità</strong> opposta. Tsung-Dao Lee e Chen-Ning Yang scoprirono che la simmetria speculare non era mai stata verificata per la forza debole. Chien-Shiung Wu e colleghi raffreddarono il cobalto-60 a un centesimo di grado sopra lo zero assoluto e allinearono gli spin nucleari: gli elettroni del decadimento beta uscivano soprattutto in una direzione. <strong>La forza debole non è simmetrica allo specchio.</strong> Garwin, Lederman e Weinrich lo confermarono in pochi giorni con decadimenti di pioni e muoni. Lee e Yang ricevettero il Nobel del 1957; Wu non fu inclusa.</p><ul><li>θ e τ erano la stessa particella, il kaone carico.</li><li>La forza debole agisce solo su particelle <strong>levogire</strong>. Maurice Goldhaber (1958) misurò che i neutrini sono sempre levogiri.</li><li>Nel Modello Standard le particelle levogire formano <strong>doppietti</strong> collegati dalla forza debole, come (neutrino elettronico, elettrone); quelle destrogire sono <strong>singoletti</strong> che la forza debole ignora.</li></ul>",
+            "<h4>Due neutrini (1962)</h4><p>Un muone non decade mai in un elettrone più un fotone, anche se con un solo tipo di neutrino la teoria diceva che dovrebbe. Leon Lederman, Melvin Schwartz e Jack Steinberger costruirono il primo <strong>fascio di neutrini da acceleratore</strong> a Brookhaven: protoni su un bersaglio producono pioni, che decadono in muoni e neutrini, e circa 13 m di acciaio fermavano tutto tranne i neutrini. Quei neutrini producevano muoni ma nessun elettrone. Dunque il <a href=\"#particle-inspector\" data-particle=\"mu_neutrino\">neutrino muonico</a> è una particella diversa dal <a href=\"#particle-inspector\" data-particle=\"e_neutrino\">neutrino elettronico</a> (Nobel 1988). I leptoni formano <strong>famiglie</strong>, ognuna con il proprio numero conservato, e il muone trovò il suo posto come copia pesante dell'elettrone in una seconda famiglia. Nel 1964 Bjorken e Glashow proposero una seconda famiglia di quark corrispondente.</p>",
+            "<h4>Violazione di CP (1964)</h4><p>Dopo il 1957 i fisici speravano che sopravvivesse una simmetria combinata: scambiare particelle con antiparticelle (C) <strong>e</strong> riflettere allo specchio (P). James Cronin, Val Fitch, James Christenson e René Turlay studiarono il kaone neutro a vita lunga a Brookhaven. Se CP valesse, potrebbe decadere solo in tre pioni; circa 2 volte su 1.000 decadeva in due. <strong>CP è violata</strong>: materia e antimateria sono leggermente diverse (Nobel 1980). Andrei Sakharov (1967) mostrò che la violazione di CP è una delle tre condizioni di cui l'universo primordiale ha bisogno per produrre più materia che antimateria. Makoto Kobayashi e Toshihide Maskawa (1973) mostrarono che il Modello Standard può produrre violazione di CP solo con almeno <strong>tre famiglie</strong> di quark, quando se ne conoscevano solo tre quark. La loro previsione è confermata nel <a href=\"#history-completion\">passo 16</a>.</p>"
+          ]
+        },
+        "completion": {
+          "eyebrow": "Storia · passo 16 di 18 · 1974–2008",
+          "short": "Completare il quadro con i rivelatori",
+          "title": "Completare il quadro: charm, tau, bottom, gluone, W, Z, top",
+          "lead": "In 26 anni collisori e rivelatori trovarono ogni particella richiesta dalla teoria del 1973, più una terza famiglia che solo Kobayashi e Maskawa avevano anticipato. Ogni scoperta fu letta dalle firme nei rivelatori mostrate qui sopra: coppie di leptoni, jet ed energia mancante.",
+          "puzzle": "Nel 1973 il charm, W e Z, il gluone e una terza famiglia erano ancora previsioni. Esistono davvero?",
+          "discovery": "J/ψ (1974), tau (1975), Υ (1977), eventi a tre jet (1979), W e Z (1983), esattamente tre neutrini leggeri (1989), top (1995), neutrino tau (2000).",
+          "classification": "Due, poi tre famiglie di quark e leptoni; il gluone, W e Z raggiunsero il fotone tra i bosoni di gauge. Tutte le 12 particelle di materia erano state viste entro il 2000.",
+          "story": [
+            "<h4>Il charm: la Rivoluzione di Novembre (1974)</h4><p>L'11 novembre 1974 due gruppi annunciarono la stessa nuova particella a 3,1 GeV. Il gruppo di Samuel Ting a Brookhaven (fascio di protoni su bersaglio fisso) la chiamò <strong>J</strong>; il gruppo di Burton Richter a SLAC (collisore elettrone–positrone SPEAR) la chiamò <strong>ψ</strong>. In pochi giorni il collisore ADONE a Frascati, spinto oltre la sua energia di progetto, la confermò. Il suo picco strettissimo indicava una vita circa mille volte più lunga del previsto: è un <a href=\"#particle-inspector\" data-particle=\"charm\">quark charm</a> legato a un antiquark charm (\"charmonio\"). I mesoni D con un solo quark charm seguirono nel 1976. La previsione GIM era confermata. Nobel 1976.</p>",
+            "<h4>Il tau: un terzo leptone a sorpresa (1975)</h4><p>A SPEAR il gruppo di Martin Perl vide collisioni che producevano un elettrone, un muone di carica opposta ed energia mancante. Lo schema corrispondeva a un nuovo leptone pesante creato in coppia, ciascuno decaduto in un elettrone o un muone più neutrini invisibili. Il <a href=\"#particle-inspector\" data-particle=\"tau\">tau</a> pesa 1,777 GeV, quasi il doppio del protone (Nobel 1995). Tre famiglie di leptoni stavano ora di fronte a due famiglie di quark: i fisici si aspettavano una terza famiglia di quark, come avevano proposto Kobayashi e Maskawa.</p>",
+            "<h4>Il bottom (1977)</h4><p>Il gruppo di Leon Lederman al Fermilab trovò la <strong>Υ (Upsilon)</strong> a 9,46 GeV, che decadeva in coppie di muoni. Come la J/ψ è un quark legato al proprio antiquark: il <a href=\"#particle-inspector\" data-particle=\"bottom\">quark bottom</a>, il primo quark della terza famiglia.</p>",
+            "<h4>Il gluone (1979)</h4><p>Al collisore elettrone–positrone PETRA del DESY ad Amburgo, la maggior parte delle collisioni produceva due jet opposti: un quark e un antiquark. Alcune producevano <strong>tre jet</strong> in una figura piatta \"a Mercedes\": il quark o l'antiquark aveva irraggiato un <a href=\"#particle-inspector\" data-particle=\"gluon\">gluone</a> energetico, diventato il terzo jet. TASSO, JADE, MARK-J e PLUTO lo annunciarono nel 1979: la prima osservazione diretta del gluone.</p>",
+            "<h4>W e Z (1983)</h4><p>W e Z richiedevano collisioni a centinaia di GeV. Al CERN Carlo Rubbia propose di trasformare l'acceleratore SPS in un collisore protone–antiprotone, e il \"raffreddamento stocastico\" di Simon van der Meer permise di raccogliere abbastanza antiprotoni. Nel 1983 gli esperimenti UA1 e UA2 trovarono il <a href=\"#particle-inspector\" data-particle=\"w_boson\">W</a> (gennaio) e lo <a href=\"#particle-inspector\" data-particle=\"z_boson\">Z</a> (maggio–giugno) alle masse previste dalla teoria elettrodebole. Rubbia e van der Meer ricevettero il Nobel nel 1984.</p>",
+            "<h4>Esattamente tre famiglie (1989)</h4><p>Il collisore LEP al CERN (27 km di circonferenza) e lo SLC a SLAC produssero milioni di bosoni Z. Lo Z può decadere in ogni tipo di neutrino più leggero di metà della sua massa, e ogni tipo allarga il suo picco di una quantità fissa. La larghezza misurata ammette <strong>esattamente tre</strong> tipi di neutrino leggero: tre famiglie di materia, non di più (a meno che una quarta famiglia abbia un neutrino estremamente pesante).</p>",
+            "<h4>Il top (1995)</h4><p>Gli esperimenti CDF e DØ al Tevatron del Fermilab trovarono il <a href=\"#particle-inspector\" data-particle=\"top\">quark top</a> a circa 173 GeV, pesante come un atomo d'oro e ancora la particella fondamentale più pesante nota. Le misure di precisione di LEP ne avevano già indicato l'intervallo di massa. Il top decade in circa 5 × 10⁻²⁵ s, troppo in fretta per formare adroni. Quando gli esperimenti delle B-factory in Giappone e in California misurarono la violazione di CP nei mesoni B (2001), la spiegazione di Kobayashi e Maskawa fu confermata; ricevettero il Nobel nel 2008.</p>",
+            "<h4>Il neutrino tau (2000)</h4><p>L'esperimento DONuT al Fermilab osservò direttamente il <a href=\"#particle-inspector\" data-particle=\"tau_neutrino\">neutrino tau</a> in una manciata di eventi in cui produceva un tau. Tutte le 12 particelle di materia erano state viste. Restava solo il bosone di Higgs (<a href=\"#history-higgs\">passo 11</a>).</p>"
+          ]
+        },
+        "open": {
+          "eyebrow": "Storia · passo 17 di 18 · 1968–2026",
+          "short": "Ciò che il Modello Standard non spiega",
+          "title": "Ciò che il Modello Standard non spiega (a novembre 2026)",
+          "lead": "Il Modello Standard ha superato finora ogni test ai collisori. Eppure non spiega le masse dei neutrini, la materia oscura, l'eccesso di materia sull'antimateria, la gravità o lo schema delle masse delle particelle. Come in passato, queste discrepanze sono i punti in cui è più probabile che si nascondano le prossime particelle.",
+          "puzzle": "Dal 1968 l'esperimento Homestake di Ray Davis rivelava solo circa un terzo dei neutrini che il Sole dovrebbe emettere. Le galassie ruotano troppo in fretta per la materia che vediamo.",
+          "discovery": "Super-Kamiokande (1998) e SNO (2001–02) mostrarono che i neutrini oscillano, quindi hanno massa. I test recenti (2025–2026) stringono i limiti senza ancora rompere il modello.",
+          "classification": "I neutrini massivi potrebbero ricevere massa dal campo di Higgs con partner destrogiri mai visti, oppure essere antiparticelle di sé stessi (Majorana). La materia oscura non corrisponde a nessuna particella del Modello Standard.",
+          "story": [
+            "<h4>I neutrini hanno massa</h4><p>Super-Kamiokande in Giappone (1998) mostrò che i neutrini muonici prodotti nell'atmosfera cambiano tipo attraversando la Terra. SNO in Canada (2001–2002) mostrò che il flusso totale di neutrini dal Sole è corretto, ma una parte arriva sotto altri tipi. Cambiare tipo (<strong>oscillazione</strong>) è possibile solo se i neutrini hanno massa (Nobel 2015). Il Modello Standard originale aveva neutrini senza massa. La loro massa può venire dal campo di Higgs, il che richiederebbe neutrini destrogiri mai visti, oppure il neutrino può essere antiparticella di sé stesso, una particella di <strong>Majorana</strong>, dal fisico italiano Ettore Majorana (1937). Gli esperimenti la cercano tramite il doppio decadimento beta senza neutrini. Nel 2025 KATRIN ha posto un limite superiore di 0,45 eV; il rivelatore JUNO in Cina ha iniziato la presa dati nell'agosto 2025 per stabilire quale neutrino sia il più pesante, l'\"ordinamento delle masse\".</p>",
+            "<h4>Materia oscura, antimateria, gravità e masse</h4><ul><li><strong>Materia oscura.</strong> Circa l'85% della materia dell'universo è invisibile. I neutrini sono troppo leggeri e veloci; candidati come WIMP e assioni non sono stati rivelati. La situazione ricorda la crisi del decadimento beta del <a href=\"#history-neutrino\">passo 14</a>: manca qualcosa, e una particella invisibile è la spiegazione più semplice.</li><li><strong>Più materia che antimateria.</strong> Le condizioni di Sakharov (<a href=\"#history-mirrors\">passo 15</a>) richiedono violazione di CP. Il Modello Standard ne ha, dalle tre famiglie di quark, ma molti ordini di grandezza troppo poca. Una nuova fonte candidata è la violazione di CP tra i neutrini, che sarà verificata da DUNE e Hyper-Kamiokande.</li><li><strong>Gravità.</strong> Tra due protoni la repulsione elettrica è circa 10³⁶ volte più intensa della gravità. Il <strong>gravitone</strong> (un ipotetico bosone di spin 2) non è mai stato osservato, e nessuna teoria della gravità quantistica è stata verificata.</li><li><strong>Lo schema delle masse.</strong> Le masse vanno da meno di 0,45 eV a 173 GeV, più di undici ordini di grandezza, ognuna da un accoppiamento separato con il campo di Higgs. Il Modello Standard ha circa 19 numeri liberi da misurare. Non spiega perché l'Higgs sia così leggero rispetto alla scala della gravità (il <strong>problema della gerarchia</strong>); la supersimmetria prevede particelle partner, ma a LHC non ne sono state trovate.</li></ul>",
+            "<h4>Test recenti, 2025–2026</h4><table><thead><tr><th>Risultato</th><th>Data</th><th>Che cosa è stato trovato</th><th>Che cosa significa</th></tr></thead><tbody><tr><th><a href=\"https://english.cas.cn/newsroom/headlines/202606/t20260611_1161560.shtml\">Primo risultato di fisica di JUNO</a></th><td>giugno 2026</td><td>misura precisa di due parametri di oscillazione da 59 giorni di dati</td><td>il rivelatore funziona; il prossimo obiettivo è l'ordinamento delle masse</td></tr><tr><th><a href=\"https://www6.slac.stanford.edu/node/6116\">Ricerca di materia oscura LZ</a></th><td>dicembre 2025</td><td>nessuna materia oscura; limiti migliori al mondo e primi segni di neutrini solari</td><td>WIMP sempre più vincolate; i rivelatori raggiungono la \"nebbia di neutrini\"</td></tr><tr><th><a href=\"https://cerncourier.com/atlas-confirms-top-antitop-excess/\">Toponio, CMS poi ATLAS</a></th><td>2025</td><td>circa l'1% di coppie top–antitop in più alla soglia di produzione</td><td>stati legati top–antitop fugaci: il cugino più pesante della J/ψ del 1974</td></tr><tr><th><a href=\"https://home.cern/news/news/physics/new-piece-matter-antimatter-puzzle\">Violazione di CP nei barioni a LHCb</a></th><td>2025</td><td>asimmetria materia–antimateria del 2,45% nei decadimenti della Λb, a 5,2 deviazioni standard</td><td>prima violazione di CP nei barioni; ancora troppo piccola per l'eccesso cosmico</td></tr><tr><th><a href=\"https://news.fnal.gov/?p=333767\">Risultato finale di Muon g-2</a></th><td>giugno 2025</td><td>magnetismo del muone misurato a 127 parti per miliardo</td><td>la previsione teorica più recente è vicina, e indebolisce un indizio di lunga data; i metodi teorici restano in disaccordo</td></tr><tr><th><a href=\"https://www.kit.edu/kit/english/pi_2025_029_astroparticle-physics-neutrinos-weigh-less-than-0-45-electronvolts.php\">Massa del neutrino da KATRIN</a></th><td>aprile 2025</td><td>massa del neutrino sotto 0,45 eV</td><td>il limite diretto di laboratorio più stringente</td></tr></tbody></table><p>Il g-2 del muone misura di quanto il magnetismo del muone supera il valore di Dirac, esattamente 2 (<a href=\"#history-antimatter\">passo 13</a>); ogni particella esistente, anche ignota, lo sposta tramite effetti quantistici.</p>",
+            "<h4>Che cosa viene dopo</h4><p>L'aggiornamento High-Luminosity di LHC è la priorità a medio termine, e LHC dovrebbe funzionare fino al 2041. Il 22 maggio 2026 il Consiglio del CERN ha indicato il FCC-ee, un collisore elettrone–positrone molto più grande, come progetto di punta preferito, con una decisione prevista per il 2028 (<a href=\"https://cerncourier.com/cern-council-updates-the-european-strategy/\">CERN Courier</a>). Funzionerebbe come \"fabbrica di Higgs\". Il neutrino, il muone, il charm e il tau sono comparsi dove una misura non concordava con le attese; i disaccordi di oggi sono le porte più probabili verso il livello successivo.</p>"
+          ]
+        },
+        "chain": {
+          "eyebrow": "Storia · passo 18 di 18 · 1897–2026",
+          "short": "La catena logica in una pagina",
+          "title": "La catena logica in una pagina",
+          "lead": "Letta dall'alto in basso, ogni risposta crea la domanda successiva. La linea del tempo mostra il secondo schema della storia: prima del 1950 le particelle per lo più sorpresero i fisici; dopo il 1950 di solito la teoria le previde prima, talvolta decenni prima dell'esperimento (48 anni per il bosone di Higgs).",
+          "puzzle": "Ogni scoperta lasciava una domanda a cui il quadro esistente non sapeva rispondere.",
+          "discovery": "Le sorprese (muone, particelle strane, tau) costrinsero la teoria a crescere; le previsioni (positrone, neutrino, pione, Ω⁻, charm, W, Z, top, Higgs) dissero agli esperimenti dove guardare.",
+          "classification": "Il risultato è il Modello Standard: tre famiglie di quark e leptoni, bosoni di gauge per tre forze e il bosone di Higgs.",
+          "story": [
+            "<table><thead><tr><th>#</th><th>La domanda</th><th>La risposta</th><th>La nuova domanda che sollevò</th></tr></thead><tbody><tr><td>1</td><td>Che cosa sono i raggi catodici?</td><td><a href=\"#history-electron\"><strong>Elettrone</strong></a> (1897)</td><td>Gli atomi sono neutri: dov'è la loro carica positiva?</td></tr><tr><td>2</td><td>Dov'è la carica positiva?</td><td><a href=\"#history-breaking-atom\"><strong>Nucleo</strong></a> (1911)</td><td>Di che cosa è fatto il nucleo?</td></tr><tr><td>3</td><td>Di che cosa è fatto il nucleo?</td><td><strong>Protone</strong> (1919)</td><td>Perché i nuclei pesano più dei loro protoni?</td></tr><tr><td>4</td><td>La luce è un'onda o una particella?</td><td><a href=\"#history-photon\"><strong>Fotone</strong></a> (1905–1923)</td><td>Anche le altre forze hanno particelle portatrici?</td></tr><tr><td>5</td><td>Perché i nuclei pesano più dei loro protoni?</td><td><a href=\"#history-neutron-discovery\"><strong>Neutrone</strong></a> (1932)</td><td>Che cosa tiene insieme protoni e neutroni?</td></tr><tr><td>6</td><td>Che cosa implica un elettrone che obbedisce alla relatività?</td><td><a href=\"#history-antimatter\"><strong>Positrone</strong></a> (1932): l'antimateria</td><td>Perché l'universo è fatto di materia? (ancora aperta)</td></tr><tr><td>7</td><td>Dove va l'energia nel decadimento beta?</td><td><a href=\"#history-neutrino\"><strong>Neutrino</strong></a> (proposto 1930, visto 1956) e la <strong>forza debole</strong></td><td>La forza debole ha un portatore?</td></tr><tr><td>8</td><td>Che cosa trasporta la forza nucleare?</td><td><a href=\"#history-pion\"><strong>Pione</strong></a> (1947), dopo l'equivoco del <strong>muone</strong> (1936)</td><td>Perché esiste il muone?</td></tr><tr><td>9</td><td>Perché le particelle V vivono così a lungo?</td><td><a href=\"#history-strangeness\"><strong>Stranezza</strong></a> (1953)</td><td>Come si possono ordinare più di 100 adroni?</td></tr><tr><td>10</td><td>La forza debole rispetta la simmetria speculare?</td><td>No: <a href=\"#history-mirrors\"><strong>violazione della parità</strong></a> (1957)</td><td>Almeno CP si conserva?</td></tr><tr><td>11</td><td>Perché un muone non decade mai in un elettrone e un fotone?</td><td><a href=\"#history-two-neutrinos\"><strong>Neutrino muonico</strong></a> (1962): famiglie di leptoni</td><td>Anche i quark formano famiglie?</td></tr><tr><td>12</td><td>C'è un ordine tra gli adroni?</td><td><a href=\"#history-quarks\"><strong>Ottuplice via</strong></a>, confermata dall'<strong>Ω⁻</strong> (1964)</td><td>Perché questi schemi?</td></tr><tr><td>13</td><td>Perché questi schemi?</td><td><strong>Quark</strong> (1964), visti dentro il protone (1968); <a href=\"#history-colour\"><strong>colore</strong></a> (1964–65)</td><td>Perché i quark non si vedono mai da soli?</td></tr><tr><td>14</td><td>Perché i quark non si vedono mai da soli?</td><td><a href=\"#history-qcd\"><strong>QCD</strong></a>: libertà asintotica e confinamento (1973); <strong>gluone</strong> visto (1979)</td><td>Come rientrano le altre forze nello stesso schema?</td></tr><tr><td>15</td><td>Come può la forza debole avere portatori pesanti?</td><td><a href=\"#history-higgs\"><strong>Meccanismo di Higgs</strong></a> (1964), <strong>teoria elettrodebole</strong> (1967)</td><td>Esistono W, Z, charm e Higgs?</td></tr><tr><td>16</td><td>Esistono le particelle previste?</td><td><a href=\"#history-charm\"><strong>Charm</strong></a> (1974), <a href=\"#history-wz\"><strong>W e Z</strong></a> (1983)</td><td>Perché CP è violata (vista nel 1964)?</td></tr><tr><td>17</td><td>Perché CP è violata?</td><td>Servono <strong>tre famiglie</strong> (Kobayashi–Maskawa, 1973)</td><td>Dov'è la terza famiglia?</td></tr><tr><td>18</td><td>Dov'è la terza famiglia?</td><td><strong>Tau</strong> (1975), <strong>bottom</strong> (1977), <strong>top</strong> (1995), <strong>neutrino tau</strong> (2000); <a href=\"#history-families\">esattamente tre famiglie</a> (1989)</td><td>Da dove vengono tutte queste masse?</td></tr><tr><td>19</td><td>Da dove vengono le masse?</td><td><a href=\"#history-higgs-boson\"><strong>Bosone di Higgs</strong></a> (2012)</td><td>Che cosa spiega la massa dei neutrini, la materia oscura e l'eccesso di materia? (<a href=\"#history-open\">passo 17</a>)</td></tr></tbody></table>",
+            "<h4>Da dove vengono i nomi</h4><table><thead><tr><th>Nome</th><th>Origine</th></tr></thead><tbody><tr><th>elettrone</th><td>greco <em>ēlektron</em>, ambra, che strofinata attrae piccoli oggetti</td></tr><tr><th>protone</th><td>greco <em>protos</em>, primo</td></tr><tr><th>neutrone, neutrino</th><td>\"neutro\"; <em>-ino</em> è il diminutivo italiano scelto da Fermi</td></tr><tr><th>fotone</th><td>greco <em>phōs</em>, luce</td></tr><tr><th>leptone, mesone, barione, adrone</th><td>in greco leggero, di mezzo, pesante e forte</td></tr><tr><th>fermione, bosone</th><td>Enrico Fermi e Satyendra Bose</td></tr><tr><th>quark</th><td>una parola dal <em>Finnegans Wake</em> di James Joyce, scelta da Gell-Mann</td></tr><tr><th>up, down</th><td>le due direzioni dell'isospin (\"su\", \"giù\")</td></tr><tr><th>strange</th><td>la \"strana\" vita lunga di kaoni e iperoni</td></tr><tr><th>charm</th><td>Bjorken e Glashow apprezzavano la simmetria (\"fascino\") che il quarto quark portava tra quark e leptoni</td></tr><tr><th>bottom, top</th><td>il membro inferiore e superiore della terza coppia di quark (detti anche beauty e truth)</td></tr><tr><th>colore, sapore</th><td>metafore: tre colori primari fanno il bianco; \"sapore\" indica il tipo di quark o leptone</td></tr><tr><th>gluone</th><td>dall'inglese glue, colla: incolla i quark</td></tr><tr><th>W, Z</th><td>W per weak (debole); Z per carica elettrica zero</td></tr><tr><th>lettere greche (π, μ, τ, Λ, Σ, Ξ, Δ, Ω, Υ, ψ)</th><td>una tradizione iniziata dai raggi alfa, beta e gamma; Ω, l'ultima lettera greca, chiuse il decupletto</td></tr></tbody></table>",
+            "<h4>Letture consigliate</h4><ul><li>Abraham Pais, <em>Inward Bound: Of Matter and Forces in the Physical World</em> (1986): la storia classica e dettagliata dalla radioattività al Modello Standard.</li><li>Steven Weinberg, <em>The Discovery of Subatomic Particles</em> (1983): elettrone, protone e neutrone spiegati per non specialisti.</li><li>Robert Crease e Charles Mann, <em>The Second Creation</em> (1986): le persone e gli esperimenti della fisica delle particelle del Novecento.</li><li>Frank Close, <em>The Infinity Puzzle</em> (2011): la storia delle teorie di gauge e del meccanismo di Higgs.</li></ul><p>I passi 1–16 raccontano la storia standard e ben documentata della disciplina; masse e date sono arrotondate. I risultati 2025–2026 del passo 17 vengono dalle pagine collegate.</p>"
+          ]
+        }
+      },
+      "extra": {
+        "decupletCaption": "Il decupletto barionico dell'Ottuplice via: 10 particelle su 4 livelli di stranezza. Ogni riga verso il basso aggiunge un quark strange; l'Ω⁻ (sss) fu prevista dall'angolo vuoto.",
+        "discoveryTable": {
+          "caption": "Quando e come ciascuna delle 17 particelle fondamentali fu vista per la prima volta",
+          "label": "Tabella delle scoperte delle particelle fondamentali",
+          "particle": "Particella",
+          "group": "Gruppo",
+          "firstSeen": "Prima osservazione",
+          "how": "Dove e come"
+        },
+        "timeline": {
+          "title": "Anni di previsione e di osservazione",
+          "label": "Linea del tempo di previsione e osservazione per ogni particella",
+          "predicted": "prevista",
+          "observed": "osservata",
+          "entry": "{name}: prevista nel {predicted}, osservata nel {observed} ({gap} anni dopo)",
+          "surprise": "{name}: osservata nel {observed} senza previsione (una sorpresa)",
+          "note": "Il quark strange è datato dalla scoperta dei kaoni nel 1947, che lo contengono; up e down dall'esperimento di SLAC del 1968 che vide per primo i quark dentro il protone. Le barre di previsione partono dalla prima proposta teorica.",
+          "positron": "Positrone",
+          "pion": "Pione",
+          "omega": "Omega meno (Ω⁻)"
+        }
+      }
     }
   },
   "ui": {
@@ -604,6 +913,24 @@
         "LHC accelera i protoni fino al 99,9999991% della velocità della luce",
         "In un bicchiere d'acqua ci sono più atomi di quanti bicchieri d'acqua ci siano in tutti gli oceani"
       ]
+    },
+    "history": {
+      "title": "Storia",
+      "discovered": "Prima osservazione {year} · {how}.",
+      "readStory": "Leggi come fu trovata",
+      "tableColumn": "Prima osservazione",
+      "yearLink": "{year}: leggi come fu trovato {name}",
+      "families": {
+        "quark": "Storia: quark e colore",
+        "lepton": "Storia: leptoni e adroni",
+        "gauge": "Storia: le forze come teorie di gauge",
+        "scalar": "Storia: il meccanismo di Higgs"
+      },
+      "topics": {
+        "spin": "Storia: spin e statistica",
+        "antimatter": "Storia: la sua antiparticella",
+        "generations": "Storia: tre famiglie"
+      }
     }
   },
   "model": {
@@ -612,103 +939,120 @@
         "name": "Quark up",
         "massLabel": "≈ 2,16 MeV/c²",
         "example": "Due quark di valenza up e uno down formano un protone.",
-        "massNote": "Massa running alla scala di 2 GeV; non è la massa di un quark libero."
+        "massNote": "Massa running alla scala di 2 GeV; non è la massa di un quark libero.",
+        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni"
       },
       "down": {
         "name": "Quark down",
         "massLabel": "≈ 4,70 MeV/c²",
         "example": "Due quark di valenza down e uno up formano un neutrone.",
-        "massNote": "Massa running alla scala di 2 GeV; il confinamento ne impedisce l'isolamento."
+        "massNote": "Massa running alla scala di 2 GeV; il confinamento ne impedisce l'isolamento.",
+        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni"
       },
       "charm": {
         "name": "Quark charm",
         "massLabel": "≈ 1,273 GeV/c²",
         "example": "Charm e anticharm formano il mesone J/ψ.",
-        "massNote": "Massa running valutata alla sua stessa scala di massa."
+        "massNote": "Massa running valutata alla sua stessa scala di massa.",
+        "discovery": "Brookhaven e SLAC: nella J/ψ"
       },
       "strange": {
         "name": "Quark strange",
         "massLabel": "≈ 93,5 MeV/c²",
         "example": "I quark strange compaiono nei kaoni e nei barioni strani.",
-        "massNote": "Massa running alla scala di 2 GeV."
+        "massNote": "Massa running alla scala di 2 GeV.",
+        "discovery": "Manchester: nei kaoni (\"particelle V\"); riconosciuto come quark nel 1964"
       },
       "top": {
         "name": "Quark top",
         "massLabel": "≈ 172,6 GeV/c²",
         "example": "Decade prevalentemente in un bosone W e un quark bottom prima di formare adroni.",
-        "massNote": "Massa da ricostruzione diretta, arrotondata; ad alta precisione non si devono mescolare definizioni di massa diverse."
+        "massNote": "Massa da ricostruzione diretta, arrotondata; ad alta precisione non si devono mescolare definizioni di massa diverse.",
+        "discovery": "Fermilab: collisioni protone–antiprotone al Tevatron"
       },
       "bottom": {
         "name": "Quark bottom",
         "massLabel": "≈ 4,183 GeV/c²",
         "example": "Gli adroni con quark bottom producono vertici di decadimento spostati nei rivelatori.",
-        "massNote": "Massa running valutata alla sua stessa scala di massa."
+        "massNote": "Massa running valutata alla sua stessa scala di massa.",
+        "discovery": "Fermilab: nella Υ"
       },
       "electron": {
         "name": "Elettrone",
         "massLabel": "≈ 0,511 MeV/c²",
         "example": "Gli elettroni atomici formano gusci e legami chimici; gli elettroni in moto trasportano la corrente elettrica.",
-        "massNote": "Massa a riposo, indipendente dalla velocità. L'elettrone è elementare; il protone è composto."
+        "massNote": "Massa a riposo, indipendente dalla velocità. L'elettrone è elementare; il protone è composto.",
+        "discovery": "Cambridge: raggi catodici"
       },
       "muon": {
         "name": "Muone",
         "massLabel": "≈ 105,66 MeV/c²",
         "example": "I muoni dei raggi cosmici raggiungono il suolo e spesso attraversano un intero rivelatore di un collisore.",
-        "massNote": "Circa 207 masse elettroniche; vita media di circa 2,2 μs."
+        "massNote": "Circa 207 masse elettroniche; vita media di circa 2,2 μs.",
+        "discovery": "Caltech: raggi cosmici"
       },
       "tau": {
         "name": "Tau",
         "massLabel": "≈ 1,777 GeV/c²",
         "example": "Nei suoi decadimenti deboli produce elettroni, muoni o adroni.",
-        "massNote": "Vita media di circa 290 femtosecondi."
+        "massNote": "Vita media di circa 290 femtosecondi.",
+        "discovery": "SLAC: eventi elettrone–muone a SPEAR"
       },
       "e_neutrino": {
         "name": "Neutrino elettronico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Prodotto nella fusione solare e nelle interazioni deboli di sapore elettronico.",
-        "massNote": "νₑ è una sovrapposizione degli stati di massa ν₁, ν₂, ν₃. Le oscillazioni misurano differenze dei quadrati delle masse, non una massa per ciascun sapore."
+        "massNote": "νₑ è una sovrapposizione degli stati di massa ν₁, ν₂, ν₃. Le oscillazioni misurano differenze dei quadrati delle masse, non una massa per ciascun sapore.",
+        "discovery": "Savannah River: antineutrini da reattore"
       },
       "mu_neutrino": {
         "name": "Neutrino muonico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Prodotto insieme ai muoni nei decadimenti dei pioni carichi.",
-        "massNote": "Stati di sapore e stati di massa sono diversi. Almeno due stati di massa dei neutrini hanno massa non nulla; il più leggero potrebbe essere privo di massa."
+        "massNote": "Stati di sapore e stati di massa sono diversi. Almeno due stati di massa dei neutrini hanno massa non nulla; il più leggero potrebbe essere privo di massa.",
+        "discovery": "Brookhaven: primo fascio di neutrini da acceleratore"
       },
       "tau_neutrino": {
         "name": "Neutrino tauonico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Identificato tramite interazioni che producono leptoni tau quando l'energia disponibile è sufficiente.",
-        "massNote": "Non esiste una massa a riposo misurata separatamente da assegnare al sapore tau. La generazione della massa dei neutrini richiede fisica oltre il Modello Standard minimo."
+        "massNote": "Non esiste una massa a riposo misurata separatamente da assegnare al sapore tau. La generazione della massa dei neutrini richiede fisica oltre il Modello Standard minimo.",
+        "discovery": "Fermilab: esperimento DONuT"
       },
       "photon": {
         "name": "Fotone",
         "massLabel": "0 nel Modello Standard",
         "example": "Luce visibile, onde radio e raggi X sono fatti di fotoni. I fotoni mediano le interazioni elettromagnetiche.",
-        "massNote": "Massa a riposo nulla non significa energia nulla: E = hf = pc. Per un fotone non esiste un sistema di riposo."
+        "massNote": "Massa a riposo nulla non significa energia nulla: E = hf = pc. Per un fotone non esiste un sistema di riposo.",
+        "discovery": "effetto fotoelettrico ed effetto Compton"
       },
       "gluon": {
         "name": "Gluone",
         "massLabel": "0 nel Modello Standard",
         "example": "Otto stati di colore mediano l'interazione forte; i gluoni interagiscono anche con altri gluoni.",
-        "massNote": "Privo di massa ma confinato: l'adronizzazione produce getti anziché gluoni isolati."
+        "massNote": "Privo di massa ma confinato: l'adronizzazione produce getti anziché gluoni isolati.",
+        "discovery": "DESY: eventi a tre jet a PETRA"
       },
       "w_boson": {
         "name": "Bosone W",
         "massLabel": "≈ 80,37 GeV/c²",
         "example": "W⁺ e W⁻ mediano i processi deboli di corrente carica, compreso il decadimento beta.",
-        "massNote": "La sua grande massa contribuisce a fissare la breve portata dell'interazione debole. Anche i bosoni W si accoppiano al campo di Higgs."
+        "massNote": "La sua grande massa contribuisce a fissare la breve portata dell'interazione debole. Anche i bosoni W si accoppiano al campo di Higgs.",
+        "discovery": "CERN: UA1 e UA2"
       },
       "z_boson": {
         "name": "Bosone Z",
         "massLabel": "≈ 91,19 GeV/c²",
         "example": "Media la diffusione debole di corrente neutra, compresa la diffusione di neutrini senza produzione di un leptone carico.",
-        "massNote": "Elettricamente neutro ma non privo di interazioni; si accoppia al campo di Higgs e alle correnti deboli."
+        "massNote": "Elettricamente neutro ma non privo di interazioni; si accoppia al campo di Higgs e alle correnti deboli.",
+        "discovery": "CERN: UA1 e UA2"
       },
       "higgs": {
         "name": "Bosone di Higgs",
         "massLabel": "≈ 125,2 GeV/c²",
         "example": "L'eccitazione osservata del campo di Higgs; ricostruita dai suoi prodotti di decadimento.",
-        "massNote": "Un bosone scalare, non un mediatore di forza di gauge. La sua massa deriva dal potenziale di Higgs; gli accoppiamenti con fotoni e gluoni avvengono tramite loop."
+        "massNote": "Un bosone scalare, non un mediatore di forza di gauge. La sua massa deriva dal potenziale di Higgs; gli accoppiamenti con fotoni e gluoni avvengono tramite loop.",
+        "discovery": "CERN: ATLAS e CMS"
       }
     },
     "interactions": {

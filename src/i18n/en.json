@@ -148,7 +148,8 @@
         "columns": {
           "particle": "Particle",
           "generation": "Generation"
-        }
+        },
+        "historyHint": "Column headings and discovery years link to the history step that explains them."
       },
       "inspector": {
         "eyebrow": "Particle field guide"
@@ -456,6 +457,314 @@
         "cern": "CERN: an introduction to the Standard Model",
         "tong": "David Tong: quantum field theory, for a mathematical next step"
       }
+    },
+    "history": {
+      "labels": {
+        "puzzle": "The puzzle",
+        "discovery": "The discovery",
+        "classification": "How it was classified",
+        "fullStory": "Read the full story of this step",
+        "explore": "Explore in the catalog:",
+        "previous": "← Previous step:",
+        "next": "Next step →",
+        "stepper": "History steps",
+        "heroPath": "Follow the discovery story",
+        "indexTitle": "The 18 steps of the story",
+        "sectionLink": "History of this topic:"
+      },
+      "steps": {
+        "intro": {
+          "eyebrow": "History · step 1 of 18 · 1897–2026",
+          "short": "How to read this history",
+          "title": "From the atom to the Standard Model: how and why every particle was found",
+          "lead": "Every elementary particle we know was found because an earlier discovery left a question it could not answer. This story follows that chain in 18 steps spread through the page, from the first crack in the atom (1897) to the Higgs boson (2012) and the questions still open in 2026. Each step sits next to the physics it explains, so you meet the history while you discover the subject.",
+          "puzzle": "What experiment or theory did not fit? Each step starts from the question that forced physicists to look further.",
+          "discovery": "Who found the new particle, with what instrument, and how they recognised it.",
+          "classification": "Which family the particle was put in, and why. The labels we use today were all learned this way.",
+          "story": [
+            "<h4>Where the story ends</h4><p>Today's Standard Model has 17 fundamental particles: 6 quarks, 6 leptons, 4 force-carrying bosons (photon, gluon, W, Z) and the Higgs boson. Each has an antiparticle, and a few (such as the photon) are their own antiparticle. Everything else (protons, neutrons, pions and hundreds of other particles) is built from quarks.</p>",
+            "<h4>Three ideas to hold before starting</h4><ul><li><strong>Mass is measured as energy.</strong> Because E = mc², physicists give masses in electronvolts (eV). The electron is 0.511 MeV, the proton 938 MeV, the Higgs about 125 GeV (1 GeV = 1,000 MeV). A heavier particle needs more energy to create, so each generation of bigger machines found heavier particles.</li><li><strong>Nobody sees a particle directly.</strong> Detectors record tracks: a charged particle leaves a trail of ionised atoms. A magnetic field bends the track, and the curvature gives the momentum and the sign of the charge. Track thickness, length and decay products reveal the mass and the lifetime.</li><li><strong>\"Elementary\" is a provisional word.</strong> The atom, the nucleus and the proton were each called elementary until something was found inside them. Today it means that no internal structure has been seen, down to sizes at least a thousand times smaller than a proton.</li></ul>",
+            "<h4>Two engines drive the story</h4><p>Discoveries alternate between surprises and confirmed predictions. Nobody predicted the muon, the strange particles or the tau. The positron, neutrino, pion, Ω⁻, charm quark, W and Z, top quark and Higgs were all predicted before they were seen. A surprise forces theory to grow; a bigger theory predicts something new to look for.</p>"
+          ]
+        },
+        "atom": {
+          "eyebrow": "History · step 2 of 18 · 1808–1908",
+          "short": "The atom becomes real",
+          "title": "Before particles: the atom becomes real",
+          "lead": "By 1900 chemists used atoms every day, but nobody knew what an atom was made of, and some physicists doubted atoms existed at all. Four clues suggested that the atom had an inside.",
+          "puzzle": "Chemical properties repeat periodically, atoms emit light only at sharp colours, and strange \"cathode rays\" glow in vacuum tubes. A truly indivisible ball explains none of this.",
+          "discovery": "Einstein (1905) explained Brownian motion as collisions with invisible molecules; Jean Perrin confirmed it in 1908 and counted the atoms in a given amount of matter.",
+          "classification": "After 1908 almost nobody doubted atoms. The open question became: what is inside them?",
+          "story": [
+            "<h4>Four clues</h4><ul><li><strong>Chemistry.</strong> John Dalton (1808) explained why compounds form in fixed proportions: each element is made of identical atoms with a characteristic weight. Dmitri Mendeleev (1869) arranged the elements by weight and found that their properties repeat periodically. An indivisible ball has no reason to repeat a pattern.</li><li><strong>Light from atoms.</strong> Gustav Kirchhoff and Robert Bunsen (1859–60) showed that each element emits light only at sharp, specific colours, a fingerprint called a spectrum. Johann Balmer (1885) found a simple formula for the lines of hydrogen. Something inside the atom vibrates in a few fixed ways only.</li><li><strong>Electricity and light.</strong> James Clerk Maxwell (1865) showed that light is an electromagnetic wave produced by moving charges. If atoms emit light, atoms must contain moving electric charges.</li><li><strong>Strange rays in glass tubes.</strong> In vacuum tubes at high voltage a glow travelled from the negative electrode (the cathode). Many German physicists thought these \"cathode rays\" were waves in the ether; many British physicists thought they were streams of charged particles.</li></ul>",
+            "<h4>The questions left open around 1900</h4><ul><li>What are cathode rays?</li><li>Why do atoms emit only certain colours?</li><li>Why do the chemical properties repeat?</li><li>What powers the Sun, which shines far longer than any chemical fire could last?</li></ul><p>Each of these questions led, within thirty years, to a new particle or a new theory. The next step opens the atom.</p>"
+          ]
+        },
+        "breakingAtom": {
+          "eyebrow": "History · step 3 of 18 · 1895–1919",
+          "short": "Electron, nucleus, proton",
+          "title": "Breaking the atom: electron, nucleus, proton",
+          "lead": "In twenty-five years the indivisible atom was split into a light, negative electron and a tiny, heavy, positive nucleus made of protons. Every step came from studying rays.",
+          "puzzle": "X-rays (Röntgen, 1895), radioactivity (Becquerel, 1896; the Curies, 1898) and cathode rays: what are these rays made of?",
+          "discovery": "J. J. Thomson found the electron (1897); Geiger, Marsden and Rutherford found the nucleus (1909–1911); Rutherford found the proton (1917–1919).",
+          "classification": "The electron is a universal piece of every atom; the nucleus holds the positive charge and almost all the mass; the hydrogen nucleus, the proton, is a building block of other nuclei.",
+          "story": [
+            "<h4>The puzzle: mysterious rays</h4><p>Wilhelm Röntgen discovered X-rays in 1895 while studying cathode-ray tubes. Looking for a link between X-rays and glowing minerals, Henri Becquerel found in 1896 that uranium emits penetrating radiation on its own. Marie and Pierre Curie (1898) found two far more active elements, polonium and radium, and coined the word <em>radioactivity</em>. Ernest Rutherford sorted the radiation by how far it penetrates: <strong>alpha</strong> rays stop in a sheet of paper, <strong>beta</strong> rays pass through thin metal, <strong>gamma</strong> rays (Paul Villard, 1900) pass through centimetres of lead. These Greek letters are why so many particles have Greek names.</p>",
+            "<h4>The discovery of the electron (1897)</h4><p>J. J. Thomson bent cathode rays with both an electric and a magnetic field. Balancing the two gave the ratio of charge to mass: about a thousand times larger than for a hydrogen ion, and the same whatever metal the cathode was made of.</p><p><strong>Why this made it a particle, and an elementary one:</strong> the rays carried a fixed charge per unit of mass, like identical bullets, and every element produced the same bullets. So the <a href=\"#particle-inspector\" data-particle=\"electron\">electron</a> had to be a universal piece of all atoms. Robert Millikan's oil-drop experiment (1909–1913) measured its charge directly: the electron weighs about 1/1836 of a hydrogen atom. Beta rays turned out to be electrons too.</p><p><strong>The new puzzle:</strong> atoms are neutral, so something positive must balance the electrons. Thomson imagined a \"plum pudding\": electrons scattered inside a diffuse positive sphere.</p>",
+            "<h4>The discovery of the nucleus (1909–1911)</h4><p>Hans Geiger and Ernest Marsden fired alpha particles at a thin gold foil. Most passed straight through, but about 1 in 8,000 bounced back. A diffuse pudding could never do that. Rutherford concluded in 1911 that all the positive charge and almost all the mass sit in a tiny <strong>nucleus</strong>, roughly 100,000 times smaller than the atom. The atom is mostly empty space. Henry Moseley (1913) then showed that each element is defined by the charge of its nucleus, the <strong>atomic number</strong> Z, which explained the periodic table better than atomic weight.</p>",
+            "<h4>The discovery of the proton (1917–1919)</h4><p>Rutherford fired alpha particles into nitrogen gas and detected hydrogen nuclei coming out. The hydrogen nucleus is therefore a building block inside other nuclei. In 1920 he named it the <strong>proton</strong>, from the Greek <em>protos</em>, \"first\".</p>",
+            "<h4>What this step left open</h4><ul><li><strong>The mass puzzle.</strong> Helium has charge 2 but mass 4. The favoured guess was protons plus electrons inside the nucleus. <a href=\"#history-neutron\">Step 4</a> shows why this failed.</li><li><strong>The glue puzzle.</strong> Protons repel each other electrically. What holds them together? This leads to <a href=\"#history-pion\">step 6</a>.</li><li><strong>The stability puzzle.</strong> By classical physics an orbiting electron should radiate and spiral into the nucleus in a fraction of a second. Why are atoms stable? This leads to quantum mechanics (<a href=\"#history-neutron\">step 4</a>).</li></ul>"
+          ]
+        },
+        "neutron": {
+          "eyebrow": "History · step 4 of 18 · 1913–1932",
+          "short": "Quantum atoms and the neutron",
+          "title": "Quantum atoms and the neutron",
+          "lead": "Quantum mechanics solved the puzzles of atomic stability and spectral lines. It also showed that the nucleus could not contain electrons, which led to the neutron.",
+          "puzzle": "An electron squeezed into a nucleus would need far more energy than beta-decay electrons carry, and the measured spin of nitrogen-14 (Rasetti, 1929) contradicted the proton + electron model.",
+          "discovery": "After Bothe and Becker (1930) and the Joliot-Curies (1932), James Chadwick (February 1932) identified a neutral particle with almost the proton's mass: the neutron.",
+          "classification": "The nucleus became protons + neutrons (nucleons). Heisenberg treated them as two states of one particle, labelled by isospin: the first internal symmetry.",
+          "story": [
+            "<h4>Quantum mechanics answers the atomic puzzles</h4><ul><li><strong>Niels Bohr, 1913:</strong> electrons may occupy only certain orbits. When an electron jumps between orbits it emits one photon whose energy equals the difference. This reproduced Balmer's hydrogen formula exactly.</li><li><strong>Louis de Broglie, 1924:</strong> if light waves are particles, particles may be waves. Electron diffraction confirmed this in 1927.</li><li><strong>Werner Heisenberg (1925) and Erwin Schrödinger (1926)</strong> built the full theory. Heisenberg's uncertainty principle (1927) says a particle squeezed into a small space must have a large, uncertain momentum.</li></ul><p>Quantum mechanics also introduced <strong>spin</strong>, which splits all particles into fermions and bosons (<a href=\"#history-spin\">step 12</a>).</p>",
+            "<h4>The puzzle: electrons cannot live in the nucleus</h4><ol><li><strong>Uncertainty.</strong> An electron confined to a nucleus would need an enormous energy, far more than the electrons emitted in beta decay actually carry.</li><li><strong>The \"nitrogen catastrophe\".</strong> In the old model nitrogen-14 holds 14 protons + 7 electrons = 21 spin-½ particles, so its total spin should be a half number. Franco Rasetti measured it in 1929 and found a whole number.</li></ol><p>Rutherford had already suggested in 1920 that a neutral particle of proton mass might exist inside nuclei.</p>",
+            "<h4>The discovery of the neutron (1932)</h4><p>Walther Bothe and Herbert Becker (1930) found that beryllium hit by alpha particles emits a very penetrating neutral radiation, which they took for gamma rays. Irène Joliot-Curie and Frédéric Joliot (January 1932) showed that it knocks protons out of paraffin wax with high energy; gamma rays would have needed an implausible energy to do that. James Chadwick repeated the experiment in February 1932, measuring the recoil of hydrogen and nitrogen nuclei. Only one explanation fitted: a <strong>neutral particle with almost the proton's mass</strong>, the <strong>neutron</strong>.</p>",
+            "<h4>How the neutron was classified</h4><ul><li>The nucleus became <strong>protons + neutrons</strong>, together called <strong>nucleons</strong>. Nitrogen-14 = 7 protons + 7 neutrons = 14 spin-½ particles, so its spin is a whole number, as measured. Both puzzles were solved at once.</li><li>Heisenberg (1932) noticed that the proton and neutron have almost the same mass and feel the nuclear force equally. He treated them as two states of one particle, distinguished by a label called <strong>isospin</strong>: the first internal symmetry, the direct ancestor of the quark \"flavours\" of <a href=\"#history-quarks\">step 8</a>.</li><li>A free neutron decays in about 15 minutes into a proton and an electron. This beta decay became the next crisis (<a href=\"#history-neutrino\">step 14</a>).</li></ul><p>In mid-1932 the world looked simple: protons, neutrons and electrons for matter, photons for light. That simplicity lasted only a few months.</p>"
+          ]
+        },
+        "map": {
+          "eyebrow": "History · step 5 of 18 · 1897–2012",
+          "short": "The final map and when each piece was found",
+          "title": "The final classification: four questions and seventeen discoveries",
+          "lead": "The catalog above is the end point of the story. Every particle can be placed by answering four questions in order, and each question was learned at a different moment: spin in 1925, the strong force in 1947, families between 1962 and 1975, and the role of bosons in 1973. The table below says when and how each of the 17 was first seen, and links to the step that tells its story.",
+          "puzzle": "Why these 17 particles, sorted into these families? Every label in the catalog answers a question that history raised.",
+          "discovery": "From the electron (1897) to the Higgs boson (2012), more than a century of rays, cosmic rays, accelerators and colliders.",
+          "classification": "Spin separates matter from forces; the strong force separates quarks from leptons; families are heavier copies; spin 1 carriers differ from the spin 0 Higgs.",
+          "story": [
+            "<h4>Four questions, in order</h4><ol><li><strong>What is its spin?</strong> A half number makes it a <strong>fermion</strong> (matter); a whole number makes it a <strong>boson</strong> (forces and mass). See <a href=\"#history-spin\">step 12</a>.</li><li><strong>If it is a fermion, does it feel the strong force?</strong> Yes: <strong>quark</strong>. No: <strong>lepton</strong>. See <a href=\"#history-pion\">step 6</a> and <a href=\"#history-zoo\">step 7</a>.</li><li><strong>Which family (generation)?</strong> Each family is a heavier copy of the first, with identical charges. See <a href=\"#history-mirrors\">step 15</a> and <a href=\"#history-completion\">step 16</a>.</li><li><strong>If it is a boson, is its spin 1 or 0?</strong> Spin 1: a <strong>gauge boson</strong> that carries a force. Spin 0: the <strong>Higgs boson</strong>. See <a href=\"#history-gauge\">step 10</a> and <a href=\"#history-higgs\">step 11</a>.</li></ol><p>Composite particles are sorted separately. They are all <strong>hadrons</strong>, named by the quarks they contain.</p>",
+            "<h4>Counting conventions</h4><p>The count of 17 treats each quark as one entry (not three colours), W⁺ and W⁻ as one, and the 8 gluons as one. Neutrino masses are not known individually: the KATRIN experiment set an upper limit of 0.45 eV in 2025, and because the three neutrino masses differ by tiny amounts the limit applies to all three. Each particle also has an antiparticle (<a href=\"#history-antimatter\">step 13</a>).</p>",
+            "<h4>Five rules that hold the picture together</h4><ol><li><strong>Matter is made of fermions; forces are carried by bosons.</strong></li><li><strong>The strong force divides fermions</strong> into quarks and leptons.</li><li><strong>Three families, each a heavier copy.</strong> Everyday matter uses only the first family: up and down quarks, electrons, and electron neutrinos from the Sun and radioactivity. Second- and third-family particles decay within a fraction of a second, so they appear only in cosmic rays and accelerators. Nobody knows why there are three, or why their masses differ so much.</li><li><strong>Quarks never appear alone</strong>; only colourless hadrons exist freely.</li><li><strong>Every particle has an antiparticle</strong> with the same mass and opposite charges.</li></ol><p>One more pattern links quarks and leptons. In each family the electric charges add up to zero: three colours × (+2/3 − 1/3) for the quarks, plus −1 for the charged lepton, plus 0 for the neutrino. This cancellation keeps the theory mathematically consistent, and suggests that quarks and leptons may share a common origin.</p>"
+          ]
+        },
+        "pion": {
+          "eyebrow": "History · step 6 of 18 · 1935–1947",
+          "short": "Yukawa, the muon mix-up and the pion",
+          "title": "The nuclear glue: Yukawa's meson, the muon mix-up and the pion",
+          "lead": "A predicted carrier of the nuclear force was searched for, apparently found, then shown to be the wrong particle by an experiment in wartime Rome. The real one, the pion, was found in 1947. The impostor, the muon, became the first sign that nature repeats itself in copies.",
+          "puzzle": "Protons in a nucleus repel each other, yet nuclei are stable. A much stronger force with a range of about 10⁻¹⁵ m must exist: the strong nuclear force.",
+          "discovery": "Yukawa predicted a carrier of about 200 electron masses (1935). The cosmic-ray \"mesotron\" of 1936–37 turned out to be the muon; Powell's group found the real pion in 1947.",
+          "classification": "Similar mass does not mean similar nature: what counts is which forces a particle feels. The pion became a hadron (meson); the muon joined the electron among the leptons.",
+          "story": [
+            "<h4>Yukawa's prediction (1935)</h4><p>Hideki Yukawa copied the photon idea (<a href=\"#history-photon\">step 9</a>): the nuclear force is carried by a particle exchanged between nucleons. The uncertainty principle links a carrier's mass to the range of its force: a massless photon gives infinite range, a heavy carrier a short range. From the size of nuclei Yukawa estimated about 200 electron masses, between the electron and the proton. Such particles were soon called <strong>mesons</strong>, from the Greek <em>mesos</em>, \"middle\".</p>",
+            "<h4>The wrong particle (1936–1947)</h4><p>Carl Anderson and Seth Neddermeyer, and separately J. C. Street and E. C. Stevenson, found in cosmic rays a particle of about 200 electron masses, with both charges. Everyone assumed it was Yukawa's meson.</p><p>In Rome, during the war, in hiding and under occupation, Marcello Conversi, Ettore Pancini and Oreste Piccioni separated positive and negative cosmic-ray mesons with magnetised iron and stopped them in different materials. A true Yukawa particle should be swallowed by a nucleus almost instantly once it stops. In iron the negative mesons were captured, but in light carbon they simply decayed, as if the nuclei were not there. Fermi, Teller and Weisskopf calculated that the particle interacted with nuclei roughly a trillion times more weakly than Yukawa's meson should: it did not feel the strong force at all. Luis Alvarez later named this experiment as the start of modern particle physics.</p>",
+            "<h4>The discovery of the pion (1947)</h4><p>Cecil Powell's group in Bristol (with César Lattes and Giuseppe Occhialini) used <strong>photographic emulsion</strong>, thick films that record a track as a line of silver grains. Exposed on mountain tops (Pic du Midi, Chacaltaya), the plates showed a heavier particle, about 270 electron masses, stopping and decaying into the lighter one. The heavier one was named the <strong>pi meson, or pion (π)</strong>; the lighter one the <strong>mu meson, later <a href=\"#particle-inspector\" data-particle=\"muon\">muon</a> (μ)</strong>. In 1948 pions were produced at the Berkeley cyclotron, the first particles made in a laboratory. Yukawa received the Nobel Prize in 1949, Powell in 1950.</p>",
+            "<h4>How they were classified</h4><table><thead><tr><th></th><th>Pion (π)</th><th>Muon (μ)</th></tr></thead><tbody><tr><th>Mass</th><td>about 273 electron masses (140 MeV)</td><td>about 207 electron masses (106 MeV)</td></tr><tr><th>Spin</th><td>0 (a boson)</td><td>½ (a fermion)</td></tr><tr><th>Feels the strong force?</th><td>Yes</td><td>No</td></tr><tr><th>Charges</th><td>+, 0, − (an isospin triplet)</td><td>− (and + for the antimuon)</td></tr><tr><th>Grouped with</th><td>hadrons, specifically mesons</td><td>electron and neutrino: the leptons</td></tr></tbody></table><p>The \"mu meson\" lost the name meson, which was kept for strongly interacting particles of whole-number spin. The muon behaves exactly like a heavy electron, except that it decays in 2.2 microseconds. Isidor Rabi's reaction became famous: \"Who ordered that?\" The answer, generations of particles, took another thirty years (<a href=\"#history-mirrors\">step 15</a> and <a href=\"#history-completion\">step 16</a>). The pion picture of the nuclear force was later understood as an approximation: the pion is made of quarks, and the strong force is really carried by gluons.</p>"
+          ]
+        },
+        "zoo": {
+          "eyebrow": "History · step 7 of 18 · 1947–1964",
+          "short": "The particle zoo",
+          "title": "The particle zoo: strangeness, resonances and new families",
+          "lead": "In under twenty years the number of known \"elementary\" particles grew from a handful to more than a hundred. This explosion forced physicists to sort particles into families, and made them suspect that most of these particles could not be elementary at all.",
+          "puzzle": "The \"V particles\" of 1947 (kaons, the Λ) were produced quickly through the strong force but lived about 10⁻¹⁰ s, a time typical of the weak force. Why made strongly but destroyed weakly?",
+          "discovery": "Rochester and Butler saw the first V events in 1947; Gell-Mann and Nishijima explained them with strangeness (1953). Accelerators and bubble chambers then found the antiproton and dozens of short-lived resonances.",
+          "classification": "Particles were sorted first by mass (leptons, mesons, baryons), then by the forces they feel and their spin. Strongly interacting particles became hadrons.",
+          "story": [
+            "<h4>The surprise: strange particles (1947–1953)</h4><p>In December 1947 George Rochester and Clifford Butler in Manchester photographed two cloud-chamber events shaped like a \"V\": an invisible neutral particle had decayed into two charged ones. Over the next years these became the <strong>kaons (K)</strong> and a particle heavier than the proton, the <strong>lambda (Λ)</strong>. Particles heavier than the nucleons were called <strong>hyperons</strong> (Λ, Σ, Ξ).</p><p><strong>The solution: strangeness (1953).</strong> Abraham Pais noticed that they are always produced in pairs. Murray Gell-Mann and, independently, Kazuhiko Nishijima proposed a new conserved quantity, <strong>strangeness</strong>. The strong force conserves it, so it creates strange particles in pairs (+1 and −1); only the weak force may change it, so the decay is slow. Today strangeness counts the <a href=\"#particle-inspector\" data-particle=\"strange\">strange quark</a>.</p>",
+            "<h4>Accelerators take over</h4><ul><li><strong>Cosmotron</strong> (Brookhaven, 1953, 3.3 GeV): first to produce strange particles at will, confirming pair production.</li><li><strong>Bevatron</strong> (Berkeley, 1954, 6.2 GeV): built with just enough energy to create proton–antiproton pairs. In 1955 Emilio Segrè, Owen Chamberlain, Clyde Wiegand and Thomas Ypsilantis found the <strong>antiproton</strong>; the antineutron followed in 1956.</li><li><strong>Bubble chamber</strong> (Donald Glaser, 1952): a tank of superheated liquid in which particles leave trails of bubbles. Luis Alvarez's large liquid-hydrogen chambers recorded millions of photographs.</li></ul>",
+            "<h4>Resonances: particles that live too briefly to leave a track</h4><p>In 1952 Fermi's group in Chicago scattered pions off protons. The collision rate peaked sharply at a total energy of about 1,232 MeV. This peak is a particle, now called the <strong>Δ (Delta)</strong>, which lives only about 10⁻²³ s: it leaves no track and shows up only as a bump in a graph of energies. In the 1960s bubble chambers revealed dozens of such <strong>resonances</strong> (ρ, ω, K*, Σ*, …). Fermi reportedly joked that if he could remember all their names he would have become a botanist.</p>",
+            "<h4>The first classification: by mass, then by force</h4><table><thead><tr><th>Group</th><th>Greek root</th><th>Modern definition</th><th>Examples</th></tr></thead><tbody><tr><th>Leptons</th><td><em>leptos</em>, light or small</td><td>spin-½ particles that do <strong>not</strong> feel the strong force</td><td>electron, muon, neutrinos</td></tr><tr><th>Mesons</th><td><em>mesos</em>, middle</td><td>strongly interacting particles with whole-number spin (baryon number 0)</td><td>π, K, ρ</td></tr><tr><th>Baryons</th><td><em>barys</em>, heavy</td><td>strongly interacting particles with half-number spin (baryon number 1)</td><td>proton, neutron, Λ, Σ, Ξ, Δ</td></tr><tr><th>Hadrons</th><td><em>hadros</em>, thick or strong (Lev Okun, 1962)</td><td>everything that feels the strong force: mesons + baryons</td><td>all of the above except leptons</td></tr></tbody></table><p>The mass-based names soon became misleading: the tau lepton is heavier than the proton, and some mesons are heavier than most baryons. The names were kept, but the definitions changed from <strong>\"how heavy\"</strong> to <strong>\"which forces it feels and what spin it has\"</strong>. New conservation laws became sorting tools too: <strong>baryon number</strong> (which is why the proton, the lightest baryon, cannot decay), <strong>lepton number</strong>, <strong>strangeness</strong> and <strong>isospin</strong>.</p>",
+            "<h4>The hint of something deeper</h4><ol><li><strong>Too many of them.</strong> A hundred \"elementary\" particles resembled the many chemical elements before the periodic table: a sign of hidden building blocks.</li><li><strong>They have a size.</strong> Robert Hofstadter (Stanford, 1950s) bounced electrons off protons and measured a radius of about 0.8 × 10⁻¹⁵ m, with charge spread out inside. Leptons, by contrast, behaved as points.</li></ol><p>The search for order among the hadrons is the next step.</p>"
+          ]
+        },
+        "quarks": {
+          "eyebrow": "History · step 8 of 18 · 1961–1973",
+          "short": "Eightfold Way, quarks and colour",
+          "title": "Order from chaos: the Eightfold Way, quarks and colour",
+          "lead": "The hundred hadrons turned out to be combinations of just three smaller particles, quarks, held together by a new kind of charge called colour. The proof came in five steps: a pattern, a prediction, a model, a correction and a direct look inside the proton.",
+          "puzzle": "Is there order among the hadrons? And if they are built from smaller pieces, why has nobody ever seen one of those pieces alone?",
+          "discovery": "Gell-Mann and Ne'eman found the Eightfold Way (1961); the Ω⁻ confirmed it (1964); Gell-Mann and Zweig proposed quarks (1964); SLAC saw point-like partons inside the proton (1968).",
+          "classification": "Baryons are three quarks, mesons a quark and an antiquark. Each quark carries one of three colours, and only colourless combinations exist freely.",
+          "story": [
+            "<h4>Step 1: the pattern (1961)</h4><p>Murray Gell-Mann and Yuval Ne'eman, independently, plotted hadrons of the same spin on a chart of strangeness against electric charge. The particles fell into regular shapes: hexagons of 8 (<strong>octets</strong>) and triangles of 10 (<strong>decuplets</strong>). The mathematics behind the shapes is the symmetry group SU(3). Gell-Mann named the scheme the <strong>Eightfold Way</strong>. The spin-½ baryon octet is p, n, Λ, Σ⁺, Σ⁰, Σ⁻, Ξ⁰, Ξ⁻; the spin-0 meson octet is π⁺, π⁰, π⁻, K⁺, K⁰, anti-K⁰, K⁻, η.</p>",
+            "<h4>Step 2: the prediction of the Ω⁻ (1962–1964)</h4><p>The spin-3/2 baryons formed a triangle of 10 places, but only 9 particles were known. At a CERN conference in 1962 Gell-Mann predicted the missing one: charge −1, strangeness −3, a mass about 150 MeV above the row before it, and a long life, because it could decay only through the weak force. In February 1964 a Brookhaven bubble-chamber team led by Nicholas Samios found it in a single photograph out of tens of thousands: the particle-physics equivalent of Mendeleev predicting unknown elements from the gaps in his table. In the decuplet below, each row down swaps one light quark for a heavier strange quark.</p>",
+            "<h4>Step 3: quarks (1964)</h4><p>Gell-Mann and George Zweig (at CERN) proposed, independently, that all hadrons are built from three smaller particles with <strong>fractional electric charge</strong>. Gell-Mann called them <strong>quarks</strong>, from a line in James Joyce's <em>Finnegans Wake</em>; Zweig called them \"aces\".</p><table><thead><tr><th>Quark</th><th>Symbol</th><th>Electric charge</th><th>Strangeness</th></tr></thead><tbody><tr><th><a href=\"#particle-inspector\" data-particle=\"up\">up</a></th><td>u</td><td>+2/3</td><td>0</td></tr><tr><th><a href=\"#particle-inspector\" data-particle=\"down\">down</a></th><td>d</td><td>−1/3</td><td>0</td></tr><tr><th><a href=\"#particle-inspector\" data-particle=\"strange\">strange</a></th><td>s</td><td>−1/3</td><td>−1</td></tr></tbody></table><ul><li><strong>Baryons = three quarks:</strong> proton = uud (2/3 + 2/3 − 1/3 = +1), neutron = udd (0), Λ = uds, Ω⁻ = sss.</li><li><strong>Mesons = one quark + one antiquark:</strong> π⁺ = u + anti-d, K⁺ = u + anti-s.</li></ul><p>Old labels found a meaning: strangeness counts strange quarks, isospin reflects the near-equal masses of u and d, baryon number is +1/3 per quark. But no free particle with fractional charge was ever found, and many physicists, Gell-Mann included, treated quarks as a bookkeeping device.</p>",
+            "<h4>Step 4: colour (1964–1965)</h4><p><strong>The puzzle:</strong> the Δ⁺⁺ is uuu and the Ω⁻ is sss, with all three spins pointing the same way. That puts three identical fermions in the same state, which Pauli's exclusion principle forbids. Oscar Greenberg (1964), then Moo-Young Han and Yoichiro Nambu (1965), proposed that each quark carries an extra charge with three possible values, later called <strong>colour</strong>: red, green and blue. The three s quarks of the Ω⁻ have different colours, so they are not identical. Only <strong>colourless</strong> combinations exist freely: red + green + blue (a baryon) or a colour plus its anticolour (a meson). Experiments later counted the colours: the decay of the neutral pion into two photons and the rate of hadron production in electron–positron collisions (at ADONE in Frascati and at SLAC) both require exactly three.</p>",
+            "<h4>Step 5: seeing inside the proton (1967–1973)</h4><p>At SLAC a 3 km linear accelerator fired 20 GeV electrons at protons. Jerome Friedman, Henry Kendall and Richard Taylor found far more electrons bouncing back at large angles than a smooth proton allows: Rutherford's gold-foil experiment repeated one level deeper. Richard Feynman (1969) interpreted the result: the proton contains point-like pieces, which he called <strong>partons</strong>. They turned out to have spin ½, and neutrino experiments with the Gargamelle bubble chamber at CERN (1973) confirmed their fractional charges and that the proton holds three of them. <strong>The partons were the quarks.</strong> Nobel Prize 1990.</p><p>One measurement did not fit: the quarks carry only about half of the proton's momentum. The other half belongs to electrically neutral partons, later identified as <a href=\"#particle-inspector\" data-particle=\"gluon\">gluons</a>. And a new puzzle: when struck hard, quarks behave as if almost free, yet no quark ever escapes. <a href=\"#history-gauge\">Step 10</a> gives the answer.</p>"
+          ]
+        },
+        "photon": {
+          "eyebrow": "History · step 9 of 18 · 1900–1948",
+          "short": "Light becomes a particle: the photon",
+          "title": "Light becomes a particle: the photon",
+          "lead": "The photon was the first particle discovered by theory before it was accepted by experiment, and it became the model for every force carrier found later.",
+          "puzzle": "Classical physics predicted that a hot object should radiate infinite energy at short wavelengths. Planck (1900) fixed the formula by assuming energy is emitted in packets, E = h × f.",
+          "discovery": "Einstein (1905) proposed that light itself is made of quanta; Millikan (1914–16) confirmed the photoelectric prediction; Compton (1923) showed X-rays bounce off electrons like billiard balls.",
+          "classification": "Massless, neutral, spin 1. In QED the electric force is an exchange of photons: each force has its own carrier particle, a gauge boson.",
+          "story": [
+            "<h4>The discovery</h4><ul><li><strong>Einstein, 1905:</strong> light is made of quanta. This explained the photoelectric effect: light knocks electrons out of a metal, but their energy depends on the light's colour, not its brightness, and red light below a threshold frees no electrons at all, however bright. A wave could not do this; a stream of packets could.</li><li><strong>Millikan, 1914–1916:</strong> tried to disprove Einstein and instead confirmed his prediction precisely.</li><li><strong>Arthur Compton, 1923:</strong> X-rays bouncing off electrons lose energy exactly as in a collision between two billiard balls, with the light carrying momentum. This convinced most physicists. The name <strong>photon</strong> was coined by Gilbert Lewis in 1926.</li></ul><p>Light is both a wave and a particle; this <strong>wave–particle duality</strong> applies to all particles.</p>",
+            "<h4>Why the photon matters for classification</h4><p>The <a href=\"#particle-inspector\" data-particle=\"photon\">photon</a> has no mass, no electric charge and spin 1. In quantum electrodynamics (QED), completed around 1948 by Richard Feynman, Julian Schwinger, Sin-Itiro Tomonaga and Freeman Dyson, the electric force between two charges is an exchange of photons. This is the key idea for everything that follows: <strong>each force is carried by its own particle.</strong> A massless carrier gives a force of infinite range. In 1935 this idea led Yukawa to predict a carrier for the nuclear force (<a href=\"#history-pion\">step 6</a>); later it led to the W, Z and gluon. All force carriers are now grouped together as <strong>gauge bosons</strong>.</p>"
+          ]
+        },
+        "gauge": {
+          "eyebrow": "History · step 10 of 18 · 1954–1973",
+          "short": "The forces as gauge theories",
+          "title": "The forces as gauge theories",
+          "lead": "Between 1954 and 1973 theorists rewrote all three particle forces in one common language, gauge theory, in which a symmetry dictates both the force and its carrier particles. This framework predicted the charm quark, the W and Z bosons, the gluons and the Higgs boson before any of them was seen.",
+          "puzzle": "Fermi's point-like weak interaction gives impossible probabilities at high energy, and Yang–Mills symmetry demands massless carriers, while the weak force has a tiny range.",
+          "discovery": "Electroweak unification (Glashow, Weinberg, Salam, 1961–68), neutral currents at Gargamelle (CERN, 1973), and QCD with asymptotic freedom (Gross, Wilczek, Politzer, 1973).",
+          "classification": "Strong: 8 gluons of SU(3) colour. Electroweak: W⁺, W⁻, Z⁰ and the photon of SU(2) × U(1). Together: SU(3) × SU(2) × U(1), the core of the Standard Model.",
+          "story": [
+            "<h4>The idea: symmetry creates forces</h4><p>In QED the electron's quantum wave has a phase, a kind of internal clock hand. The equations stay the same if you turn that hand by the same amount everywhere: a <em>global</em> symmetry. Demand that you may turn it by a different amount at every point (a <em>local</em> or <strong>gauge</strong> symmetry), and the equations only work if a new field is added to compensate. That field is exactly the electromagnetic field, and its quantum is the photon. <strong>The symmetry requires the force carrier.</strong> Chen-Ning Yang and Robert Mills (1954) applied the same recipe to richer symmetries. Their carriers, unlike the photon, carry charge themselves and interact with each other. The flaw: the symmetry demanded massless carriers, but the weak force needs heavy ones. The way out, the Higgs mechanism, is <a href=\"#history-higgs\">step 11</a>.</p>",
+            "<h4>Electroweak unification (1961–1971)</h4><ul><li><strong>Sheldon Glashow (1961)</strong> combined the weak and electromagnetic forces in one symmetry group with four carriers: W⁺, W⁻, a neutral Z⁰ and the photon.</li><li><strong>Steven Weinberg (1967) and Abdus Salam (1968)</strong> added the Higgs mechanism. The W and Z become heavy, about 85 to 100 times the proton mass, which makes the weak force short-range and \"weak\". The photon stays massless.</li><li><strong>Gerard 't Hooft and Martinus Veltman (1971)</strong> proved that the theory gives finite, calculable predictions (it is <em>renormalisable</em>). Nobel Prizes 1979 and 1999.</li></ul><p>The theory predicted <strong>neutral currents</strong>: weak interactions carried by the Z in which a neutrino scatters and stays a neutrino.</p>",
+            "<h4>Charm is predicted (1970)</h4><p>Some kaon decays that change strangeness without changing charge were far rarer than the three-quark theory predicted. Sheldon Glashow, John Iliopoulos and Luciano Maiani (the <strong>GIM mechanism</strong>) showed the problem disappears if a fourth quark exists. Called <strong>charm</strong>, it would pair with the strange quark as up pairs with down, giving two quark families (u, d) and (c, s) to match the two lepton families.</p>",
+            "<h4>Neutral currents are found (1973)</h4><p>The Gargamelle bubble chamber at CERN, exposed to a neutrino beam, recorded events in which a neutrino hit an electron or a nucleus and nothing but the neutrino left: no muon. These were the predicted neutral currents, the first direct evidence for the <a href=\"#particle-inspector\" data-particle=\"z_boson\">Z</a>, and the first major discovery at CERN.</p>",
+            "<h4>Quantum chromodynamics (1973)</h4><p>Colour (<a href=\"#history-quarks\">step 8</a>) was made into a gauge symmetry. The resulting theory of the strong force is <strong>quantum chromodynamics (QCD)</strong>, formulated by Harald Fritzsch, Gell-Mann and Heinrich Leutwyler. It has <strong>8 gluons</strong>, and because gluons carry colour themselves, gluons attract other gluons. David Gross and Frank Wilczek, and independently David Politzer, showed that the strong force becomes <strong>weaker at short distances</strong>: <strong>asymptotic freedom</strong>, which explains why quarks hit hard at SLAC looked almost free (Nobel Prize 2004). At large distances the force does not weaken: pulling two quarks apart stretches a tube of gluon field until the stored energy creates a new quark–antiquark pair and the tube snaps into two hadrons. This is <strong>confinement</strong>. In a high-energy collision a struck quark appears as a narrow spray of hadrons, a <strong>jet</strong>.</p>",
+            "<h4>The result: the forces of the Standard Model</h4><table><thead><tr><th>Force</th><th>Symmetry</th><th>Carriers</th><th>Carrier mass</th><th>Range</th><th>Acts on</th></tr></thead><tbody><tr><th>Strong</th><td>SU(3) colour</td><td>8 gluons</td><td>0</td><td>about 10⁻¹⁵ m (confined)</td><td>quarks, gluons</td></tr><tr><th>Electromagnetic</th><td>U(1), what remains after symmetry breaking</td><td>photon</td><td>0</td><td>infinite</td><td>electrically charged particles</td></tr><tr><th>Weak</th><td>SU(2) × U(1), broken by the Higgs field</td><td>W⁺, W⁻, Z⁰</td><td>80.4 and 91.2 GeV</td><td>about 10⁻¹⁸ m</td><td>all quarks and leptons</td></tr><tr><th>Gravity</th><td>not part of the Standard Model</td><td>graviton (hypothetical)</td><td>0</td><td>infinite</td><td>everything with energy</td></tr></tbody></table><p>In 1973 the key ingredients were still predictions: charm, the W and Z, the gluon, the Higgs boson and (from Kobayashi and Maskawa, <a href=\"#history-mirrors\">step 15</a>) a third family. The next forty years were spent finding them.</p>"
+          ]
+        },
+        "higgs": {
+          "eyebrow": "History · step 11 of 18 · 1964–2013",
+          "short": "The Higgs mechanism and the Higgs boson",
+          "title": "The Higgs mechanism (1964) and the Higgs boson (2012)",
+          "lead": "Gauge symmetry demanded massless carriers, yet the W and Z are heavy. The answer, a field that fills all of space, was proposed in 1964 and confirmed 48 years later, when the Higgs boson became the last Standard Model particle to be observed.",
+          "puzzle": "How can a gauge theory have heavy carriers without breaking the symmetry that makes it work?",
+          "discovery": "Englert and Brout; Higgs; Guralnik, Hagen and Kibble (1964). ATLAS and CMS at the LHC announced a boson of about 125 GeV on 4 July 2012.",
+          "classification": "Spin 0, no charge: the only fundamental scalar. It is not a force carrier like the gauge bosons; its couplings grow with the mass of each particle.",
+          "story": [
+            "<h4>The Higgs mechanism (1964)</h4><p>Inspired by Yoichiro Nambu's work on superconductivity, three groups found the way out in 1964: François Englert and Robert Brout; Peter Higgs; and Gerald Guralnik, Carl Hagen and Tom Kibble. Suppose a new field fills all of space and has a non-zero value even in empty space. The symmetry still holds in the equations but is hidden in the state of the vacuum (<strong>spontaneous symmetry breaking</strong>). Carriers that interact with this field acquire mass; carriers that do not stay massless. Higgs pointed out that the theory leaves a physical trace: a new particle, the ripple of this field itself, the <strong>Higgs boson</strong>. Weinberg and Salam used the mechanism in electroweak theory (<a href=\"#history-gauge\">step 10</a>), where the electron and the other matter particles also get their masses from the Higgs field.</p>",
+            "<h4>The Higgs boson (2012)</h4><p>LEP at CERN had excluded a Higgs lighter than 114 GeV. The <strong>Large Hadron Collider (LHC)</strong>, colliding protons in the old LEP tunnel, began physics runs in 2010. On 4 July 2012 the <strong>ATLAS</strong> experiment (spokesperson Fabiola Gianotti) and the <strong>CMS</strong> experiment (spokesperson Joe Incandela) announced a new boson of about 125 GeV, seen decaying into two photons and into four leptons. Later measurements showed spin 0 and couplings proportional to mass, as the Higgs mechanism requires. François Englert and Peter Higgs received the Nobel Prize in 2013. With the <a href=\"#particle-inspector\" data-particle=\"higgs\">Higgs</a>, every particle of the Standard Model had been observed.</p>"
+          ]
+        },
+        "spin": {
+          "eyebrow": "History · step 12 of 18 · 1922–1940",
+          "short": "Spin, Pauli and the great division",
+          "title": "Spin, Pauli and the great division: fermions and bosons",
+          "lead": "Spin produced the deepest division in all of particle physics. The occupancy experiment above is the rule that Pauli discovered in 1925, and it is why matter takes up space.",
+          "puzzle": "Stern and Gerlach (1922) sent silver atoms through a magnetic field and saw the beam split in exactly two. And why do electrons fill atoms shell by shell?",
+          "discovery": "Uhlenbeck and Goudsmit (1925): the electron has built-in angular momentum, spin ½. Pauli (1925): no two electrons can share the same quantum state.",
+          "classification": "Half-integer spin: fermions (matter). Whole-number spin: bosons (forces and fields). Pauli proved in 1940 that spin and behaviour are always linked this way.",
+          "story": [
+            "<h4>Spin: a new identity card for particles</h4><p>In 1925 George Uhlenbeck and Samuel Goudsmit explained the Stern–Gerlach split: the electron has its own built-in angular momentum, called <strong>spin</strong>, of value ½ in quantum units. Spin is as basic a label as mass or charge, and it can only be a whole or a half number: 0, ½, 1, 3/2, 2.</p>",
+            "<h4>The Pauli exclusion principle and the great division</h4><p>Wolfgang Pauli (1925) stated that no two electrons can occupy the same quantum state. Electrons therefore fill atoms shell by shell, and the outer shells repeat their pattern: this finally explained Mendeleev's periodic table. In 1926 Enrico Fermi and Paul Dirac showed that all particles with half-integer spin obey this rule; earlier, Satyendra Bose and Einstein (1924–25) had described the opposite behaviour of whole-number spin particles.</p><table><thead><tr><th>Class</th><th>Spin</th><th>Behaviour</th><th>Role in nature</th><th>Named after</th></tr></thead><tbody><tr><th>Fermions</th><td>½, 3/2, …</td><td>refuse to share a state; they \"take up space\"</td><td>matter</td><td>Enrico Fermi</td></tr><tr><th>Bosons</th><td>0, 1, 2, …</td><td>happily pile into the same state</td><td>forces and fields (a laser is billions of photons in one state)</td><td>Satyendra Bose</td></tr></tbody></table><p>This is why, today, matter particles (quarks, leptons) are all fermions and force carriers are all bosons. In <a href=\"#history-antimatter\">step 13</a>, spin ½ appears automatically from Dirac's equation.</p>"
+          ]
+        },
+        "antimatter": {
+          "eyebrow": "History · step 13 of 18 · 1912–1956",
+          "short": "Antimatter: Dirac and the positron",
+          "title": "Antimatter: Dirac's equation and the positron",
+          "lead": "The positron, the first antiparticle, was predicted by pure mathematics and found in cosmic rays four years later. It doubled the number of particles at a stroke: every particle has an antiparticle.",
+          "puzzle": "Schrödinger's equation ignores relativity, but electrons in heavy atoms move close to the speed of light. Dirac's relativistic equation (1928) produced solutions with negative energy.",
+          "discovery": "Dirac predicted an anti-electron (1931). Carl Anderson photographed it in cosmic rays in 1932; Blackett and Occhialini saw gamma rays turn into electron–positron pairs (1933).",
+          "classification": "Every particle has an antiparticle with the same mass and spin and opposite charges; a few neutral particles, such as the photon, are their own antiparticle.",
+          "story": [
+            "<h4>The puzzle: quantum mechanics ignored relativity</h4><p>Paul Dirac (1928) wrote an equation for the electron that respects Einstein's relativity. It produced two surprises: <strong>spin ½ came out automatically</strong>, as a consequence of combining relativity with quantum mechanics, and there were <strong>solutions with negative energy</strong>. Dirac at first interpreted the missing negative-energy states as protons, but others showed that the \"hole\" must have exactly the electron's mass. In 1931 Dirac predicted an <strong>anti-electron</strong>: same mass, opposite charge.</p>",
+            "<h4>Where to look: cosmic rays</h4><p>In 1912 Victor Hess carried detectors on balloon flights and found that radiation increases with altitude: it comes from space. These <strong>cosmic rays</strong> hit the atmosphere with energies no laboratory could produce, and until the 1950s they were the main source of new particles.</p>",
+            "<h4>The discovery of the positron (1932)</h4><p>Carl Anderson at Caltech photographed cosmic rays in a <strong>cloud chamber</strong> (supersaturated vapour in which a charged particle leaves a trail of droplets) inside a strong magnet. A 6 mm lead plate showed which way each particle travelled, because a particle loses energy crossing it and then curves more. One track bent the way a positive charge bends, but it was far too thin and too long for a proton: a positive electron, the <strong>positron</strong>. In 1933 Patrick Blackett and the Italian Giuseppe Occhialini confirmed it, triggering their chamber with Geiger counters, and photographed gamma rays turning into electron–positron pairs. Anderson and Hess shared the 1936 Nobel Prize.</p>",
+            "<h4>How the discovery changed classification</h4><ul><li><strong>Every particle has an antiparticle.</strong> The antiproton (1955) and antineutron (1956) followed.</li><li><strong>Particles can be created and destroyed.</strong> A particle meeting its antiparticle annihilates into photons, and a photon with enough energy can create a pair: E = mc² works in both directions.</li><li><strong>Fields become the basic objects.</strong> Because particle number is not fixed, physicists moved to <strong>quantum field theory</strong>: each type of particle is a ripple of an underlying field that fills space.</li></ul><p><strong>The puzzle that remains:</strong> if matter and antimatter behave almost identically, why is the universe made almost entirely of matter? This is still unsolved (<a href=\"#history-open\">step 17</a>).</p>"
+          ]
+        },
+        "neutrino": {
+          "eyebrow": "History · step 14 of 18 · 1914–1956",
+          "short": "The beta-decay crisis and the neutrino",
+          "title": "The beta-decay crisis and the neutrino",
+          "lead": "The neutrino was invented in 1930 to save the law of conservation of energy, and detected 26 years later. Explaining how it is produced required a third force of nature: the weak force. The beta-decay reaction above is exactly the process at the centre of this story.",
+          "puzzle": "In beta decay the electrons come out with any energy up to a maximum (Chadwick, 1914), and the spins do not add up. Bohr was ready to give up conservation of energy.",
+          "discovery": "Pauli proposed a light neutral particle (1930); Fermi named it and built the theory of the weak force (1933–34); Cowan and Reines detected it at a nuclear reactor (1956).",
+          "classification": "Spin ½, no charge, almost no mass: a fermion that feels only the weak force. Grouped with the electron among the leptons, with a conserved lepton number.",
+          "story": [
+            "<h4>The puzzle: energy seems to disappear</h4><p>When a nucleus emits an alpha particle, the alpha always has the same energy, as expected when one object splits into two. In beta decay, however, James Chadwick (1914) found that the electrons come out with <em>any</em> energy from zero up to a maximum, and Charles Ellis and William Wooster (1927) confirmed that the missing energy was not hidden in gamma rays. There was also a spin problem: a neutron (spin ½) cannot become a proton (½) plus an electron (½), because two halves add to 0 or 1, never ½.</p>",
+            "<h4>Pauli's \"desperate remedy\" (1930)</h4><p>In a letter to colleagues meeting in Tübingen in December 1930, Pauli proposed a third particle emitted in beta decay: electrically neutral, very light and spin ½. It would carry off the missing energy and fix the spin count, invisibly. After Chadwick claimed the name \"neutron\" in 1932, Enrico Fermi in Rome called Pauli's particle the <strong>neutrino</strong>, Italian for \"little neutral one\".</p>",
+            "<h4>Fermi's theory: a new force (1933–1934)</h4><p>Fermi modelled beta decay on the way an atom emits a photon: a neutron turns into a proton and <em>creates</em> an electron and an antineutrino on the spot. <em>Nature</em> rejected the paper as too remote from physical reality; it appeared in Italian and German journals in 1934. The interaction is extremely weak and acts only at very short distances: the <strong>weak force</strong>, the only force that changes one kind of particle into another. It also answers the old question about the Sun: hydrogen fusion in the Sun's core requires the weak force to turn protons into neutrons (Hans Bethe, 1938). The theory also predicted the problem: a neutrino could pass through light-years of lead without stopping.</p>",
+            "<h4>The detection (1956)</h4><p>Clyde Cowan and Frederick Reines found an enormous flux of neutrinos beside the Savannah River nuclear reactor. They looked for the reverse of beta decay: antineutrino + proton → neutron + positron. Their tanks of water and cadmium recorded a double signal: the positron annihilates at once, giving two gamma rays; a few microseconds later the neutron is captured by cadmium, giving a second flash. This delayed double signal is a fingerprint that background rarely imitates. In June 1956 they telegraphed Pauli. Reines received the Nobel Prize in 1995; Cowan had died in 1974.</p>",
+            "<h4>How the neutrino was classified</h4><ul><li><strong>Spin ½, no charge, almost no mass</strong>: a fermion that feels only the weak force (and gravity).</li><li>It was grouped with the electron as a particle that does <strong>not</strong> feel the nuclear force: later the <strong>leptons</strong> (<a href=\"#history-zoo\">step 7</a>).</li><li>Neutrino and antineutrino behave differently, leading to a new conservation rule, <strong>lepton number</strong>.</li></ul><p><strong>The problem Fermi's theory left:</strong> it describes the weak interaction at a single point, and at very high energies its probabilities exceed 100%. The weak force, like electromagnetism, must have a carrier: the W boson (<a href=\"#history-gauge\">step 10</a> and <a href=\"#history-completion\">step 16</a>).</p>"
+          ]
+        },
+        "mirrors": {
+          "eyebrow": "History · step 15 of 18 · 1956–1973",
+          "short": "Broken mirrors: parity, two neutrinos, CP",
+          "title": "Broken mirrors: parity, two neutrinos and CP violation",
+          "lead": "Between 1956 and 1964, three experiments showed that the weak force distinguishes left from right and matter from antimatter, and that leptons come in separate families. These results became the rules that shaped the Standard Model.",
+          "puzzle": "The θ–τ puzzle: two strange particles with identical mass and lifetime decayed into states of opposite parity. And why does a muon never decay into an electron and a photon?",
+          "discovery": "Wu (1957) showed parity violation in cobalt-60; Lederman, Schwartz and Steinberger found the muon neutrino (1962); Cronin and Fitch found CP violation in kaons (1964).",
+          "classification": "The weak force acts only on left-handed particles, grouped in doublets. Leptons come in families, (e, νe) and (μ, νμ). CP violation needs at least three quark families (Kobayashi–Maskawa, 1973).",
+          "story": [
+            "<h4>Parity violation (1956–1957)</h4><p>Two strange particles, θ and τ (unrelated to today's tau lepton), had identical mass and lifetime, but decayed into two and three pions, states of opposite <strong>parity</strong>. Tsung-Dao Lee and Chen-Ning Yang found that mirror symmetry had never been tested for the weak force. Chien-Shiung Wu and colleagues cooled cobalt-60 to a hundredth of a degree above absolute zero and lined up the nuclear spins: the beta-decay electrons came out mostly in one direction. <strong>The weak force is not mirror-symmetric.</strong> Garwin, Lederman and Weinrich confirmed it within days with pion and muon decays. Lee and Yang received the 1957 Nobel Prize; Wu was not included.</p><ul><li>θ and τ were the same particle, the charged kaon.</li><li>The weak force acts only on <strong>left-handed</strong> particles. Maurice Goldhaber (1958) measured that neutrinos are always left-handed.</li><li>In the Standard Model left-handed particles come in <strong>doublets</strong> connected by the weak force, such as (electron neutrino, electron); right-handed ones are <strong>singlets</strong> the weak force ignores.</li></ul>",
+            "<h4>Two neutrinos (1962)</h4><p>A muon never decays into an electron plus a photon, although with only one kind of neutrino theory said it should. Leon Lederman, Melvin Schwartz and Jack Steinberger built the first <strong>accelerator neutrino beam</strong> at Brookhaven: protons hit a target to make pions, which decay into muons and neutrinos, and about 13 m of steel stopped everything except the neutrinos. Those neutrinos produced muons but no electrons. So the <a href=\"#particle-inspector\" data-particle=\"mu_neutrino\">muon neutrino</a> is a different particle from the <a href=\"#particle-inspector\" data-particle=\"e_neutrino\">electron neutrino</a> (Nobel Prize 1988). Leptons come in <strong>families</strong>, each with its own conserved number, and the muon found its place as the heavy copy of the electron in a second family. In 1964 Bjorken and Glashow suggested a matching second quark family.</p>",
+            "<h4>CP violation (1964)</h4><p>After 1957 physicists hoped that a combined symmetry survived: swap particles with antiparticles (C) <strong>and</strong> reflect in a mirror (P). James Cronin, Val Fitch, James Christenson and René Turlay studied the long-lived neutral kaon at Brookhaven. If CP held, it could decay only into three pions; about 2 times in 1,000 it decayed into two. <strong>CP is violated</strong>: matter and antimatter are slightly different (Nobel Prize 1980). Andrei Sakharov (1967) showed that CP violation is one of three conditions the early universe needs to produce more matter than antimatter. Makoto Kobayashi and Toshihide Maskawa (1973) showed that the Standard Model can produce CP violation only with at least <strong>three families</strong> of quarks, when only three quarks were known. Their prediction is confirmed in <a href=\"#history-completion\">step 16</a>.</p>"
+          ]
+        },
+        "completion": {
+          "eyebrow": "History · step 16 of 18 · 1974–2008",
+          "short": "Completing the picture with detectors",
+          "title": "Completing the picture: charm, tau, bottom, gluon, W, Z, top",
+          "lead": "In 26 years, colliders and detectors found every particle the 1973 theory needed, plus a third family that only Kobayashi and Maskawa had anticipated. Each discovery was read from the detector signatures shown above: lepton pairs, jets and missing energy.",
+          "puzzle": "In 1973 charm, the W and Z, the gluon and a third family were still predictions. Do they exist?",
+          "discovery": "J/ψ (1974), tau (1975), Υ (1977), three-jet events (1979), W and Z (1983), exactly three light neutrinos (1989), top (1995), tau neutrino (2000).",
+          "classification": "Two, then three families of quarks and leptons; the gluon and the W and Z joined the photon as gauge bosons. All 12 matter particles had been seen by 2000.",
+          "story": [
+            "<h4>Charm: the November Revolution (1974)</h4><p>On 11 November 1974 two teams announced the same new particle at 3.1 GeV. Samuel Ting's group at Brookhaven (proton beam on a fixed target) called it <strong>J</strong>; Burton Richter's group at SLAC (electron–positron collider SPEAR) called it <strong>ψ</strong>. Within days the ADONE collider in Frascati, pushed beyond its design energy, confirmed it. Its very narrow peak meant it lived about a thousand times longer than expected: it is a <a href=\"#particle-inspector\" data-particle=\"charm\">charm quark</a> bound to a charm antiquark (\"charmonium\"). D mesons with a single charm quark followed in 1976. GIM's prediction was confirmed. Nobel Prize 1976.</p>",
+            "<h4>The tau: a surprise third lepton (1975)</h4><p>At SPEAR, Martin Perl's team saw collisions producing one electron, one muon of opposite charge, and missing energy. The pattern fitted a new heavy lepton created in pairs, each decaying into an electron or muon plus invisible neutrinos. The <a href=\"#particle-inspector\" data-particle=\"tau\">tau</a> weighs 1.777 GeV, nearly twice the proton (Nobel Prize 1995). Three lepton families now faced two quark families: physicists expected a third quark family, as Kobayashi and Maskawa had proposed.</p>",
+            "<h4>Bottom (1977)</h4><p>Leon Lederman's team at Fermilab found the <strong>Υ (Upsilon)</strong> at 9.46 GeV, decaying into muon pairs. Like the J/ψ it is a quark bound to its own antiquark: the <a href=\"#particle-inspector\" data-particle=\"bottom\">bottom quark</a>, the first quark of the third family.</p>",
+            "<h4>The gluon (1979)</h4><p>At the PETRA electron–positron collider at DESY in Hamburg, most collisions produced two back-to-back jets: a quark and an antiquark. Some produced <strong>three jets</strong> in a flat \"Mercedes\" pattern: the quark or antiquark had radiated a hard <a href=\"#particle-inspector\" data-particle=\"gluon\">gluon</a>, which became the third jet. TASSO, JADE, MARK-J and PLUTO reported it in 1979: the first direct observation of the gluon.</p>",
+            "<h4>W and Z (1983)</h4><p>The W and Z needed collisions at hundreds of GeV. At CERN, Carlo Rubbia proposed turning the SPS accelerator into a proton–antiproton collider, and Simon van der Meer's \"stochastic cooling\" made it possible to collect enough antiprotons. In 1983 the UA1 and UA2 experiments found the <a href=\"#particle-inspector\" data-particle=\"w_boson\">W</a> (January) and the <a href=\"#particle-inspector\" data-particle=\"z_boson\">Z</a> (May–June) at the masses electroweak theory predicted. Rubbia and van der Meer received the Nobel Prize in 1984.</p>",
+            "<h4>Exactly three families (1989)</h4><p>The LEP collider at CERN (27 km circumference) and the SLC at SLAC produced millions of Z bosons. The Z can decay into any neutrino type lighter than half its mass, and each type broadens its peak by a fixed amount. The measured width allows <strong>exactly three</strong> light neutrino types: three families of matter, not more (unless a fourth family had an extremely heavy neutrino).</p>",
+            "<h4>Top (1995)</h4><p>The CDF and DØ experiments at Fermilab's Tevatron found the <a href=\"#particle-inspector\" data-particle=\"top\">top quark</a> at about 173 GeV, as heavy as a gold atom and still the heaviest known fundamental particle. LEP's precision measurements had already indicated its mass range. The top decays in about 5 × 10⁻²⁵ s, too fast to form hadrons. When B-factory experiments in Japan and California measured CP violation in B mesons (2001), Kobayashi and Maskawa's explanation was confirmed; they received the Nobel Prize in 2008.</p>",
+            "<h4>Tau neutrino (2000)</h4><p>The DONuT experiment at Fermilab directly observed the <a href=\"#particle-inspector\" data-particle=\"tau_neutrino\">tau neutrino</a> through a handful of events in which it produced a tau. All 12 matter particles had now been seen. Only the Higgs boson remained (<a href=\"#history-higgs\">step 11</a>).</p>"
+          ]
+        },
+        "open": {
+          "eyebrow": "History · step 17 of 18 · 1968–2026",
+          "short": "What the Standard Model does not explain",
+          "title": "What the Standard Model does not explain (as of November 2026)",
+          "lead": "The Standard Model has passed every collider test so far. Yet it does not explain neutrino masses, dark matter, the excess of matter over antimatter, gravity, or the pattern of particle masses. As in the past, these mismatches are where the next particles are most likely to be hiding.",
+          "puzzle": "From 1968 Ray Davis's Homestake experiment detected only about a third of the neutrinos the Sun should emit. Galaxies rotate too fast for the matter we can see.",
+          "discovery": "Super-Kamiokande (1998) and SNO (2001–02) showed that neutrinos oscillate, so they have mass. Recent tests (2025–2026) sharpen the limits without yet breaking the model.",
+          "classification": "Massive neutrinos may get mass from the Higgs field with unseen right-handed partners, or be their own antiparticles (Majorana). Dark matter fits no Standard Model particle.",
+          "story": [
+            "<h4>Neutrinos have mass</h4><p>Super-Kamiokande in Japan (1998) showed that muon neutrinos made in the atmosphere change type on their way through the Earth. SNO in Canada (2001–2002) showed that the Sun's total neutrino output is correct, but part of it arrives as other types. Changing type (<strong>oscillation</strong>) is possible only if neutrinos have mass (Nobel Prize 2015). The original Standard Model had massless neutrinos. Their mass may come from the Higgs field, which would need right-handed neutrinos never seen, or the neutrino may be its own antiparticle, a <strong>Majorana</strong> particle, after the Italian physicist Ettore Majorana (1937). Experiments search for it through neutrinoless double-beta decay. In 2025 KATRIN set an upper limit of 0.45 eV; the JUNO detector in China began taking data in August 2025 to find which neutrino is heaviest, the \"mass ordering\".</p>",
+            "<h4>Dark matter, antimatter, gravity and masses</h4><ul><li><strong>Dark matter.</strong> About 85% of the matter in the universe is invisible. Neutrinos are too light and too fast; candidates such as WIMPs and axions have not been detected. The situation resembles the beta-decay crisis of <a href=\"#history-neutrino\">step 14</a>: something is missing, and an unseen particle is the simplest explanation.</li><li><strong>More matter than antimatter.</strong> Sakharov's conditions (<a href=\"#history-mirrors\">step 15</a>) require CP violation. The Standard Model has it, from the three quark families, but many orders of magnitude too little. One candidate new source is CP violation among neutrinos, to be tested by DUNE and Hyper-Kamiokande.</li><li><strong>Gravity.</strong> Between two protons the electric repulsion is about 10³⁶ times stronger than gravity. The <strong>graviton</strong> (a hypothetical spin-2 boson) has never been observed, and no theory of quantum gravity has been tested.</li><li><strong>The pattern of masses.</strong> Masses range from below 0.45 eV to 173 GeV, more than eleven orders of magnitude, each from a separate coupling to the Higgs field. The Standard Model has about 19 free numbers that must be measured. It does not explain why the Higgs is so light compared with the scale of gravity (the <strong>hierarchy problem</strong>); supersymmetry predicts partner particles, but none have been found at the LHC.</li></ul>",
+            "<h4>Recent tests, 2025–2026</h4><table><thead><tr><th>Result</th><th>Date</th><th>What was found</th><th>What it means</th></tr></thead><tbody><tr><th><a href=\"https://english.cas.cn/newsroom/headlines/202606/t20260611_1161560.shtml\">JUNO first physics result</a></th><td>June 2026</td><td>precise measurement of two oscillation parameters from 59 days of data</td><td>the detector works; next goal is the mass ordering</td></tr><tr><th><a href=\"https://www6.slac.stanford.edu/node/6116\">LZ dark-matter search</a></th><td>December 2025</td><td>no dark matter; world-leading limits and first signs of solar neutrinos</td><td>WIMPs increasingly constrained; detectors reach the \"neutrino fog\"</td></tr><tr><th><a href=\"https://cerncourier.com/atlas-confirms-top-antitop-excess/\">Toponium, CMS then ATLAS</a></th><td>2025</td><td>about 1% extra top–antitop pairs at the production threshold</td><td>fleeting top–antitop bound states: the heaviest cousin of the 1974 J/ψ</td></tr><tr><th><a href=\"https://home.cern/news/news/physics/new-piece-matter-antimatter-puzzle\">LHCb CP violation in baryons</a></th><td>2025</td><td>2.45% matter–antimatter asymmetry in Λb decays, at 5.2 standard deviations</td><td>first CP violation in baryons; still far too small for the cosmic excess</td></tr><tr><th><a href=\"https://news.fnal.gov/?p=333767\">Muon g-2 final result</a></th><td>June 2025</td><td>muon magnetism measured to 127 parts per billion</td><td>the newer theory prediction is close, weakening a long-standing hint; theory methods still disagree</td></tr><tr><th><a href=\"https://www.kit.edu/kit/english/pi_2025_029_astroparticle-physics-neutrinos-weigh-less-than-0-45-electronvolts.php\">KATRIN neutrino mass</a></th><td>April 2025</td><td>neutrino mass below 0.45 eV</td><td>the tightest direct laboratory limit</td></tr></tbody></table><p>The muon g-2 measures how much the muon's magnetism exceeds Dirac's value of exactly 2 (<a href=\"#history-antimatter\">step 13</a>); every particle that exists, even unknown ones, nudges it through quantum effects.</p>",
+            "<h4>What comes next</h4><p>The High-Luminosity LHC upgrade is the top medium-term priority, and the LHC is expected to run until 2041. On 22 May 2026 the CERN Council named the FCC-ee, a much larger electron–positron collider, as the preferred next flagship project, with a decision targeted for 2028 (<a href=\"https://cerncourier.com/cern-council-updates-the-european-strategy/\">CERN Courier</a>). It would act as a \"Higgs factory\". The neutrino, the muon, charm and the tau each appeared where a measurement disagreed with expectations; today's disagreements are the most likely doors to the next layer.</p>"
+          ]
+        },
+        "chain": {
+          "eyebrow": "History · step 18 of 18 · 1897–2026",
+          "short": "The chain of logic in one page",
+          "title": "The chain of logic in one page",
+          "lead": "Read from top to bottom, each answer creates the next question. The timeline shows the second pattern of the story: before 1950 particles mostly surprised physicists; after 1950 theory usually predicted them first, sometimes decades before the experiment (48 years for the Higgs boson).",
+          "puzzle": "Each discovery left a question that the existing picture could not answer.",
+          "discovery": "Surprises (muon, strange particles, tau) forced theory to grow; predictions (positron, neutrino, pion, Ω⁻, charm, W, Z, top, Higgs) told experiments where to look.",
+          "classification": "The result is the Standard Model: three families of quarks and leptons, gauge bosons for three forces, and the Higgs boson.",
+          "story": [
+            "<table><thead><tr><th>#</th><th>The question</th><th>The answer</th><th>The new question it raised</th></tr></thead><tbody><tr><td>1</td><td>What are cathode rays?</td><td><a href=\"#history-electron\"><strong>Electron</strong></a> (1897)</td><td>Atoms are neutral: where is their positive charge?</td></tr><tr><td>2</td><td>Where is the positive charge?</td><td><a href=\"#history-breaking-atom\"><strong>Nucleus</strong></a> (1911)</td><td>What is the nucleus made of?</td></tr><tr><td>3</td><td>What is the nucleus made of?</td><td><strong>Proton</strong> (1919)</td><td>Why do nuclei weigh more than their protons?</td></tr><tr><td>4</td><td>Is light a wave or a particle?</td><td><a href=\"#history-photon\"><strong>Photon</strong></a> (1905–1923)</td><td>Do other forces have carrier particles too?</td></tr><tr><td>5</td><td>Why do nuclei weigh more than their protons?</td><td><a href=\"#history-neutron-discovery\"><strong>Neutron</strong></a> (1932)</td><td>What holds protons and neutrons together?</td></tr><tr><td>6</td><td>What does an electron obeying relativity imply?</td><td><a href=\"#history-antimatter\"><strong>Positron</strong></a> (1932): antimatter</td><td>Why is the universe made of matter? (still open)</td></tr><tr><td>7</td><td>Where does energy go in beta decay?</td><td><a href=\"#history-neutrino\"><strong>Neutrino</strong></a> (proposed 1930, seen 1956) and the <strong>weak force</strong></td><td>Does the weak force have a carrier?</td></tr><tr><td>8</td><td>What carries the nuclear force?</td><td><a href=\"#history-pion\"><strong>Pion</strong></a> (1947), after the <strong>muon</strong> mix-up (1936)</td><td>Why does the muon exist?</td></tr><tr><td>9</td><td>Why do the V particles live so long?</td><td><a href=\"#history-strangeness\"><strong>Strangeness</strong></a> (1953)</td><td>How can 100+ hadrons be organised?</td></tr><tr><td>10</td><td>Does the weak force respect mirror symmetry?</td><td>No: <a href=\"#history-mirrors\"><strong>parity violation</strong></a> (1957)</td><td>Is CP at least conserved?</td></tr><tr><td>11</td><td>Why does a muon never decay into an electron and a photon?</td><td><a href=\"#history-two-neutrinos\"><strong>Muon neutrino</strong></a> (1962): lepton families</td><td>Do quarks also come in families?</td></tr><tr><td>12</td><td>Is there order among the hadrons?</td><td><a href=\"#history-quarks\"><strong>Eightfold Way</strong></a>, confirmed by the <strong>Ω⁻</strong> (1964)</td><td>Why these patterns?</td></tr><tr><td>13</td><td>Why these patterns?</td><td><strong>Quarks</strong> (1964), seen inside the proton (1968); <a href=\"#history-colour\"><strong>colour</strong></a> (1964–65)</td><td>Why are quarks never seen alone?</td></tr><tr><td>14</td><td>Why are quarks never seen alone?</td><td><a href=\"#history-qcd\"><strong>QCD</strong></a>: asymptotic freedom and confinement (1973); <strong>gluon</strong> seen (1979)</td><td>How do the other forces fit the same scheme?</td></tr><tr><td>15</td><td>How can the weak force have heavy carriers?</td><td><a href=\"#history-higgs\"><strong>Higgs mechanism</strong></a> (1964), <strong>electroweak theory</strong> (1967)</td><td>Do the W, Z, charm and Higgs exist?</td></tr><tr><td>16</td><td>Do the predicted particles exist?</td><td><a href=\"#history-charm\"><strong>Charm</strong></a> (1974), <a href=\"#history-wz\"><strong>W and Z</strong></a> (1983)</td><td>Why is CP violated (seen 1964)?</td></tr><tr><td>17</td><td>Why is CP violated?</td><td><strong>Three families</strong> needed (Kobayashi–Maskawa, 1973)</td><td>Where is the third family?</td></tr><tr><td>18</td><td>Where is the third family?</td><td><strong>Tau</strong> (1975), <strong>bottom</strong> (1977), <strong>top</strong> (1995), <strong>tau neutrino</strong> (2000); <a href=\"#history-families\">exactly three families</a> (1989)</td><td>Where do all these masses come from?</td></tr><tr><td>19</td><td>Where do masses come from?</td><td><a href=\"#history-higgs-boson\"><strong>Higgs boson</strong></a> (2012)</td><td>What explains neutrino mass, dark matter and the matter excess? (<a href=\"#history-open\">step 17</a>)</td></tr></tbody></table>",
+            "<h4>Where the names come from</h4><table><thead><tr><th>Name</th><th>Origin</th></tr></thead><tbody><tr><th>electron</th><td>Greek <em>ēlektron</em>, amber, which attracts small objects when rubbed</td></tr><tr><th>proton</th><td>Greek <em>protos</em>, first</td></tr><tr><th>neutron, neutrino</th><td>\"neutral\"; <em>-ino</em> is the Italian diminutive, chosen by Fermi</td></tr><tr><th>photon</th><td>Greek <em>phōs</em>, light</td></tr><tr><th>lepton, meson, baryon, hadron</th><td>Greek for light, middle, heavy and strong</td></tr><tr><th>fermion, boson</th><td>Enrico Fermi and Satyendra Bose</td></tr><tr><th>quark</th><td>a word from James Joyce's <em>Finnegans Wake</em>, chosen by Gell-Mann</td></tr><tr><th>up, down</th><td>the two directions of isospin</td></tr><tr><th>strange</th><td>the \"strange\" long lifetime of kaons and hyperons</td></tr><tr><th>charm</th><td>Bjorken and Glashow liked the symmetry the fourth quark brought between quarks and leptons</td></tr><tr><th>bottom, top</th><td>the lower and upper member of the third quark pair (also called beauty and truth)</td></tr><tr><th>colour, flavour</th><td>metaphors: three primary colours make white; \"flavour\" means which kind of quark or lepton</td></tr><tr><th>gluon</th><td>it glues quarks together</td></tr><tr><th>W, Z</th><td>W for weak; Z for zero electric charge</td></tr><tr><th>Greek letters (π, μ, τ, Λ, Σ, Ξ, Δ, Ω, Υ, ψ)</th><td>a tradition started by alpha, beta and gamma rays; Ω, the last Greek letter, closed the decuplet</td></tr></tbody></table>",
+            "<h4>Further reading</h4><ul><li>Abraham Pais, <em>Inward Bound: Of Matter and Forces in the Physical World</em> (1986): the classic, detailed history from radioactivity to the Standard Model.</li><li>Steven Weinberg, <em>The Discovery of Subatomic Particles</em> (1983): the electron, proton and neutron, explained for non-specialists.</li><li>Robert Crease and Charles Mann, <em>The Second Creation</em> (1986): the people and experiments of 20th-century particle physics.</li><li>Frank Close, <em>The Infinity Puzzle</em> (2011): the story of gauge theories and the Higgs mechanism.</li></ul><p>Steps 1–16 tell the standard, well-documented history of the field; masses and dates are rounded. The 2025–2026 results in step 17 come from the linked pages.</p>"
+          ]
+        }
+      },
+      "extra": {
+        "decupletCaption": "The baryon decuplet of the Eightfold Way: 10 particles on 4 strangeness levels. Each row down adds one strange quark; the Ω⁻ (sss) was predicted from the empty corner.",
+        "discoveryTable": {
+          "caption": "When and how each of the 17 fundamental particles was first seen",
+          "label": "Discovery table of the fundamental particles",
+          "particle": "Particle",
+          "group": "Group",
+          "firstSeen": "First seen",
+          "how": "Where and how"
+        },
+        "timeline": {
+          "title": "Prediction and observation years",
+          "label": "Timeline of prediction and observation for each particle",
+          "predicted": "predicted",
+          "observed": "observed",
+          "entry": "{name}: predicted {predicted}, observed {observed} ({gap} years later)",
+          "surprise": "{name}: observed {observed} without a prediction (a surprise)",
+          "note": "The strange quark is dated by the 1947 discovery of kaons, which contain it; up and down by the 1968 SLAC experiment that first saw quarks inside the proton. Predicted bars start at the first theoretical proposal.",
+          "positron": "Positron",
+          "pion": "Pion",
+          "omega": "Omega-minus (Ω⁻)"
+        }
+      }
     }
   },
   "ui": {
@@ -604,6 +913,24 @@
         "The LHC accelerates protons to 99.9999991% the speed of light",
         "There are more atoms in a glass of water than glasses of water in all the oceans"
       ]
+    },
+    "history": {
+      "title": "History",
+      "discovered": "First seen {year} · {how}.",
+      "readStory": "Read how it was found",
+      "tableColumn": "First seen",
+      "yearLink": "{year}: read how {name} was found",
+      "families": {
+        "quark": "History: quarks and colour",
+        "lepton": "History: leptons and hadrons",
+        "gauge": "History: forces as gauge theories",
+        "scalar": "History: the Higgs mechanism"
+      },
+      "topics": {
+        "spin": "History: spin and statistics",
+        "antimatter": "History: its antiparticle",
+        "generations": "History: three families"
+      }
     }
   },
   "model": {
@@ -612,103 +939,120 @@
         "name": "Up quark",
         "massLabel": "≈ 2.16 MeV/c²",
         "example": "Two up and one down valence quarks make a proton.",
-        "massNote": "Running mass at a scale of 2 GeV; not the mass of a free quark."
+        "massNote": "Running mass at a scale of 2 GeV; not the mass of a free quark.",
+        "discovery": "SLAC: inside the proton, by electron scattering"
       },
       "down": {
         "name": "Down quark",
         "massLabel": "≈ 4.70 MeV/c²",
         "example": "Two down and one up valence quarks make a neutron.",
-        "massNote": "Running mass at a scale of 2 GeV; confinement prevents isolation."
+        "massNote": "Running mass at a scale of 2 GeV; confinement prevents isolation.",
+        "discovery": "SLAC: inside the proton, by electron scattering"
       },
       "charm": {
         "name": "Charm quark",
         "massLabel": "≈ 1.273 GeV/c²",
         "example": "Charm and anticharm form the J/ψ meson.",
-        "massNote": "Running mass evaluated at its own mass scale."
+        "massNote": "Running mass evaluated at its own mass scale.",
+        "discovery": "Brookhaven and SLAC: in the J/ψ"
       },
       "strange": {
         "name": "Strange quark",
         "massLabel": "≈ 93.5 MeV/c²",
         "example": "Strange quarks appear in kaons and strange baryons.",
-        "massNote": "Running mass at a scale of 2 GeV."
+        "massNote": "Running mass at a scale of 2 GeV.",
+        "discovery": "Manchester: in kaons (\"V particles\"); understood as a quark in 1964"
       },
       "top": {
         "name": "Top quark",
         "massLabel": "≈ 172.6 GeV/c²",
         "example": "Decays predominantly to a W boson and a bottom quark before forming hadrons.",
-        "massNote": "Rounded direct-reconstruction mass; different mass definitions must not be mixed at high precision."
+        "massNote": "Rounded direct-reconstruction mass; different mass definitions must not be mixed at high precision.",
+        "discovery": "Fermilab: Tevatron proton–antiproton collisions"
       },
       "bottom": {
         "name": "Bottom quark",
         "massLabel": "≈ 4.183 GeV/c²",
         "example": "Bottom hadrons produce displaced decay vertices in detectors.",
-        "massNote": "Running mass evaluated at its own mass scale."
+        "massNote": "Running mass evaluated at its own mass scale.",
+        "discovery": "Fermilab: in the Υ"
       },
       "electron": {
         "name": "Electron",
         "massLabel": "≈ 0.511 MeV/c²",
         "example": "Atomic electrons form shells and chemical bonds; moving electrons carry electric current.",
-        "massNote": "Rest mass, independent of its speed. An electron is elementary; a proton is composite."
+        "massNote": "Rest mass, independent of its speed. An electron is elementary; a proton is composite.",
+        "discovery": "Cambridge: cathode rays"
       },
       "muon": {
         "name": "Muon",
         "massLabel": "≈ 105.66 MeV/c²",
         "example": "Cosmic-ray muons reach the ground and often traverse an entire collider detector.",
-        "massNote": "About 207 electron masses; mean lifetime approximately 2.2 μs."
+        "massNote": "About 207 electron masses; mean lifetime approximately 2.2 μs.",
+        "discovery": "Caltech: cosmic rays"
       },
       "tau": {
         "name": "Tau",
         "massLabel": "≈ 1.777 GeV/c²",
         "example": "Produces electrons, muons, or hadrons in its weak decays.",
-        "massNote": "Mean lifetime approximately 290 femtoseconds."
+        "massNote": "Mean lifetime approximately 290 femtoseconds.",
+        "discovery": "SLAC: electron–muon events at SPEAR"
       },
       "e_neutrino": {
         "name": "Electron neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Produced in solar fusion and electron-flavor weak interactions.",
-        "massNote": "νₑ is a superposition of mass states ν₁, ν₂, ν₃. Oscillations measure mass-squared differences, not one mass for each flavor."
+        "massNote": "νₑ is a superposition of mass states ν₁, ν₂, ν₃. Oscillations measure mass-squared differences, not one mass for each flavor.",
+        "discovery": "Savannah River: reactor antineutrinos"
       },
       "mu_neutrino": {
         "name": "Muon neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Produced with muons in charged-pion decays.",
-        "massNote": "Flavor and mass states differ. At least two neutrino mass states have nonzero mass; the lightest could be massless."
+        "massNote": "Flavor and mass states differ. At least two neutrino mass states have nonzero mass; the lightest could be massless.",
+        "discovery": "Brookhaven: first accelerator neutrino beam"
       },
       "tau_neutrino": {
         "name": "Tau neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Identified through interactions that produce tau leptons when enough energy is available.",
-        "massNote": "There is no separate measured rest mass to assign to the tau flavor. Neutrino mass generation requires physics beyond the minimal Standard Model."
+        "massNote": "There is no separate measured rest mass to assign to the tau flavor. Neutrino mass generation requires physics beyond the minimal Standard Model.",
+        "discovery": "Fermilab: DONuT experiment"
       },
       "photon": {
         "name": "Photon",
         "massLabel": "0 in the Standard Model",
         "example": "Visible light, radio waves, and X-rays consist of photons. Photons mediate electromagnetic interactions.",
-        "massNote": "Zero rest mass does not mean zero energy: E = hf = pc. No rest frame exists for a photon."
+        "massNote": "Zero rest mass does not mean zero energy: E = hf = pc. No rest frame exists for a photon.",
+        "discovery": "photoelectric and Compton effects"
       },
       "gluon": {
         "name": "Gluon",
         "massLabel": "0 in the Standard Model",
         "example": "Eight color states mediate the strong interaction; gluons also interact with other gluons.",
-        "massNote": "Massless but confined: hadronization produces jets rather than isolated gluons."
+        "massNote": "Massless but confined: hadronization produces jets rather than isolated gluons.",
+        "discovery": "DESY: three-jet events at PETRA"
       },
       "w_boson": {
         "name": "W boson",
         "massLabel": "≈ 80.37 GeV/c²",
         "example": "W⁺ and W⁻ mediate charged-current weak processes, including beta decay.",
-        "massNote": "Its large mass helps set the short range of the weak interaction. W bosons also couple to the Higgs field."
+        "massNote": "Its large mass helps set the short range of the weak interaction. W bosons also couple to the Higgs field.",
+        "discovery": "CERN: UA1 and UA2"
       },
       "z_boson": {
         "name": "Z boson",
         "massLabel": "≈ 91.19 GeV/c²",
         "example": "Mediates neutral-current weak scattering, including neutrino scattering without producing a charged lepton.",
-        "massNote": "Electrically neutral but not non-interacting; couples to the Higgs field and weak currents."
+        "massNote": "Electrically neutral but not non-interacting; couples to the Higgs field and weak currents.",
+        "discovery": "CERN: UA1 and UA2"
       },
       "higgs": {
         "name": "Higgs boson",
         "massLabel": "≈ 125.2 GeV/c²",
         "example": "The observed excitation of the Higgs field; reconstructed from its decay products.",
-        "massNote": "A scalar boson, not a gauge force carrier. Its own mass comes from the Higgs potential; photon/gluon couplings occur through loops."
+        "massNote": "A scalar boson, not a gauge force carrier. Its own mass comes from the Higgs potential; photon/gluon couplings occur through loops.",
+        "discovery": "CERN: ATLAS and CMS"
       }
     },
     "interactions": {

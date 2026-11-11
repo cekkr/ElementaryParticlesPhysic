@@ -94,7 +94,7 @@
                 <p class="hero-subtitle">{{page.hero.subtitle}}</p>
                 <div class="interactive-demo">
                     <p>{{page.hero.welcome}}</p>
-                    <div class="learning-paths"><a href="#matter">{{page.hero.paths.atoms}}</a><a href="#particle-zoo">{{page.hero.paths.standardModel}}</a><a href="#quantum">{{page.hero.paths.exclusion}}</a></div>
+                    <div class="learning-paths"><a href="#matter">{{page.hero.paths.atoms}}</a><a href="#particle-zoo">{{page.hero.paths.standardModel}}</a><a href="#quantum">{{page.hero.paths.exclusion}}</a><a href="#history-intro">{{page.history.labels.heroPath}}</a></div>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -147,6 +147,60 @@
                 <p>{{page.scale.mnemonic.phrase}}</p>
                 <p>{{page.scale.mnemonic.prefixes}}</p>
             </div>
+            <!-- History step 1 of 18: page.history.steps.intro -->
+            <article class="concept-card history-step" id="history-intro" aria-labelledby="history-intro-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.intro.eyebrow}}</p>
+                <h3 id="history-intro-title">{{page.history.steps.intro.title}}</h3>
+                <p class="history-lead">{{page.history.steps.intro.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.intro.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.intro.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.intro.classification}}</p></div>
+                </div>
+                <h4>{{page.history.labels.indexTitle}}</h4>
+                <ol class="history-index">
+                    <li><a href="#history-intro">{{page.history.steps.intro.short}}</a></li>
+                    <li><a href="#history-atom">{{page.history.steps.atom.short}}</a></li>
+                    <li><a href="#history-breaking-atom">{{page.history.steps.breakingAtom.short}}</a></li>
+                    <li><a href="#history-neutron">{{page.history.steps.neutron.short}}</a></li>
+                    <li><a href="#history-map">{{page.history.steps.map.short}}</a></li>
+                    <li><a href="#history-pion">{{page.history.steps.pion.short}}</a></li>
+                    <li><a href="#history-zoo">{{page.history.steps.zoo.short}}</a></li>
+                    <li><a href="#history-quarks">{{page.history.steps.quarks.short}}</a></li>
+                    <li><a href="#history-photon">{{page.history.steps.photon.short}}</a></li>
+                    <li><a href="#history-gauge">{{page.history.steps.gauge.short}}</a></li>
+                    <li><a href="#history-higgs">{{page.history.steps.higgs.short}}</a></li>
+                    <li><a href="#history-spin">{{page.history.steps.spin.short}}</a></li>
+                    <li><a href="#history-antimatter">{{page.history.steps.antimatter.short}}</a></li>
+                    <li><a href="#history-neutrino">{{page.history.steps.neutrino.short}}</a></li>
+                    <li><a href="#history-mirrors">{{page.history.steps.mirrors.short}}</a></li>
+                    <li><a href="#history-completion">{{page.history.steps.completion.short}}</a></li>
+                    <li><a href="#history-open">{{page.history.steps.open.short}}</a></li>
+                    <li><a href="#history-chain">{{page.history.steps.chain.short}}</a></li>
+                </ol>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.intro.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.intro.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.intro.story.2}}</div>
+                </details>
+                <div class="history-stepper"><a href="#history-atom" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.atom.short}}</span></a></div>
+            </article>
+            <!-- History step 2 of 18: page.history.steps.atom -->
+            <article class="concept-card history-step" id="history-atom" aria-labelledby="history-atom-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.atom.eyebrow}}</p>
+                <h3 id="history-atom-title">{{page.history.steps.atom.title}}</h3>
+                <p class="history-lead">{{page.history.steps.atom.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.atom.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.atom.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.atom.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.atom.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.atom.story.1}}</div>
+                </details>
+                <div class="history-stepper"><a href="#history-intro" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.intro.short}}</span></a><a href="#history-breaking-atom" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.breakingAtom.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 2: What is Matter? (schematic atom canvas + timeline disclosure) -->
@@ -192,6 +246,45 @@
                     </div>
                 </div>
             </div>
+            <!-- History step 3 of 18: page.history.steps.breakingAtom -->
+            <article class="concept-card history-step" id="history-breaking-atom" aria-labelledby="history-breaking-atom-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.breakingAtom.eyebrow}}</p>
+                <h3 id="history-breaking-atom-title">{{page.history.steps.breakingAtom.title}}</h3>
+                <p class="history-lead">{{page.history.steps.breakingAtom.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.breakingAtom.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.breakingAtom.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.breakingAtom.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.breakingAtom.story.0}}</div>
+                    <div class="history-block" id="history-electron">{{page.history.steps.breakingAtom.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.breakingAtom.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.breakingAtom.story.3}}</div>
+                    <div class="history-block">{{page.history.steps.breakingAtom.story.4}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="up">{{model.particles.up.name}}</a><a href="#particle-inspector" data-particle="down">{{model.particles.down.name}}</a></div>
+                <div class="history-stepper"><a href="#history-atom" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.atom.short}}</span></a><a href="#history-neutron" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.neutron.short}}</span></a></div>
+            </article>
+            <!-- History step 4 of 18: page.history.steps.neutron -->
+            <article class="concept-card history-step" id="history-neutron" aria-labelledby="history-neutron-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.neutron.eyebrow}}</p>
+                <h3 id="history-neutron-title">{{page.history.steps.neutron.title}}</h3>
+                <p class="history-lead">{{page.history.steps.neutron.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.neutron.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.neutron.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.neutron.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.neutron.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.neutron.story.1}}</div>
+                    <div class="history-block" id="history-neutron-discovery">{{page.history.steps.neutron.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.neutron.story.3}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="up">{{model.particles.up.name}}</a><a href="#particle-inspector" data-particle="down">{{model.particles.down.name}}</a><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a></div>
+                <div class="history-stepper"><a href="#history-breaking-atom" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.breakingAtom.short}}</span></a><a href="#history-map" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.map.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 3: The Particle Zoo (catalog hub, inline inspector, pair comparison matrix) -->
@@ -225,8 +318,9 @@
                 <details class="deep-dive" open>
                     <summary>{{page.zoo.table.summary}}</summary>
                     <div class="table-scroll" role="region" aria-label="{{page.zoo.table.summary}}" tabindex="0">
-                        <table id="particle-table"><caption>{{page.zoo.table.caption}}</caption><thead><tr><th scope="col">{{page.zoo.table.columns.particle}}</th><th scope="col">{{ui.properties.type}}</th><th scope="col">{{page.zoo.table.columns.generation}}</th><th scope="col">{{ui.properties.restMass}}</th><th scope="col">{{ui.properties.chargeUnit}}</th><th scope="col">{{ui.properties.spinUnit}}</th><th scope="col">{{ui.properties.interactions}}</th></tr></thead><tbody id="particle-rows"></tbody></table>
+                        <table id="particle-table"><caption>{{page.zoo.table.caption}}</caption><thead><tr><th scope="col">{{page.zoo.table.columns.particle}}</th><th scope="col"><a href="#history-map">{{ui.properties.type}}</a></th><th scope="col"><a href="#history-families">{{page.zoo.table.columns.generation}}</a></th><th scope="col"><a href="#history-higgs">{{ui.properties.restMass}}</a></th><th scope="col"><a href="#history-electron">{{ui.properties.chargeUnit}}</a></th><th scope="col"><a href="#history-spin">{{ui.properties.spinUnit}}</a></th><th scope="col"><a href="#history-forces-table">{{ui.properties.interactions}}</a></th><th scope="col"><a href="#history-map">{{ui.history.tableColumn}}</a></th></tr></thead><tbody id="particle-rows"></tbody></table>
                     </div>
+                    <p class="hint">{{page.zoo.table.historyHint}}</p>
                 </details>
                 <p class="source-note">{{page.zoo.catalog.massNote}}</p>
                 <p class="hint">{{page.zoo.catalog.filterNote}}</p>
@@ -259,6 +353,24 @@
                     <p id="mass-comparison" role="status"></p>
                 </details>
             </div>
+            <!-- History step 5 of 18: page.history.steps.map -->
+            <article class="concept-card history-step" id="history-map" aria-labelledby="history-map-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.map.eyebrow}}</p>
+                <h3 id="history-map-title">{{page.history.steps.map.title}}</h3>
+                <p class="history-lead">{{page.history.steps.map.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.map.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.map.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.map.classification}}</p></div>
+                </div>
+                <div class="table-scroll" role="region" aria-label="{{page.history.extra.discoveryTable.label}}" tabindex="0"><table id="history-discovery-table"><caption>{{page.history.extra.discoveryTable.caption}}</caption><thead><tr><th scope="col">{{page.history.extra.discoveryTable.particle}}</th><th scope="col">{{ui.properties.type}}</th><th scope="col">{{page.zoo.table.columns.generation}}</th><th scope="col">{{ui.properties.chargeUnit}}</th><th scope="col">{{ui.properties.restMass}}</th><th scope="col">{{page.history.extra.discoveryTable.firstSeen}}</th><th scope="col">{{page.history.extra.discoveryTable.how}}</th></tr></thead><tbody id="history-discovery-rows"></tbody></table></div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.map.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.map.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.map.story.2}}</div>
+                </details>
+                <div class="history-stepper"><a href="#history-neutron" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.neutron.short}}</span></a><a href="#history-pion" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.pion.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 4: Fermions (composites, confinement, leptons, neutrino mixing) -->
@@ -282,6 +394,72 @@
                 <p>{{page.fermions.leptons.intro}}</p>
                 <details class="deep-dive"><summary>{{page.fermions.leptons.deep.summary}}</summary><p>{{page.fermions.leptons.deep.mixing}}</p><div class="equation">|νₐ⟩ = Σᵢ U*ₐᵢ |νᵢ⟩</div><p>{{page.fermions.leptons.deep.matrix}}</p><p class="source-note">{{page.fermions.leptons.deep.sources}}</p></details>
             </div>
+            <!-- History step 6 of 18: page.history.steps.pion -->
+            <article class="concept-card history-step" id="history-pion" aria-labelledby="history-pion-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.pion.eyebrow}}</p>
+                <h3 id="history-pion-title">{{page.history.steps.pion.title}}</h3>
+                <p class="history-lead">{{page.history.steps.pion.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.pion.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.pion.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.pion.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.pion.story.0}}</div>
+                    <div class="history-block" id="history-muon">{{page.history.steps.pion.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.pion.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.pion.story.3}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="muon">{{model.particles.muon.name}}</a><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="up">{{model.particles.up.name}}</a><a href="#particle-inspector" data-particle="down">{{model.particles.down.name}}</a><a href="#particle-inspector" data-particle="gluon">{{model.particles.gluon.name}}</a></div>
+                <div class="history-stepper"><a href="#history-map" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.map.short}}</span></a><a href="#history-zoo" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.zoo.short}}</span></a></div>
+            </article>
+            <!-- History step 7 of 18: page.history.steps.zoo -->
+            <article class="concept-card history-step" id="history-zoo" aria-labelledby="history-zoo-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.zoo.eyebrow}}</p>
+                <h3 id="history-zoo-title">{{page.history.steps.zoo.title}}</h3>
+                <p class="history-lead">{{page.history.steps.zoo.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.zoo.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.zoo.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.zoo.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block" id="history-strangeness">{{page.history.steps.zoo.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.zoo.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.zoo.story.2}}</div>
+                    <div class="history-block" id="history-hadron-names">{{page.history.steps.zoo.story.3}}</div>
+                    <div class="history-block">{{page.history.steps.zoo.story.4}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="strange">{{model.particles.strange.name}}</a><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="muon">{{model.particles.muon.name}}</a><a href="#particle-inspector" data-particle="e_neutrino">{{model.particles.e_neutrino.name}}</a></div>
+                <div class="history-stepper"><a href="#history-pion" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.pion.short}}</span></a><a href="#history-quarks" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.quarks.short}}</span></a></div>
+            </article>
+            <!-- History step 8 of 18: page.history.steps.quarks -->
+            <article class="concept-card history-step" id="history-quarks" aria-labelledby="history-quarks-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.quarks.eyebrow}}</p>
+                <h3 id="history-quarks-title">{{page.history.steps.quarks.title}}</h3>
+                <p class="history-lead">{{page.history.steps.quarks.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.quarks.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.quarks.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.quarks.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.quarks.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.quarks.story.1}}</div>
+                    <figure class="decuplet">
+                        <div class="decuplet-row"><span class="decuplet-level">S = 0</span><span class="decuplet-cell"><b>Δ⁻</b> ddd</span><span class="decuplet-cell"><b>Δ⁰</b> udd</span><span class="decuplet-cell"><b>Δ⁺</b> uud</span><span class="decuplet-cell"><b>Δ⁺⁺</b> uuu</span></div>
+                        <div class="decuplet-row"><span class="decuplet-level">S = −1</span><span class="decuplet-cell"><b>Σ*⁻</b> dds</span><span class="decuplet-cell"><b>Σ*⁰</b> uds</span><span class="decuplet-cell"><b>Σ*⁺</b> uus</span></div>
+                        <div class="decuplet-row"><span class="decuplet-level">S = −2</span><span class="decuplet-cell"><b>Ξ*⁻</b> dss</span><span class="decuplet-cell"><b>Ξ*⁰</b> uss</span></div>
+                        <div class="decuplet-row"><span class="decuplet-level">S = −3</span><span class="decuplet-cell decuplet-predicted"><b>Ω⁻</b> sss</span></div>
+                        <figcaption>{{page.history.extra.decupletCaption}}</figcaption>
+                    </figure>
+                    <div class="history-block">{{page.history.steps.quarks.story.2}}</div>
+                    <div class="history-block" id="history-colour">{{page.history.steps.quarks.story.3}}</div>
+                    <div class="history-block" id="history-partons">{{page.history.steps.quarks.story.4}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="up">{{model.particles.up.name}}</a><a href="#particle-inspector" data-particle="down">{{model.particles.down.name}}</a><a href="#particle-inspector" data-particle="strange">{{model.particles.strange.name}}</a><a href="#particle-inspector" data-particle="gluon">{{model.particles.gluon.name}}</a></div>
+                <div class="history-stepper"><a href="#history-zoo" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.zoo.short}}</span></a><a href="#history-photon" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.photon.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 5: Forces and carriers -->
@@ -297,6 +475,44 @@
                 </tbody></table></div>
                 <details class="deep-dive"><summary>{{page.forces.deep.summary}}</summary><p>{{page.forces.deep.diagrams}}</p><div class="equation">{{page.forces.deep.equation}}</div><p>{{page.forces.deep.range}}</p><p class="source-note">{{page.forces.deep.sources}}</p></details>
             </div>
+            <!-- History step 9 of 18: page.history.steps.photon -->
+            <article class="concept-card history-step" id="history-photon" aria-labelledby="history-photon-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.photon.eyebrow}}</p>
+                <h3 id="history-photon-title">{{page.history.steps.photon.title}}</h3>
+                <p class="history-lead">{{page.history.steps.photon.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.photon.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.photon.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.photon.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.photon.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.photon.story.1}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="photon">{{model.particles.photon.name}}</a><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a></div>
+                <div class="history-stepper"><a href="#history-quarks" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.quarks.short}}</span></a><a href="#history-gauge" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.gauge.short}}</span></a></div>
+            </article>
+            <!-- History step 10 of 18: page.history.steps.gauge -->
+            <article class="concept-card history-step" id="history-gauge" aria-labelledby="history-gauge-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.gauge.eyebrow}}</p>
+                <h3 id="history-gauge-title">{{page.history.steps.gauge.title}}</h3>
+                <p class="history-lead">{{page.history.steps.gauge.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.gauge.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.gauge.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.gauge.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.gauge.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.gauge.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.gauge.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.gauge.story.3}}</div>
+                    <div class="history-block" id="history-qcd">{{page.history.steps.gauge.story.4}}</div>
+                    <div class="history-block" id="history-forces-table">{{page.history.steps.gauge.story.5}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="gluon">{{model.particles.gluon.name}}</a><a href="#particle-inspector" data-particle="w_boson">{{model.particles.w_boson.name}}</a><a href="#particle-inspector" data-particle="z_boson">{{model.particles.z_boson.name}}</a><a href="#particle-inspector" data-particle="photon">{{model.particles.photon.name}}</a><a href="#particle-inspector" data-particle="charm">{{model.particles.charm.name}}</a></div>
+                <div class="history-stepper"><a href="#history-photon" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.photon.short}}</span></a><a href="#history-higgs" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.higgs.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 6: Higgs mechanism -->
@@ -308,6 +524,23 @@
                 <details class="deep-dive"><summary>{{page.higgs.deep.summary}}</summary><div class="equation">{{page.higgs.deep.equation}}</div><p>{{page.higgs.deep.yukawa}}</p><p>{{page.higgs.deep.experiments}}</p></details>
                 <p class="source-note">{{page.higgs.card.sources}}</p>
             </div>
+            <!-- History step 11 of 18: page.history.steps.higgs -->
+            <article class="concept-card history-step" id="history-higgs" aria-labelledby="history-higgs-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.higgs.eyebrow}}</p>
+                <h3 id="history-higgs-title">{{page.history.steps.higgs.title}}</h3>
+                <p class="history-lead">{{page.history.steps.higgs.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.higgs.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.higgs.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.higgs.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.higgs.story.0}}</div>
+                    <div class="history-block" id="history-higgs-boson">{{page.history.steps.higgs.story.1}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="higgs">{{model.particles.higgs.name}}</a><a href="#particle-inspector" data-particle="w_boson">{{model.particles.w_boson.name}}</a><a href="#particle-inspector" data-particle="z_boson">{{model.particles.z_boson.name}}</a><a href="#particle-inspector" data-particle="top">{{model.particles.top.name}}</a></div>
+                <div class="history-stepper"><a href="#history-gauge" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.gauge.short}}</span></a><a href="#history-spin" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.spin.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 7: Quantum properties and the occupancy experiment -->
@@ -324,6 +557,42 @@
                 </div>
                 <details class="deep-dive"><summary>{{page.quantum.deep.summary}}</summary><div class="equation">{{page.quantum.deep.symmetryEquation}}</div><p>{{page.quantum.deep.symmetry}}</p><div class="equation">{{page.quantum.deep.spinEquation}}</div><p>{{page.quantum.deep.spin}}</p><p class="source-note">{{page.quantum.deep.sources}}</p></details>
             </div>
+            <!-- History step 12 of 18: page.history.steps.spin -->
+            <article class="concept-card history-step" id="history-spin" aria-labelledby="history-spin-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.spin.eyebrow}}</p>
+                <h3 id="history-spin-title">{{page.history.steps.spin.title}}</h3>
+                <p class="history-lead">{{page.history.steps.spin.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.spin.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.spin.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.spin.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.spin.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.spin.story.1}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="photon">{{model.particles.photon.name}}</a></div>
+                <div class="history-stepper"><a href="#history-higgs" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.higgs.short}}</span></a><a href="#history-antimatter" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.antimatter.short}}</span></a></div>
+            </article>
+            <!-- History step 13 of 18: page.history.steps.antimatter -->
+            <article class="concept-card history-step" id="history-antimatter" aria-labelledby="history-antimatter-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.antimatter.eyebrow}}</p>
+                <h3 id="history-antimatter-title">{{page.history.steps.antimatter.title}}</h3>
+                <p class="history-lead">{{page.history.steps.antimatter.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.antimatter.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.antimatter.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.antimatter.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.antimatter.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.antimatter.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.antimatter.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.antimatter.story.3}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="photon">{{model.particles.photon.name}}</a></div>
+                <div class="history-stepper"><a href="#history-spin" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.spin.short}}</span></a><a href="#history-neutrino" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.neutrino.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 8: Interactions and the reaction charge check -->
@@ -337,6 +606,44 @@
                 <details class="deep-dive"><summary>{{page.interactions.deep.summary}}</summary><p>{{page.interactions.deep.amplitudes}}</p><div class="equation">{{page.interactions.deep.equation}}</div><p>{{page.interactions.deep.phaseSpace}}</p></details>
                 <p class="source-note">{{page.interactions.card.sources}}</p>
             </div>
+            <!-- History step 14 of 18: page.history.steps.neutrino -->
+            <article class="concept-card history-step" id="history-neutrino" aria-labelledby="history-neutrino-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.neutrino.eyebrow}}</p>
+                <h3 id="history-neutrino-title">{{page.history.steps.neutrino.title}}</h3>
+                <p class="history-lead">{{page.history.steps.neutrino.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.neutrino.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.neutrino.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.neutrino.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.neutrino.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.neutrino.story.1}}</div>
+                    <div class="history-block" id="history-fermi">{{page.history.steps.neutrino.story.2}}</div>
+                    <div class="history-block" id="history-neutrino-detection">{{page.history.steps.neutrino.story.3}}</div>
+                    <div class="history-block">{{page.history.steps.neutrino.story.4}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="e_neutrino">{{model.particles.e_neutrino.name}}</a><a href="#particle-inspector" data-particle="electron">{{model.particles.electron.name}}</a><a href="#particle-inspector" data-particle="w_boson">{{model.particles.w_boson.name}}</a></div>
+                <div class="history-stepper"><a href="#history-antimatter" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.antimatter.short}}</span></a><a href="#history-mirrors" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.mirrors.short}}</span></a></div>
+            </article>
+            <!-- History step 15 of 18: page.history.steps.mirrors -->
+            <article class="concept-card history-step" id="history-mirrors" aria-labelledby="history-mirrors-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.mirrors.eyebrow}}</p>
+                <h3 id="history-mirrors-title">{{page.history.steps.mirrors.title}}</h3>
+                <p class="history-lead">{{page.history.steps.mirrors.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.mirrors.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.mirrors.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.mirrors.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.mirrors.story.0}}</div>
+                    <div class="history-block" id="history-two-neutrinos">{{page.history.steps.mirrors.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.mirrors.story.2}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="mu_neutrino">{{model.particles.mu_neutrino.name}}</a><a href="#particle-inspector" data-particle="e_neutrino">{{model.particles.e_neutrino.name}}</a><a href="#particle-inspector" data-particle="muon">{{model.particles.muon.name}}</a><a href="#particle-inspector" data-particle="strange">{{model.particles.strange.name}}</a></div>
+                <div class="history-stepper"><a href="#history-neutrino" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.neutrino.short}}</span></a><a href="#history-completion" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.completion.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 9: Detection and detector signatures -->
@@ -351,6 +658,29 @@
                 <details class="deep-dive"><summary>{{page.detection.deep.summary}}</summary><p>{{page.detection.deep.showers}}</p><p>{{page.detection.deep.missing}}</p></details>
                 <p class="source-note">{{page.detection.card.sources}}</p>
             </div>
+            <!-- History step 16 of 18: page.history.steps.completion -->
+            <article class="concept-card history-step" id="history-completion" aria-labelledby="history-completion-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.completion.eyebrow}}</p>
+                <h3 id="history-completion-title">{{page.history.steps.completion.title}}</h3>
+                <p class="history-lead">{{page.history.steps.completion.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.completion.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.completion.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.completion.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block" id="history-charm">{{page.history.steps.completion.story.0}}</div>
+                    <div class="history-block" id="history-tau">{{page.history.steps.completion.story.1}}</div>
+                    <div class="history-block" id="history-bottom">{{page.history.steps.completion.story.2}}</div>
+                    <div class="history-block" id="history-gluon">{{page.history.steps.completion.story.3}}</div>
+                    <div class="history-block" id="history-wz">{{page.history.steps.completion.story.4}}</div>
+                    <div class="history-block" id="history-families">{{page.history.steps.completion.story.5}}</div>
+                    <div class="history-block" id="history-top">{{page.history.steps.completion.story.6}}</div>
+                    <div class="history-block" id="history-tau-neutrino">{{page.history.steps.completion.story.7}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="charm">{{model.particles.charm.name}}</a><a href="#particle-inspector" data-particle="tau">{{model.particles.tau.name}}</a><a href="#particle-inspector" data-particle="bottom">{{model.particles.bottom.name}}</a><a href="#particle-inspector" data-particle="gluon">{{model.particles.gluon.name}}</a><a href="#particle-inspector" data-particle="w_boson">{{model.particles.w_boson.name}}</a><a href="#particle-inspector" data-particle="z_boson">{{model.particles.z_boson.name}}</a><a href="#particle-inspector" data-particle="top">{{model.particles.top.name}}</a><a href="#particle-inspector" data-particle="tau_neutrino">{{model.particles.tau_neutrino.name}}</a></div>
+                <div class="history-stepper"><a href="#history-mirrors" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.mirrors.short}}</span></a><a href="#history-open" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.open.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 10: Mathematical foundation -->
@@ -382,6 +712,25 @@
                 <details class="deep-dive"><summary>{{page.beyond.deep.summary}}</summary><p>{{page.beyond.deep.hypotheses}}</p><p>{{page.beyond.deep.antiparticles}}</p></details>
                 <p class="source-note">{{page.beyond.card.sources}}</p>
             </div>
+            <!-- History step 17 of 18: page.history.steps.open -->
+            <article class="concept-card history-step" id="history-open" aria-labelledby="history-open-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.open.eyebrow}}</p>
+                <h3 id="history-open-title">{{page.history.steps.open.title}}</h3>
+                <p class="history-lead">{{page.history.steps.open.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.open.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.open.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.open.classification}}</p></div>
+                </div>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.open.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.open.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.open.story.2}}</div>
+                    <div class="history-block">{{page.history.steps.open.story.3}}</div>
+                </details>
+                <div class="learning-paths history-explore"><span class="history-explore-label">{{page.history.labels.explore}}</span><a href="#particle-inspector" data-particle="e_neutrino">{{model.particles.e_neutrino.name}}</a><a href="#particle-inspector" data-particle="mu_neutrino">{{model.particles.mu_neutrino.name}}</a><a href="#particle-inspector" data-particle="tau_neutrino">{{model.particles.tau_neutrino.name}}</a><a href="#particle-inspector" data-particle="higgs">{{model.particles.higgs.name}}</a><a href="#particle-inspector" data-particle="muon">{{model.particles.muon.name}}</a></div>
+                <div class="history-stepper"><a href="#history-completion" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.completion.short}}</span></a><a href="#history-chain" rel="next"><span>{{page.history.labels.next}}</span> <span>{{page.history.steps.chain.short}}</span></a></div>
+            </article>
         </section>
 
         <!-- Section 12: Summary, glossary, and references -->
@@ -399,6 +748,26 @@
                 <li><a href="https://home.cern/science/physics/standard-model">{{page.summary.references.cern}}</a></li>
                 <li><a href="https://www.damtp.cam.ac.uk/user/tong/qft/qft.pdf">{{page.summary.references.tong}}</a></li>
             </ul></div>
+            <!-- History step 18 of 18: page.history.steps.chain -->
+            <article class="concept-card history-step" id="history-chain" aria-labelledby="history-chain-title">
+                <p class="eyebrow history-eyebrow">{{page.history.steps.chain.eyebrow}}</p>
+                <h3 id="history-chain-title">{{page.history.steps.chain.title}}</h3>
+                <p class="history-lead">{{page.history.steps.chain.lead}}</p>
+                <div class="concept-columns history-columns">
+                    <div><h4>{{page.history.labels.puzzle}}</h4><p>{{page.history.steps.chain.puzzle}}</p></div>
+                    <div><h4>{{page.history.labels.discovery}}</h4><p>{{page.history.steps.chain.discovery}}</p></div>
+                    <div><h4>{{page.history.labels.classification}}</h4><p>{{page.history.steps.chain.classification}}</p></div>
+                </div>
+                <h4>{{page.history.extra.timeline.title}}</h4>
+                <ol id="history-timeline" class="history-timeline" aria-label="{{page.history.extra.timeline.label}}"></ol>
+                <p class="source-note">{{page.history.extra.timeline.note}}</p>
+                <details class="deep-dive history-story"><summary>{{page.history.labels.fullStory}}</summary>
+                    <div class="history-block">{{page.history.steps.chain.story.0}}</div>
+                    <div class="history-block">{{page.history.steps.chain.story.1}}</div>
+                    <div class="history-block">{{page.history.steps.chain.story.2}}</div>
+                </details>
+                <div class="history-stepper"><a href="#history-open" rel="prev"><span>{{page.history.labels.previous}}</span> <span>{{page.history.steps.open.short}}</span></a></div>
+            </article>
         </section>
     </div>
 

@@ -31,7 +31,10 @@ do not confuse it with the page served by the project server.
    [serve.js](serve.js) defines the HTTP interface. Source and configuration govern
    behavior beyond the assertions actually made by tests.
 4. [README.md](README.md) documents local startup and navigation checks.
-5. [modular/content.json](modular/content.json) and the other
+5. [docs/StandardModel_history.md](docs/StandardModel_history.md) is the authored
+   history research the page's history steps were adapted from. It is not read by
+   the generator; the page text lives in the locale files.
+6. [modular/content.json](modular/content.json) and the other
    [modular files](modular/) describe the alternative prototype, not a production
    build pipeline. Git history supplies historical context only.
 
@@ -159,6 +162,21 @@ manifest, or nested `AGENTS.md` exists in this checkout.
   conservation. `chargeBalance` tests electric charge only and MUST NOT be
   presented as a proof that a process is physically allowed. Detector signatures
   are qualitative and missing momentum alone is not a particle identification.
+- **History steps:** 18 `article.history-step` cards (ids `history-intro` …
+  `history-chain`) sit inside the existing sections in reading order, not in a
+  separate navigation topic. Each shows `page.history.steps.<key>` eyebrow, title,
+  lead and puzzle/discovery/classification columns; the full story is a native
+  `details.history-story` of `.history-block`s, some with link-target ids
+  (`history-electron`, `history-top`, …). Steps link prev/next and to catalog
+  particles. `revealFragmentTarget` in [src/app.js](src/app.js) opens closed
+  `details` ancestors before a fragment link scrolls, on `hashchange`, and on load
+  (instant jump, repeated on `load`). `HISTORY_ANCHORS` in
+  [src/physics-model.js](src/physics-model.js) maps particles, families and topics
+  (spin, antimatter, generations) to those ids; the property table's discovery
+  column and headings, catalog group headings, and the inspector's History row use
+  them. Every `href="#…"` in markup and locale text must resolve to an id; the
+  [model tests](tests/physics-model.test.js) enforce this. Step numbers in prose
+  ("step 12") are authored text: renumber them by hand if steps move.
 - **Cross-topic selection:** `data-particle` values must be catalog keys.
   `showParticleDetail` updates an inline `#particle-inspector`, never a popup.
   Delegated clicks update the title and focus it; native particle links retain
@@ -249,8 +267,9 @@ English structural comments (a `<!--- … --->` doc comment is stripped at build
 [physics-model.js](src/physics-model.js) is the pure model plus `I18N`, `t`,
 `setModelLanguage`, `withText`, and `textMap`. [app.js](src/app.js) is browser
 behavior. [i18n/en.json](src/i18n/en.json) is the reference locale; its top-level
-groups are `meta`, `nav`, `page` (static markup by section), `ui` (strings built by
-`app.js`), and `model` (catalog, channel, pair, process, and detector text).
+groups are `meta`, `nav`, `page` (static markup by section, plus `page.history`
+labels, steps and timeline/table text), `ui` (strings built by `app.js`, including
+`ui.history`), and `model` (catalog, channel, pair, process, and detector text).
 [i18n/it.json](src/i18n/it.json) mirrors it. The landmarks below describe the
 generated page; edit their owners in `src/`.
 
@@ -289,6 +308,10 @@ not implement HTTP routing or use the modular renderer at runtime.
   charge lists, explanations, and particle references; `chargeBalance` totals
   the initial/final charges. `DETECTOR_SIGNATURES` provides four qualitative
   detector-layer responses and a catalog reference for each selectable example.
+  `HISTORY_ANCHORS` maps catalog ids, families and topics to history-step ids;
+  `DISCOVERY_TIMELINE` lists prediction/observation years (non-catalog entries
+  carry a `label`, `symbol` and `anchor`). `PARTICLES` records carry a literal
+  `discovered` year and a translated `discovery` text getter.
 - **Catalog UI:** `renderParticleExplorer` reads controls, renders groups/rows,
   updates result status, and preserves `selectedParticle`. `particleById`,
   `isFermion`, `interactionText`, `statisticsText`, and `particleLink` resolve
@@ -301,6 +324,10 @@ not implement HTTP routing or use the modular renderer at runtime.
   rebuilding focused cells. `handleMatrixKeydown` manages bounded arrow/Home/End
   focus movement with one cell tab stop. The comparison's native details panel
   opens by default and retains the full property table and mass ratio.
+  `historyLink`/`historyYearLink` build links into the history steps;
+  `renderHistoryDiscoveries` fills `#history-discovery-rows` and
+  `renderHistoryTimeline` fills `#history-timeline` (both re-render on language
+  change via `renderAllExplorers`).
 - **Other learning explorers:** `renderQuantumState` displays `stateCounts`;
   `addQuantumParticle` invokes the pure occupancy rule. `renderProcess` connects
   `#process-choice` to the charge check and reaction links. `renderDetector`
@@ -441,8 +468,9 @@ Extracts the pure `physics-model` script into an isolated `node:vm` context and
 uses the actual model functions. Tests cover particle family/spin invariants,
 unknown neutrino masses, zero/unknown mass ratios, combined filters, numeric mass
 sorting without catalog mutation, identical-fermion exclusion and boson
-occupancy, reaction charge balance, detector signatures, and static cross-topic
-anchors/particle keys. Pair tests traverse both axes and validate symmetry,
+occupancy, reaction charge balance, detector signatures, static cross-topic
+anchors/particle keys, and history steps (count, reading order across sections,
+every markup/locale fragment link, particle discovery years/anchors, timeline). Pair tests traverse both axes and validate symmetry,
 self-pairs, channel labels, representative tree-level routes, and higher-order
 exceptions. It also validates reaction/detector catalog references.
 It has no browser DOM or external dependencies; UI rendering, event wiring, and
@@ -518,6 +546,21 @@ compares electron spin states with photon polarizations in a fixed spatial mode.
 The [model tests](tests/physics-model.test.js) enforce rejection without mutation,
 opposite-spin access, and repeated boson occupation. This is an occupancy teaching
 model, not a many-body wavefunction solver.
+
+### Step-by-step discovery history — Shipped
+
+The [history research](docs/StandardModel_history.md) is adapted into 18 steps in
+`page.history.steps` (English and Italian) and placed by [template](src/template.html)
+markup at the end of the section each step explains: scale (reading guide, atoms),
+matter (electron/nucleus/proton, neutron), particle zoo (final map with the
+discovery table), fermions (pion/muon, particle zoo, quarks with the baryon
+decuplet), forces (photon, gauge theories), Higgs, quantum (spin, antimatter),
+interactions (neutrino, parity/CP), detection (charm to tau neutrino), beyond
+(open questions) and summary (chain of logic, prediction timeline, names). The
+hero links to the step index. Catalog, table and inspector link back through
+`HISTORY_ANCHORS`. The source document's embedded charts are replaced by the
+decuplet figure, the discovery table and the timeline. There is no automatic sync
+with the Markdown source.
 
 ### Reaction and detector exploration — Shipped
 
@@ -743,6 +786,10 @@ configuration but is not a working substitute for the standalone page.
   routes are qualitative perturbative summaries, not amplitude/rate calculations;
   color, polarization, kinematics, neutrino mass effects, and final-state choices
   require an explicit process calculation beyond the matrix.
+- History step text is a hand-maintained adaptation of
+  [docs/StandardModel_history.md](docs/StandardModel_history.md); edits to one do
+  not reach the other. Dates and masses there are rounded; the 2025–2026 results
+  reflect sources as of November 2026.
 - Only English and Italian exist. Without JavaScript the page is English only.
   The language choice is not reflected in the URL after switching (only `?lang=`
   on load is honored). Number formats in authored labels are per-locale strings;

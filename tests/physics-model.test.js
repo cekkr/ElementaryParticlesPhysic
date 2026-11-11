@@ -7,8 +7,8 @@ const vm = require('node:vm');
 const html = fs.readFileSync(path.join(__dirname, '..', 'elementaryparticles.html'), 'utf8');
 const modelSource = html.match(/<script id="physics-model">([\s\S]*?)<\/script>/)[1];
 const context = vm.createContext({});
-vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES };`, context);
-const { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES } = context.model;
+vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N };`, context);
+const { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N } = context.model;
 const particle = id => PARTICLES.find(p => p.id === id);
 
 test('catalog distinguishes matter, carriers, and the scalar Higgs', () => {
@@ -143,4 +143,34 @@ test('cross-topic links resolve to real anchors and particle catalog entries', (
   const ids = new Set([...markup.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
   for (const [, fragment] of markup.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(fragment), fragment);
   for (const [, id] of markup.matchAll(/data-particle="([^"]+)"/g)) assert.ok(particle(id), id);
+});
+
+test('history steps are distributed in reading order and every history link has a target', () => {
+  const markup = html.split('<body>')[1].split('<script id="physics-model">')[0];
+  const ids = new Set([...markup.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
+  // Steps follow the page: their numbers increase from the first section to the summary.
+  const steps = [...markup.matchAll(/<article class="concept-card history-step" id="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(steps.length, 18);
+  assert.equal(steps[0], 'history-intro');
+  assert.equal(steps.at(-1), 'history-chain');
+  const sectionOf = id => markup.slice(0, markup.indexOf(`id="${id}"`)).match(/<section id="([^"]+)"/g).at(-1);
+  assert.ok(new Set(steps.map(sectionOf)).size >= 10, 'history is spread through the sections');
+  // Locale fragments are inserted at runtime, so check their links against the static ids too.
+  for (const table of Object.values(I18N)) {
+    for (const text of Object.values(table)) {
+      for (const [, fragment] of text.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(fragment), fragment);
+      for (const [, id] of text.matchAll(/data-particle="([^"]+)"/g)) assert.ok(particle(id), id);
+    }
+  }
+  for (const p of PARTICLES) {
+    assert.match(p.discovered, /^\d{4}(–\d{4})?$/, p.id);
+    assert.ok(p.discovery, p.id);
+    assert.ok(ids.has(HISTORY_ANCHORS.particles[p.id]), p.id);
+  }
+  for (const anchor of [...Object.values(HISTORY_ANCHORS.families), ...Object.values(HISTORY_ANCHORS.topics)]) assert.ok(ids.has(anchor), anchor);
+  for (const entry of DISCOVERY_TIMELINE) {
+    assert.ok(entry.id ? particle(entry.id) : ids.has(entry.anchor), JSON.stringify(entry));
+    if (entry.predicted) assert.ok(entry.predicted < entry.observed);
+  }
+  assert.equal(DISCOVERY_TIMELINE.find(entry => entry.id === 'higgs').observed - 1964, 48);
 });

@@ -96,6 +96,9 @@ const statisticsText = p => t(isFermion(p) ? 'ui.statistics.fermion' : 'ui.stati
 function particleLink(id, label) {
     return `<a href="#particle-inspector" data-particle="${id}">${label || particleById(id).name}</a>`;
 }
+// History links jump to the step (or story block) that explains a particle, family, or property.
+const historyLink = (anchor, label) => `<a href="#${anchor}">${label}</a>`;
+const historyYearLink = p => `<a href="#${HISTORY_ANCHORS.particles[p.id]}" aria-label="${t('ui.history.yearLink', { year: p.discovered, name: p.name })}">${p.discovered}</a>`;
 function renderParticleExplorer() {
     const controls = {
         family: document.getElementById('particle-family').value,
@@ -106,16 +109,16 @@ function renderParticleExplorer() {
     const visible = selectParticles(controls);
     document.getElementById('particle-count').textContent = t(visible.length ? 'ui.catalog.count' : 'ui.catalog.countNone', { shown: visible.length, total: PARTICLES.length });
     const groups = [
-        { key: 'quarks', families: ['quark'] },
-        { key: 'leptons', families: ['lepton'] },
-        { key: 'bosons', families: ['gauge', 'scalar'] }
+        { key: 'quarks', families: ['quark'], history: 'quark' },
+        { key: 'leptons', families: ['lepton'], history: 'lepton' },
+        { key: 'bosons', families: ['gauge', 'scalar'], history: 'gauge' }
     ];
     document.getElementById('particle-grid').innerHTML = groups.map(group => {
         const members = visible.filter(p => group.families.includes(p.family));
         if (!members.length) return '';
-        return `<div class="family-group"><h4>${t(`ui.catalog.groups.${group.key}.title`)}</h4><p class="hint">${t(`ui.catalog.groups.${group.key}.subtitle`)}</p><div class="particle-grid">${members.map(p => `<button type="button" class="particle-tile ${p.family}" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}"><span class="particle-symbol">${p.symbol}</span><span class="particle-name">${p.name}</span><span class="tile-mass">${p.mass === null ? t('ui.catalog.mixedMass') : p.massLabel}</span><span class="tile-meta">${p.generation ? `${t('ui.catalog.generationShort', { generation: p.generation })} · ` : ''}Q ${p.charge} · ${t('ui.catalog.spin')} ${p.spin}</span></button>`).join('')}</div></div>`;
+        return `<div class="family-group"><h4>${t(`ui.catalog.groups.${group.key}.title`)}</h4><p class="hint">${t(`ui.catalog.groups.${group.key}.subtitle`)}</p><p class="history-group-link">${historyLink(HISTORY_ANCHORS.families[group.history], t(`ui.history.families.${group.history}`))}</p><div class="particle-grid">${members.map(p => `<button type="button" class="particle-tile ${p.family}" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}"><span class="particle-symbol">${p.symbol}</span><span class="particle-name">${p.name}</span><span class="tile-mass">${p.mass === null ? t('ui.catalog.mixedMass') : p.massLabel}</span><span class="tile-meta">${p.generation ? `${t('ui.catalog.generationShort', { generation: p.generation })} · ` : ''}Q ${p.charge} · ${t('ui.catalog.spin')} ${p.spin}</span></button>`).join('')}</div></div>`;
     }).join('');
-    document.getElementById('particle-rows').innerHTML = visible.map(p => `<tr><th scope="row"><button type="button" class="table-particle" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}">${p.symbol} ${p.name}</button></th><td>${FAMILY_NAMES[p.family]}</td><td>${p.generation || '—'}</td><td>${p.massLabel}</td><td>${p.charge}</td><td>${p.spin}</td><td>${interactionText(p)}</td></tr>`).join('');
+    document.getElementById('particle-rows').innerHTML = visible.map(p => `<tr><th scope="row"><button type="button" class="table-particle" data-particle="${p.id}" aria-controls="particle-inspector" aria-pressed="${p.id === selectedParticle}">${p.symbol} ${p.name}</button></th><td>${FAMILY_NAMES[p.family]}</td><td>${p.generation || '—'}</td><td>${p.massLabel}</td><td>${p.charge}</td><td>${p.spin}</td><td>${interactionText(p)}</td><td>${historyYearLink(p)}</td></tr>`).join('');
     updateNavigation();
 }
 function showParticleDetail(id) {
@@ -134,7 +137,7 @@ function showParticleDetail(id) {
         : 'ui.inspector.chargeNote.charged');
     document.getElementById('particle-detail-title').textContent = `${p.symbol} · ${p.name}`;
     document.getElementById('particle-selection-status').textContent = t('ui.inspector.selected', { name: p.name });
-    document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>${t('ui.properties.type')}</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>${t('ui.properties.restMass')}</strong><span>${p.massLabel}</span></div><div><strong>${t('ui.properties.electricCharge')}</strong><span>${p.charge} e</span></div><div><strong>${t('ui.properties.spin')}</strong><span>${t('ui.inspector.spinValue', { spin: p.spin })}</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>${t('ui.inspector.massOrigin')}</dt><dd>${p.massNote} ${higgsNote}</dd><dt>${t('ui.properties.interactions')}</dt><dd>${interactionText(p)}. ${chargeNote}</dd><dt>${t('ui.inspector.quantumRule')}</dt><dd>${statisticsText(p)}</dd></dl><div class="learning-paths"><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${t(isFermion(p) ? 'ui.inspector.paths.matter' : 'ui.inspector.paths.forces')}</a><a href="#higgs">${t('ui.inspector.paths.higgs')}</a><a href="#quantum">${t('ui.inspector.paths.quantum')}</a><a href="#interactions">${t('ui.inspector.paths.reaction')}</a><a href="#detection">${t('ui.inspector.paths.detection')}</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">${t('ui.inspector.pdgReference')}</a> · <a href="#references">${t('ui.inspector.conventions')}</a></p>`;
+    document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>${t('ui.properties.type')}</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>${t('ui.properties.restMass')}</strong><span>${p.massLabel}</span></div><div><strong>${t('ui.properties.electricCharge')}</strong><span>${p.charge} e</span></div><div><strong>${t('ui.properties.spin')}</strong><span>${t('ui.inspector.spinValue', { spin: p.spin })}</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>${t('ui.inspector.massOrigin')}</dt><dd>${p.massNote} ${higgsNote}</dd><dt>${t('ui.properties.interactions')}</dt><dd>${interactionText(p)}. ${chargeNote}</dd><dt>${t('ui.inspector.quantumRule')}</dt><dd>${statisticsText(p)}</dd><dt>${t('ui.history.title')}</dt><dd>${t('ui.history.discovered', { year: p.discovered, how: p.discovery })} ${historyLink(HISTORY_ANCHORS.particles[p.id], t('ui.history.readStory'))}</dd></dl><div class="learning-paths history-paths">${historyLink(HISTORY_ANCHORS.families[p.family], t(`ui.history.families.${p.family}`))}${historyLink(HISTORY_ANCHORS.topics.spin, t('ui.history.topics.spin'))}${historyLink(HISTORY_ANCHORS.topics.antimatter, t('ui.history.topics.antimatter'))}${p.generation ? historyLink(HISTORY_ANCHORS.topics.generations, t('ui.history.topics.generations')) : ''}</div><div class="learning-paths"><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${t(isFermion(p) ? 'ui.inspector.paths.matter' : 'ui.inspector.paths.forces')}</a><a href="#higgs">${t('ui.inspector.paths.higgs')}</a><a href="#quantum">${t('ui.inspector.paths.quantum')}</a><a href="#interactions">${t('ui.inspector.paths.reaction')}</a><a href="#detection">${t('ui.inspector.paths.detection')}</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">${t('ui.inspector.pdgReference')}</a> · <a href="#references">${t('ui.inspector.conventions')}</a></p>`;
     document.querySelectorAll('button[data-particle]').forEach(button => button.setAttribute('aria-pressed', button.dataset.particle === id));
 }
 function renderInteractionMatrix() {
@@ -247,6 +250,42 @@ function renderDetector() {
     document.getElementById('detector-explanation').textContent = signature.why;
     document.getElementById('detector-particle-link').innerHTML = t('ui.detector.catalogLink', { link: particleLink(signature.particle, signature.catalogLabel) });
 }
+// Discovery table in the "final map" history step: same catalog, with first-observation data.
+function renderHistoryDiscoveries() {
+    document.getElementById('history-discovery-rows').innerHTML = PARTICLES.map(p => `<tr><th scope="row">${particleLink(p.id, `${p.symbol} ${p.name}`)}</th><td>${FAMILY_NAMES[p.family]}</td><td>${p.generation || '—'}</td><td>${p.charge}</td><td>${p.massLabel}</td><td>${historyYearLink(p)}</td><td>${p.discovery}</td></tr>`).join('');
+}
+// Prediction → observation bars on a fixed 1890–2020 axis; full sentences stay available as text.
+function renderHistoryTimeline() {
+    const start = 1890;
+    const end = 2020;
+    const position = year => ((year - start) / (end - start)) * 100;
+    const ticks = [1900, 1925, 1950, 1975, 2000].map(year => `<span class="timeline-tick" style="left: ${position(year).toFixed(2)}%">${year}</span>`).join('');
+    const legend = `<span class="timeline-legend"><i class="legend-bar"></i>${t('page.history.extra.timeline.predicted')} <i class="legend-dot"></i>${t('page.history.extra.timeline.observed')}</span>`;
+    document.getElementById('history-timeline').innerHTML = `<li class="timeline-axis" aria-hidden="true">${legend}<span class="timeline-track">${ticks}</span></li>` + DISCOVERY_TIMELINE.map(entry => {
+        const p = entry.id ? particleById(entry.id) : null;
+        const name = p ? p.name : t(`page.history.extra.timeline.${entry.label}`);
+        const anchor = p ? HISTORY_ANCHORS.particles[p.id] : entry.anchor;
+        const text = entry.predicted
+            ? t('page.history.extra.timeline.entry', { name, predicted: entry.predicted, observed: entry.observed, gap: entry.observed - entry.predicted })
+            : t('page.history.extra.timeline.surprise', { name, observed: entry.observed });
+        const bar = entry.predicted ? `<span class="timeline-bar" style="left: ${position(entry.predicted).toFixed(2)}%; width: ${(position(entry.observed) - position(entry.predicted)).toFixed(2)}%"></span>` : '';
+        return `<li class="${entry.predicted ? 'timeline-predicted' : 'timeline-surprise'}"><a href="#${anchor}" class="timeline-name">${p ? p.symbol : entry.symbol} ${name}</a><span class="timeline-track" aria-hidden="true">${bar}<span class="timeline-dot" style="left: ${position(entry.observed).toFixed(2)}%"></span></span><span class="timeline-years" aria-hidden="true">${entry.predicted ? `${entry.predicted} → ${entry.observed}` : entry.observed}</span><span class="sr-only">${text}</span></li>`;
+    }).join('');
+}
+// Story blocks live in closed <details>; open them before a fragment link scrolls there.
+function revealFragmentTarget(hash) {
+    if (!hash || hash.length < 2) return false;
+    let target = null;
+    try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (error) { return false; }
+    let opened = false;
+    for (let node = target && target.parentElement; node; node = node.parentElement) {
+        if (node.tagName === 'DETAILS' && !node.open) {
+            node.open = true;
+            opened = true;
+        }
+    }
+    return opened;
+}
 function renderAllExplorers() {
     renderParticleExplorer();
     showParticleDetail(selectedParticle);
@@ -256,6 +295,8 @@ function renderAllExplorers() {
     renderQuantumState();
     renderProcess();
     renderDetector();
+    renderHistoryDiscoveries();
+    renderHistoryTimeline();
 }
 function initParticleExplorers() {
     ['particle-family', 'particle-interaction', 'particle-sort'].forEach(id => document.getElementById(id).addEventListener('change', renderParticleExplorer));
@@ -266,6 +307,12 @@ function initParticleExplorers() {
         document.getElementById('particle-sort').value = 'model';
         renderParticleExplorer();
     });
+    // Runs before native fragment navigation, so the browser scrolls to the opened block.
+    document.addEventListener('click', event => {
+        const link = event.target.closest('a[href^="#"]');
+        if (link) revealFragmentTarget(link.getAttribute('href'));
+    });
+    window.addEventListener('hashchange', () => revealFragmentTarget(window.location.hash));
     document.addEventListener('click', event => {
         const control = event.target.closest('[data-particle]');
         if (!control) return;
@@ -602,6 +649,15 @@ document.addEventListener('DOMContentLoaded', () => {
         collisionCanvas.style.borderRadius = '15px';
         collisionCanvas.style.marginTop = '2rem';
         heroDemo.appendChild(collisionCanvas);
+    }
+
+    // A shared link to a story block: open its disclosure, then jump to it. Repeat once
+    // after images and fonts load, since the hero canvas and icons shift the layout.
+    if (revealFragmentTarget(window.location.hash)) {
+        const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+        const jump = () => target.scrollIntoView({ behavior: 'instant' });
+        jump();
+        window.addEventListener('load', jump, { once: true });
     }
 
     // Console Easter egg

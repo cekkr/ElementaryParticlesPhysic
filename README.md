@@ -32,4 +32,15 @@ detector signatures, and expandable mathematical explanations. Values are rounde
 from the fixed PDG 2025 references linked in the page; the explorers are teaching
 models, not precision simulations.
 
+The history of the Standard Model is told in 18 numbered "History" steps placed
+inside the sections, in reading order: atoms with the scale of the universe, the
+electron and the neutron with matter, quarks and the particle zoo with fermions,
+the photon and gauge theories with forces, spin and antimatter with quantum
+properties, and so on, ending with the chain of discoveries in the summary. Each
+step states the puzzle, the discovery and the classification, with the full story
+in an expandable panel and links to the previous and next step. In the other
+direction, the property table's discovery years and column headings, the catalog
+group headings, and the particle field guide link back to the relevant step. The
+steps are adapted from `docs/StandardModel_history.md`.
+
 Run the regression checks with `node --test tests/*.test.js`.

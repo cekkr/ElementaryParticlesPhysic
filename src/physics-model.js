@@ -35,26 +35,64 @@ function textMap(prefix, keys) {
 
 // Rounded teaching values from the PDG 2025 summary tables; masses in MeV/c².
 // Null means a flavor state has no single mass, never a measured zero.
-// Text fields (name, massLabel, example, massNote) come from model.particles.<id>.*.
+// Text fields (name, massLabel, example, massNote, discovery) come from model.particles.<id>.*.
+// `discovered` is the year (or span) of the first observation, from the history steps.
 const PARTICLES = [
-    { id: 'up', symbol: 'u', family: 'quark', generation: 1, mass: 2.16, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'down', symbol: 'd', family: 'quark', generation: 1, mass: 4.70, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'charm', symbol: 'c', family: 'quark', generation: 2, mass: 1273, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'strange', symbol: 's', family: 'quark', generation: 2, mass: 93.5, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'top', symbol: 't', family: 'quark', generation: 3, mass: 172560, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'bottom', symbol: 'b', family: 'quark', generation: 3, mass: 4183, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'] },
-    { id: 'electron', symbol: 'e⁻', family: 'lepton', generation: 1, mass: 0.510999, charge: '−1', spin: '1/2', interactions: ['em', 'weak'] },
-    { id: 'muon', symbol: 'μ⁻', family: 'lepton', generation: 2, mass: 105.658, charge: '−1', spin: '1/2', interactions: ['em', 'weak'] },
-    { id: 'tau', symbol: 'τ⁻', family: 'lepton', generation: 3, mass: 1776.93, charge: '−1', spin: '1/2', interactions: ['em', 'weak'] },
-    { id: 'e_neutrino', symbol: 'νₑ', family: 'lepton', generation: 1, mass: null, charge: '0', spin: '1/2', interactions: ['weak'] },
-    { id: 'mu_neutrino', symbol: 'νμ', family: 'lepton', generation: 2, mass: null, charge: '0', spin: '1/2', interactions: ['weak'] },
-    { id: 'tau_neutrino', symbol: 'ντ', family: 'lepton', generation: 3, mass: null, charge: '0', spin: '1/2', interactions: ['weak'] },
-    { id: 'photon', symbol: 'γ', family: 'gauge', generation: null, mass: 0, charge: '0', spin: '1', interactions: ['em'] },
-    { id: 'gluon', symbol: 'g', family: 'gauge', generation: null, mass: 0, charge: '0', spin: '1', interactions: ['strong'] },
-    { id: 'w_boson', symbol: 'W±', family: 'gauge', generation: null, mass: 80369, charge: '±1', spin: '1', interactions: ['em', 'weak'] },
-    { id: 'z_boson', symbol: 'Z⁰', family: 'gauge', generation: null, mass: 91187.6, charge: '0', spin: '1', interactions: ['weak'] },
-    { id: 'higgs', symbol: 'H', family: 'scalar', generation: null, mass: 125200, charge: '0', spin: '0', interactions: ['higgs'] }
-].map(p => withText(p, `model.particles.${p.id}`, ['name', 'massLabel', 'example', 'massNote']));
+    { id: 'up', symbol: 'u', family: 'quark', generation: 1, mass: 2.16, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1968' },
+    { id: 'down', symbol: 'd', family: 'quark', generation: 1, mass: 4.70, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1968' },
+    { id: 'charm', symbol: 'c', family: 'quark', generation: 2, mass: 1273, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1974' },
+    { id: 'strange', symbol: 's', family: 'quark', generation: 2, mass: 93.5, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1947' },
+    { id: 'top', symbol: 't', family: 'quark', generation: 3, mass: 172560, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1995' },
+    { id: 'bottom', symbol: 'b', family: 'quark', generation: 3, mass: 4183, charge: '−1/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1977' },
+    { id: 'electron', symbol: 'e⁻', family: 'lepton', generation: 1, mass: 0.510999, charge: '−1', spin: '1/2', interactions: ['em', 'weak'], discovered: '1897' },
+    { id: 'muon', symbol: 'μ⁻', family: 'lepton', generation: 2, mass: 105.658, charge: '−1', spin: '1/2', interactions: ['em', 'weak'], discovered: '1936' },
+    { id: 'tau', symbol: 'τ⁻', family: 'lepton', generation: 3, mass: 1776.93, charge: '−1', spin: '1/2', interactions: ['em', 'weak'], discovered: '1975' },
+    { id: 'e_neutrino', symbol: 'νₑ', family: 'lepton', generation: 1, mass: null, charge: '0', spin: '1/2', interactions: ['weak'], discovered: '1956' },
+    { id: 'mu_neutrino', symbol: 'νμ', family: 'lepton', generation: 2, mass: null, charge: '0', spin: '1/2', interactions: ['weak'], discovered: '1962' },
+    { id: 'tau_neutrino', symbol: 'ντ', family: 'lepton', generation: 3, mass: null, charge: '0', spin: '1/2', interactions: ['weak'], discovered: '2000' },
+    { id: 'photon', symbol: 'γ', family: 'gauge', generation: null, mass: 0, charge: '0', spin: '1', interactions: ['em'], discovered: '1905–1923' },
+    { id: 'gluon', symbol: 'g', family: 'gauge', generation: null, mass: 0, charge: '0', spin: '1', interactions: ['strong'], discovered: '1979' },
+    { id: 'w_boson', symbol: 'W±', family: 'gauge', generation: null, mass: 80369, charge: '±1', spin: '1', interactions: ['em', 'weak'], discovered: '1983' },
+    { id: 'z_boson', symbol: 'Z⁰', family: 'gauge', generation: null, mass: 91187.6, charge: '0', spin: '1', interactions: ['weak'], discovered: '1983' },
+    { id: 'higgs', symbol: 'H', family: 'scalar', generation: null, mass: 125200, charge: '0', spin: '0', interactions: ['higgs'], discovered: '2012' }
+].map(p => withText(p, `model.particles.${p.id}`, ['name', 'massLabel', 'example', 'massNote', 'discovery']));
+// Link targets (element ids) inside the history steps distributed through the page.
+// particles: the block telling each discovery; families/topics: where a label was learned.
+const HISTORY_ANCHORS = {
+    particles: {
+        up: 'history-partons', down: 'history-partons', charm: 'history-charm', strange: 'history-strangeness',
+        top: 'history-top', bottom: 'history-bottom', electron: 'history-electron', muon: 'history-muon',
+        tau: 'history-tau', e_neutrino: 'history-neutrino-detection', mu_neutrino: 'history-two-neutrinos',
+        tau_neutrino: 'history-tau-neutrino', photon: 'history-photon', gluon: 'history-gluon',
+        w_boson: 'history-wz', z_boson: 'history-wz', higgs: 'history-higgs-boson'
+    },
+    families: { quark: 'history-quarks', lepton: 'history-hadron-names', gauge: 'history-gauge', scalar: 'history-higgs' },
+    topics: { spin: 'history-spin', antimatter: 'history-antimatter', generations: 'history-families' }
+};
+// Prediction/observation years for the summary timeline. Entries without `id` are
+// composite or antimatter milestones labelled by page.history.extra.timeline.<label>.
+const DISCOVERY_TIMELINE = [
+    { id: 'electron', observed: 1897 },
+    { id: 'photon', predicted: 1905, observed: 1923 },
+    { label: 'positron', symbol: 'e⁺', anchor: 'history-antimatter', predicted: 1931, observed: 1932 },
+    { id: 'e_neutrino', predicted: 1930, observed: 1956 },
+    { id: 'muon', observed: 1936 },
+    { label: 'pion', symbol: 'π', anchor: 'history-pion', predicted: 1935, observed: 1947 },
+    { id: 'strange', observed: 1947 },
+    { id: 'mu_neutrino', observed: 1962 },
+    { label: 'omega', symbol: 'Ω⁻', anchor: 'history-quarks', predicted: 1962, observed: 1964 },
+    { id: 'up', predicted: 1964, observed: 1968 },
+    { id: 'down', predicted: 1964, observed: 1968 },
+    { id: 'charm', predicted: 1970, observed: 1974 },
+    { id: 'tau', observed: 1975 },
+    { id: 'bottom', predicted: 1973, observed: 1977 },
+    { id: 'gluon', predicted: 1973, observed: 1979 },
+    { id: 'w_boson', predicted: 1961, observed: 1983 },
+    { id: 'z_boson', predicted: 1961, observed: 1983 },
+    { id: 'top', predicted: 1973, observed: 1995 },
+    { id: 'tau_neutrino', predicted: 1975, observed: 2000 },
+    { id: 'higgs', predicted: 1964, observed: 2012 }
+];
 const INTERACTION_NAMES = textMap('model.interactions', ['strong', 'em', 'weak', 'higgs']);
 const FAMILY_NAMES = textMap('model.families', ['quark', 'lepton', 'gauge', 'scalar']);
 
