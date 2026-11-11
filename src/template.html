@@ -53,34 +53,37 @@
         <a class="nav-dot" href="#matter" data-section="2" aria-label="{{nav.matter}}">
             <span class="nav-tooltip">{{nav.matter}}</span>
         </a>
-        <a class="nav-dot" href="#particle-zoo" data-section="3" aria-label="{{nav.particleZoo}}">
+        <a class="nav-dot" href="#composition" data-section="3" aria-label="{{nav.composition}}">
+            <span class="nav-tooltip">{{nav.composition}}</span>
+        </a>
+        <a class="nav-dot" href="#particle-zoo" data-section="4" aria-label="{{nav.particleZoo}}">
             <span class="nav-tooltip">{{nav.particleZoo}}</span>
         </a>
-        <a class="nav-dot" href="#fermions" data-section="4" aria-label="{{nav.fermions}}">
+        <a class="nav-dot" href="#fermions" data-section="5" aria-label="{{nav.fermions}}">
             <span class="nav-tooltip">{{nav.fermions}}</span>
         </a>
-        <a class="nav-dot" href="#forces" data-section="5" aria-label="{{nav.forces}}">
+        <a class="nav-dot" href="#forces" data-section="6" aria-label="{{nav.forces}}">
             <span class="nav-tooltip">{{nav.forces}}</span>
         </a>
-        <a class="nav-dot" href="#higgs" data-section="6" aria-label="{{nav.higgs}}">
+        <a class="nav-dot" href="#higgs" data-section="7" aria-label="{{nav.higgs}}">
             <span class="nav-tooltip">{{nav.higgs}}</span>
         </a>
-        <a class="nav-dot" href="#quantum" data-section="7" aria-label="{{nav.quantum}}">
+        <a class="nav-dot" href="#quantum" data-section="8" aria-label="{{nav.quantum}}">
             <span class="nav-tooltip">{{nav.quantum}}</span>
         </a>
-        <a class="nav-dot" href="#interactions" data-section="8" aria-label="{{nav.interactions}}">
+        <a class="nav-dot" href="#interactions" data-section="9" aria-label="{{nav.interactions}}">
             <span class="nav-tooltip">{{nav.interactions}}</span>
         </a>
-        <a class="nav-dot" href="#detection" data-section="9" aria-label="{{nav.detection}}">
+        <a class="nav-dot" href="#detection" data-section="10" aria-label="{{nav.detection}}">
             <span class="nav-tooltip">{{nav.detection}}</span>
         </a>
-        <a class="nav-dot" href="#mathematics" data-section="10" aria-label="{{nav.mathematics}}">
+        <a class="nav-dot" href="#mathematics" data-section="11" aria-label="{{nav.mathematics}}">
             <span class="nav-tooltip">{{nav.mathematics}}</span>
         </a>
-        <a class="nav-dot" href="#beyond" data-section="11" aria-label="{{nav.beyond}}">
+        <a class="nav-dot" href="#beyond" data-section="12" aria-label="{{nav.beyond}}">
             <span class="nav-tooltip">{{nav.beyond}}</span>
         </a>
-        <a class="nav-dot" href="#summary" data-section="12" aria-label="{{nav.summary}}">
+        <a class="nav-dot" href="#summary" data-section="13" aria-label="{{nav.summary}}">
             <span class="nav-tooltip">{{nav.summary}}</span>
         </a>
     </nav>
@@ -95,7 +98,7 @@
                 <p class="hero-subtitle">{{page.hero.subtitle}}</p>
                 <div class="interactive-demo">
                     <p>{{page.hero.welcome}}</p>
-                    <div class="learning-paths"><a href="#matter">{{page.hero.paths.atoms}}</a><a href="#particle-zoo">{{page.hero.paths.standardModel}}</a><a href="#quantum">{{page.hero.paths.exclusion}}</a><a href="#history-intro">{{page.history.labels.heroPath}}</a></div>
+                    <div class="learning-paths"><a href="#matter">{{page.hero.paths.atoms}}</a><a href="#composition">{{page.hero.paths.composition}}</a><a href="#particle-zoo">{{page.hero.paths.standardModel}}</a><a href="#quantum">{{page.hero.paths.exclusion}}</a><a href="#history-intro">{{page.history.labels.heroPath}}</a></div>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -288,10 +291,112 @@
             </article>
         </section>
 
-        <!-- Section 3: The Particle Zoo (catalog hub, inline inspector, pair comparison matrix) -->
-        <section id="particle-zoo" class="content-section" data-section="3">
+        <!-- Section 3: Inside Matter (zoom ladder canvas, composite builder, particle-creation explorer) -->
+        <section id="composition" class="content-section" data-section="3">
             <div class="section-header">
                 <span class="section-number">3</span>
+                <h2 class="section-title">{{page.composition.title}}</h2>
+            </div>
+            <div class="concept-card">
+                <p class="eyebrow">{{page.composition.overview.eyebrow}}</p>
+                <h3>{{page.composition.overview.title}}</h3>
+                <p class="history-lead">{{page.composition.overview.lead}}</p>
+                <div class="concept-columns">
+                    <div><h4>{{page.composition.overview.questions.inside.title}}</h4><p>{{page.composition.overview.questions.inside.text}}</p></div>
+                    <div><h4>{{page.composition.overview.questions.glue.title}}</h4><p>{{page.composition.overview.questions.glue.text}}</p></div>
+                    <div><h4>{{page.composition.overview.questions.energy.title}}</h4><p>{{page.composition.overview.questions.energy.text}}</p></div>
+                </div>
+            </div>
+            <!-- Zoom ladder: buttons choose a COMPOSITION_LEVELS entry; app.js draws #compositionCanvas and fills #level-detail. -->
+            <div class="concept-card" id="composition-ladder">
+                <p class="eyebrow">{{page.composition.ladder.eyebrow}}</p>
+                <h3>{{page.composition.ladder.title}}</h3>
+                <p>{{page.composition.ladder.intro}}</p>
+                <div class="level-picker" role="group" aria-label="{{page.composition.ladder.pickerLabel}}">
+                    <button type="button" class="level-btn" data-level="atom" aria-pressed="true"><span class="level-step">1</span> <span>{{model.levels.atom.name}}</span></button>
+                    <button type="button" class="level-btn" data-level="nucleus" aria-pressed="false"><span class="level-step">2</span> <span>{{model.levels.nucleus.name}}</span></button>
+                    <button type="button" class="level-btn" data-level="nucleon" aria-pressed="false"><span class="level-step">3</span> <span>{{model.levels.nucleon.name}}</span></button>
+                    <button type="button" class="level-btn" data-level="elementary" aria-pressed="false"><span class="level-step">4</span> <span>{{model.levels.elementary.name}}</span></button>
+                </div>
+                <div class="ladder-layout">
+                    <div class="interactive-demo ladder-canvas"><canvas id="compositionCanvas" class="demo-canvas" role="img"></canvas></div>
+                    <div id="level-detail" class="level-detail" aria-live="polite"></div>
+                </div>
+                <div class="button-row"><button type="button" class="action-btn" id="zoom-out">{{page.composition.ladder.zoomOut}}</button><button type="button" class="action-btn" id="zoom-in">{{page.composition.ladder.zoomIn}}</button></div>
+                <details class="deep-dive"><summary>{{page.composition.ladder.deep.summary}}</summary>
+                    <p>{{page.composition.ladder.deep.probe}}</p>
+                    <div class="equation">λ ≈ h c / E  ·  h c ≈ 1240 eV · nm</div>
+                    <p>{{page.composition.ladder.deep.elementary}}</p>
+                    <p class="source-note">{{page.composition.ladder.deep.sources}}</p>
+                </details>
+            </div>
+            <!-- Composite builder: #composite-choice values are COMPOSITES keys; app.js renders compositeSummary(). -->
+            <div class="concept-card" id="composite-builder">
+                <p class="eyebrow">{{page.composition.builder.eyebrow}}</p>
+                <h3>{{page.composition.builder.title}}</h3>
+                <p>{{page.composition.builder.intro}}</p>
+                <div class="explorer-controls">
+                    <label><span>{{page.composition.builder.choose}}</span><select id="composite-choice">
+                        <optgroup label="{{page.composition.builder.groups.bound}}"><option value="hydrogen">{{model.composites.hydrogen.name}}</option><option value="helium4">{{model.composites.helium4.name}}</option></optgroup>
+                        <optgroup label="{{page.composition.builder.groups.baryons}}"><option value="proton">{{model.composites.proton.name}}</option><option value="neutron">{{model.composites.neutron.name}}</option><option value="lambda">{{model.composites.lambda.name}}</option><option value="omega">{{model.composites.omega.name}}</option></optgroup>
+                        <optgroup label="{{page.composition.builder.groups.mesons}}"><option value="pion">{{model.composites.pion.name}}</option><option value="kaon">{{model.composites.kaon.name}}</option><option value="dmeson">{{model.composites.dmeson.name}}</option><option value="jpsi">{{model.composites.jpsi.name}}</option><option value="bmeson">{{model.composites.bmeson.name}}</option><option value="upsilon">{{model.composites.upsilon.name}}</option></optgroup>
+                    </select></label>
+                </div>
+                <div id="composite-result" class="composite-result" aria-live="polite"></div>
+                <details class="deep-dive"><summary>{{page.composition.builder.deep.summary}}</summary>
+                    <p>{{page.composition.builder.deep.binding}}</p>
+                    <div class="equation">m(whole) c² = Σ m(parts) c² + E(motion and fields) − E(binding)</div>
+                    <p>{{page.composition.builder.deep.hadrons}}</p>
+                    <p>{{page.composition.builder.deep.sea}}</p>
+                </details>
+                <p class="source-note">{{page.composition.builder.sourceNote}}</p>
+            </div>
+            <!-- Creation explorer: energy slider + presets → availableProductions(); app.js animates #creationCanvas. -->
+            <div class="concept-card" id="particle-creation">
+                <p class="eyebrow">{{page.composition.creation.eyebrow}}</p>
+                <h3>{{page.composition.creation.title}}</h3>
+                <p>{{page.composition.creation.intro}}</p>
+                <div class="concept-columns">
+                    <div><h4>{{page.composition.creation.ways.knockOut.title}}</h4><p>{{page.composition.creation.ways.knockOut.text}}</p></div>
+                    <div><h4>{{page.composition.creation.ways.create.title}}</h4><p>{{page.composition.creation.ways.create.text}}</p></div>
+                    <div><h4>{{page.composition.creation.ways.decay.title}}</h4><p>{{page.composition.creation.ways.decay.text}}</p></div>
+                </div>
+                <div class="equation-box">
+                    <div class="equation">E<sub>collision</sub> ≥ Σ m<sub>new</sub> c²</div>
+                    <p>{{page.composition.creation.equationText}}</p>
+                </div>
+                <div class="energy-controls">
+                    <label for="collision-energy"><span>{{page.composition.creation.energyLabel}}</span></label>
+                    <input type="range" id="collision-energy" min="0" max="1000" step="1" value="500">
+                    <output id="collision-energy-value" for="collision-energy"></output>
+                </div>
+                <div class="button-row preset-row" id="collider-presets" role="group" aria-label="{{page.composition.creation.presetsLabel}}"></div>
+                <p id="creation-status" class="creation-status" role="status"></p>
+                <div class="ladder-layout">
+                    <div class="interactive-demo ladder-canvas"><canvas id="creationCanvas" class="demo-canvas" role="img"></canvas></div>
+                    <div id="creation-detail" class="level-detail" aria-live="polite"></div>
+                </div>
+                <p class="hint">{{page.composition.creation.listHint}}</p>
+                <ol id="creation-list" class="creation-list"></ol>
+                <details class="deep-dive"><summary>{{page.composition.creation.deep.summary}}</summary>
+                    <ul class="rule-list">
+                        <li>{{page.composition.creation.deep.rules.energy}}</li>
+                        <li>{{page.composition.creation.deep.rules.charge}}</li>
+                        <li>{{page.composition.creation.deep.rules.baryon}}</li>
+                        <li>{{page.composition.creation.deep.rules.lepton}}</li>
+                        <li>{{page.composition.creation.deep.rules.flavor}}</li>
+                    </ul>
+                    <p>{{page.composition.creation.deep.jets}}</p>
+                    <p>{{page.composition.creation.deep.nature}}</p>
+                </details>
+                <p class="source-note">{{page.composition.creation.sourceNote}}</p>
+            </div>
+        </section>
+
+        <!-- Section 4: The Particle Zoo (catalog hub, inline inspector, pair comparison matrix) -->
+        <section id="particle-zoo" class="content-section" data-section="4">
+            <div class="section-header">
+                <span class="section-number">4</span>
                 <h2 class="section-title">{{page.zoo.title}}</h2>
             </div>
             <div class="concept-card catalog-card">
@@ -304,6 +409,7 @@
                     <div><h4>{{page.zoo.catalog.columns.higgs.title}}</h4><p>{{page.zoo.catalog.columns.higgs.text}}</p></div>
                 </div>
                 <p class="source-note">{{page.zoo.catalog.countNote}}</p>
+                <p class="hint">{{page.zoo.catalog.compositeNote}}</p>
                 <!-- Filter controls; option values are stable model keys, labels are translated. -->
                 <div class="explorer-controls" role="group" aria-label="{{page.zoo.controls.label}}">
                     <label><span>{{page.zoo.controls.search}}</span><input id="particle-search" type="search" placeholder="{{page.zoo.controls.searchPlaceholder}}"></label>
@@ -374,12 +480,13 @@
             </article>
         </section>
 
-        <!-- Section 4: Fermions (composites, confinement, leptons, neutrino mixing) -->
-        <section id="fermions" class="content-section" data-section="4">
-            <div class="section-header"><span class="section-number">4</span><h2 class="section-title">{{page.fermions.title}}</h2></div>
+        <!-- Section 5: Fermions (composites, confinement, leptons, neutrino mixing) -->
+        <section id="fermions" class="content-section" data-section="5">
+            <div class="section-header"><span class="section-number">5</span><h2 class="section-title">{{page.fermions.title}}</h2></div>
             <div class="concept-card">
                 <h3>{{page.fermions.quarks.title}}</h3>
                 <p>{{page.fermions.quarks.intro}}</p>
+                <p class="hint">{{page.fermions.quarks.builderHint}}</p>
                 <div class="table-scroll" role="region" aria-label="{{page.fermions.quarks.table.label}}" tabindex="0"><table><caption>{{page.fermions.quarks.table.caption}}</caption><thead><tr><th scope="col">{{page.fermions.quarks.table.columns.composite}}</th><th scope="col">{{page.fermions.quarks.table.columns.valence}}</th><th scope="col">{{ui.properties.chargeUnit}}</th><th scope="col">{{page.fermions.quarks.table.columns.explore}}</th></tr></thead><tbody>
                 <tr><th scope="row">{{page.fermions.quarks.table.proton}}</th><td>uud</td><td>⅔ + ⅔ − ⅓ = +1</td><td><a href="#particle-inspector" data-particle="up">{{page.fermions.quarks.table.protonLink}}</a></td></tr>
                 <tr><th scope="row">{{page.fermions.quarks.table.neutron}}</th><td>udd</td><td>⅔ − ⅓ − ⅓ = 0</td><td><a href="#interactions">{{page.fermions.quarks.table.neutronLink}}</a></td></tr>
@@ -394,6 +501,28 @@
             <div class="concept-card"><h3>{{page.fermions.leptons.title}}</h3>
                 <p>{{page.fermions.leptons.intro}}</p>
                 <details class="deep-dive"><summary>{{page.fermions.leptons.deep.summary}}</summary><p>{{page.fermions.leptons.deep.mixing}}</p><div class="equation">|νₐ⟩ = Σᵢ U*ₐᵢ |νᵢ⟩</div><p>{{page.fermions.leptons.deep.matrix}}</p><p class="source-note">{{page.fermions.leptons.deep.sources}}</p></details>
+            </div>
+            <!-- Why generations exist: reasons that predicted charm, top, and the tau neutrino; charge sums from generationChargeThirds(). -->
+            <div class="concept-card" id="generations">
+                <p class="eyebrow">{{page.fermions.generations.eyebrow}}</p>
+                <h3>{{page.fermions.generations.title}}</h3>
+                <p class="history-lead">{{page.fermions.generations.lead}}</p>
+                <div class="table-scroll" role="region" aria-label="{{page.fermions.generations.table.label}}" tabindex="0"><table class="generation-table"><caption>{{page.fermions.generations.table.caption}}</caption><thead><tr><th scope="col">{{page.fermions.generations.table.columns.generation}}</th><th scope="col">{{page.fermions.generations.table.columns.quarks}}</th><th scope="col">{{page.fermions.generations.table.columns.leptons}}</th><th scope="col">{{page.fermions.generations.table.columns.where}}</th></tr></thead><tbody>
+                <tr><th scope="row">{{page.fermions.generations.table.rows.first.name}}</th><td><a href="#particle-inspector" data-particle="up">u</a> · <a href="#particle-inspector" data-particle="down">d</a></td><td><a href="#particle-inspector" data-particle="electron">e⁻</a> · <a href="#particle-inspector" data-particle="e_neutrino">νₑ</a></td><td>{{page.fermions.generations.table.rows.first.where}}</td></tr>
+                <tr><th scope="row">{{page.fermions.generations.table.rows.second.name}}</th><td><a href="#particle-inspector" data-particle="charm">c</a> · <a href="#particle-inspector" data-particle="strange">s</a></td><td><a href="#particle-inspector" data-particle="muon">μ⁻</a> · <a href="#particle-inspector" data-particle="mu_neutrino">νμ</a></td><td>{{page.fermions.generations.table.rows.second.where}}</td></tr>
+                <tr><th scope="row">{{page.fermions.generations.table.rows.third.name}}</th><td><a href="#particle-inspector" data-particle="top">t</a> · <a href="#particle-inspector" data-particle="bottom">b</a></td><td><a href="#particle-inspector" data-particle="tau">τ⁻</a> · <a href="#particle-inspector" data-particle="tau_neutrino">ντ</a></td><td>{{page.fermions.generations.table.rows.third.where}}</td></tr>
+                </tbody></table></div>
+                <h4>{{page.fermions.generations.reasonsTitle}}</h4>
+                <div class="concept-columns reason-grid">
+                    <div><h4>{{page.fermions.generations.reasons.complete.title}}</h4><p>{{page.fermions.generations.reasons.complete.text}}</p><div class="equation small-equation">3 × (+⅔ − ⅓) + (−1 + 0) = 0</div></div>
+                    <div><h4>{{page.fermions.generations.reasons.charm.title}}</h4><p>{{page.fermions.generations.reasons.charm.text}}</p></div>
+                    <div><h4>{{page.fermions.generations.reasons.cp.title}}</h4><p>{{page.fermions.generations.reasons.cp.text}}</p></div>
+                    <div><h4>{{page.fermions.generations.reasons.muon.title}}</h4><p>{{page.fermions.generations.reasons.muon.text}}</p></div>
+                    <div><h4>{{page.fermions.generations.reasons.top.title}}</h4><p>{{page.fermions.generations.reasons.top.text}}</p></div>
+                    <div><h4>{{page.fermions.generations.reasons.decay.title}}</h4><p>{{page.fermions.generations.reasons.decay.text}}</p></div>
+                </div>
+                <div class="cern-reference"><h4>{{page.fermions.generations.open.title}}</h4><p>{{page.fermions.generations.open.text}}</p></div>
+                <p class="source-note">{{page.fermions.generations.sources}}</p>
             </div>
             <!-- History step 6 of 18: page.history.steps.pion -->
             <article class="concept-card history-step" id="history-pion" aria-labelledby="history-pion-title">
@@ -463,9 +592,9 @@
             </article>
         </section>
 
-        <!-- Section 5: Forces and carriers -->
-        <section id="forces" class="content-section" data-section="5">
-            <div class="section-header"><span class="section-number">5</span><h2 class="section-title">{{page.forces.title}}</h2></div>
+        <!-- Section 6: Forces and carriers -->
+        <section id="forces" class="content-section" data-section="6">
+            <div class="section-header"><span class="section-number">6</span><h2 class="section-title">{{page.forces.title}}</h2></div>
             <div class="concept-card"><h3>{{page.forces.card.title}}</h3>
                 <p>{{page.forces.card.intro}}</p>
                 <div class="table-scroll" role="region" aria-label="{{page.forces.table.label}}" tabindex="0"><table><caption>{{page.forces.table.caption}}</caption><thead><tr><th scope="col">{{page.forces.table.columns.interaction}}</th><th scope="col">{{page.forces.table.columns.carrier}}</th><th scope="col">{{page.forces.table.columns.actsOn}}</th><th scope="col">{{page.forces.table.columns.range}}</th></tr></thead><tbody>
@@ -516,9 +645,9 @@
             </article>
         </section>
 
-        <!-- Section 6: Higgs mechanism -->
-        <section id="higgs" class="content-section" data-section="6">
-            <div class="section-header"><span class="section-number">6</span><h2 class="section-title">{{page.higgs.title}}</h2></div>
+        <!-- Section 7: Higgs mechanism -->
+        <section id="higgs" class="content-section" data-section="7">
+            <div class="section-header"><span class="section-number">7</span><h2 class="section-title">{{page.higgs.title}}</h2></div>
             <div class="concept-card"><h3>{{page.higgs.card.title}}</h3>
                 <p>{{page.higgs.card.field}}</p>
                 <p>{{page.higgs.card.photons}}</p>
@@ -544,9 +673,9 @@
             </article>
         </section>
 
-        <!-- Section 7: Quantum properties and the occupancy experiment -->
-        <section id="quantum" class="content-section" data-section="7">
-            <div class="section-header"><span class="section-number">7</span><h2 class="section-title">{{page.quantum.title}}</h2></div>
+        <!-- Section 8: Quantum properties and the occupancy experiment -->
+        <section id="quantum" class="content-section" data-section="8">
+            <div class="section-header"><span class="section-number">8</span><h2 class="section-title">{{page.quantum.title}}</h2></div>
             <div class="concept-card"><h3>{{page.quantum.card.title}}</h3>
                 <p>{{page.quantum.card.spin}}</p>
                 <p>{{page.quantum.card.orbitals}}</p>
@@ -596,9 +725,9 @@
             </article>
         </section>
 
-        <!-- Section 8: Interactions and the reaction charge check -->
-        <section id="interactions" class="content-section" data-section="8">
-            <div class="section-header"><span class="section-number">8</span><h2 class="section-title">{{page.interactions.title}}</h2></div>
+        <!-- Section 9: Interactions and the reaction charge check -->
+        <section id="interactions" class="content-section" data-section="9">
+            <div class="section-header"><span class="section-number">9</span><h2 class="section-title">{{page.interactions.title}}</h2></div>
             <div class="concept-card"><h3>{{page.interactions.card.title}}</h3>
                 <p>{{page.interactions.card.intro}}</p>
                 <label><span>{{page.interactions.card.choose}}</span><select id="process-choice"><option value="beta">{{page.interactions.card.options.beta}}</option><option value="annihilation">{{page.interactions.card.options.annihilation}}</option><option value="higgs">{{page.interactions.card.options.higgs}}</option><option value="forbidden">{{page.interactions.card.options.forbidden}}</option></select></label>
@@ -647,9 +776,9 @@
             </article>
         </section>
 
-        <!-- Section 9: Detection and detector signatures -->
-        <section id="detection" class="content-section" data-section="9">
-            <div class="section-header"><span class="section-number">9</span><h2 class="section-title">{{page.detection.title}}</h2></div>
+        <!-- Section 10: Detection and detector signatures -->
+        <section id="detection" class="content-section" data-section="10">
+            <div class="section-header"><span class="section-number">10</span><h2 class="section-title">{{page.detection.title}}</h2></div>
             <div class="concept-card"><h3>{{page.detection.card.title}}</h3>
                 <p>{{page.detection.card.intro}}</p>
                 <label><span>{{page.detection.card.choose}}</span><select id="detector-choice"><option value="electron">{{model.detector.electron.name}}</option><option value="photon">{{model.detector.photon.name}}</option><option value="muon">{{model.detector.muon.name}}</option><option value="hadron">{{model.detector.hadron.name}}</option><option value="neutrino">{{model.detector.neutrino.name}}</option></select></label>
@@ -684,9 +813,9 @@
             </article>
         </section>
 
-        <!-- Section 10: Mathematical foundation -->
-        <section id="mathematics" class="content-section" data-section="10">
-            <div class="section-header"><span class="section-number">10</span><h2 class="section-title">{{page.mathematics.title}}</h2></div>
+        <!-- Section 11: Mathematical foundation -->
+        <section id="mathematics" class="content-section" data-section="11">
+            <div class="section-header"><span class="section-number">11</span><h2 class="section-title">{{page.mathematics.title}}</h2></div>
             <div class="concept-card"><h3>{{page.mathematics.card.title}}</h3>
                 <p>{{page.mathematics.card.intro}}</p>
                 <div class="table-scroll" role="region" aria-label="{{page.mathematics.table.label}}" tabindex="0"><table><caption>{{page.mathematics.table.caption}}</caption><thead><tr><th scope="col">{{page.mathematics.table.columns.relation}}</th><th scope="col">{{page.mathematics.table.columns.meaning}}</th><th scope="col">{{page.mathematics.table.columns.explore}}</th></tr></thead><tbody>
@@ -700,9 +829,9 @@
             </div>
         </section>
 
-        <!-- Section 11: Beyond the Standard Model (keep separate from the summary) -->
-        <section id="beyond" class="content-section" data-section="11">
-            <div class="section-header"><span class="section-number">11</span><h2 class="section-title">{{page.beyond.title}}</h2></div>
+        <!-- Section 12: Beyond the Standard Model (keep separate from the summary) -->
+        <section id="beyond" class="content-section" data-section="12">
+            <div class="section-header"><span class="section-number">12</span><h2 class="section-title">{{page.beyond.title}}</h2></div>
             <div class="concept-card"><h3>{{page.beyond.card.title}}</h3>
                 <p>{{page.beyond.card.intro}}</p>
                 <div class="table-scroll" role="region" aria-label="{{page.beyond.table.label}}" tabindex="0"><table><caption>{{page.beyond.table.caption}}</caption><thead><tr><th scope="col">{{page.beyond.table.columns.question}}</th><th scope="col">{{page.beyond.table.columns.established}}</th><th scope="col">{{page.beyond.table.columns.unresolved}}</th></tr></thead><tbody>
@@ -734,8 +863,8 @@
             </article>
         </section>
 
-        <!-- Section 12: Summary, glossary, and references -->
-        <section id="summary" class="content-section" data-section="12">
+        <!-- Section 13: Summary, glossary, and references -->
+        <section id="summary" class="content-section" data-section="13">
             <div class="section-header"><span class="section-number">∞</span><h2 class="section-title">{{page.summary.title}}</h2></div>
             <div class="concept-card"><h3>{{page.summary.card.title}}</h3>
                 <p>{{page.summary.card.intro}}</p>

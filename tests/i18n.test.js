@@ -45,12 +45,16 @@ test('static markup is annotated so runtime language switching reaches it', () =
 test('the pure model reports text in the active language and falls back to English', () => {
   const source = html.match(/<script id="physics-model">([\s\S]*?)<\/script>/)[1];
   const context = vm.createContext({});
-  vm.runInContext(`${source}\nthis.model = { PARTICLES, PROCESSES, DETECTOR_SIGNATURES, INTERACTION_NAMES, pairInteraction, setModelLanguage, t };`, context);
-  const { PARTICLES, PROCESSES, DETECTOR_SIGNATURES, INTERACTION_NAMES, pairInteraction, setModelLanguage, t } = context.model;
+  vm.runInContext(`${source}\nthis.model = { PARTICLES, PROCESSES, DETECTOR_SIGNATURES, INTERACTION_NAMES, COMPOSITION_LEVELS, COMPOSITES, PRODUCTION_CHANNELS, COLLIDER_PRESETS, pairInteraction, setModelLanguage, t };`, context);
+  const { PARTICLES, PROCESSES, DETECTOR_SIGNATURES, INTERACTION_NAMES, COMPOSITION_LEVELS, COMPOSITES, PRODUCTION_CHANNELS, COLLIDER_PRESETS, pairInteraction, setModelLanguage, t } = context.model;
   for (const language of languages) {
     assert.equal(setModelLanguage(language), language);
     const texts = [
-      ...PARTICLES.flatMap(p => [p.name, p.massLabel, p.example, p.massNote]),
+      ...PARTICLES.flatMap(p => [p.name, p.massLabel, p.example, p.massNote, p.role, p.origin, p.fate]),
+      ...COMPOSITION_LEVELS.flatMap(l => [l.name, l.inside, l.glue, l.breakIt, l.evidence, l.takeaway]),
+      ...Object.values(COMPOSITES).flatMap(c => [c.name, c.lifetime, c.note]),
+      ...PRODUCTION_CHANNELS.flatMap(c => [c.label, c.first, c.fate]),
+      ...COLLIDER_PRESETS.map(p => p.label),
       ...Object.values(PROCESSES).flatMap(p => [p.label, p.explanation]),
       ...Object.values(DETECTOR_SIGNATURES).flatMap(s => [s.name, s.why, s.catalogLabel, ...s.layers]),
       ...Object.values(INTERACTION_NAMES),

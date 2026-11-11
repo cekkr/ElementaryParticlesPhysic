@@ -137,7 +137,7 @@ function showParticleDetail(id) {
         : 'ui.inspector.chargeNote.charged');
     document.getElementById('particle-detail-title').textContent = `${p.symbol} · ${p.name}`;
     document.getElementById('particle-selection-status').textContent = t('ui.inspector.selected', { name: p.name });
-    document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>${t('ui.properties.type')}</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>${t('ui.properties.restMass')}</strong><span>${p.massLabel}</span></div><div><strong>${t('ui.properties.electricCharge')}</strong><span>${p.charge} e</span></div><div><strong>${t('ui.properties.spin')}</strong><span>${t('ui.inspector.spinValue', { spin: p.spin })}</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>${t('ui.inspector.massOrigin')}</dt><dd>${p.massNote} ${higgsNote}</dd><dt>${t('ui.properties.interactions')}</dt><dd>${interactionText(p)}. ${chargeNote}</dd><dt>${t('ui.inspector.quantumRule')}</dt><dd>${statisticsText(p)}</dd><dt>${t('ui.history.title')}</dt><dd>${t('ui.history.discovered', { year: p.discovered, how: p.discovery })} ${historyLink(HISTORY_ANCHORS.particles[p.id], t('ui.history.readStory'))}</dd></dl><div class="learning-paths history-paths">${historyLink(HISTORY_ANCHORS.families[p.family], t(`ui.history.families.${p.family}`))}${historyLink(HISTORY_ANCHORS.topics.spin, t('ui.history.topics.spin'))}${historyLink(HISTORY_ANCHORS.topics.antimatter, t('ui.history.topics.antimatter'))}${p.generation ? historyLink(HISTORY_ANCHORS.topics.generations, t('ui.history.topics.generations')) : ''}</div><div class="learning-paths"><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${t(isFermion(p) ? 'ui.inspector.paths.matter' : 'ui.inspector.paths.forces')}</a><a href="#higgs">${t('ui.inspector.paths.higgs')}</a><a href="#quantum">${t('ui.inspector.paths.quantum')}</a><a href="#interactions">${t('ui.inspector.paths.reaction')}</a><a href="#detection">${t('ui.inspector.paths.detection')}</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">${t('ui.inspector.pdgReference')}</a> · <a href="#references">${t('ui.inspector.conventions')}</a></p>`;
+    document.getElementById('particle-detail').innerHTML = `<div class="property-grid"><div><strong>${t('ui.properties.type')}</strong><span>${FAMILY_NAMES[p.family]}</span></div><div><strong>${t('ui.properties.restMass')}</strong><span>${p.massLabel}</span></div><div><strong>${t('ui.properties.electricCharge')}</strong><span>${p.charge} e</span></div><div><strong>${t('ui.properties.spin')}</strong><span>${t('ui.inspector.spinValue', { spin: p.spin })}</span></div></div><p class="particle-example">${p.example}</p><dl class="detail-list"><dt>${t('ui.inspector.role')}</dt><dd>${p.role}</dd><dt>${t('ui.inspector.origin')}</dt><dd>${p.origin}</dd><dt>${t('ui.inspector.fate')}</dt><dd>${p.fate}</dd><dt>${t('ui.inspector.massOrigin')}</dt><dd>${p.massNote} ${higgsNote}</dd><dt>${t('ui.properties.interactions')}</dt><dd>${interactionText(p)}. ${chargeNote}</dd><dt>${t('ui.inspector.quantumRule')}</dt><dd>${statisticsText(p)}</dd><dt>${t('ui.history.title')}</dt><dd>${t('ui.history.discovered', { year: p.discovered, how: p.discovery })} ${historyLink(HISTORY_ANCHORS.particles[p.id], t('ui.history.readStory'))}</dd></dl><div class="learning-paths history-paths">${historyLink(HISTORY_ANCHORS.families[p.family], t(`ui.history.families.${p.family}`))}${historyLink(HISTORY_ANCHORS.topics.spin, t('ui.history.topics.spin'))}${historyLink(HISTORY_ANCHORS.topics.antimatter, t('ui.history.topics.antimatter'))}${p.generation ? historyLink(HISTORY_ANCHORS.topics.generations, t('ui.history.topics.generations')) : ''}</div><div class="learning-paths">${p.generation ? `<a href="#generations">${t('ui.inspector.paths.generations')}</a>` : ''}<a href="#particle-creation">${t('ui.inspector.paths.creation')}</a><a href="#${isFermion(p) ? 'fermions' : 'forces'}">${t(isFermion(p) ? 'ui.inspector.paths.matter' : 'ui.inspector.paths.forces')}</a><a href="#higgs">${t('ui.inspector.paths.higgs')}</a><a href="#quantum">${t('ui.inspector.paths.quantum')}</a><a href="#interactions">${t('ui.inspector.paths.reaction')}</a><a href="#detection">${t('ui.inspector.paths.detection')}</a></div><p class="source-note"><a href="https://pdg.lbl.gov/2025/tables/rpp2025-sum-${source}.pdf">${t('ui.inspector.pdgReference')}</a> · <a href="#references">${t('ui.inspector.conventions')}</a></p>`;
     document.querySelectorAll('button[data-particle]').forEach(button => button.setAttribute('aria-pressed', button.dataset.particle === id));
 }
 function renderInteractionMatrix() {
@@ -272,6 +272,99 @@ function renderHistoryTimeline() {
         return `<li class="${entry.predicted ? 'timeline-predicted' : 'timeline-surprise'}"><a href="#${anchor}" class="timeline-name">${p ? p.symbol : entry.symbol} ${name}</a><span class="timeline-track" aria-hidden="true">${bar}<span class="timeline-dot" style="left: ${position(entry.observed).toFixed(2)}%"></span></span><span class="timeline-years" aria-hidden="true">${entry.predicted ? `${entry.predicted} → ${entry.observed}` : entry.observed}</span><span class="sr-only">${text}</span></li>`;
     }).join('');
 }
+// ---------- Inside matter: zoom ladder, composite builder, particle creation ----------
+let compositionLevel = 'atom';
+let selectedComposite = 'proton';
+let selectedProduction = 'charm';
+let collisionEnergy = 8000;
+// Energies are MeV in the model; display picks eV…TeV with locale digits (unit symbols are SI).
+function formatEnergy(mev) {
+    const units = [['TeV', 1e6], ['GeV', 1e3], ['MeV', 1], ['keV', 1e-3], ['eV', 1e-6]];
+    const [unit, scale] = units.find(([, size]) => Math.abs(mev) >= size) || units.at(-1);
+    return `${new Intl.NumberFormat(currentLanguage, { maximumSignificantDigits: 4 }).format(mev / scale)} ${unit}`;
+}
+const formatLength = metres => {
+    const exponent = Math.round(Math.log10(metres));
+    const superscript = String(exponent).replace('-', '⁻').replace(/\d/g, digit => '⁰¹²³⁴⁵⁶⁷⁸⁹'[digit]);
+    return `≈ 10${superscript} m`;
+};
+function renderCompositionLevel() {
+    const index = COMPOSITION_LEVELS.findIndex(level => level.key === compositionLevel);
+    const level = COMPOSITION_LEVELS[index];
+    document.querySelectorAll('.level-btn').forEach(button => button.setAttribute('aria-pressed', button.dataset.level === level.key));
+    document.getElementById('zoom-out').disabled = index === 0;
+    document.getElementById('zoom-in').disabled = index === COMPOSITION_LEVELS.length - 1;
+    document.getElementById('compositionCanvas').setAttribute('aria-label', t(`ui.compositionCanvas.label.${level.key}`));
+    const probe = t('ui.composition.probeValue', { energy: formatEnergy(probeEnergy(level.size) / 1e6) });
+    document.getElementById('level-detail').innerHTML = `<h4><span class="level-step">${index + 1}</span> ${level.name}</h4><dl class="detail-list"><dt>${t('ui.composition.size')}</dt><dd>${formatLength(level.size)}</dd><dt>${t('ui.composition.inside')}</dt><dd>${level.inside}</dd><dt>${t('ui.composition.glue')}</dt><dd>${level.glue}</dd><dt>${t('ui.composition.breakIt')}</dt><dd>${level.breakIt}</dd><dt>${t('ui.composition.probe')}</dt><dd>${probe}</dd><dt>${t('ui.composition.evidence')}</dt><dd>${level.evidence}</dd></dl><p class="level-takeaway">${level.takeaway}</p><div class="learning-paths">${level.particles.map(id => particleLink(id)).join('')}</div>`;
+}
+function setCompositionLevel(key) {
+    compositionLevel = key;
+    renderCompositionLevel();
+}
+function renderComposite() {
+    const composite = COMPOSITES[selectedComposite];
+    const summary = compositeSummary(selectedComposite);
+    document.getElementById('composite-choice').value = selectedComposite;
+    const chips = summary.parts.map(part => {
+        const label = `<span class="chip-symbol">${part.symbol}</span><small>${part.composite ? COMPOSITES[part.id].name : part.anti ? t('ui.composite.antiName', { name: particleById(part.id).name }) : particleById(part.id).name}</small><small class="chip-charge">${formatChargeThirds(part.chargeThirds)}</small>`;
+        return part.composite
+            ? `<button type="button" class="constituent-chip composite-chip" data-composite="${part.id}" aria-label="${t('ui.composite.openPart', { name: COMPOSITES[part.id].name })}">${label}</button>`
+            : `<a class="constituent-chip" href="#particle-inspector" data-particle="${part.id}">${label}</a>`;
+    }).join('<span class="chip-plus" aria-hidden="true">+</span>');
+    const chargeEquation = `${summary.parts.map(part => formatChargeThirds(part.chargeThirds)).join(' ')} = ${formatChargeThirds(summary.chargeThirds)}`;
+    const share = Math.min(summary.partsShare, 1) * 100;
+    const verdict = summary.bound
+        ? t('ui.composite.verdict.bound', { name: composite.name, binding: formatEnergy(-summary.massDifference) })
+        : t(summary.partsShare < 0.5 ? 'ui.composite.verdict.light' : 'ui.composite.verdict.heavy', {
+            name: composite.name,
+            share: new Intl.NumberFormat(currentLanguage, { maximumFractionDigits: 1 }).format(summary.partsShare * 100),
+            extra: formatEnergy(summary.massDifference)
+        });
+    document.getElementById('composite-result').innerHTML = `<div class="composite-head"><span class="composite-symbol">${composite.symbol}</span><div><h4>${composite.name}</h4><p class="hint">${t(`ui.composite.kinds.${composite.kind}`)}</p></div></div><div class="constituents" aria-label="${t('ui.composite.partsLabel')}">${chips}</div><div class="property-grid"><div><strong>${t('ui.composite.charge')}</strong><span>${chargeEquation}</span></div><div><strong>${t('ui.composite.mass')}</strong><span>${formatEnergy(summary.mass)}/c²</span></div><div><strong>${t(summary.bound ? 'ui.composite.partsMassBound' : 'ui.composite.partsMassQuarks')}</strong><span>${formatEnergy(summary.partsMass)}/c²</span></div><div><strong>${t('ui.composite.lifetime')}</strong><span>${composite.lifetime}</span></div></div><div class="mass-bars" aria-hidden="true"><div class="mass-bar"><span>${t('ui.composite.barWhole')}</span><i style="width: 100%"></i></div><div class="mass-bar parts"><span>${t('ui.composite.barParts')}</span><i style="width: ${share.toFixed(2)}%"></i></div></div><p class="composite-verdict">${verdict}</p><p>${composite.note}</p>`;
+}
+function selectComposite(key) {
+    if (!COMPOSITES[key]) return;
+    selectedComposite = key;
+    renderComposite();
+}
+// Logarithmic slider from 0.5 MeV to 20 TeV.
+const ENERGY_RANGE = [Math.log10(0.5), Math.log10(2e7)];
+const sliderToEnergy = value => 10 ** (ENERGY_RANGE[0] + (value / 1000) * (ENERGY_RANGE[1] - ENERGY_RANGE[0]));
+const energyToSlider = energy => Math.round(((Math.log10(energy) - ENERGY_RANGE[0]) / (ENERGY_RANGE[1] - ENERGY_RANGE[0])) * 1000);
+function renderCreation() {
+    const energyText = formatEnergy(collisionEnergy);
+    const slider = document.getElementById('collision-energy');
+    slider.value = energyToSlider(collisionEnergy);
+    slider.setAttribute('aria-valuetext', energyText);
+    document.getElementById('collision-energy-value').textContent = energyText;
+    document.getElementById('collider-presets').innerHTML = COLLIDER_PRESETS.map(preset => `<button type="button" class="action-btn preset-btn" data-energy="${preset.energy}" aria-pressed="${preset.energy === collisionEnergy}">${preset.label} <small>${formatEnergy(preset.energy)}</small></button>`).join('');
+    const reachable = availableProductions(collisionEnergy);
+    document.getElementById('creation-status').textContent = reachable.length
+        ? t('ui.creation.status', { energy: energyText, count: reachable.length, total: PRODUCTION_CHANNELS.length, heaviest: reachable.at(-1).label })
+        : t('ui.creation.statusNone', { energy: energyText });
+    document.getElementById('creation-list').innerHTML = PRODUCTION_CHANNELS.map(channel => {
+        const open = reachable.includes(channel);
+        return `<li class="${open ? 'reachable' : 'locked'}"><button type="button" class="creation-item" data-production="${channel.key}" aria-pressed="${channel.key === selectedProduction}"><span class="creation-threshold">${formatEnergy(productionThreshold(channel))}</span><span class="creation-label">${channel.label}</span><span class="creation-reaction">${channel.reaction}</span><span class="creation-state">${t(open ? 'ui.creation.reachable' : 'ui.creation.locked')}</span></button></li>`;
+    }).join('');
+    const channel = PRODUCTION_CHANNELS.find(c => c.key === selectedProduction);
+    const threshold = productionThreshold(channel);
+    const open = threshold <= collisionEnergy;
+    const decays = channel.symbols.map((symbol, i) => `<li>${channel.decays[i] ? `${symbol} → ${channel.decays[i].join(' + ')}` : `${symbol}: ${t('ui.creation.stable')}`}</li>`).join('');
+    const reach = open ? t('ui.creation.canMake', { threshold: formatEnergy(threshold) })
+        : threshold / collisionEnergy < 2
+            ? t('ui.creation.needPercent', { threshold: formatEnergy(threshold), percent: new Intl.NumberFormat(currentLanguage, { maximumSignificantDigits: 2 }).format((threshold / collisionEnergy - 1) * 100) })
+            : t('ui.creation.needMore', { threshold: formatEnergy(threshold), factor: new Intl.NumberFormat(currentLanguage, { maximumSignificantDigits: 2 }).format(threshold / collisionEnergy) });
+    const builder = channel.composite ? `<button type="button" class="action-btn" data-composite="${channel.composite}">${t('ui.composite.openPart', { name: COMPOSITES[channel.composite].name })}</button>` : '';
+    document.getElementById('creation-detail').innerHTML = `<h4>${channel.label}</h4><div class="equation small-equation">${channel.reaction}</div><p class="creation-reach ${open ? 'reachable' : 'locked'}">${reach}</p><dl class="detail-list"><dt>${t('ui.creation.firstMade')}</dt><dd>${channel.first}</dd><dt>${t('ui.creation.thenWhat')}</dt><dd>${channel.fate}<ul class="decay-list">${decays}</ul></dd></dl><div class="learning-paths">${channel.particles.map(id => particleLink(id)).join('')}</div>${builder}`;
+    document.getElementById('creationCanvas').setAttribute('aria-label', open
+        ? t('ui.creationCanvas.label', { reaction: channel.reaction })
+        : t('ui.creationCanvas.labelTooLow', { reaction: channel.reaction }));
+}
+function setCollisionEnergy(energy) {
+    collisionEnergy = energy;
+    renderCreation();
+}
 // Story blocks live in closed <details>; open them before a fragment link scrolls there.
 function revealFragmentTarget(hash) {
     if (!hash || hash.length < 2) return false;
@@ -297,6 +390,9 @@ function renderAllExplorers() {
     renderDetector();
     renderHistoryDiscoveries();
     renderHistoryTimeline();
+    renderCompositionLevel();
+    renderComposite();
+    renderCreation();
 }
 function initParticleExplorers() {
     ['particle-family', 'particle-interaction', 'particle-sort'].forEach(id => document.getElementById(id).addEventListener('change', renderParticleExplorer));
@@ -342,6 +438,32 @@ function initParticleExplorers() {
     [0, 1].forEach(i => document.getElementById(`add-state-${i}`).addEventListener('click', () => addQuantumParticle(i)));
     document.getElementById('process-choice').addEventListener('change', renderProcess);
     document.getElementById('detector-choice').addEventListener('change', renderDetector);
+    document.querySelectorAll('.level-btn').forEach(button => button.addEventListener('click', () => setCompositionLevel(button.dataset.level)));
+    [['zoom-in', 1], ['zoom-out', -1]].forEach(([id, step]) => document.getElementById(id).addEventListener('click', () => {
+        const index = COMPOSITION_LEVELS.findIndex(level => level.key === compositionLevel) + step;
+        if (COMPOSITION_LEVELS[index]) setCompositionLevel(COMPOSITION_LEVELS[index].key);
+    }));
+    document.getElementById('composite-choice').addEventListener('change', event => selectComposite(event.target.value));
+    // Composite chips and "open in builder" buttons share data-composite.
+    document.addEventListener('click', event => {
+        const control = event.target.closest('button[data-composite]');
+        if (!control) return;
+        selectComposite(control.dataset.composite);
+        if (!control.closest('#composite-builder')) document.getElementById('composite-builder').scrollIntoView({ behavior: 'auto', block: 'start' });
+        document.getElementById('composite-choice').focus({ preventScroll: true });
+    });
+    document.getElementById('collision-energy').addEventListener('input', event => setCollisionEnergy(sliderToEnergy(Number(event.target.value))));
+    document.getElementById('collider-presets').addEventListener('click', event => {
+        const preset = event.target.closest('[data-energy]');
+        if (preset) setCollisionEnergy(Number(preset.dataset.energy));
+    });
+    document.getElementById('creation-list').addEventListener('click', event => {
+        const item = event.target.closest('[data-production]');
+        if (!item) return;
+        selectedProduction = item.dataset.production;
+        renderCreation();
+        document.querySelector(`[data-production="${selectedProduction}"]`).focus();
+    });
     document.querySelectorAll('details').forEach(details => details.addEventListener('toggle', updateNavigation));
     document.getElementById('language-choice').addEventListener('change', event => setLanguage(event.target.value, { persist: true }));
     renderAllExplorers();
@@ -360,6 +482,11 @@ function initVisualizations() {
     if (atomCanvas) {
         animateAtom(atomCanvas);
     }
+
+    const compositionCanvas = document.getElementById('compositionCanvas');
+    if (compositionCanvas) animateComposition(compositionCanvas);
+    const creationCanvas = document.getElementById('creationCanvas');
+    if (creationCanvas) animateCreation(creationCanvas);
 }
 
 // Scale visualization: labels are looked up each frame so they follow the active language.
@@ -547,6 +674,227 @@ function animateAtom(canvas) {
         requestAnimationFrame(draw);
     }
 
+    draw();
+}
+
+// Shared canvas text helper; labels are translated each frame.
+function canvasLabel(ctx, text, x, y, { align = 'center', color = '#e0e6ed', size = 12 } = {}) {
+    ctx.fillStyle = color;
+    ctx.font = `${size}px 'Segoe UI', system-ui, sans-serif`;
+    ctx.textAlign = align;
+    ctx.fillText(text, x, y);
+    ctx.textAlign = 'start';
+}
+function sizeCanvas(canvas) {
+    canvas.width = canvas.offsetWidth || 600;
+    canvas.height = canvas.offsetHeight || 400;
+}
+// Zoom ladder drawing for compositionLevel. Schematic, not to scale (the caption says so).
+function animateComposition(canvas) {
+    const ctx = canvas.getContext('2d');
+    sizeCanvas(canvas);
+    let time = 0;
+    const quarkColors = ['#ff5c7a', '#5cff9d', '#5c9dff'];
+    function circle(x, y, r, fill) {
+        ctx.fillStyle = fill;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    function spring(x1, y1, x2, y2, phase) {
+        const length = Math.hypot(x2 - x1, y2 - y1);
+        const angle = Math.atan2(y2 - y1, x2 - x1);
+        ctx.save();
+        ctx.translate(x1, y1);
+        ctx.rotate(angle);
+        ctx.strokeStyle = 'rgba(255, 207, 105, 0.75)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        for (let s = 0; s <= length; s += 2) ctx.lineTo(s, Math.sin(s / 5 + phase) * 5);
+        ctx.stroke();
+        ctx.restore();
+    }
+    // Time follows the clock, not the frame rate, so throttled or fast displays agree.
+    function draw(now = 0) {
+        time = now / 1000;
+        const w = canvas.width;
+        const h = canvas.height;
+        const cx = w / 2;
+        const cy = h / 2;
+        const r = Math.min(w, h) * 0.36;
+        ctx.clearRect(0, 0, w, h);
+        if (compositionLevel === 'atom') {
+            const cloud = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+            cloud.addColorStop(0, 'rgba(0, 212, 255, 0.45)');
+            cloud.addColorStop(0.6, 'rgba(0, 212, 255, 0.15)');
+            cloud.addColorStop(1, 'rgba(0, 212, 255, 0)');
+            circle(cx, cy, r, cloud);
+            // Flickering dots: where an electron might be found, not a path.
+            for (let i = 0; i < 70; i++) {
+                const a = i * 2.4 + Math.floor(time * 3 + i) * 1.7;
+                const d = r * Math.abs(Math.sin(i * 12.9898 + Math.floor(time * 3 + i * 0.3))) ** 0.8;
+                circle(cx + Math.cos(a) * d, cy + Math.sin(a) * d, 1.6, 'rgba(160, 235, 255, 0.8)');
+            }
+            circle(cx, cy, 4, '#ff006e');
+            canvasLabel(ctx, t('ui.compositionCanvas.atom.cloud'), cx, cy - r - 12);
+            canvasLabel(ctx, t('ui.compositionCanvas.atom.nucleus'), cx, cy + 22, { color: '#ff8fb8' });
+        } else if (compositionLevel === 'nucleus') {
+            const nucleons = [[-1, -1, 'p'], [1, 1, 'p'], [1, -1, 'n'], [-1, 1, 'n']];
+            const unit = r * 0.32;
+            const points = nucleons.map(([dx, dy, kind], i) => [cx + dx * unit * 0.75 + Math.sin(time * 2 + i) * 4, cy + dy * unit * 0.75 + Math.cos(time * 2.3 + i) * 4, kind]);
+            // Pion exchange between neighbours: the residual strong force.
+            points.forEach(([x1, y1], i) => {
+                const [x2, y2] = points[(i + 1) % points.length];
+                const f = (time * 0.6 + i * 0.25) % 1;
+                ctx.strokeStyle = 'rgba(255, 207, 105, 0.25)';
+                ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+                circle(x1 + (x2 - x1) * f, y1 + (y2 - y1) * f, 3, '#ffcf69');
+            });
+            points.forEach(([x, y, kind]) => {
+                circle(x, y, unit * 0.62, kind === 'p' ? '#d6336c' : '#3a6fd8');
+                canvasLabel(ctx, kind, x, y + 6, { size: 18 });
+            });
+            canvasLabel(ctx, t('ui.compositionCanvas.nucleus.title'), cx, 28);
+            canvasLabel(ctx, t('ui.compositionCanvas.nucleus.exchange'), cx, h - 26, { color: '#ffcf69' });
+        } else if (compositionLevel === 'nucleon') {
+            ctx.strokeStyle = 'rgba(214, 51, 108, 0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+            circle(cx, cy, r, 'rgba(214, 51, 108, 0.08)');
+            // Short-lived sea pairs appear and vanish.
+            for (let i = 0; i < 6; i++) {
+                const life = (time * 0.7 + i / 6) % 1;
+                const a = i * 1.9 + Math.floor(time * 0.7 + i / 6) * 2.2;
+                const d = r * (0.3 + 0.55 * ((i * 0.37) % 1));
+                const x = cx + Math.cos(a) * d;
+                const y = cy + Math.sin(a) * d;
+                ctx.globalAlpha = Math.sin(life * Math.PI) * 0.7;
+                circle(x - 5, y, 3, '#c3cddd');
+                circle(x + 5, y, 3, '#8892b0');
+                ctx.globalAlpha = 1;
+            }
+            const quarks = ['u', 'u', 'd'].map((flavor, i) => {
+                const a = (Math.PI * 2 / 3) * i + time * 0.4;
+                const d = r * (0.42 + 0.12 * Math.sin(time * 1.7 + i * 2));
+                return [cx + Math.cos(a) * d, cy + Math.sin(a) * d, flavor, i];
+            });
+            quarks.forEach(([x, y], i) => {
+                const [x2, y2] = quarks[(i + 1) % 3];
+                spring(x, y, x2, y2, time * 6);
+            });
+            const colorShift = Math.floor(time * 0.8);
+            quarks.forEach(([x, y, flavor, i]) => {
+                circle(x, y, 13, quarkColors[(i + colorShift) % 3]);
+                canvasLabel(ctx, flavor, x, y + 5, { color: '#0a0e27', size: 15 });
+            });
+            canvasLabel(ctx, t('ui.compositionCanvas.nucleon.valence'), cx, 24);
+            canvasLabel(ctx, t('ui.compositionCanvas.nucleon.gluons'), cx, h - 44, { color: '#ffcf69' });
+            canvasLabel(ctx, t('ui.compositionCanvas.nucleon.sea'), cx, h - 26, { color: '#c3cddd' });
+        } else {
+            // Shrinking rings: resolution reached by probes, with no structure found.
+            for (let i = 0; i < 4; i++) {
+                const f = 1 - ((time * 0.25 + i / 4) % 1);
+                ctx.strokeStyle = `rgba(0, 212, 255, ${0.6 * (1 - f) + 0.1})`;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath(); ctx.arc(cx, cy, 8 + f * r, 0, Math.PI * 2); ctx.stroke();
+            }
+            circle(cx, cy, 3, '#ffffff');
+            canvasLabel(ctx, t('ui.compositionCanvas.elementary.point'), cx, cy - 18);
+            canvasLabel(ctx, t('ui.compositionCanvas.elementary.limit'), cx, h - 26, { color: '#83e6ff' });
+        }
+        canvasLabel(ctx, t('ui.compositionCanvas.notToScale'), w - 10, h - 6, { align: 'right', color: '#8892b0', size: 10 });
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+// Collision animation for selectedProduction at collisionEnergy: beams meet, a flash, the
+// products fly apart and decay. Below threshold the beams only scatter.
+function animateCreation(canvas) {
+    const ctx = canvas.getContext('2d');
+    sizeCanvas(canvas);
+    let time = 0;
+    function dot(x, y, r, color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    // Time follows the clock, not the frame rate, so throttled or fast displays agree.
+    function draw(now = 0) {
+        time = now / 1000;
+        const w = canvas.width;
+        const h = canvas.height;
+        const cx = w / 2;
+        const cy = h / 2;
+        const reach = Math.min(w, h) * 0.42;
+        const channel = PRODUCTION_CHANNELS.find(c => c.key === selectedProduction);
+        const open = productionThreshold(channel) <= collisionEnergy;
+        const incoming = channel.key === 'electronPair' ? ['γ', 'γ'] : ['e⁻', 'e⁺'];
+        const cycle = 4.2;
+        const phase = time % cycle;
+        const seed = Math.floor(time / cycle);
+        ctx.clearRect(0, 0, w, h);
+        ctx.strokeStyle = 'rgba(136, 146, 176, 0.25)';
+        ctx.setLineDash([4, 6]);
+        ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(w, cy); ctx.stroke();
+        ctx.setLineDash([]);
+        if (phase < 1) {
+            const x = (cx - 20) * phase;
+            dot(x, cy, 6, '#00d4ff'); canvasLabel(ctx, incoming[0], x, cy - 14, { color: '#83e6ff' });
+            dot(w - x, cy, 6, '#ff82b6'); canvasLabel(ctx, incoming[1], w - x, cy - 14, { color: '#ff82b6' });
+        } else if (!open) {
+            const f = Math.min((phase - 1) / 1.6, 1);
+            dot(cx - 20 - f * cx * 0.7, cy - f * 60, 6, '#00d4ff');
+            dot(cx + 20 + f * cx * 0.7, cy + f * 60, 6, '#ff82b6');
+            if (phase < 1.25) dot(cx, cy, 10 * (1.25 - phase) * 4, 'rgba(255, 255, 255, 0.5)');
+            canvasLabel(ctx, t('ui.creationCanvas.tooLow'), cx, 28, { color: '#ffcf69', size: 14 });
+        } else {
+            const flash = phase - 1;
+            if (flash < 0.35) {
+                dot(cx, cy, 10 + flash * 120, `rgba(255, 240, 200, ${0.9 - flash * 2.4})`);
+                canvasLabel(ctx, `E = ${formatEnergy(collisionEnergy)}`, cx, cy - 40, { color: '#fff3c4', size: 14 });
+            }
+            // Keep products near the beam plane so labels stay clear of the reaction caption.
+            const baseAngle = ((seed * 0.77) % 1.2) - 0.6;
+            const count = channel.symbols.length;
+            channel.symbols.forEach((symbol, i) => {
+                const angle = baseAngle + (count === 1 ? Math.PI / 2 : i * Math.PI);
+                const travel = count === 1 ? 0.25 : 1;
+                const out = Math.min(flash / 1.2, 1) * reach * 0.55 * travel;
+                const x = cx + Math.cos(angle) * out;
+                const y = cy + Math.sin(angle) * out;
+                const decays = channel.decays[i];
+                if (!decays || flash < 1.3) {
+                    const along = Math.min(flash / 1.2, 1);
+                    ctx.strokeStyle = 'rgba(255, 207, 105, 0.6)';
+                    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke();
+                    dot(x, y, 7, '#ffcf69');
+                    canvasLabel(ctx, symbol, x, y - 12, { color: '#ffcf69', size: 15 });
+                    if (!decays && along >= 1) canvasLabel(ctx, t('ui.creationCanvas.stable'), x, y + 22, { color: '#b0bfd0', size: 11 });
+                } else {
+                    ctx.strokeStyle = 'rgba(255, 207, 105, 0.6)';
+                    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke();
+                    canvasLabel(ctx, symbol, x, y - 12, { color: 'rgba(255, 207, 105, 0.7)', size: 12 });
+                    const spread = Math.min((flash - 1.3) / 1.2, 1) * reach * 0.45;
+                    decays.forEach((daughter, j) => {
+                        const a = angle + (j - (decays.length - 1) / 2) * 0.7;
+                        const dx = x + Math.cos(a) * spread;
+                        const dy = y + Math.sin(a) * spread;
+                        const neutrino = daughter.includes('ν');
+                        ctx.strokeStyle = neutrino ? 'rgba(136, 146, 176, 0.6)' : 'rgba(6, 255, 165, 0.8)';
+                        ctx.setLineDash(neutrino ? [3, 4] : []);
+                        ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(dx, dy); ctx.stroke();
+                        ctx.setLineDash([]);
+                        dot(dx, dy, 4, neutrino ? '#8892b0' : '#06ffa5');
+                        canvasLabel(ctx, daughter, dx, dy - 9, { color: neutrino ? '#b0bfd0' : '#7dffcf', size: 12 });
+                    });
+                }
+            });
+            canvasLabel(ctx, channel.reaction, cx, 28, { color: '#e0e6ed', size: 14 });
+        }
+        canvasLabel(ctx, t('ui.creationCanvas.legend'), w - 10, h - 8, { align: 'right', color: '#8892b0', size: 10 });
+        requestAnimationFrame(draw);
+    }
     draw();
 }
 

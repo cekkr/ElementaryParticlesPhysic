@@ -280,7 +280,7 @@ theme, interactions, animations, and every locale. Do not edit it directly; it d
 not implement HTTP routing or use the modular renderer at runtime.
 
 - **Markup/CSS landmarks:** `.nav-sidebar`/`.nav-dot` map introduction, scale,
-  matter, particle zoo, fermions, forces, Higgs, quantum properties, interactions,
+  matter, inside matter (`#composition`), particle zoo, fermions, forces, Higgs, quantum properties, interactions,
   detection, mathematics, beyond, and summary to matching section IDs.
   `.concept-card`, `.mnemonic`, `.cern-reference`, `.equation-box`, and
   `.depth-*` organize learning material. `.table-scroll` contains wide tables.
@@ -291,7 +291,9 @@ not implement HTTP routing or use the modular renderer at runtime.
   at 1120px while `#particle-zoo` uses the full available width.
   `.comparison-preview`, `.family-*`, `.channel-*`, `.matrix-axis`, and
   `.matrix-cell` style pair cards, channel codes, sticky axes, and selection.
-  `#interaction-matrix-scroll` owns both-axis scrolling. The responsive media query owns the
+  `#interaction-matrix-scroll` owns both-axis scrolling. `.level-btn`,
+  `.ladder-layout`, `.constituent-chip`, `.mass-bars`, `.energy-controls`, and
+  `.creation-list` style the inside-matter explorers. The responsive media query owns the
   bottom navigation; `prefers-reduced-motion` disables smooth anchor scrolling.
 - **`updateNavigation`:** computes progress and the current section; scroll,
   resize, disclosure changes, and DOM initialization call it.
@@ -308,10 +310,25 @@ not implement HTTP routing or use the modular renderer at runtime.
   charge lists, explanations, and particle references; `chargeBalance` totals
   the initial/final charges. `DETECTOR_SIGNATURES` provides four qualitative
   detector-layer responses and a catalog reference for each selectable example.
+  `chargeThirds`/`formatChargeThirds` convert catalog charge strings to and from
+  integer thirds of e. `COMPOSITION_LEVELS` (atom, nucleus, nucleon, elementary;
+  sizes in metres) feeds the zoom ladder, with `probeEnergy(size)` = hc/λ in eV.
+  `COMPOSITES` holds bound systems and hadrons (`kind`, symbol, mass in MeV/c²,
+  `parts` of catalog ids, `anti:` ids, or other composite keys);
+  `compositeSummary(key)` resolves parts via `resolvePart` and returns the charge
+  sum, parts mass, mass difference, parts share, and `bound` (atom/nucleus).
+  `PRODUCTION_CHANNELS` lists creation recipes in increasing threshold order
+  (reaction, products, display symbols, one typical decay per product, catalog
+  links, optional composite); `productionThreshold` sums final rest masses and
+  `availableProductions(energy)` filters them. `COLLIDER_PRESETS` are rounded
+  maximum collision energies. `generationChargeThirds(g)` sums one generation's
+  charges (three colors per quark) and is zero for each generation.
   `HISTORY_ANCHORS` maps catalog ids, families and topics to history-step ids;
   `DISCOVERY_TIMELINE` lists prediction/observation years (non-catalog entries
   carry a `label`, `symbol` and `anchor`). `PARTICLES` records carry a literal
-  `discovered` year and a translated `discovery` text getter.
+  `discovered` year and translated `discovery`, `role`, `origin`, and `fate`
+  getters; the inspector shows the last three as "why it matters", "where it
+  comes from", and "lifetime and fate".
 - **Catalog UI:** `renderParticleExplorer` reads controls, renders groups/rows,
   updates result status, and preserves `selectedParticle`. `particleById`,
   `isFermion`, `interactionText`, `statisticsText`, and `particleLink` resolve
@@ -328,13 +345,29 @@ not implement HTTP routing or use the modular renderer at runtime.
   `renderHistoryDiscoveries` fills `#history-discovery-rows` and
   `renderHistoryTimeline` fills `#history-timeline` (both re-render on language
   change via `renderAllExplorers`).
+- **Inside-matter explorers:** `renderCompositionLevel` fills `#level-detail`,
+  updates `.level-btn` pressed state, zoom-button limits, and the canvas label
+  for `compositionLevel`; `animateComposition` draws the selected layer.
+  `renderComposite`/`selectComposite` render `#composite-result` from
+  `compositeSummary`; constituent links open the inspector, composite chips
+  (`button[data-composite]`, also used by the creation detail) reopen the builder.
+  `renderCreation` maps the logarithmic `#collision-energy` slider
+  (`sliderToEnergy`/`energyToSlider`, 0.5 MeV–20 TeV) and `#collider-presets`
+  to `availableProductions`, the status line, `#creation-list` recipe buttons
+  (`data-production`), and `#creation-detail`; `animateCreation` animates
+  `selectedProduction` at `collisionEnergy`, showing scattering below threshold.
+  `formatEnergy` picks eV…TeV with locale digits. Both new canvases use clock
+  time (`requestAnimationFrame` timestamps), not per-frame increments.
 - **Other learning explorers:** `renderQuantumState` displays `stateCounts`;
   `addQuantumParticle` invokes the pure occupancy rule. `renderProcess` connects
   `#process-choice` to the charge check and reaction links. `renderDetector`
   connects `#detector-choice` to the layer responses and explanation.
   `initParticleExplorers` binds all controls, reset actions, delegated selection,
   and native-details toggle updates, then renders initial states.
-- **Content/reference landmarks:** `#particle-zoo` is the catalog hub,
+- **Content/reference landmarks:** `#composition` holds the overview,
+  `#composition-ladder`, `#composite-builder`, and `#particle-creation`;
+  `#generations` in `#fermions` explains why the heavier generations exist.
+  `#particle-zoo` is the catalog hub,
   `#particle-inspector` is its inline field guide; `#particle-comparison` owns
   the matrix, quick access, preview, and full property disclosure. `#fermions` has composite and
   neutrino explanations, `#forces` links carriers, `#higgs` explains mass,
@@ -342,7 +375,7 @@ not implement HTTP routing or use the modular renderer at runtime.
   `#detection` hosts signatures, `#mathematics` links equations to examples, and
   `#references` contains fixed-edition primary sources. The model does not use
   the prototype's JSON particle copy.
-- **`initVisualizations`:** initializes `scaleVisualization` and `atomModel`.
+- **`initVisualizations`:** initializes `scaleVisualization`, `atomModel`, `compositionCanvas`, and `creationCanvas`.
   `drawScaleVisualization(canvas)` owns wheel zoom and its drawing loop;
   `animateAtom(canvas)` draws a schematic nucleus and orbiting electrons.
   `createParticleCollision()` returns the animated hero canvas and owns particle
@@ -468,7 +501,8 @@ Extracts the pure `physics-model` script into an isolated `node:vm` context and
 uses the actual model functions. Tests cover particle family/spin invariants,
 unknown neutrino masses, zero/unknown mass ratios, combined filters, numeric mass
 sorting without catalog mutation, identical-fermion exclusion and boson
-occupancy, reaction charge balance, detector signatures, static cross-topic
+occupancy, reaction charge balance, detector signatures, composites,
+creation thresholds, zoom-ladder levels, generation charge sums, static cross-topic
 anchors/particle keys, and history steps (count, reading order across sections,
 every markup/locale fragment link, particle discovery years/anchors, timeline). Pair tests traverse both axes and validate symmetry,
 self-pairs, channel labels, representative tree-level routes, and higher-order
@@ -562,6 +596,22 @@ hero links to the step index. Catalog, table and inspector link back through
 decuplet figure, the discovery table and the timeline. There is no automatic sync
 with the Markdown source.
 
+### Inside matter: composition and particle creation — Shipped
+
+`#composition` (between matter and the particle zoo) → zoom ladder
+(`COMPOSITION_LEVELS`, `probeEnergy`) → composite builder (`COMPOSITES`,
+`compositeSummary`) → creation explorer (`PRODUCTION_CHANNELS`,
+`availableProductions`, `COLLIDER_PRESETS`). `#generations` in the fermions
+section gives the reasons behind charm, bottom, top, and the tau neutrino and
+the open questions. Every catalog particle carries role/origin/fate text in the
+inspector. Thresholds are idealized centre-of-mass rest-energy sums for the
+listed (mostly e⁺e⁻) reaction; no rates, resonance shapes, or parton fractions
+are modelled, and hadron-collider presets overstate the per-collision energy
+(stated on the page). Quark masses are running masses, so hadron parts-versus-
+whole comparisons are illustrative. [Model tests](tests/physics-model.test.js)
+cover charge sums, binding signs, thresholds, LEP2 limits, probe ordering, and
+generation charge neutrality; drawing and controls need browser checks.
+
 ### Reaction and detector exploration — Shipped
 
 `#process-choice` → `PROCESSES`/`chargeBalance` → `renderProcess` displays beta
@@ -653,7 +703,7 @@ channel, not whether every possible reaction of those incoming species is allowe
 | `?lang=<code>`, `#language-choice`, `localStorage` key `elementary-particles-language` | `preferredLanguage`/`setLanguage` in [src/app.js](src/app.js) |
 | Locale file format (nested JSON, dotted keys, `{variables}`) | [src/i18n/en.json](src/i18n/en.json), validated by [generate.js](generate.js) |
 | Section URL fragments and responsive topic navigation | [src/template.html](src/template.html) anchors and `updateNavigation` in [src/app.js](src/app.js) |
-| Disclosures, catalog/inspector/comparison, learning explorers, three canvas demonstrations | [src/app.js](src/app.js) and [src/physics-model.js](src/physics-model.js), inlined into [elementaryparticles.html](elementaryparticles.html) |
+| Disclosures, catalog/inspector/comparison, learning explorers (including the inside-matter zoom ladder, composite builder, and creation explorer), five canvas demonstrations | [src/app.js](src/app.js) and [src/physics-model.js](src/physics-model.js), inlined into [elementaryparticles.html](elementaryparticles.html) |
 | Prototype shell and JSON card/block format | [modular/index.html](modular/index.html), [content.json](modular/content.json), [script.js](modular/script.js) builders |
 
 There is no public library API, persistence protocol, plugin interface, or separate
@@ -716,6 +766,8 @@ Unknown — verify before changing deployment or publishing behavior.
 | Server routing, fresh reads, status codes | Manual loopback HTTP checks; no automated server suite |
 | Prototype code/data | Node syntax diagnostic and JSON parse check; no runtime suite/schema |
 | Catalog semantics/filtering/mass ratios, occupancy, charge checks, detector data/references | [tests/physics-model.test.js](tests/physics-model.test.js) |
+| Composite charges/binding, creation thresholds, zoom-ladder probes, generation charge sums | [tests/physics-model.test.js](tests/physics-model.test.js) |
+| Zoom ladder/builder/creation controls, canvases, slider, mobile layout | Browser inspection; no automated browser suite |
 | Pair-channel symmetry/coverage, tree/loop exceptions and same-fermion semantics | [tests/physics-model.test.js](tests/physics-model.test.js), pair tests |
 | Matrix cell/axis/dropdown synchronization, roving focus, sticky axes, mobile overflow | Browser inspection; no automated browser suite |
 | Explorer event wiring, inspector keyboard focus, responsive tables/controls | Browser inspection; no automated browser suite |
@@ -759,7 +811,8 @@ The loopback server serves the standalone educational page with all topic
 destinations, separate summary, keyboard-capable fragment navigation, a mobile
 navigation bar, a shared particle catalog with filters/property table/inline
 inspection/comparison with a selectable pair matrix and synchronized quick
-controls, occupancy/reaction/detector explorers, contextual links,
+controls, an inside-matter section (zoom ladder, composite builder, particle
+creation by collision energy), occupancy/reaction/detector explorers, contextual links,
 primary references, native deeper explanations, and scale/atom/hero canvases,
 in English and Italian with a runtime language switcher, generated from `src/`.
 Source regression checks cover navigation, the pure learning model, and i18n.
@@ -794,6 +847,8 @@ configuration but is not a working substitute for the standalone page.
   The language choice is not reflected in the URL after switching (only `?lang=`
   on load is honored). Number formats in authored labels are per-locale strings;
   only the comparison mass ratio is formatted with `Intl.NumberFormat`.
+- Composite and creation data are a fixed teaching selection (12 composites, 12
+  recipes), not a hadron table; antiparticle composites are not modelled as parts.
 - Canvases size themselves from `offsetWidth` once at load; a page loaded in a
   hidden/background tab can initialize them with zero width (pre-existing).
 - The catalog requires JavaScript; surrounding learning content stays readable

@@ -19,6 +19,19 @@ The section navigation links to every topic, from the introduction through the
 summary. On small screens, swipe the navigation bar at the bottom to reach more
 topics. Links also support keyboard navigation and shareable URL fragments.
 
+The "Inside Matter" section answers what composite particles are made of and
+where the heavier particles come from. A zoom ladder steps from the atom to the
+nucleus, the proton/neutron, and the elementary limit, with a schematic drawing,
+the size, the binding force, the energy needed to break or resolve each layer, and
+the experiment that revealed it. A composite builder takes hydrogen, helium-4,
+baryons, and mesons apart: it adds the constituents' charges and compares the
+rest mass of the parts with the whole (bound systems are lighter; light hadrons
+are far heavier than their quarks). A collision-energy slider with real collider
+presets shows which particles can be created from energy, who first made them,
+and what they decay into, with an animation of each recipe. The Fermions section
+explains why the second and third generations exist, and every particle in the
+field guide states why it matters, where it comes from, and how it decays.
+
 Explore the Standard Model through searchable particle tiles and a property
 table, filter by family or interaction, and compare any two particles. The
 comparison has a selectable A × B matrix with matching particle axes, colored

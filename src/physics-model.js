@@ -35,7 +35,7 @@ function textMap(prefix, keys) {
 
 // Rounded teaching values from the PDG 2025 summary tables; masses in MeV/c².
 // Null means a flavor state has no single mass, never a measured zero.
-// Text fields (name, massLabel, example, massNote, discovery) come from model.particles.<id>.*.
+// Text fields (name, massLabel, example, massNote, discovery, role, origin, fate) come from model.particles.<id>.*.
 // `discovered` is the year (or span) of the first observation, from the history steps.
 const PARTICLES = [
     { id: 'up', symbol: 'u', family: 'quark', generation: 1, mass: 2.16, charge: '+2/3', spin: '1/2', interactions: ['strong', 'em', 'weak'], discovered: '1968' },
@@ -55,7 +55,7 @@ const PARTICLES = [
     { id: 'w_boson', symbol: 'W±', family: 'gauge', generation: null, mass: 80369, charge: '±1', spin: '1', interactions: ['em', 'weak'], discovered: '1983' },
     { id: 'z_boson', symbol: 'Z⁰', family: 'gauge', generation: null, mass: 91187.6, charge: '0', spin: '1', interactions: ['weak'], discovered: '1983' },
     { id: 'higgs', symbol: 'H', family: 'scalar', generation: null, mass: 125200, charge: '0', spin: '0', interactions: ['higgs'], discovered: '2012' }
-].map(p => withText(p, `model.particles.${p.id}`, ['name', 'massLabel', 'example', 'massNote', 'discovery']));
+].map(p => withText(p, `model.particles.${p.id}`, ['name', 'massLabel', 'example', 'massNote', 'discovery', 'role', 'origin', 'fate']));
 // Link targets (element ids) inside the history steps distributed through the page.
 // particles: the block telling each discovery; families/topics: where a label was learned.
 const HISTORY_ANCHORS = {
@@ -208,4 +208,122 @@ const DETECTOR_SIGNATURES = {
 for (const [key, signature] of Object.entries(DETECTOR_SIGNATURES)) {
     withText(signature, `model.detector.${key}`, ['name', 'why', 'catalogLabel']);
     Object.defineProperty(signature, 'layers', { enumerable: true, get: () => [0, 1, 2, 3].map(i => t(`model.detector.${key}.layers.${i}`)) });
+}
+
+// ---------- Inside matter: layers, composites, and particle creation ----------
+// Charge strings from the catalog ('+2/3', '−1', '0') as integers in units of e/3.
+function chargeThirds(charge) {
+    const sign = /^[−-]/.test(charge) ? -1 : 1;
+    const [numerator, denominator] = charge.replace(/^[+−-]/, '').split('/');
+    return sign * Number(numerator) * (denominator ? 3 / Number(denominator) : 3);
+}
+// Language-neutral display of a charge in units of e, using the catalog's minus sign.
+function formatChargeThirds(thirds) {
+    if (thirds === 0) return '0';
+    const sign = thirds < 0 ? '−' : '+';
+    const size = Math.abs(thirds);
+    return size % 3 === 0 ? `${sign}${size / 3}` : `${sign}${size}/3`;
+}
+// Probe resolution: a wavelength comparable to a size needs E ≈ hc/λ (hc ≈ 1239.84 eV·nm).
+const HC_EV_METRE = 1239.84e-9;
+function probeEnergy(sizeMetres) {
+    return HC_EV_METRE / sizeMetres;
+}
+// Zoom ladder from an atom to the elementary limit; sizes are rounded orders of magnitude.
+// Text comes from model.levels.<key>.*.
+const COMPOSITION_LEVELS = [
+    { key: 'atom', size: 1e-10, particles: ['electron'] },
+    { key: 'nucleus', size: 5e-15, particles: ['up', 'down', 'gluon'] },
+    { key: 'nucleon', size: 1.7e-15, particles: ['up', 'down', 'gluon'] },
+    { key: 'elementary', size: 1e-19, particles: ['up', 'down', 'electron', 'gluon'] }
+];
+for (const level of COMPOSITION_LEVELS) withText(level, `model.levels.${level.key}`, ['name', 'inside', 'glue', 'breakIt', 'evidence', 'takeaway']);
+// Bound systems and hadrons with their valence content. Masses in MeV/c² (PDG 2025 /
+// CODATA, rounded; hydrogen is p + e⁻ minus 13.6 eV of binding). 'anti:' marks an antiparticle; parts may be other composites.
+// Text (name, lifetime, note) comes from model.composites.<key>.*.
+const COMPOSITES = {
+    hydrogen: { kind: 'atom', symbol: 'H', mass: 938.7829854, parts: ['proton', 'electron'] },
+    helium4: { kind: 'nucleus', symbol: '⁴He²⁺', mass: 3727.379, parts: ['proton', 'proton', 'neutron', 'neutron'] },
+    proton: { kind: 'baryon', symbol: 'p', mass: 938.272, parts: ['up', 'up', 'down'] },
+    neutron: { kind: 'baryon', symbol: 'n', mass: 939.565, parts: ['up', 'down', 'down'] },
+    lambda: { kind: 'baryon', symbol: 'Λ⁰', mass: 1115.683, parts: ['up', 'down', 'strange'] },
+    omega: { kind: 'baryon', symbol: 'Ω⁻', mass: 1672.45, parts: ['strange', 'strange', 'strange'] },
+    pion: { kind: 'meson', symbol: 'π⁺', mass: 139.570, parts: ['up', 'anti:down'] },
+    kaon: { kind: 'meson', symbol: 'K⁺', mass: 493.677, parts: ['up', 'anti:strange'] },
+    dmeson: { kind: 'meson', symbol: 'D⁰', mass: 1864.84, parts: ['charm', 'anti:up'] },
+    jpsi: { kind: 'meson', symbol: 'J/ψ', mass: 3096.900, parts: ['charm', 'anti:charm'] },
+    bmeson: { kind: 'meson', symbol: 'B⁺', mass: 5279.41, parts: ['up', 'anti:bottom'] },
+    upsilon: { kind: 'meson', symbol: 'Υ', mass: 9460.40, parts: ['bottom', 'anti:bottom'] }
+};
+for (const [key, composite] of Object.entries(COMPOSITES)) withText(composite, `model.composites.${key}`, ['name', 'lifetime', 'note']);
+// One constituent reference → symbol, mass, and charge (antiparticles flip charge, keep mass).
+function resolvePart(ref) {
+    const anti = ref.startsWith('anti:');
+    const id = anti ? ref.slice(5) : ref;
+    if (COMPOSITES[id]) {
+        if (anti) throw new Error('Composite antiparticles are not modelled as parts');
+        return { id, composite: true, anti, symbol: COMPOSITES[id].symbol, mass: COMPOSITES[id].mass, chargeThirds: compositeSummary(id).chargeThirds };
+    }
+    const particle = PARTICLES.find(p => p.id === id);
+    if (!particle || particle.mass === null) throw new Error(`Unknown constituent ${ref}`);
+    return { id, composite: false, anti, symbol: anti ? `${particle.symbol}̄` : particle.symbol, mass: particle.mass, chargeThirds: (anti ? -1 : 1) * chargeThirds(particle.charge) };
+}
+// Atoms and nuclei weigh less than their parts (binding energy); light hadrons weigh far
+// more than their valence-quark rest masses (field and motion energy). Quark masses are
+// scheme-dependent running masses, so `partsShare` is a teaching comparison only.
+function compositeSummary(key) {
+    const composite = COMPOSITES[key];
+    if (!composite) throw new Error('Unknown composite');
+    const parts = composite.parts.map(resolvePart);
+    const partsMass = parts.reduce((sum, part) => sum + part.mass, 0);
+    return {
+        key, kind: composite.kind, parts, partsMass, mass: composite.mass,
+        chargeThirds: parts.reduce((sum, part) => sum + part.chargeThirds, 0),
+        massDifference: composite.mass - partsMass,
+        partsShare: partsMass / composite.mass,
+        bound: ['atom', 'nucleus'].includes(composite.kind)
+    };
+}
+// Creating particles from collision energy. Thresholds are the minimum centre-of-mass
+// energy (sum of final rest energies) for the listed reaction; e⁺e⁻ annihilation makes
+// all of it available. Rates, widths, and hadron-collider parton fractions are ignored.
+// `decays` lists one typical decay per product (null = stable); text in model.production.<key>.*.
+const PRODUCTION_CHANNELS = [
+    { key: 'electronPair', reaction: 'γ + γ → e⁻ + e⁺', products: ['electron', 'anti:electron'], symbols: ['e⁻', 'e⁺'], decays: [null, null], particles: ['electron', 'photon'] },
+    { key: 'muonPair', reaction: 'e⁻ + e⁺ → μ⁻ + μ⁺', products: ['muon', 'anti:muon'], symbols: ['μ⁻', 'μ⁺'], decays: [['e⁻', 'ν̄ₑ', 'νμ'], ['e⁺', 'νₑ', 'ν̄μ']], particles: ['muon'] },
+    { key: 'pionPair', reaction: 'e⁻ + e⁺ → π⁻ + π⁺', products: ['pion', 'pion'], symbols: ['π⁻', 'π⁺'], decays: [['μ⁻', 'ν̄μ'], ['μ⁺', 'νμ']], particles: ['up', 'down'], composite: 'pion' },
+    { key: 'kaonPair', reaction: 'e⁻ + e⁺ → K⁻ + K⁺', products: ['kaon', 'kaon'], symbols: ['K⁻', 'K⁺'], decays: [['μ⁻', 'ν̄μ'], ['μ⁺', 'νμ']], particles: ['strange'], composite: 'kaon' },
+    { key: 'protonPair', reaction: 'e⁻ + e⁺ → p + p̄', products: ['proton', 'proton'], symbols: ['p', 'p̄'], decays: [null, null], particles: ['up', 'down'], composite: 'proton' },
+    { key: 'charm', reaction: 'e⁻ + e⁺ → J/ψ (c c̄)', products: ['jpsi'], symbols: ['J/ψ'], decays: [['μ⁻', 'μ⁺']], particles: ['charm'], composite: 'jpsi' },
+    { key: 'tauPair', reaction: 'e⁻ + e⁺ → τ⁻ + τ⁺', products: ['tau', 'anti:tau'], symbols: ['τ⁻', 'τ⁺'], decays: [['μ⁻', 'ν̄μ', 'ντ'], ['e⁺', 'νₑ', 'ν̄τ']], particles: ['tau', 'tau_neutrino'] },
+    { key: 'bottom', reaction: 'e⁻ + e⁺ → Υ (b b̄)', products: ['upsilon'], symbols: ['Υ'], decays: [['μ⁻', 'μ⁺']], particles: ['bottom'], composite: 'upsilon' },
+    { key: 'zBoson', reaction: 'e⁻ + e⁺ → Z⁰', products: ['z_boson'], symbols: ['Z⁰'], decays: [['e⁻', 'e⁺']], particles: ['z_boson'] },
+    { key: 'wPair', reaction: 'e⁻ + e⁺ → W⁻ + W⁺', products: ['w_boson', 'w_boson'], symbols: ['W⁻', 'W⁺'], decays: [['e⁻', 'ν̄ₑ'], ['μ⁺', 'νμ']], particles: ['w_boson'] },
+    { key: 'higgs', reaction: 'e⁻ + e⁺ → Z⁰ + H', products: ['z_boson', 'higgs'], symbols: ['Z⁰', 'H'], decays: [['μ⁻', 'μ⁺'], ['b', 'b̄']], particles: ['higgs', 'z_boson'] },
+    { key: 'topPair', reaction: 'e⁻ + e⁺ → t + t̄', products: ['top', 'anti:top'], symbols: ['t', 't̄'], decays: [['b', 'W⁺'], ['b̄', 'W⁻']], particles: ['top', 'bottom', 'w_boson'] }
+];
+for (const channel of PRODUCTION_CHANNELS) withText(channel, `model.production.${channel.key}`, ['label', 'first', 'fate']);
+function productionThreshold(channel) {
+    return channel.products.reduce((sum, ref) => sum + resolvePart(ref).mass, 0);
+}
+function availableProductions(energyMeV) {
+    return PRODUCTION_CHANNELS.filter(channel => productionThreshold(channel) <= energyMeV);
+}
+// Rounded maximum collision energies (MeV) for the energy slider; labels in model.presets.<key>.
+// Hadron colliders share their energy among quarks and gluons, so their values overstate
+// what one elementary collision receives.
+const COLLIDER_PRESETS = [
+    { key: 'radioactivity', energy: 1 },
+    { key: 'spear', energy: 8000 },
+    { key: 'lep1', energy: 91200 },
+    { key: 'lep2', energy: 209000 },
+    { key: 'tevatron', energy: 1960000 },
+    { key: 'lhc', energy: 13600000 }
+];
+for (const preset of COLLIDER_PRESETS) withText(preset, `model.presets.${preset.key}`, ['label']);
+// Sum of electric charges in one generation: three colors of each quark plus the two leptons.
+// It vanishes for every generation (a condition tied to gauge-anomaly cancellation).
+function generationChargeThirds(generation) {
+    return PARTICLES.filter(p => p.generation === generation && ['quark', 'lepton'].includes(p.family))
+        .reduce((sum, p) => sum + (p.family === 'quark' ? 3 : 1) * chargeThirds(p.charge), 0);
 }

@@ -7,6 +7,7 @@
     "introduction": "Introduction",
     "scale": "Scale of Universe",
     "matter": "What is Matter?",
+    "composition": "Inside Matter",
     "particleZoo": "Particle Zoo",
     "fermions": "Fermions",
     "forces": "Forces & Bosons",
@@ -29,7 +30,8 @@
       "paths": {
         "atoms": "Start with atoms",
         "standardModel": "Explore the Standard Model",
-        "exclusion": "Try the exclusion principle"
+        "exclusion": "Try the exclusion principle",
+        "composition": "What is a proton made of?"
       }
     },
     "scale": {
@@ -70,7 +72,7 @@
         "canvasLabel": "Schematic atom animation; circular paths are not physical electron orbitals",
         "consistsOf": "Today we know that atoms consist of:",
         "parts": {
-          "nucleus": "<strong>Nucleus:</strong> Protons and neutrons (made of quarks!)",
+          "nucleus": "<strong>Nucleus:</strong> Protons and neutrons, each built from three quarks held together by gluons. <a href=\"#composition\">Open the layers one by one</a>.",
           "cloud": "<strong>Electron cloud:</strong> Electrons in quantum orbitals",
           "scale": "<strong>Scale:</strong> The nucleus is much smaller than the atom. The electron cloud is a quantum probability distribution, not little planets on fixed tracks."
         }
@@ -90,6 +92,96 @@
           "title": "CERN Connection",
           "text": "Colliders probe subnuclear structure through high-energy scattering. Heavy-ion collisions can produce quark–gluon plasma; this is different from the static orbital sketch above. <a href=\"#fermions\">Explore quarks and confinement</a>."
         }
+      }
+    },
+    "composition": {
+      "title": "Inside Matter: What Is Made of What",
+      "overview": {
+        "eyebrow": "From atoms to quarks",
+        "title": "Electrons are elementary, so what is a proton?",
+        "lead": "An electron has never shown any internal parts. A proton has: it is a bound system of quarks and gluons, just as an atom is a bound system of a nucleus and electrons, and a nucleus is a bound system of protons and neutrons. This section opens each layer in turn, then shows how collisions <em>create</em> the heavier particles (muons, charm, tau, top) that you will meet in the catalog.",
+        "questions": {
+          "inside": {
+            "title": "What is inside?",
+            "text": "Each layer is made of the next one down, until we reach particles with no measurable size."
+          },
+          "glue": {
+            "title": "What holds it together?",
+            "text": "A different force dominates each layer: electromagnetism for atoms, the residual strong force for nuclei, and the color force itself for protons and neutrons."
+          },
+          "energy": {
+            "title": "How much energy breaks it?",
+            "text": "A few eV for atoms, millions of eV for nuclei. At the proton level no amount of energy frees a quark: the energy turns into new particles instead."
+          }
+        }
+      },
+      "ladder": {
+        "eyebrow": "Interactive zoom",
+        "title": "Zoom into an atom, one layer at a time",
+        "intro": "Choose a layer or use the zoom buttons. The drawing changes, and the panel answers the same questions at every scale. The probe energy is what a beam needs for its wavelength to be as small as the layer: the reason larger accelerators see smaller things.",
+        "pickerLabel": "Layer of matter",
+        "zoomOut": "Zoom out",
+        "zoomIn": "Zoom in",
+        "deep": {
+          "summary": "Go deeper: why smaller needs more energy, and what “elementary” means",
+          "probe": "To see a detail you need a wave shorter than the detail. For fast particles, wavelength and energy are linked by λ ≈ hc/E, so resolving 10⁻¹⁵ m needs about 1 GeV and resolving 10⁻¹⁹ m about 10 TeV. That is why the history of particle physics follows the energy of accelerators.",
+          "elementary": "A particle is called elementary when no experiment has found structure inside it. Electron scattering first measured the size of nuclei (Hofstadter, 1950s) and then found point-like constituents inside protons (1968). Quarks and leptons still appear point-like at the LHC; whether they have structure at even smaller distances remains an open experimental question.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: quantum chromodynamics</a>; <a href=\"https://www.nobelprize.org/prizes/physics/1990/summary/\">Nobel Prize in Physics 1990: quarks inside the proton</a>."
+        }
+      },
+      "builder": {
+        "eyebrow": "Composite builder",
+        "title": "Take a composite apart: charges add up, masses do not",
+        "intro": "Pick an atom, a nucleus, or a hadron. The builder lists its constituents, adds their electric charges, and compares the rest mass of the parts with the mass of the whole. Select a quark or the electron to inspect it, or a proton or neutron to open it in turn.",
+        "choose": "Composite",
+        "groups": {
+          "bound": "Atoms and nuclei",
+          "baryons": "Baryons (three quarks)",
+          "mesons": "Mesons (quark + antiquark)"
+        },
+        "deep": {
+          "summary": "Go deeper: why bound systems are lighter, but protons are heavier",
+          "binding": "When parts attract each other and settle into a bound state, energy is released, so the whole weighs less than the parts (the mass defect). For an atom the difference is tiny (13.6 eV out of 938 MeV); for a nucleus it is close to 1%. This is the energy released by fission and fusion.",
+          "hadrons": "Quarks are different: they cannot be separated, and in a light hadron they move almost at the speed of light inside a strong color field. That motion and field energy appears as mass. A proton is therefore about 100 times heavier than its three valence quarks, while the heavy-quark mesons J/ψ and Υ get most of their mass from the quarks themselves.",
+          "sea": "Valence quarks fix the quantum numbers (charge, strangeness, charm, and so on). A real proton also contains gluons and short-lived quark–antiquark pairs, the “sea”; in high-energy collisions, gluons carry about half of the proton's momentum."
+        },
+        "sourceNote": "Hadron masses and lifetimes: PDG 2025, rounded. Quark masses are scheme-dependent running masses (PDG convention), so the parts-versus-whole comparison for hadrons is illustrative: a confined light quark cannot be weighed on its own."
+      },
+      "creation": {
+        "eyebrow": "Interactive: making particles",
+        "title": "Breaking apart versus creating: where muons, charm, and top come from",
+        "intro": "Muons, charm quarks, and top quarks are not hiding inside protons, waiting to be knocked out. They are <strong>created</strong> from collision energy and then decay into lighter particles. That is why they seem to “appear” in experiments, and why you never meet them in ordinary matter.",
+        "ways": {
+          "knockOut": {
+            "title": "1 · Knocking out what is there",
+            "text": "Ionizing an atom frees an electron; splitting a nucleus frees protons and neutrons. These pieces existed before the collision."
+          },
+          "create": {
+            "title": "2 · Creating what was not there",
+            "text": "When enough energy is concentrated, it can become the rest mass of new particles (E = mc²), always in combinations that conserve charge and other quantum numbers, usually as particle–antiparticle pairs."
+          },
+          "decay": {
+            "title": "3 · Decaying to the lightest",
+            "text": "Heavy particles turn into lighter ones, mostly through the weak force, within microseconds or far less. What remains around us is the stable end of every chain: electrons, up and down quarks in protons and neutrons, neutrinos, and photons."
+          }
+        },
+        "equationText": "The total rest energy of the new particles must fit inside the collision energy measured in the centre-of-mass frame. In electron–positron annihilation all of it is available, so the thresholds below use that reaction where possible.",
+        "energyLabel": "Collision energy (centre of mass)",
+        "presetsLabel": "Real energy scales",
+        "listHint": "Each card is a minimum-energy recipe. Choose one to see the collision, who first made it, and what it decays into; move the slider to see which recipes become possible.",
+        "deep": {
+          "summary": "Go deeper: the rules every creation must obey",
+          "rules": {
+            "energy": "<strong>Energy and momentum:</strong> the products' rest energies cannot exceed the centre-of-mass energy; any surplus becomes their motion.",
+            "charge": "<strong>Electric charge:</strong> the total before equals the total after, so charged particles are made together with oppositely charged partners.",
+            "baryon": "<strong>Baryon number:</strong> every quark created comes with an antiquark, so a proton can only be made together with an antiproton (or from an existing baryon).",
+            "lepton": "<strong>Lepton number:</strong> a muon is made with an antimuon or with a muon antineutrino; this is why neutrinos accompany every weak decay of a lepton.",
+            "flavor": "<strong>Flavor:</strong> strong and electromagnetic interactions create strangeness, charm, and beauty only in quark–antiquark pairs. Only the weak force changes a flavor, which is why these particles live long enough to leave tracks."
+          },
+          "jets": "Why no free quarks? When a collision kicks a quark out of a proton, the color field between it and the rest stretches until its energy creates a new quark–antiquark pair. Repeated breaks produce a spray of hadrons, a jet, pointing along the quark's direction.",
+          "nature": "Nature runs the same experiment. Cosmic-ray protons hitting the atmosphere create pions, kaons, and muons. In the first fraction of a second after the Big Bang the temperature was high enough to produce every Standard Model particle; all but the stable ones have since decayed."
+        },
+        "sourceNote": "Thresholds are sums of final rest masses (PDG 2025, rounded) for the listed reaction; rates, resonance shapes, and detector effects are not modelled. Hadron colliders (Tevatron, LHC) share their beam energy among quarks and gluons, so one elementary collision receives only a fraction of the marked energy."
       }
     },
     "zoo": {
@@ -116,7 +208,8 @@
         "hint": "Choose a tile or a name in the table to inspect it. Compare two particles below.",
         "noscript": "The interactive catalog requires JavaScript. The explanations, linked topics, and reference material remain readable.",
         "massNote": "Rounded teaching values, using the <a href=\"https://pdg.lbl.gov/2025/tables/contents_tables.html\">PDG 2025 tables</a>. MeV/c² and GeV/c² are mass units: 1 GeV/c² = 1000 MeV/c². Quark masses depend on definition and scale. Neutrino flavor states have no single rest mass; unknown values sort last.",
-        "filterNote": "Interaction filters show the principal gauge interactions and identify the Higgs sector; they are not a complete vertex list. Gravity is omitted. Massive charged fermions and W/Z also couple to the Higgs field; photons and gluons can couple to the Higgs through loops."
+        "filterNote": "Interaction filters show the principal gauge interactions and identify the Higgs sector; they are not a complete vertex list. Gravity is omitted. Massive charged fermions and W/Z also couple to the Higgs field; photons and gluons can couple to the Higgs through loops.",
+        "compositeNote": "This catalog lists only elementary particles. Protons, neutrons, pions, and other composites are built from them: see the <a href=\"#composite-builder\">composite builder</a> and <a href=\"#particle-creation\">how collisions create heavier particles</a>."
       },
       "controls": {
         "label": "Particle filters",
@@ -197,7 +290,8 @@
           "confinement": "Pulling quarks apart builds a color field; sufficient energy produces new hadrons rather than an isolated quark. At high momentum transfer the strong coupling becomes smaller (asymptotic freedom), allowing perturbative calculations. Confinement dominates at low energies.",
           "protonMass": "A proton has a mass near 938 MeV/c², far larger than the sum of its light valence-quark masses. Most of that mass comes from the dynamics of quarks and gluon fields. The Higgs gives quarks their masses, but does not directly account for most of a proton's mass.",
           "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: quantum chromodynamics</a>; <a href=\"https://cms.cern/node/1380\">CMS: Higgs and ordinary matter</a>."
-        }
+        },
+        "builderHint": "Take these composites apart, along with many others, in the <a href=\"#composite-builder\">composite builder</a>."
       },
       "leptons": {
         "title": "Leptons and three generations",
@@ -208,6 +302,67 @@
           "matrix": "The mixing matrix U connects flavor labels to mass labels. The minimal Standard Model has massless neutrinos, so measured oscillations require an extension.",
           "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: neutrino masses, mixing, and oscillations</a>."
         }
+      },
+      "generations": {
+        "eyebrow": "Why so many particles?",
+        "title": "Heavier copies: what the second and third generations are for",
+        "lead": "Everything around you needs only the first generation: <a href=\"#particle-inspector\" data-particle=\"up\">up</a> and <a href=\"#particle-inspector\" data-particle=\"down\">down</a> quarks, the <a href=\"#particle-inspector\" data-particle=\"electron\">electron</a>, and the electron neutrino. Nature repeats this set twice more, with identical charges and forces but larger masses. The Standard Model does not explain <em>why</em> there are three copies, but they are not random extras: strict rules tie them together, and those rules predicted charm, bottom, top, and the tau neutrino before they were seen.",
+        "table": {
+          "label": "The three generations",
+          "caption": "Each generation has the same charges (+⅔, −⅓, −1, 0) and interactions; only the masses differ.",
+          "columns": {
+            "generation": "Generation",
+            "quarks": "Quarks",
+            "leptons": "Leptons",
+            "where": "Where you meet them"
+          },
+          "rows": {
+            "first": {
+              "name": "1st",
+              "where": "All ordinary matter: atoms, living things, the fuel of the Sun. Stable."
+            },
+            "second": {
+              "name": "2nd",
+              "where": "Cosmic-ray muons, kaons, and charm particles in colliders. They decay in microseconds or less."
+            },
+            "third": {
+              "name": "3rd",
+              "where": "Only in high-energy collisions and the early universe. They decay in about a picosecond or less."
+            }
+          }
+        },
+        "reasonsTitle": "Why physicists expected each missing piece",
+        "reasons": {
+          "complete": {
+            "title": "Complete sets keep the theory consistent",
+            "text": "The Standard Model is mathematically consistent (its gauge anomalies cancel) only if each generation is complete: a quark pair in three colors plus a charged lepton and a neutrino. One visible check is that the electric charges of a generation add up to zero. So when the tau (1975) and the bottom quark (1977) appeared, a top quark and a tau neutrino were expected; they were found in 1995 and 2000."
+          },
+          "charm": {
+            "title": "Charm explained a missing decay",
+            "text": "Some decays of neutral kaons, such as the one into μ⁺μ⁻, are far rarer than a three-quark theory predicted. In 1970 Glashow, Iliopoulos, and Maiani showed that a fourth quark, charm, cancels them. The discovery of the J/ψ in 1974 confirmed it."
+          },
+          "cp": {
+            "title": "Three generations allow matter ≠ antimatter",
+            "text": "In 1973, before charm was even found, Kobayashi and Maskawa showed that quark mixing can distinguish matter from antimatter (CP violation) only if there are at least three generations. B-meson experiments confirmed their picture, and they shared the 2008 Nobel Prize."
+          },
+          "muon": {
+            "title": "The muon: an unexpected repeat",
+            "text": "Nobody predicted the muon; on hearing of it, I. I. Rabi asked “Who ordered that?” It was the first sign of a second generation. Today muons test whether the laws are identical for every generation (lepton universality) and search for new physics through precision measurements such as the muon's magnetic moment."
+          },
+          "top": {
+            "title": "The top: the heaviest, most Higgs-like quark",
+            "text": "The top couples to the Higgs field with a strength close to 1, the largest of any particle. Top-quark loops are the main route for making Higgs bosons at the LHC, and the top and Higgs masses together decide whether our vacuum is completely stable or only extremely long-lived."
+          },
+          "decay": {
+            "title": "Why you never meet them",
+            "text": "Heavier copies decay into lighter ones through the <a href=\"#particle-inspector\" data-particle=\"w_boson\">W boson</a>, the only interaction that changes flavor: a muon lives 2.2 μs, a tau 0.3 ps, a top 5 × 10⁻²⁵ s. Cosmic rays and colliders make them continually, and they were abundant in the hot early universe."
+          }
+        },
+        "open": {
+          "title": "What remains unexplained",
+          "text": "Why there are three generations, and why masses range from 0.511 MeV/c² (electron) to about 173 GeV/c² (top), a factor of about 340 000, are open questions. LEP's Z measurements show that exactly three light neutrinos couple to the Z, and Higgs production rates exclude a simple fourth generation of heavy quarks."
+        },
+        "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-ckm-matrix.pdf\">PDG: CKM quark-mixing matrix</a>; <a href=\"https://www.nobelprize.org/prizes/physics/2008/summary/\">Nobel Prize in Physics 2008</a>; <a href=\"#history-completion\">history: from charm to the tau neutrino</a>."
       }
     },
     "forces": {
@@ -832,10 +987,15 @@
         "higgs": "Mass & Higgs",
         "quantum": "Spin & exclusion",
         "reaction": "Follow a reaction",
-        "detection": "Detection"
+        "detection": "Detection",
+        "generations": "Why generations?",
+        "creation": "How it is created"
       },
       "pdgReference": "PDG 2025 property reference",
-      "conventions": "Conventions and further study"
+      "conventions": "Conventions and further study",
+      "role": "Why it matters",
+      "origin": "Where it comes from",
+      "fate": "Lifetime and fate"
     },
     "comparison": {
       "rowA": "Row A",
@@ -931,6 +1091,83 @@
         "antimatter": "History: its antiparticle",
         "generations": "History: three families"
       }
+    },
+    "composition": {
+      "size": "Typical size",
+      "inside": "What is inside",
+      "glue": "What holds it together",
+      "breakIt": "Energy to break it",
+      "probe": "Energy needed to see this scale",
+      "probeValue": "about {energy} (wavelength ≈ size)",
+      "evidence": "How we found out"
+    },
+    "composite": {
+      "antiName": "{name} (antiparticle)",
+      "openPart": "Open {name} in the builder",
+      "partsLabel": "Constituents",
+      "charge": "Electric charge (sum)",
+      "mass": "Mass of the whole",
+      "partsMassBound": "Rest mass of the parts",
+      "partsMassQuarks": "Valence-quark rest masses",
+      "lifetime": "Lifetime",
+      "barWhole": "Whole",
+      "barParts": "Parts",
+      "kinds": {
+        "atom": "Atom: a nucleus and electrons, bound electromagnetically",
+        "nucleus": "Nucleus: protons and neutrons, bound by the residual strong force",
+        "baryon": "Baryon: three valence quarks, color-neutral",
+        "meson": "Meson: a valence quark and antiquark, color-neutral"
+      },
+      "verdict": {
+        "bound": "{name}: lighter than its parts by {binding}. That difference is the binding energy, the energy needed to pull it apart.",
+        "light": "{name}: the valence quarks' rest masses are only {share}% of the total. The other {extra} is energy of the quarks' motion and of the gluon field.",
+        "heavy": "{name}: the heavy quarks supply {share}% of the mass; the remaining {extra} is motion and field energy, a much smaller share than in a proton."
+      }
+    },
+    "creation": {
+      "status": "At {energy}: {count} of {total} recipes are possible; the heaviest is {heaviest}.",
+      "statusNone": "At {energy}: not enough to create even an electron–positron pair (1.022 MeV).",
+      "reachable": "Possible at this energy",
+      "locked": "Needs more energy",
+      "stable": "stable",
+      "canMake": "Possible: needs at least {threshold}.",
+      "needMore": "Not yet: needs {threshold}, about {factor} × the current energy.",
+      "needPercent": "Not yet: needs {threshold}, {percent}% more than the current energy.",
+      "firstMade": "First made",
+      "thenWhat": "What happens next"
+    },
+    "compositionCanvas": {
+      "label": {
+        "atom": "Schematic atom: a fuzzy electron cloud around a tiny nucleus",
+        "nucleus": "Schematic helium-4 nucleus: two protons and two neutrons exchanging pions",
+        "nucleon": "Schematic proton: three valence quarks linked by gluons, with short-lived quark–antiquark pairs",
+        "elementary": "Schematic elementary particle: a point with no structure found at any probed scale"
+      },
+      "atom": {
+        "cloud": "electron cloud (where electrons may be found)",
+        "nucleus": "nucleus (drawn far too large)"
+      },
+      "nucleus": {
+        "title": "helium-4: 2 protons (p) + 2 neutrons (n)",
+        "exchange": "residual strong force (pion exchange)"
+      },
+      "nucleon": {
+        "valence": "proton: valence quarks u u d, colors keep changing",
+        "gluons": "gluon field binding the quarks",
+        "sea": "grey pairs: short-lived quark–antiquark sea"
+      },
+      "elementary": {
+        "point": "point-like: no size measured",
+        "limit": "probed down to about 10⁻¹⁹ m, no inner structure"
+      },
+      "notToScale": "schematic, not to scale"
+    },
+    "creationCanvas": {
+      "label": "Animation: {reaction}, then the products decay",
+      "labelTooLow": "Animation: the energy is below the threshold for {reaction}, so the beams only scatter",
+      "tooLow": "Not enough energy: the beams just scatter",
+      "stable": "stable",
+      "legend": "yellow: created · green: decay products · dashed: neutrinos"
     }
   },
   "model": {
@@ -940,119 +1177,170 @@
         "massLabel": "≈ 2.16 MeV/c²",
         "example": "Two up and one down valence quarks make a proton.",
         "massNote": "Running mass at a scale of 2 GeV; not the mass of a free quark.",
-        "discovery": "SLAC: inside the proton, by electron scattering"
+        "discovery": "SLAC: inside the proton, by electron scattering",
+        "role": "The lightest quark. Together with the down quark it builds every proton and neutron, and so, through the energy bound inside them, most of the visible mass around you.",
+        "origin": "Present since the first microseconds after the Big Bang, when the quark–gluon plasma cooled into protons and neutrons. Never observed alone.",
+        "fate": "Stable as the lightest quark. Bound in protons, which have never been seen to decay (lifetime above 10³⁴ years)."
       },
       "down": {
         "name": "Down quark",
         "massLabel": "≈ 4.70 MeV/c²",
         "example": "Two down and one up valence quarks make a neutron.",
         "massNote": "Running mass at a scale of 2 GeV; confinement prevents isolation.",
-        "discovery": "SLAC: inside the proton, by electron scattering"
+        "discovery": "SLAC: inside the proton, by electron scattering",
+        "role": "The up quark's partner. Because it is slightly heavier, the neutron is mainly for that reason slightly heavier than the proton: free neutrons decay while hydrogen is stable, and chemistry as we know it depends on that ordering.",
+        "origin": "In every proton and neutron, since the first microseconds after the Big Bang.",
+        "fate": "In a free neutron a down quark turns into an up quark by emitting a virtual W⁻ (beta decay, about 15 minutes). In stable nuclei that decay would cost energy, so it does not happen."
       },
       "charm": {
         "name": "Charm quark",
         "massLabel": "≈ 1.273 GeV/c²",
         "example": "Charm and anticharm form the J/ψ meson.",
         "massNote": "Running mass evaluated at its own mass scale.",
-        "discovery": "Brookhaven and SLAC: in the J/ψ"
+        "discovery": "Brookhaven and SLAC: in the J/ψ",
+        "role": "Second-generation partner of the strange quark. It was predicted in 1970 to explain why certain kaon decays are almost absent, and its discovery in 1974 convinced physicists that quarks are real.",
+        "origin": "Not present in ordinary matter. Made in c c̄ pairs whenever a collision has more than about 3 GeV available: in colliders, in cosmic-ray showers, and in the hot early universe.",
+        "fate": "Decays through the weak force, mostly into a strange quark, in roughly 10⁻¹³ to 10⁻¹² s inside D mesons."
       },
       "strange": {
         "name": "Strange quark",
         "massLabel": "≈ 93.5 MeV/c²",
         "example": "Strange quarks appear in kaons and strange baryons.",
         "massNote": "Running mass at a scale of 2 GeV.",
-        "discovery": "Manchester: in kaons (\"V particles\"); understood as a quark in 1964"
+        "discovery": "Manchester: in kaons (\"V particles\"); understood as a quark in 1964",
+        "role": "The lightest second-generation quark. “Strange” particles puzzled physicists in 1947: made quickly, in pairs, by the strong force, they decay slowly, one by one, through the weak force. Kaons revealed CP violation in 1964.",
+        "origin": "Made in s s̄ pairs in collisions above about 1 GeV; cosmic rays produce kaons in the atmosphere.",
+        "fate": "Decays through the weak force into an up quark, typically in 10⁻¹⁰ to 10⁻⁸ s inside kaons and hyperons."
       },
       "top": {
         "name": "Top quark",
         "massLabel": "≈ 172.6 GeV/c²",
         "example": "Decays predominantly to a W boson and a bottom quark before forming hadrons.",
         "massNote": "Rounded direct-reconstruction mass; different mass definitions must not be mixed at high precision.",
-        "discovery": "Fermilab: Tevatron proton–antiproton collisions"
+        "discovery": "Fermilab: Tevatron proton–antiproton collisions",
+        "role": "The heaviest known elementary particle, roughly the mass of a tungsten atom. Its Higgs coupling is close to 1, the strongest of all, so it dominates Higgs production at the LHC and, with the Higgs mass, decides how stable the vacuum is. It completed the third generation predicted after the bottom quark.",
+        "origin": "Only in high-energy collisions: first made at the Fermilab Tevatron in 1995, now by the millions at the LHC. A t t̄ pair needs at least about 345 GeV.",
+        "fate": "Decays in about 5 × 10⁻²⁵ s, almost always into a bottom quark and a W boson: faster than hadrons can form, so it is the only quark observed “bare”."
       },
       "bottom": {
         "name": "Bottom quark",
         "massLabel": "≈ 4.183 GeV/c²",
         "example": "Bottom hadrons produce displaced decay vertices in detectors.",
         "massNote": "Running mass evaluated at its own mass scale.",
-        "discovery": "Fermilab: in the Υ"
+        "discovery": "Fermilab: in the Υ",
+        "role": "Third-generation partner of the top. Its discovery in 1977 implied a top quark. B mesons are the main laboratory for matter–antimatter differences among quarks.",
+        "origin": "Made in b b̄ pairs above about 10 GeV; the Υ meson (b b̄) was found at Fermilab in 1977.",
+        "fate": "Weak decay, mainly into a charm quark, in about 1.5 × 10⁻¹² s: long enough to fly a few millimetres, which gives the displaced vertices used to tag it."
       },
       "electron": {
         "name": "Electron",
         "massLabel": "≈ 0.511 MeV/c²",
         "example": "Atomic electrons form shells and chemical bonds; moving electrons carry electric current.",
         "massNote": "Rest mass, independent of its speed. An electron is elementary; a proton is composite.",
-        "discovery": "Cambridge: cathode rays"
+        "discovery": "Cambridge: cathode rays",
+        "role": "The lightest charged particle. Nothing lighter carries its charge, so it cannot decay. It builds atomic shells and therefore all of chemistry, electricity, and the emission of light.",
+        "origin": "Made in the early universe and in beta decays; also created with positrons (pair production) when a gamma ray above 1.022 MeV passes near a nucleus.",
+        "fate": "Stable: experiments find a lifetime above 10²⁸ years."
       },
       "muon": {
         "name": "Muon",
         "massLabel": "≈ 105.66 MeV/c²",
         "example": "Cosmic-ray muons reach the ground and often traverse an entire collider detector.",
         "massNote": "About 207 electron masses; mean lifetime approximately 2.2 μs.",
-        "discovery": "Caltech: cosmic rays"
+        "discovery": "Caltech: cosmic rays",
+        "role": "A heavier copy of the electron: same charge and interactions, 207 times the mass. Unpredicted, it was the first sign that nature repeats its particles in generations. Today it is a precision probe (muon g − 2) and a practical tool (muon imaging of volcanoes and pyramids).",
+        "origin": "Made continually in the upper atmosphere: cosmic-ray protons create pions, which decay into muons. About one muon crosses each square centimetre of ground per minute.",
+        "fate": "Decays in 2.2 μs (at rest) into an electron and two neutrinos. Atmospheric muons reach the ground only because relativistic time dilation stretches their lives."
       },
       "tau": {
         "name": "Tau",
         "massLabel": "≈ 1.777 GeV/c²",
         "example": "Produces electrons, muons, or hadrons in its weak decays.",
         "massNote": "Mean lifetime approximately 290 femtoseconds.",
-        "discovery": "SLAC: electron–muon events at SPEAR"
+        "discovery": "SLAC: electron–muon events at SPEAR",
+        "role": "The heaviest charged lepton and first member of the third generation (1975). It signalled that a whole third generation should exist.",
+        "origin": "Made in τ⁺τ⁻ pairs above 3.55 GeV; found at SLAC's SPEAR collider through events with just one electron, one muon, and missing energy.",
+        "fate": "Decays in about 2.9 × 10⁻¹³ s into a lighter lepton plus neutrinos, or into hadrons: the only lepton heavy enough to do so."
       },
       "e_neutrino": {
         "name": "Electron neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Produced in solar fusion and electron-flavor weak interactions.",
         "massNote": "νₑ is a superposition of mass states ν₁, ν₂, ν₃. Oscillations measure mass-squared differences, not one mass for each flavor.",
-        "discovery": "Savannah River: reactor antineutrinos"
+        "discovery": "Savannah River: reactor antineutrinos",
+        "role": "Proposed by Pauli in 1930 to save energy conservation in beta decay. Electron neutrinos carry energy out of the fusion reactions that power the Sun, and their small, nonzero masses point beyond the Standard Model.",
+        "origin": "Beta decays and nuclear reactors; the Sun sends about 6 × 10¹⁰ per square centimetre per second to Earth. Relic neutrinos from the Big Bang fill space.",
+        "fate": "Stable as far as we know, but it changes flavor while travelling (oscillation), because it is a mixture of mass states."
       },
       "mu_neutrino": {
         "name": "Muon neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Produced with muons in charged-pion decays.",
         "massNote": "Flavor and mass states differ. At least two neutrino mass states have nonzero mass; the lightest could be massless.",
-        "discovery": "Brookhaven: first accelerator neutrino beam"
+        "discovery": "Brookhaven: first accelerator neutrino beam",
+        "role": "Its discovery in 1962 proved that neutrinos come in distinct flavors: neutrinos from pion decay make muons, not electrons. This established the lepton generations.",
+        "origin": "Pion and kaon decays: in cosmic-ray showers in the atmosphere and in accelerator neutrino beams.",
+        "fate": "Oscillates into other flavors over long distances; in 1998 Super-Kamiokande's atmospheric-neutrino result first showed that neutrinos have mass."
       },
       "tau_neutrino": {
         "name": "Tau neutrino",
         "massLabel": "Flavor mixture; masses unknown",
         "example": "Identified through interactions that produce tau leptons when enough energy is available.",
         "massNote": "There is no separate measured rest mass to assign to the tau flavor. Neutrino mass generation requires physics beyond the minimal Standard Model.",
-        "discovery": "Fermilab: DONuT experiment"
+        "discovery": "Fermilab: DONuT experiment",
+        "role": "The last lepton of the third generation; its direct observation in 2000 (DONuT) completed the table of fermions.",
+        "origin": "Decays of tau leptons and of charmed-strange Dₛ mesons made by high-energy proton beams; also from oscillating muon neutrinos.",
+        "fate": "Stable as far as we know; it oscillates among flavors."
       },
       "photon": {
         "name": "Photon",
         "massLabel": "0 in the Standard Model",
         "example": "Visible light, radio waves, and X-rays consist of photons. Photons mediate electromagnetic interactions.",
         "massNote": "Zero rest mass does not mean zero energy: E = hf = pc. No rest frame exists for a photon.",
-        "discovery": "photoelectric and Compton effects"
+        "discovery": "photoelectric and Compton effects",
+        "role": "Carrier of the electromagnetic force: it binds electrons to nuclei and atoms into molecules, and it is light and all electromagnetic radiation. Its zero mass gives the force an unlimited range.",
+        "origin": "Emitted whenever charged particles accelerate or change energy level, and created by annihilation (e⁻ + e⁺ → γ + γ). The cosmic microwave background holds about 400 photons per cubic centimetre.",
+        "fate": "Stable; absorbed when it hands its energy to charged matter."
       },
       "gluon": {
         "name": "Gluon",
         "massLabel": "0 in the Standard Model",
         "example": "Eight color states mediate the strong interaction; gluons also interact with other gluons.",
         "massNote": "Massless but confined: hadronization produces jets rather than isolated gluons.",
-        "discovery": "DESY: three-jet events at PETRA"
+        "discovery": "DESY: three-jet events at PETRA",
+        "role": "Carrier of the strong force between quarks. Gluons carry color themselves and therefore attract each other, which produces confinement and most of the mass of protons and neutrons.",
+        "origin": "Exchanged constantly inside every hadron; emitted as an extra jet in high-energy collisions, first seen in three-jet events at DESY's PETRA in 1979.",
+        "fate": "Never free: within about 10⁻²³ s it turns into a jet of hadrons."
       },
       "w_boson": {
         "name": "W boson",
         "massLabel": "≈ 80.37 GeV/c²",
         "example": "W⁺ and W⁻ mediate charged-current weak processes, including beta decay.",
         "massNote": "Its large mass helps set the short range of the weak interaction. W bosons also couple to the Higgs field.",
-        "discovery": "CERN: UA1 and UA2"
+        "discovery": "CERN: UA1 and UA2",
+        "role": "Carrier of the charged weak force, the only interaction that changes one type of quark or lepton into another (d → u in beta decay, and the first step of hydrogen fusion in the Sun). Without it, the heavier generations could not decay.",
+        "origin": "Exchanged virtually in every beta decay; produced as a real particle only above 80 GeV, first at CERN's SppS collider in 1983.",
+        "fate": "Decays in about 3 × 10⁻²⁵ s into a charged lepton and a neutrino, or into a quark–antiquark pair (jets)."
       },
       "z_boson": {
         "name": "Z boson",
         "massLabel": "≈ 91.19 GeV/c²",
         "example": "Mediates neutral-current weak scattering, including neutrino scattering without producing a charged lepton.",
         "massNote": "Electrically neutral but not non-interacting; couples to the Higgs field and weak currents.",
-        "discovery": "CERN: UA1 and UA2"
+        "discovery": "CERN: UA1 and UA2",
+        "role": "Carrier of the neutral weak force; its discovery confirmed the unification of the electromagnetic and weak interactions. Measuring how quickly it decays showed that there are exactly three light neutrino types.",
+        "origin": "Produced as a real particle above 91 GeV; LEP made about 17 million Z bosons between 1989 and 2000.",
+        "fate": "Decays in about 3 × 10⁻²⁵ s into a fermion–antifermion pair: electrons, muons, taus, quark jets, or invisible neutrinos."
       },
       "higgs": {
         "name": "Higgs boson",
         "massLabel": "≈ 125.2 GeV/c²",
         "example": "The observed excitation of the Higgs field; reconstructed from its decay products.",
         "massNote": "A scalar boson, not a gauge force carrier. Its own mass comes from the Higgs potential; photon/gluon couplings occur through loops.",
-        "discovery": "CERN: ATLAS and CMS"
+        "discovery": "CERN: ATLAS and CMS",
+        "role": "The excitation of the Higgs field, which gives the W and Z bosons their masses and, through Yukawa couplings, the quarks and charged leptons theirs. Without it electrons would be massless and atoms as we know them could not form.",
+        "origin": "Made only in high-energy collisions, mainly by gluon fusion through a top-quark loop at the LHC; discovered by ATLAS and CMS in 2012.",
+        "fate": "Decays in about 1.6 × 10⁻²² s, most often into b b̄; the rarer γγ and four-lepton decays gave the cleanest discovery signals."
       }
     },
     "interactions": {
@@ -1143,6 +1431,172 @@
         "layers": ["No track", "No deposit", "No deposit", "No track"],
         "why": "Usually escapes a collider detector. Missing transverse momentum is inferred from the measured imbalance; it can also arise from other invisible particles or measurement errors."
       }
+    },
+    "levels": {
+      "atom": {
+        "name": "Atom",
+        "inside": "A tiny <a href=\"#history-breaking-atom\">nucleus</a> surrounded by <a href=\"#particle-inspector\" data-particle=\"electron\">electrons</a>, spread out as a quantum cloud. The electrons are elementary; the nucleus is not.",
+        "glue": "Electromagnetic attraction between the positive nucleus and the negative electrons, carried by photons.",
+        "breakIt": "A few eV: 13.6 eV ionizes hydrogen. Flames, ultraviolet light, and sparks do it every day; this is the energy scale of chemistry.",
+        "evidence": "Thomson found the electron in 1897; Rutherford's 1911 gold-foil experiment showed that almost all the mass sits in a nucleus about 100 000 times smaller than the atom.",
+        "takeaway": "By volume an atom is mostly empty, yet about 99.95% of its mass is in the nucleus."
+      },
+      "nucleus": {
+        "name": "Nucleus",
+        "inside": "Protons (charge +1) and neutrons (charge 0), together called nucleons. The number of protons fixes the element; the number of neutrons, the isotope.",
+        "glue": "The residual strong force: the color force between quarks leaks out of color-neutral nucleons, a little like the van der Waals attraction between neutral molecules. It is described as pion exchange and reaches only about 1–3 fm.",
+        "breakIt": "Millions of eV: about 8 MeV per nucleon in typical nuclei, 28.3 MeV to take helium-4 completely apart. Radioactivity, fission, and fusion work on this scale, about a million times the energy of chemistry.",
+        "evidence": "Rutherford identified the proton in 1919, and Chadwick found the neutron in 1932.",
+        "takeaway": "Nuclear energy is about a million times chemical energy because the binding force is much stronger and much shorter-ranged."
+      },
+      "nucleon": {
+        "name": "Proton / neutron",
+        "inside": "Three valence quarks (uud for the proton, udd for the neutron) plus a constantly changing “sea” of gluons and quark–antiquark pairs.",
+        "glue": "The strong force, carried by gluons between color charges. It does not weaken with distance; pulling quarks apart creates new quark–antiquark pairs instead (confinement).",
+        "breakIt": "It cannot be broken into free quarks. Hitting a proton with about 140 MeV or more creates pions; much harder hits produce jets of hadrons. What comes out is new hadrons, never loose quarks.",
+        "evidence": "Electron scattering at SLAC in 1968 (Friedman, Kendall, Taylor) revealed point-like scatterers inside the proton, later identified as quarks and gluons.",
+        "takeaway": "The quarks' rest masses make up only about 1% of the proton's mass; the rest is energy of motion and fields."
+      },
+      "elementary": {
+        "name": "Quarks and electrons",
+        "inside": "Nothing that we can detect. Elementary particles behave as points in every collision measured so far.",
+        "glue": "Nothing to hold: without parts, they are excitations of quantum fields.",
+        "breakIt": "Not possible, as far as anyone knows. Enough energy creates new particles instead of revealing pieces.",
+        "evidence": "LHC collisions at 13.6 TeV probe distances near 10⁻¹⁹ m, about 10 000 times smaller than a proton, and find no structure inside quarks or leptons.",
+        "takeaway": "“Elementary” is an experimental statement: no structure found down to the smallest distances probed so far, not a proof that none exists."
+      }
+    },
+    "composites": {
+      "hydrogen": {
+        "name": "Hydrogen atom",
+        "lifetime": "Stable",
+        "note": "One proton and one electron held by electric attraction. Ionizing it takes 13.6 eV, which ultraviolet light can supply; that is why its mass defect is only about one part in 70 million."
+      },
+      "helium4": {
+        "name": "Helium-4 nucleus (alpha particle)",
+        "lifetime": "Stable",
+        "note": "Two protons and two neutrons held by the residual strong force, which overpowers the protons' electric repulsion below about 2 fm. When the Sun fuses hydrogen into helium it releases about 26.7 MeV per nucleus, a little less than 28.3 MeV because two protons must first become neutrons."
+      },
+      "proton": {
+        "name": "Proton",
+        "lifetime": "Stable (no decay seen; lifetime above 10³⁴ years)",
+        "note": "The three quarks' rest masses add up to only about 9 MeV/c²; nearly all of the proton's 938 MeV/c² comes from the quarks' motion and the energy of the gluon field that confines them: E = mc² read backwards."
+      },
+      "neutron": {
+        "name": "Neutron",
+        "lifetime": "About 879 s (15 minutes) when free; stable inside most nuclei",
+        "note": "Slightly heavier than the proton (by 1.29 MeV/c²), so a free neutron decays: n → p + e⁻ + ν̄ₑ. Inside a stable nucleus that decay would cost energy, so it does not happen."
+      },
+      "lambda": {
+        "name": "Lambda baryon",
+        "lifetime": "About 2.6 × 10⁻¹⁰ s",
+        "note": "A proton-like baryon with a strange quark in place of a down quark. The strong force makes it together with a kaon (strangeness comes in pairs), but it can decay only through the weak force (Λ → p + π⁻), hence its “strangely” long life."
+      },
+      "omega": {
+        "name": "Omega-minus baryon",
+        "lifetime": "About 8.2 × 10⁻¹¹ s",
+        "note": "Three strange quarks. Gell-Mann's quark pattern predicted its charge, strangeness, and mass before it was seen at Brookhaven in 1964, the decisive test of the quark model. Three identical quarks in one state also required a new quantum number: color."
+      },
+      "pion": {
+        "name": "Positive pion",
+        "lifetime": "About 2.6 × 10⁻⁸ s",
+        "note": "Predicted by Yukawa in 1935 as the carrier of the nuclear force. As the lightest hadron it sets the force's range, about 1.4 fm. Its decay into μ⁺ + νμ is the main source of cosmic-ray muons."
+      },
+      "kaon": {
+        "name": "Positive kaon",
+        "lifetime": "About 1.24 × 10⁻⁸ s",
+        "note": "The lightest strange meson. Neutral kaons showed in 1964 that nature slightly distinguishes matter from antimatter (CP violation)."
+      },
+      "dmeson": {
+        "name": "Neutral D meson",
+        "lifetime": "About 4.1 × 10⁻¹³ s",
+        "note": "A charm quark with an anti-up quark: charm that is not cancelled by anticharm. Its weak decays, usually into kaons, confirmed “open charm” in 1976."
+      },
+      "jpsi": {
+        "name": "J/psi meson",
+        "lifetime": "About 7 × 10⁻²¹ s",
+        "note": "Charm and anticharm, discovered in 1974 at Brookhaven (J) and SLAC (ψ) at the same time. It is lighter than a pair of D mesons, so it cannot simply fall apart into them, and it lives about a thousand times longer than typical hadrons of its mass. This “November Revolution” established the charm quark."
+      },
+      "bmeson": {
+        "name": "Positive B meson",
+        "lifetime": "About 1.6 × 10⁻¹² s",
+        "note": "An up quark with an anti-bottom quark. It flies a few millimetres in a detector before decaying, which lets experiments tag bottom quarks, and it is the main system for measuring matter–antimatter differences among quarks."
+      },
+      "upsilon": {
+        "name": "Upsilon meson",
+        "lifetime": "About 1.2 × 10⁻²⁰ s",
+        "note": "Bottom and antibottom, seen at Fermilab in 1977 as a bump in muon pairs. Here the quark masses supply most of the total: heavy quarks move slowly, so field energy is a smaller share than in a proton."
+      }
+    },
+    "production": {
+      "electronPair": {
+        "label": "Electron–positron pair",
+        "first": "Anderson saw positrons in cosmic rays in 1932, a year after Dirac predicted antimatter. A gamma ray above 1.022 MeV passing near a nucleus routinely makes such pairs.",
+        "fate": "Both are stable. The positron soon meets an electron and annihilates into two 511 keV photons, the signal used in PET medical scans."
+      },
+      "muonPair": {
+        "label": "Muon–antimuon pair",
+        "first": "Muons were found in cosmic rays in 1936 (Anderson and Neddermeyer), made by pion decays rather than in pairs. Electron–positron colliders make μ⁺μ⁻ pairs directly.",
+        "fate": "Each muon decays after about 2.2 μs (at rest) into an electron and two neutrinos."
+      },
+      "pionPair": {
+        "label": "Pion pair (up and down quarks)",
+        "first": "Charged pions were found in cosmic rays in 1947 by Powell's group and produced at Berkeley's cyclotron in 1948.",
+        "fate": "Charged pions decay in 26 ns into a muon and a neutrino; this is how cosmic rays make muons."
+      },
+      "kaonPair": {
+        "label": "Kaon pair (strange quarks)",
+        "first": "Kaons appeared in cosmic-ray cloud-chamber photographs in 1947 (Rochester and Butler) as “V particles”. The strong force always makes strange quarks together with strange antiquarks.",
+        "fate": "Kaons decay through the weak force after about 10 ns, often into a muon and a neutrino."
+      },
+      "protonPair": {
+        "label": "Proton–antiproton pair",
+        "first": "The antiproton was made in 1955 at Berkeley's Bevatron, an accelerator built with just enough energy for p + p → p + p + p + p̄.",
+        "fate": "Each is stable on its own, but the antiproton annihilates as soon as it meets ordinary matter, typically into several pions."
+      },
+      "charm": {
+        "label": "Charm–anticharm (J/ψ)",
+        "first": "Discovered in November 1974 at the same time at SLAC's SPEAR electron–positron collider and at Brookhaven (a proton beam on beryllium).",
+        "fate": "The J/ψ lives about 7 × 10⁻²¹ s and decays into hadrons or, about 12% of the time, into an electron or muon pair."
+      },
+      "tauPair": {
+        "label": "Tau–antitau pair",
+        "first": "Martin Perl's group found the tau at SPEAR in 1975 through puzzling events with just one electron, one muon, and missing energy.",
+        "fate": "Each tau decays in about 0.3 ps, for example τ⁻ → μ⁻ + ν̄μ + ντ; the neutrinos explain the missing energy."
+      },
+      "bottom": {
+        "label": "Bottom–antibottom (Υ)",
+        "first": "The Υ was observed in 1977 at Fermilab by Leon Lederman's experiment, as a peak in muon pairs from proton–nucleus collisions near 9.5 GeV.",
+        "fate": "The Υ decays in about 10⁻²⁰ s; heavier b b̄ pairs separate into B mesons that live about 1.5 ps."
+      },
+      "zBoson": {
+        "label": "Z boson",
+        "first": "First seen in 1983 at CERN's SppS proton–antiproton collider (UA1, UA2). LEP (1989–2000) then produced millions by tuning electron–positron collisions to 91.2 GeV.",
+        "fate": "Decays in about 3 × 10⁻²⁵ s into a fermion–antifermion pair; about 20% of the time into invisible neutrinos."
+      },
+      "wPair": {
+        "label": "W⁺W⁻ pair",
+        "first": "Single W bosons were found in 1983 at CERN's SppS. LEP's higher-energy phase (LEP2, from 1996) produced W pairs and measured how they couple to each other.",
+        "fate": "Each W decays in about 3 × 10⁻²⁵ s into a charged lepton plus a neutrino, or into two quark jets."
+      },
+      "higgs": {
+        "label": "Higgs boson (with a Z)",
+        "first": "LEP's maximum of 209 GeV fell just short of the 216 GeV needed for Z + H. The Higgs was discovered at the LHC in 2012, mostly produced by gluon fusion.",
+        "fate": "Decays in about 1.6 × 10⁻²² s, most often into b b̄; the rare γγ and four-lepton decays gave the cleanest discovery signals."
+      },
+      "topPair": {
+        "label": "Top–antitop pair",
+        "first": "No electron–positron collider has reached 345 GeV yet. Top quarks were discovered in 1995 at Fermilab's Tevatron in proton–antiproton collisions (CDF and DØ).",
+        "fate": "Each top decays in about 5 × 10⁻²⁵ s into a bottom quark and a W boson, before it can form a hadron."
+      }
+    },
+    "presets": {
+      "radioactivity": { "label": "Radioactive decay" },
+      "spear": { "label": "SPEAR (1974)" },
+      "lep1": { "label": "LEP at the Z (1989)" },
+      "lep2": { "label": "LEP2 (2000)" },
+      "tevatron": { "label": "Tevatron (p p̄)" },
+      "lhc": { "label": "LHC (p p, 2022)" }
     }
   }
 }

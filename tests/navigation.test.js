@@ -13,7 +13,7 @@ test('every listed topic links to a unique section containing learning material'
   assert.ok(nav, 'section navigation exists');
   const links = [...nav.matchAll(/<a\b([^>]*)>/g)];
   const expected = [
-    'introduction', 'scale', 'matter', 'particle-zoo', 'fermions', 'forces',
+    'introduction', 'scale', 'matter', 'composition', 'particle-zoo', 'fermions', 'forces',
     'higgs', 'quantum', 'interactions', 'detection', 'mathematics', 'beyond', 'summary',
   ];
   assert.deepEqual(links.map(link => attribute(link[1], 'href')), expected.map(id => `#${id}`));

@@ -7,6 +7,7 @@
     "introduction": "Introduzione",
     "scale": "Scale dell'Universo",
     "matter": "Che cos'è la materia?",
+    "composition": "Dentro la materia",
     "particleZoo": "Zoo delle particelle",
     "fermions": "Fermioni",
     "forces": "Forze e bosoni",
@@ -29,7 +30,8 @@
       "paths": {
         "atoms": "Inizia dagli atomi",
         "standardModel": "Esplora il Modello Standard",
-        "exclusion": "Prova il principio di esclusione"
+        "exclusion": "Prova il principio di esclusione",
+        "composition": "Di cosa è fatto un protone?"
       }
     },
     "scale": {
@@ -70,7 +72,7 @@
         "canvasLabel": "Animazione schematica di un atomo; le traiettorie circolari non sono veri orbitali elettronici",
         "consistsOf": "Oggi sappiamo che gli atomi sono costituiti da:",
         "parts": {
-          "nucleus": "<strong>Nucleo:</strong> protoni e neutroni (fatti di quark!)",
+          "nucleus": "<strong>Nucleo:</strong> protoni e neutroni, ciascuno formato da tre quark tenuti insieme dai gluoni. <a href=\"#composition\">Apri gli strati uno alla volta</a>.",
           "cloud": "<strong>Nube elettronica:</strong> elettroni in orbitali quantistici",
           "scale": "<strong>Scala:</strong> il nucleo è molto più piccolo dell'atomo. La nube elettronica è una distribuzione di probabilità quantistica, non un insieme di pianetini su orbite fisse."
         }
@@ -90,6 +92,96 @@
           "title": "Il legame con il CERN",
           "text": "I collisori sondano la struttura subnucleare tramite urti ad alta energia. Le collisioni di ioni pesanti possono produrre plasma di quark e gluoni, ben diverso dallo schizzo statico di orbite qui sopra. <a href=\"#fermions\">Esplora i quark e il confinamento</a>."
         }
+      }
+    },
+    "composition": {
+      "title": "Dentro la materia: cosa è fatto di cosa",
+      "overview": {
+        "eyebrow": "Dagli atomi ai quark",
+        "title": "Gli elettroni sono elementari: allora cos'è un protone?",
+        "lead": "Un elettrone non ha mai mostrato parti interne. Un protone sì: è un sistema legato di quark e gluoni, così come un atomo è un sistema legato di un nucleo e di elettroni, e un nucleo è un sistema legato di protoni e neutroni. Questa sezione apre uno strato alla volta, poi mostra come le collisioni <em>creano</em> le particelle più pesanti (muoni, charm, tau, top) che incontrerai nel catalogo.",
+        "questions": {
+          "inside": {
+            "title": "Che cosa c'è dentro?",
+            "text": "Ogni strato è fatto dello strato successivo, fino ad arrivare a particelle senza dimensioni misurabili."
+          },
+          "glue": {
+            "title": "Che cosa lo tiene insieme?",
+            "text": "In ogni strato domina una forza diversa: l'elettromagnetismo negli atomi, la forza forte residua nei nuclei e la forza di colore vera e propria in protoni e neutroni."
+          },
+          "energy": {
+            "title": "Quanta energia serve per romperlo?",
+            "text": "Pochi eV per gli atomi, milioni di eV per i nuclei. Al livello del protone nessuna quantità di energia libera un quark: l'energia si trasforma invece in nuove particelle."
+          }
+        }
+      },
+      "ladder": {
+        "eyebrow": "Zoom interattivo",
+        "title": "Zooma dentro un atomo, uno strato alla volta",
+        "intro": "Scegli uno strato o usa i pulsanti di zoom. Il disegno cambia e il pannello risponde alle stesse domande a ogni scala. L'energia di sonda è quella che serve a un fascio perché la sua lunghezza d'onda sia piccola quanto lo strato: il motivo per cui acceleratori più grandi vedono cose più piccole.",
+        "pickerLabel": "Strato della materia",
+        "zoomOut": "Allontana",
+        "zoomIn": "Avvicina",
+        "deep": {
+          "summary": "Approfondisci: perché il più piccolo richiede più energia, e cosa significa “elementare”",
+          "probe": "Per vedere un dettaglio serve un'onda più corta del dettaglio. Per particelle veloci lunghezza d'onda ed energia sono legate da λ ≈ hc/E: risolvere 10⁻¹⁵ m richiede circa 1 GeV, risolvere 10⁻¹⁹ m circa 10 TeV. Per questo la storia della fisica delle particelle segue l'energia degli acceleratori.",
+          "elementary": "Una particella si dice elementare quando nessun esperimento ha trovato una struttura al suo interno. La diffusione di elettroni misurò prima le dimensioni dei nuclei (Hofstadter, anni '50) e poi trovò costituenti puntiformi dentro i protoni (1968). Quark e leptoni appaiono ancora puntiformi a LHC; se abbiano una struttura a distanze ancora più piccole resta una questione sperimentale aperta.",
+          "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: cromodinamica quantistica</a>; <a href=\"https://www.nobelprize.org/prizes/physics/1990/summary/\">Premio Nobel per la Fisica 1990: i quark dentro il protone</a>."
+        }
+      },
+      "builder": {
+        "eyebrow": "Costruttore di compositi",
+        "title": "Smonta un composito: le cariche si sommano, le masse no",
+        "intro": "Scegli un atomo, un nucleo o un adrone. Il costruttore elenca i costituenti, somma le loro cariche elettriche e confronta la massa a riposo delle parti con la massa dell'intero. Seleziona un quark o l'elettrone per esaminarlo, oppure un protone o un neutrone per aprirlo a sua volta.",
+        "choose": "Composito",
+        "groups": {
+          "bound": "Atomi e nuclei",
+          "baryons": "Barioni (tre quark)",
+          "mesons": "Mesoni (quark + antiquark)"
+        },
+        "deep": {
+          "summary": "Approfondisci: perché i sistemi legati sono più leggeri, ma i protoni più pesanti",
+          "binding": "Quando le parti si attraggono e si sistemano in uno stato legato, viene rilasciata energia, quindi l'intero pesa meno delle parti (il difetto di massa). Per un atomo la differenza è minuscola (13,6 eV su 938 MeV); per un nucleo è vicina all'1%. È l'energia liberata da fissione e fusione.",
+          "hadrons": "I quark sono diversi: non si possono separare e in un adrone leggero si muovono quasi alla velocità della luce dentro un intenso campo di colore. Quell'energia di moto e di campo appare come massa. Un protone è quindi circa 100 volte più pesante dei suoi tre quark di valenza, mentre i mesoni di quark pesanti J/ψ e Υ ricevono gran parte della massa dai quark stessi.",
+          "sea": "I quark di valenza fissano i numeri quantici (carica, stranezza, charm e così via). Un protone reale contiene anche gluoni e coppie quark–antiquark di vita breve, il “mare”; nelle collisioni ad alta energia i gluoni portano circa metà dell'impulso del protone."
+        },
+        "sourceNote": "Masse e vite medie degli adroni: PDG 2025, arrotondate. Le masse dei quark sono masse correnti dipendenti dallo schema (convenzione PDG), quindi per gli adroni il confronto parti–intero è illustrativo: un quark leggero confinato non si può pesare da solo."
+      },
+      "creation": {
+        "eyebrow": "Interattivo: creare particelle",
+        "title": "Rompere o creare: da dove vengono muoni, charm e top",
+        "intro": "Muoni, quark charm e quark top non sono nascosti dentro i protoni in attesa di essere estratti. Vengono <strong>creati</strong> dall'energia della collisione e poi decadono in particelle più leggere. Per questo sembrano “comparire” negli esperimenti, e per questo non li incontri mai nella materia ordinaria.",
+        "ways": {
+          "knockOut": {
+            "title": "1 · Estrarre ciò che c'è",
+            "text": "Ionizzare un atomo libera un elettrone; spezzare un nucleo libera protoni e neutroni. Questi pezzi esistevano già prima della collisione."
+          },
+          "create": {
+            "title": "2 · Creare ciò che non c'era",
+            "text": "Quando si concentra abbastanza energia, questa può diventare la massa a riposo di nuove particelle (E = mc²), sempre in combinazioni che conservano la carica e gli altri numeri quantici, di solito come coppie particella–antiparticella."
+          },
+          "decay": {
+            "title": "3 · Decadere fino al più leggero",
+            "text": "Le particelle pesanti si trasformano in particelle più leggere, soprattutto tramite la forza debole, in microsecondi o molto meno. Ciò che resta intorno a noi è la fine stabile di ogni catena: elettroni, quark up e down in protoni e neutroni, neutrini e fotoni."
+          }
+        },
+        "equationText": "L'energia a riposo totale delle nuove particelle deve rientrare nell'energia della collisione misurata nel sistema del centro di massa. Nell'annichilazione elettrone–positrone è tutta disponibile, quindi le soglie qui sotto usano quella reazione quando possibile.",
+        "energyLabel": "Energia della collisione (centro di massa)",
+        "presetsLabel": "Scale di energia reali",
+        "listHint": "Ogni scheda è una ricetta a energia minima. Scegline una per vedere la collisione, chi l'ha realizzata per primo e in cosa decade; sposta il cursore per vedere quali ricette diventano possibili.",
+        "deep": {
+          "summary": "Approfondisci: le regole che ogni creazione deve rispettare",
+          "rules": {
+            "energy": "<strong>Energia e impulso:</strong> le energie a riposo dei prodotti non possono superare l'energia nel centro di massa; l'eccesso diventa il loro moto.",
+            "charge": "<strong>Carica elettrica:</strong> il totale prima è uguale al totale dopo, quindi le particelle cariche nascono insieme a partner di carica opposta.",
+            "baryon": "<strong>Numero barionico:</strong> ogni quark creato arriva con un antiquark, quindi un protone può nascere solo insieme a un antiprotone (o da un barione già esistente).",
+            "lepton": "<strong>Numero leptonico:</strong> un muone nasce con un antimuone o con un antineutrino muonico; per questo i neutrini accompagnano ogni decadimento debole di un leptone.",
+            "flavor": "<strong>Sapore:</strong> le interazioni forte ed elettromagnetica creano stranezza, charm e bellezza solo in coppie quark–antiquark. Solo la forza debole cambia un sapore, ed è per questo che queste particelle vivono abbastanza da lasciare tracce."
+          },
+          "jets": "Perché niente quark liberi? Quando una collisione sbalza un quark fuori da un protone, il campo di colore fra il quark e il resto si allunga finché la sua energia crea una nuova coppia quark–antiquark. Rotture ripetute producono uno sciame di adroni, un getto, orientato nella direzione del quark.",
+          "nature": "La natura fa lo stesso esperimento. I protoni dei raggi cosmici che colpiscono l'atmosfera creano pioni, kaoni e muoni. Nella prima frazione di secondo dopo il Big Bang la temperatura era abbastanza alta da produrre ogni particella del Modello Standard; tutte tranne quelle stabili sono poi decadute."
+        },
+        "sourceNote": "Le soglie sono somme delle masse a riposo finali (PDG 2025, arrotondate) per la reazione indicata; frequenze, forme delle risonanze ed effetti dei rivelatori non sono modellati. I collisori adronici (Tevatron, LHC) dividono l'energia del fascio fra quark e gluoni, quindi una singola collisione elementare riceve solo una frazione dell'energia indicata."
       }
     },
     "zoo": {
@@ -116,7 +208,8 @@
         "hint": "Scegli una casella o un nome nella tabella per esaminarlo. Più sotto puoi confrontare due particelle.",
         "noscript": "Il catalogo interattivo richiede JavaScript. Le spiegazioni, gli argomenti collegati e il materiale di riferimento restano leggibili.",
         "massNote": "Valori didattici arrotondati, tratti dalle <a href=\"https://pdg.lbl.gov/2025/tables/contents_tables.html\">tabelle PDG 2025</a>. MeV/c² e GeV/c² sono unità di massa: 1 GeV/c² = 1000 MeV/c². Le masse dei quark dipendono dalla definizione e dalla scala. Gli stati di sapore dei neutrini non hanno un'unica massa a riposo; i valori ignoti vengono ordinati per ultimi.",
-        "filterNote": "I filtri per interazione mostrano le principali interazioni di gauge e identificano il settore di Higgs; non sono un elenco completo dei vertici. La gravità è omessa. Anche i fermioni carichi massivi e i bosoni W/Z si accoppiano al campo di Higgs; fotoni e gluoni possono accoppiarsi all'Higgs tramite loop."
+        "filterNote": "I filtri per interazione mostrano le principali interazioni di gauge e identificano il settore di Higgs; non sono un elenco completo dei vertici. La gravità è omessa. Anche i fermioni carichi massivi e i bosoni W/Z si accoppiano al campo di Higgs; fotoni e gluoni possono accoppiarsi all'Higgs tramite loop.",
+        "compositeNote": "Questo catalogo elenca solo particelle elementari. Protoni, neutroni, pioni e altri compositi sono costruiti a partire da esse: vedi il <a href=\"#composite-builder\">costruttore di compositi</a> e <a href=\"#particle-creation\">come le collisioni creano particelle più pesanti</a>."
       },
       "controls": {
         "label": "Filtri delle particelle",
@@ -197,7 +290,8 @@
           "confinement": "Separare i quark crea un campo di colore; con energia sufficiente si producono nuovi adroni anziché un quark isolato. Ad alto trasferimento di impulso l'accoppiamento forte diminuisce (libertà asintotica), rendendo possibili i calcoli perturbativi. A basse energie domina il confinamento.",
           "protonMass": "Un protone ha una massa di circa 938 MeV/c², molto maggiore della somma delle masse dei suoi quark leggeri di valenza. La maggior parte di quella massa deriva dalla dinamica dei quark e dei campi gluonici. L'Higgs dà ai quark le loro masse, ma non spiega direttamente la maggior parte della massa del protone.",
           "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-qcd.pdf\">PDG: cromodinamica quantistica</a>; <a href=\"https://cms.cern/node/1380\">CMS: l'Higgs e la materia ordinaria</a>."
-        }
+        },
+        "builderHint": "Smonta questi compositi, e molti altri, nel <a href=\"#composite-builder\">costruttore di compositi</a>."
       },
       "leptons": {
         "title": "I leptoni e le tre generazioni",
@@ -208,6 +302,67 @@
           "matrix": "La matrice di mescolamento U collega le etichette di sapore a quelle di massa. Il Modello Standard minimo prevede neutrini privi di massa, quindi le oscillazioni misurate richiedono un'estensione.",
           "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-neutrino-mixing.pdf\">PDG: masse, mescolamento e oscillazioni dei neutrini</a>."
         }
+      },
+      "generations": {
+        "eyebrow": "Perché così tante particelle?",
+        "title": "Copie più pesanti: a cosa servono la seconda e la terza generazione",
+        "lead": "Tutto ciò che ti circonda richiede solo la prima generazione: i quark <a href=\"#particle-inspector\" data-particle=\"up\">up</a> e <a href=\"#particle-inspector\" data-particle=\"down\">down</a>, l'<a href=\"#particle-inspector\" data-particle=\"electron\">elettrone</a> e il neutrino elettronico. La natura ripete questo insieme altre due volte, con cariche e forze identiche ma masse maggiori. Il Modello Standard non spiega <em>perché</em> ci siano tre copie, ma non sono extra casuali: regole rigorose le legano fra loro, e quelle regole hanno previsto charm, bottom, top e neutrino tau prima che fossero osservati.",
+        "table": {
+          "label": "Le tre generazioni",
+          "caption": "Ogni generazione ha le stesse cariche (+⅔, −⅓, −1, 0) e interazioni; cambiano solo le masse.",
+          "columns": {
+            "generation": "Generazione",
+            "quarks": "Quark",
+            "leptons": "Leptoni",
+            "where": "Dove le incontri"
+          },
+          "rows": {
+            "first": {
+              "name": "1ª",
+              "where": "Tutta la materia ordinaria: atomi, esseri viventi, il combustibile del Sole. Stabile."
+            },
+            "second": {
+              "name": "2ª",
+              "where": "Muoni dei raggi cosmici, kaoni e particelle con charm nei collisori. Decadono in microsecondi o meno."
+            },
+            "third": {
+              "name": "3ª",
+              "where": "Solo nelle collisioni ad alta energia e nell'universo primordiale. Decadono in circa un picosecondo o meno."
+            }
+          }
+        },
+        "reasonsTitle": "Perché i fisici si aspettavano ogni pezzo mancante",
+        "reasons": {
+          "complete": {
+            "title": "Insiemi completi rendono coerente la teoria",
+            "text": "Il Modello Standard è matematicamente coerente (le sue anomalie di gauge si cancellano) solo se ogni generazione è completa: una coppia di quark in tre colori più un leptone carico e un neutrino. Una verifica visibile è che le cariche elettriche di una generazione sommano a zero. Così, quando comparvero il tau (1975) e il quark bottom (1977), ci si aspettavano un quark top e un neutrino tau, trovati nel 1995 e nel 2000."
+          },
+          "charm": {
+            "title": "Il charm spiegò un decadimento mancante",
+            "text": "Alcuni decadimenti dei kaoni neutri, come quello in μ⁺μ⁻, sono molto più rari di quanto prevedeva una teoria con tre quark. Nel 1970 Glashow, Iliopoulos e Maiani mostrarono che un quarto quark, il charm, li cancella. La scoperta della J/ψ nel 1974 lo confermò."
+          },
+          "cp": {
+            "title": "Tre generazioni permettono materia ≠ antimateria",
+            "text": "Nel 1973, prima ancora che il charm fosse trovato, Kobayashi e Maskawa mostrarono che il mescolamento dei quark può distinguere materia e antimateria (violazione di CP) solo se esistono almeno tre generazioni. Gli esperimenti sui mesoni B confermarono il loro quadro, e condivisero il Premio Nobel 2008."
+          },
+          "muon": {
+            "title": "Il muone: una ripetizione inattesa",
+            "text": "Nessuno aveva previsto il muone; sentendone parlare, I. I. Rabi chiese “Who ordered that?” (“Chi l'ha ordinato?”). Fu il primo segno di una seconda generazione. Oggi i muoni verificano se le leggi sono identiche per ogni generazione (universalità leptonica) e cercano nuova fisica con misure di precisione come quella del momento magnetico del muone."
+          },
+          "top": {
+            "title": "Il top: il quark più pesante e più legato al Higgs",
+            "text": "Il top si accoppia al campo di Higgs con un'intensità vicina a 1, la più grande fra tutte le particelle. I loop di quark top sono la via principale per produrre bosoni di Higgs a LHC, e le masse del top e del Higgs insieme decidono se il nostro vuoto è del tutto stabile o solo estremamente longevo."
+          },
+          "decay": {
+            "title": "Perché non le incontri mai",
+            "text": "Le copie più pesanti decadono in quelle più leggere tramite il <a href=\"#particle-inspector\" data-particle=\"w_boson\">bosone W</a>, l'unica interazione che cambia sapore: un muone vive 2,2 μs, un tau 0,3 ps, un top 5 × 10⁻²⁵ s. Raggi cosmici e collisori le producono di continuo, ed erano abbondanti nel caldo universo primordiale."
+          }
+        },
+        "open": {
+          "title": "Che cosa resta da spiegare",
+          "text": "Perché esistano tre generazioni, e perché le masse vadano da 0,511 MeV/c² (elettrone) a circa 173 GeV/c² (top), un fattore di circa 340 000, sono domande aperte. Le misure della Z a LEP mostrano che esattamente tre neutrini leggeri si accoppiano alla Z, e i tassi di produzione del Higgs escludono una semplice quarta generazione di quark pesanti."
+        },
+        "sources": "<a href=\"https://pdg.lbl.gov/2025/reviews/rpp2025-rev-ckm-matrix.pdf\">PDG: matrice CKM di mescolamento dei quark</a>; <a href=\"https://www.nobelprize.org/prizes/physics/2008/summary/\">Premio Nobel per la Fisica 2008</a>; <a href=\"#history-completion\">storia: dal charm al neutrino tau</a>."
       }
     },
     "forces": {
@@ -832,10 +987,15 @@
         "higgs": "Massa e Higgs",
         "quantum": "Spin ed esclusione",
         "reaction": "Segui una reazione",
-        "detection": "Rivelazione"
+        "detection": "Rivelazione",
+        "generations": "Perché le generazioni?",
+        "creation": "Come viene creata"
       },
       "pdgReference": "Riferimento PDG 2025 per le proprietà",
-      "conventions": "Convenzioni e approfondimenti"
+      "conventions": "Convenzioni e approfondimenti",
+      "role": "Perché è importante",
+      "origin": "Da dove viene",
+      "fate": "Vita media e destino"
     },
     "comparison": {
       "rowA": "Riga A",
@@ -931,6 +1091,83 @@
         "antimatter": "Storia: la sua antiparticella",
         "generations": "Storia: tre famiglie"
       }
+    },
+    "composition": {
+      "size": "Dimensione tipica",
+      "inside": "Che cosa c'è dentro",
+      "glue": "Che cosa lo tiene insieme",
+      "breakIt": "Energia per romperlo",
+      "probe": "Energia necessaria per vedere questa scala",
+      "probeValue": "circa {energy} (lunghezza d'onda ≈ dimensione)",
+      "evidence": "Come lo abbiamo scoperto"
+    },
+    "composite": {
+      "antiName": "{name} (antiparticella)",
+      "openPart": "Apri {name} nel costruttore",
+      "partsLabel": "Costituenti",
+      "charge": "Carica elettrica (somma)",
+      "mass": "Massa dell'intero",
+      "partsMassBound": "Massa a riposo delle parti",
+      "partsMassQuarks": "Masse a riposo dei quark di valenza",
+      "lifetime": "Vita media",
+      "barWhole": "Intero",
+      "barParts": "Parti",
+      "kinds": {
+        "atom": "Atomo: un nucleo ed elettroni, legati elettromagneticamente",
+        "nucleus": "Nucleo: protoni e neutroni, legati dalla forza forte residua",
+        "baryon": "Barione: tre quark di valenza, neutro di colore",
+        "meson": "Mesone: un quark e un antiquark di valenza, neutro di colore"
+      },
+      "verdict": {
+        "bound": "{name}: più leggero delle sue parti di {binding}. Quella differenza è l'energia di legame, l'energia necessaria per separarlo.",
+        "light": "{name}: le masse a riposo dei quark di valenza valgono appena {share}% del totale. Gli altri {extra} sono energia del moto dei quark e del campo dei gluoni.",
+        "heavy": "{name}: i quark pesanti forniscono {share}% della massa; i restanti {extra} sono energia di moto e di campo, una quota molto più piccola che in un protone."
+      }
+    },
+    "creation": {
+      "status": "A {energy}: {count} ricette su {total} sono possibili; la più pesante è {heaviest}.",
+      "statusNone": "A {energy}: non basta per creare nemmeno una coppia elettrone–positrone (1,022 MeV).",
+      "reachable": "Possibile a questa energia",
+      "locked": "Serve più energia",
+      "stable": "stabile",
+      "canMake": "Possibile: servono almeno {threshold}.",
+      "needMore": "Non ancora: servono {threshold}, circa {factor} × l'energia attuale.",
+      "needPercent": "Non ancora: servono {threshold}, cioè {percent}% in più dell'energia attuale.",
+      "firstMade": "Prima produzione",
+      "thenWhat": "Che cosa succede dopo"
+    },
+    "compositionCanvas": {
+      "label": {
+        "atom": "Atomo schematico: una nuvola elettronica sfumata attorno a un nucleo minuscolo",
+        "nucleus": "Nucleo di elio-4 schematico: due protoni e due neutroni che si scambiano pioni",
+        "nucleon": "Protone schematico: tre quark di valenza uniti da gluoni, con coppie quark–antiquark di vita breve",
+        "elementary": "Particella elementare schematica: un punto senza struttura a ogni scala esplorata"
+      },
+      "atom": {
+        "cloud": "nuvola elettronica (dove si possono trovare gli elettroni)",
+        "nucleus": "nucleo (disegnato troppo grande)"
+      },
+      "nucleus": {
+        "title": "elio-4: 2 protoni (p) + 2 neutroni (n)",
+        "exchange": "forza forte residua (scambio di pioni)"
+      },
+      "nucleon": {
+        "valence": "protone: quark di valenza u u d, i colori cambiano di continuo",
+        "gluons": "campo dei gluoni che lega i quark",
+        "sea": "coppie grigie: mare di quark–antiquark di vita breve"
+      },
+      "elementary": {
+        "point": "puntiforme: nessuna dimensione misurata",
+        "limit": "esplorata fino a circa 10⁻¹⁹ m, nessuna struttura interna"
+      },
+      "notToScale": "schematico, non in scala"
+    },
+    "creationCanvas": {
+      "label": "Animazione: {reaction}, poi i prodotti decadono",
+      "labelTooLow": "Animazione: l'energia è sotto la soglia per {reaction}, quindi i fasci si limitano a deviare",
+      "tooLow": "Energia insufficiente: i fasci si limitano a deviare",
+      "stable": "stabile",
+      "legend": "giallo: creati · verde: prodotti di decadimento · tratteggio: neutrini"
     }
   },
   "model": {
@@ -940,119 +1177,170 @@
         "massLabel": "≈ 2,16 MeV/c²",
         "example": "Due quark di valenza up e uno down formano un protone.",
         "massNote": "Massa running alla scala di 2 GeV; non è la massa di un quark libero.",
-        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni"
+        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni",
+        "role": "Il quark più leggero. Insieme al quark down costruisce ogni protone e neutrone e quindi, attraverso l'energia legata al loro interno, gran parte della massa visibile intorno a te.",
+        "origin": "Presente dai primi microsecondi dopo il Big Bang, quando il plasma di quark e gluoni si raffreddò in protoni e neutroni. Mai osservato da solo.",
+        "fate": "Stabile in quanto quark più leggero. Legato nei protoni, che non sono mai stati visti decadere (vita media oltre 10³⁴ anni)."
       },
       "down": {
         "name": "Quark down",
         "massLabel": "≈ 4,70 MeV/c²",
         "example": "Due quark di valenza down e uno up formano un neutrone.",
         "massNote": "Massa running alla scala di 2 GeV; il confinamento ne impedisce l'isolamento.",
-        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni"
+        "discovery": "SLAC: dentro il protone, con la diffusione di elettroni",
+        "role": "Il partner del quark up. Poiché è leggermente più pesante, il neutrone è soprattutto per questo leggermente più pesante del protone: i neutroni liberi decadono mentre l'idrogeno è stabile, e la chimica che conosciamo dipende da questo ordine.",
+        "origin": "In ogni protone e neutrone, dai primi microsecondi dopo il Big Bang.",
+        "fate": "In un neutrone libero un quark down diventa un quark up emettendo un W⁻ virtuale (decadimento beta, circa 15 minuti). Nei nuclei stabili quel decadimento costerebbe energia, quindi non avviene."
       },
       "charm": {
         "name": "Quark charm",
         "massLabel": "≈ 1,273 GeV/c²",
         "example": "Charm e anticharm formano il mesone J/ψ.",
         "massNote": "Massa running valutata alla sua stessa scala di massa.",
-        "discovery": "Brookhaven e SLAC: nella J/ψ"
+        "discovery": "Brookhaven e SLAC: nella J/ψ",
+        "role": "Partner di seconda generazione del quark strange. Fu previsto nel 1970 per spiegare perché certi decadimenti dei kaoni sono quasi assenti, e la sua scoperta nel 1974 convinse i fisici che i quark sono reali.",
+        "origin": "Assente nella materia ordinaria. Viene prodotto in coppie c c̄ ogni volta che una collisione dispone di più di circa 3 GeV: nei collisori, negli sciami dei raggi cosmici e nel caldo universo primordiale.",
+        "fate": "Decade tramite la forza debole, soprattutto in un quark strange, in circa 10⁻¹³–10⁻¹² s dentro i mesoni D."
       },
       "strange": {
         "name": "Quark strange",
         "massLabel": "≈ 93,5 MeV/c²",
         "example": "I quark strange compaiono nei kaoni e nei barioni strani.",
         "massNote": "Massa running alla scala di 2 GeV.",
-        "discovery": "Manchester: nei kaoni (\"particelle V\"); riconosciuto come quark nel 1964"
+        "discovery": "Manchester: nei kaoni (\"particelle V\"); riconosciuto come quark nel 1964",
+        "role": "Il quark più leggero della seconda generazione. Le particelle “strane” sconcertarono i fisici nel 1947: prodotte rapidamente, in coppie, dalla forza forte, decadono lentamente, una alla volta, tramite la forza debole. I kaoni rivelarono la violazione di CP nel 1964.",
+        "origin": "Prodotto in coppie s s̄ nelle collisioni sopra circa 1 GeV; i raggi cosmici producono kaoni nell'atmosfera.",
+        "fate": "Decade tramite la forza debole in un quark up, tipicamente in 10⁻¹⁰–10⁻⁸ s dentro kaoni e iperoni."
       },
       "top": {
         "name": "Quark top",
         "massLabel": "≈ 172,6 GeV/c²",
         "example": "Decade prevalentemente in un bosone W e un quark bottom prima di formare adroni.",
         "massNote": "Massa da ricostruzione diretta, arrotondata; ad alta precisione non si devono mescolare definizioni di massa diverse.",
-        "discovery": "Fermilab: collisioni protone–antiprotone al Tevatron"
+        "discovery": "Fermilab: collisioni protone–antiprotone al Tevatron",
+        "role": "La particella elementare più pesante conosciuta, circa la massa di un atomo di tungsteno. Il suo accoppiamento al Higgs è vicino a 1, il più forte di tutti, quindi domina la produzione del Higgs a LHC e, con la massa del Higgs, decide quanto è stabile il vuoto. Completò la terza generazione prevista dopo il quark bottom.",
+        "origin": "Solo nelle collisioni ad alta energia: prodotto per la prima volta al Tevatron del Fermilab nel 1995, oggi a milioni a LHC. Una coppia t t̄ richiede almeno circa 345 GeV.",
+        "fate": "Decade in circa 5 × 10⁻²⁵ s, quasi sempre in un quark bottom e un bosone W: più in fretta di quanto si formino gli adroni, quindi è l'unico quark osservato “nudo”."
       },
       "bottom": {
         "name": "Quark bottom",
         "massLabel": "≈ 4,183 GeV/c²",
         "example": "Gli adroni con quark bottom producono vertici di decadimento spostati nei rivelatori.",
         "massNote": "Massa running valutata alla sua stessa scala di massa.",
-        "discovery": "Fermilab: nella Υ"
+        "discovery": "Fermilab: nella Υ",
+        "role": "Partner di terza generazione del top. La sua scoperta nel 1977 implicava un quark top. I mesoni B sono il laboratorio principale per le differenze fra materia e antimateria nei quark.",
+        "origin": "Prodotto in coppie b b̄ sopra circa 10 GeV; il mesone Υ (b b̄) fu trovato al Fermilab nel 1977.",
+        "fate": "Decadimento debole, soprattutto in un quark charm, in circa 1,5 × 10⁻¹² s: abbastanza per volare qualche millimetro, il che produce i vertici spostati usati per identificarlo."
       },
       "electron": {
         "name": "Elettrone",
         "massLabel": "≈ 0,511 MeV/c²",
         "example": "Gli elettroni atomici formano gusci e legami chimici; gli elettroni in moto trasportano la corrente elettrica.",
         "massNote": "Massa a riposo, indipendente dalla velocità. L'elettrone è elementare; il protone è composto.",
-        "discovery": "Cambridge: raggi catodici"
+        "discovery": "Cambridge: raggi catodici",
+        "role": "La particella carica più leggera. Nulla di più leggero porta la sua carica, quindi non può decadere. Costruisce i gusci atomici e quindi tutta la chimica, l'elettricità e l'emissione di luce.",
+        "origin": "Prodotto nell'universo primordiale e nei decadimenti beta; viene anche creato insieme ai positroni (produzione di coppie) quando un raggio gamma sopra 1,022 MeV passa vicino a un nucleo.",
+        "fate": "Stabile: gli esperimenti trovano una vita media superiore a 10²⁸ anni."
       },
       "muon": {
         "name": "Muone",
         "massLabel": "≈ 105,66 MeV/c²",
         "example": "I muoni dei raggi cosmici raggiungono il suolo e spesso attraversano un intero rivelatore di un collisore.",
         "massNote": "Circa 207 masse elettroniche; vita media di circa 2,2 μs.",
-        "discovery": "Caltech: raggi cosmici"
+        "discovery": "Caltech: raggi cosmici",
+        "role": "Una copia più pesante dell'elettrone: stessa carica e stesse interazioni, 207 volte la massa. Non previsto, fu il primo segno che la natura ripete le sue particelle in generazioni. Oggi è una sonda di precisione (muone g − 2) e uno strumento pratico (radiografia muonica di vulcani e piramidi).",
+        "origin": "Prodotto di continuo nell'alta atmosfera: i protoni dei raggi cosmici creano pioni, che decadono in muoni. Circa un muone attraversa ogni centimetro quadrato di suolo al minuto.",
+        "fate": "Decade in 2,2 μs (a riposo) in un elettrone e due neutrini. I muoni atmosferici raggiungono il suolo solo perché la dilatazione relativistica del tempo allunga la loro vita."
       },
       "tau": {
         "name": "Tau",
         "massLabel": "≈ 1,777 GeV/c²",
         "example": "Nei suoi decadimenti deboli produce elettroni, muoni o adroni.",
         "massNote": "Vita media di circa 290 femtosecondi.",
-        "discovery": "SLAC: eventi elettrone–muone a SPEAR"
+        "discovery": "SLAC: eventi elettrone–muone a SPEAR",
+        "role": "Il leptone carico più pesante e primo membro della terza generazione (1975). Segnalò che doveva esistere un'intera terza generazione.",
+        "origin": "Prodotto in coppie τ⁺τ⁻ sopra 3,55 GeV; trovato al collisore SPEAR di SLAC tramite eventi con solo un elettrone, un muone ed energia mancante.",
+        "fate": "Decade in circa 2,9 × 10⁻¹³ s in un leptone più leggero più neutrini, oppure in adroni: l'unico leptone abbastanza pesante da farlo."
       },
       "e_neutrino": {
         "name": "Neutrino elettronico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Prodotto nella fusione solare e nelle interazioni deboli di sapore elettronico.",
         "massNote": "νₑ è una sovrapposizione degli stati di massa ν₁, ν₂, ν₃. Le oscillazioni misurano differenze dei quadrati delle masse, non una massa per ciascun sapore.",
-        "discovery": "Savannah River: antineutrini da reattore"
+        "discovery": "Savannah River: antineutrini da reattore",
+        "role": "Proposto da Pauli nel 1930 per salvare la conservazione dell'energia nel decadimento beta. I neutrini elettronici portano energia fuori dalle reazioni di fusione che alimentano il Sole, e le loro masse piccole ma non nulle indicano fisica oltre il Modello Standard.",
+        "origin": "Decadimenti beta e reattori nucleari; il Sole ne invia sulla Terra circa 6 × 10¹⁰ per centimetro quadrato al secondo. Neutrini fossili del Big Bang riempiono lo spazio.",
+        "fate": "Stabile per quanto ne sappiamo, ma cambia sapore durante il viaggio (oscillazione), perché è una miscela di stati di massa."
       },
       "mu_neutrino": {
         "name": "Neutrino muonico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Prodotto insieme ai muoni nei decadimenti dei pioni carichi.",
         "massNote": "Stati di sapore e stati di massa sono diversi. Almeno due stati di massa dei neutrini hanno massa non nulla; il più leggero potrebbe essere privo di massa.",
-        "discovery": "Brookhaven: primo fascio di neutrini da acceleratore"
+        "discovery": "Brookhaven: primo fascio di neutrini da acceleratore",
+        "role": "La sua scoperta nel 1962 dimostrò che i neutrini hanno sapori distinti: i neutrini dal decadimento dei pioni producono muoni, non elettroni. Questo stabilì le generazioni leptoniche.",
+        "origin": "Decadimenti di pioni e kaoni: negli sciami dei raggi cosmici nell'atmosfera e nei fasci di neutrini degli acceleratori.",
+        "fate": "Oscilla in altri sapori su lunghe distanze; nel 1998 il risultato di Super-Kamiokande sui neutrini atmosferici mostrò per primo che i neutrini hanno massa."
       },
       "tau_neutrino": {
         "name": "Neutrino tauonico",
         "massLabel": "Miscela di sapore; masse ignote",
         "example": "Identificato tramite interazioni che producono leptoni tau quando l'energia disponibile è sufficiente.",
         "massNote": "Non esiste una massa a riposo misurata separatamente da assegnare al sapore tau. La generazione della massa dei neutrini richiede fisica oltre il Modello Standard minimo.",
-        "discovery": "Fermilab: esperimento DONuT"
+        "discovery": "Fermilab: esperimento DONuT",
+        "role": "L'ultimo leptone della terza generazione; la sua osservazione diretta nel 2000 (DONuT) completò la tabella dei fermioni.",
+        "origin": "Decadimenti dei leptoni tau e dei mesoni Dₛ (charm e strange) prodotti da fasci di protoni ad alta energia; anche dall'oscillazione dei neutrini muonici.",
+        "fate": "Stabile per quanto ne sappiamo; oscilla fra i sapori."
       },
       "photon": {
         "name": "Fotone",
         "massLabel": "0 nel Modello Standard",
         "example": "Luce visibile, onde radio e raggi X sono fatti di fotoni. I fotoni mediano le interazioni elettromagnetiche.",
         "massNote": "Massa a riposo nulla non significa energia nulla: E = hf = pc. Per un fotone non esiste un sistema di riposo.",
-        "discovery": "effetto fotoelettrico ed effetto Compton"
+        "discovery": "effetto fotoelettrico ed effetto Compton",
+        "role": "Mediatore della forza elettromagnetica: lega gli elettroni ai nuclei e gli atomi nelle molecole, ed è la luce e tutta la radiazione elettromagnetica. La sua massa nulla dà alla forza una portata illimitata.",
+        "origin": "Emesso ogni volta che particelle cariche accelerano o cambiano livello di energia, e creato nell'annichilazione (e⁻ + e⁺ → γ + γ). Il fondo cosmico a microonde contiene circa 400 fotoni per centimetro cubo.",
+        "fate": "Stabile; viene assorbito quando cede la sua energia alla materia carica."
       },
       "gluon": {
         "name": "Gluone",
         "massLabel": "0 nel Modello Standard",
         "example": "Otto stati di colore mediano l'interazione forte; i gluoni interagiscono anche con altri gluoni.",
         "massNote": "Privo di massa ma confinato: l'adronizzazione produce getti anziché gluoni isolati.",
-        "discovery": "DESY: eventi a tre jet a PETRA"
+        "discovery": "DESY: eventi a tre jet a PETRA",
+        "role": "Mediatore della forza forte fra i quark. I gluoni portano essi stessi colore e quindi si attraggono a vicenda, il che produce il confinamento e gran parte della massa di protoni e neutroni.",
+        "origin": "Scambiato di continuo dentro ogni adrone; emesso come getto aggiuntivo nelle collisioni ad alta energia, visto per la prima volta in eventi a tre getti a PETRA, DESY, nel 1979.",
+        "fate": "Mai libero: in circa 10⁻²³ s si trasforma in un getto di adroni."
       },
       "w_boson": {
         "name": "Bosone W",
         "massLabel": "≈ 80,37 GeV/c²",
         "example": "W⁺ e W⁻ mediano i processi deboli di corrente carica, compreso il decadimento beta.",
         "massNote": "La sua grande massa contribuisce a fissare la breve portata dell'interazione debole. Anche i bosoni W si accoppiano al campo di Higgs.",
-        "discovery": "CERN: UA1 e UA2"
+        "discovery": "CERN: UA1 e UA2",
+        "role": "Mediatore della forza debole carica, l'unica interazione che trasforma un tipo di quark o leptone in un altro (d → u nel decadimento beta, e il primo passo della fusione dell'idrogeno nel Sole). Senza di esso le generazioni più pesanti non potrebbero decadere.",
+        "origin": "Scambiato in forma virtuale in ogni decadimento beta; prodotto come particella reale solo sopra 80 GeV, la prima volta al collisore SppS del CERN nel 1983.",
+        "fate": "Decade in circa 3 × 10⁻²⁵ s in un leptone carico e un neutrino, oppure in una coppia quark–antiquark (getti)."
       },
       "z_boson": {
         "name": "Bosone Z",
         "massLabel": "≈ 91,19 GeV/c²",
         "example": "Media la diffusione debole di corrente neutra, compresa la diffusione di neutrini senza produzione di un leptone carico.",
         "massNote": "Elettricamente neutro ma non privo di interazioni; si accoppia al campo di Higgs e alle correnti deboli.",
-        "discovery": "CERN: UA1 e UA2"
+        "discovery": "CERN: UA1 e UA2",
+        "role": "Mediatore della forza debole neutra; la sua scoperta confermò l'unificazione delle interazioni elettromagnetica e debole. Misurare quanto rapidamente decade mostrò che esistono esattamente tre tipi di neutrini leggeri.",
+        "origin": "Prodotto come particella reale sopra 91 GeV; LEP produsse circa 17 milioni di bosoni Z fra il 1989 e il 2000.",
+        "fate": "Decade in circa 3 × 10⁻²⁵ s in una coppia fermione–antifermione: elettroni, muoni, tau, getti di quark o neutrini invisibili."
       },
       "higgs": {
         "name": "Bosone di Higgs",
         "massLabel": "≈ 125,2 GeV/c²",
         "example": "L'eccitazione osservata del campo di Higgs; ricostruita dai suoi prodotti di decadimento.",
         "massNote": "Un bosone scalare, non un mediatore di forza di gauge. La sua massa deriva dal potenziale di Higgs; gli accoppiamenti con fotoni e gluoni avvengono tramite loop.",
-        "discovery": "CERN: ATLAS e CMS"
+        "discovery": "CERN: ATLAS e CMS",
+        "role": "L'eccitazione del campo di Higgs, che dà la massa ai bosoni W e Z e, tramite gli accoppiamenti di Yukawa, ai quark e ai leptoni carichi. Senza di esso gli elettroni sarebbero privi di massa e gli atomi come li conosciamo non potrebbero formarsi.",
+        "origin": "Prodotto solo nelle collisioni ad alta energia, soprattutto per fusione di gluoni tramite un loop di quark top a LHC; scoperto da ATLAS e CMS nel 2012.",
+        "fate": "Decade in circa 1,6 × 10⁻²² s, più spesso in b b̄; i decadimenti più rari in γγ e in quattro leptoni diedero i segnali di scoperta più puliti."
       }
     },
     "interactions": {
@@ -1143,6 +1431,172 @@
         "layers": ["Nessuna traccia", "Nessun deposito", "Nessun deposito", "Nessuna traccia"],
         "why": "Di solito sfugge al rivelatore di un collisore. L'impulso trasverso mancante si deduce dallo squilibrio misurato; può nascere anche da altre particelle invisibili o da errori di misura."
       }
+    },
+    "levels": {
+      "atom": {
+        "name": "Atomo",
+        "inside": "Un minuscolo <a href=\"#history-breaking-atom\">nucleo</a> circondato da <a href=\"#particle-inspector\" data-particle=\"electron\">elettroni</a>, distribuiti come una nuvola quantistica. Gli elettroni sono elementari; il nucleo no.",
+        "glue": "L'attrazione elettromagnetica fra il nucleo positivo e gli elettroni negativi, mediata dai fotoni.",
+        "breakIt": "Pochi eV: 13,6 eV ionizzano l'idrogeno. Fiamme, luce ultravioletta e scintille lo fanno ogni giorno; è la scala di energia della chimica.",
+        "evidence": "Thomson trovò l'elettrone nel 1897; l'esperimento della lamina d'oro di Rutherford (1911) mostrò che quasi tutta la massa sta in un nucleo circa 100 000 volte più piccolo dell'atomo.",
+        "takeaway": "In volume un atomo è quasi vuoto, eppure circa il 99,95% della sua massa sta nel nucleo."
+      },
+      "nucleus": {
+        "name": "Nucleo",
+        "inside": "Protoni (carica +1) e neutroni (carica 0), detti insieme nucleoni. Il numero di protoni fissa l'elemento; quello dei neutroni, l'isotopo.",
+        "glue": "La forza forte residua: la forza di colore fra i quark “trapela” dai nucleoni neutri di colore, un po' come l'attrazione di van der Waals fra molecole neutre. Si descrive come scambio di pioni e arriva solo a circa 1–3 fm.",
+        "breakIt": "Milioni di eV: circa 8 MeV per nucleone nei nuclei tipici, 28,3 MeV per smontare completamente l'elio-4. Radioattività, fissione e fusione lavorano su questa scala, circa un milione di volte l'energia della chimica.",
+        "evidence": "Rutherford identificò il protone nel 1919 e Chadwick trovò il neutrone nel 1932.",
+        "takeaway": "L'energia nucleare è circa un milione di volte quella chimica perché la forza di legame è molto più intensa e di portata molto più breve."
+      },
+      "nucleon": {
+        "name": "Protone / neutrone",
+        "inside": "Tre quark di valenza (uud per il protone, udd per il neutrone) più un “mare” in continuo cambiamento di gluoni e coppie quark–antiquark.",
+        "glue": "La forza forte, mediata dai gluoni fra le cariche di colore. Non si indebolisce con la distanza; separare i quark crea invece nuove coppie quark–antiquark (confinamento).",
+        "breakIt": "Non si può rompere in quark liberi. Colpire un protone con circa 140 MeV o più crea pioni; urti molto più violenti producono getti di adroni. Ciò che esce sono nuovi adroni, mai quark sciolti.",
+        "evidence": "La diffusione di elettroni a SLAC nel 1968 (Friedman, Kendall, Taylor) rivelò centri di diffusione puntiformi dentro il protone, poi identificati con quark e gluoni.",
+        "takeaway": "Le masse a riposo dei quark costituiscono solo circa l'1% della massa del protone; il resto è energia di moto e di campo."
+      },
+      "elementary": {
+        "name": "Quark ed elettroni",
+        "inside": "Nulla che possiamo rivelare. Le particelle elementari si comportano come punti in ogni collisione misurata finora.",
+        "glue": "Nulla da tenere insieme: senza parti, sono eccitazioni di campi quantistici.",
+        "breakIt": "Non è possibile, per quanto se ne sa. Abbastanza energia crea nuove particelle invece di rivelare dei pezzi.",
+        "evidence": "Le collisioni di LHC a 13,6 TeV esplorano distanze vicine a 10⁻¹⁹ m, circa 10 000 volte più piccole di un protone, e non trovano struttura dentro quark o leptoni.",
+        "takeaway": "“Elementare” è un'affermazione sperimentale: nessuna struttura trovata fino alle distanze più piccole esplorate, non una prova che non ne esista alcuna."
+      }
+    },
+    "composites": {
+      "hydrogen": {
+        "name": "Atomo di idrogeno",
+        "lifetime": "Stabile",
+        "note": "Un protone e un elettrone tenuti insieme dall'attrazione elettrica. Per ionizzarlo servono 13,6 eV, che la luce ultravioletta può fornire; per questo il suo difetto di massa è solo circa una parte su 70 milioni."
+      },
+      "helium4": {
+        "name": "Nucleo di elio-4 (particella alfa)",
+        "lifetime": "Stabile",
+        "note": "Due protoni e due neutroni tenuti insieme dalla forza forte residua, che sotto circa 2 fm vince la repulsione elettrica dei protoni. Quando il Sole fonde idrogeno in elio libera circa 26,7 MeV per nucleo, un po' meno di 28,3 MeV perché prima due protoni devono diventare neutroni."
+      },
+      "proton": {
+        "name": "Protone",
+        "lifetime": "Stabile (nessun decadimento osservato; vita media oltre 10³⁴ anni)",
+        "note": "Le masse a riposo dei tre quark sommano solo a circa 9 MeV/c²; quasi tutti i 938 MeV/c² del protone vengono dal moto dei quark e dall'energia del campo dei gluoni che li confina: E = mc² letta al contrario."
+      },
+      "neutron": {
+        "name": "Neutrone",
+        "lifetime": "Circa 879 s (15 minuti) se libero; stabile nella maggior parte dei nuclei",
+        "note": "Leggermente più pesante del protone (di 1,29 MeV/c²), quindi un neutrone libero decade: n → p + e⁻ + ν̄ₑ. In un nucleo stabile quel decadimento costerebbe energia, quindi non avviene."
+      },
+      "lambda": {
+        "name": "Barione lambda",
+        "lifetime": "Circa 2,6 × 10⁻¹⁰ s",
+        "note": "Un barione simile al protone con un quark strange al posto di un quark down. La forza forte lo produce insieme a un kaone (la stranezza arriva in coppie), ma può decadere solo tramite la forza debole (Λ → p + π⁻), da cui la sua vita “stranamente” lunga."
+      },
+      "omega": {
+        "name": "Barione omega meno",
+        "lifetime": "Circa 8,2 × 10⁻¹¹ s",
+        "note": "Tre quark strange. Lo schema dei quark di Gell-Mann ne previde carica, stranezza e massa prima che fosse osservato a Brookhaven nel 1964, la prova decisiva del modello a quark. Tre quark identici nello stesso stato richiesero anche un nuovo numero quantico: il colore."
+      },
+      "pion": {
+        "name": "Pione positivo",
+        "lifetime": "Circa 2,6 × 10⁻⁸ s",
+        "note": "Previsto da Yukawa nel 1935 come mediatore della forza nucleare. Essendo l'adrone più leggero, fissa la portata di quella forza, circa 1,4 fm. Il suo decadimento in μ⁺ + νμ è la principale sorgente dei muoni dei raggi cosmici."
+      },
+      "kaon": {
+        "name": "Kaone positivo",
+        "lifetime": "Circa 1,24 × 10⁻⁸ s",
+        "note": "Il mesone strano più leggero. I kaoni neutri mostrarono nel 1964 che la natura distingue leggermente materia e antimateria (violazione di CP)."
+      },
+      "dmeson": {
+        "name": "Mesone D neutro",
+        "lifetime": "Circa 4,1 × 10⁻¹³ s",
+        "note": "Un quark charm con un antiquark up: charm non cancellato dall'anticharm. I suoi decadimenti deboli, di solito in kaoni, confermarono il “charm aperto” nel 1976."
+      },
+      "jpsi": {
+        "name": "Mesone J/psi",
+        "lifetime": "Circa 7 × 10⁻²¹ s",
+        "note": "Charm e anticharm, scoperto nel 1974 contemporaneamente a Brookhaven (J) e a SLAC (ψ). È più leggero di una coppia di mesoni D, quindi non può semplicemente scindersi in essi, e vive circa mille volte più a lungo degli adroni tipici della sua massa. Questa “Rivoluzione di novembre” affermò il quark charm."
+      },
+      "bmeson": {
+        "name": "Mesone B positivo",
+        "lifetime": "Circa 1,6 × 10⁻¹² s",
+        "note": "Un quark up con un antiquark bottom. Percorre qualche millimetro in un rivelatore prima di decadere, il che permette agli esperimenti di identificare i quark bottom, ed è il sistema principale per misurare le differenze fra materia e antimateria nei quark."
+      },
+      "upsilon": {
+        "name": "Mesone upsilon",
+        "lifetime": "Circa 1,2 × 10⁻²⁰ s",
+        "note": "Bottom e antibottom, osservato al Fermilab nel 1977 come un picco nelle coppie di muoni. Qui le masse dei quark forniscono gran parte del totale: i quark pesanti si muovono lentamente, quindi l'energia di campo è una quota minore che in un protone."
+      }
+    },
+    "production": {
+      "electronPair": {
+        "label": "Coppia elettrone–positrone",
+        "first": "Anderson vide i positroni nei raggi cosmici nel 1932, un anno dopo che Dirac aveva previsto l'antimateria. Un raggio gamma sopra 1,022 MeV che passa vicino a un nucleo produce abitualmente coppie di questo tipo.",
+        "fate": "Entrambi sono stabili. Il positrone incontra presto un elettrone e si annichila in due fotoni da 511 keV, il segnale usato nella PET in medicina."
+      },
+      "muonPair": {
+        "label": "Coppia muone–antimuone",
+        "first": "I muoni furono trovati nei raggi cosmici nel 1936 (Anderson e Neddermeyer), prodotti da decadimenti di pioni e non in coppie. I collisori elettrone–positrone producono direttamente coppie μ⁺μ⁻.",
+        "fate": "Ogni muone decade dopo circa 2,2 μs (a riposo) in un elettrone e due neutrini."
+      },
+      "pionPair": {
+        "label": "Coppia di pioni (quark up e down)",
+        "first": "I pioni carichi furono trovati nei raggi cosmici nel 1947 dal gruppo di Powell e prodotti al ciclotrone di Berkeley nel 1948.",
+        "fate": "I pioni carichi decadono in 26 ns in un muone e un neutrino; è così che i raggi cosmici producono muoni."
+      },
+      "kaonPair": {
+        "label": "Coppia di kaoni (quark strange)",
+        "first": "I kaoni comparvero nel 1947 in fotografie di camere a nebbia esposte ai raggi cosmici (Rochester e Butler) come “particelle V”. La forza forte produce sempre i quark strange insieme ad antiquark strange.",
+        "fate": "I kaoni decadono tramite la forza debole dopo circa 10 ns, spesso in un muone e un neutrino."
+      },
+      "protonPair": {
+        "label": "Coppia protone–antiprotone",
+        "first": "L'antiprotone fu prodotto nel 1955 al Bevatron di Berkeley, un acceleratore costruito con energia appena sufficiente per p + p → p + p + p + p̄.",
+        "fate": "Ciascuno è stabile da solo, ma l'antiprotone si annichila appena incontra materia ordinaria, tipicamente in diversi pioni."
+      },
+      "charm": {
+        "label": "Charm–anticharm (J/ψ)",
+        "first": "Scoperto nel novembre 1974 contemporaneamente al collisore elettrone–positrone SPEAR di SLAC e a Brookhaven (un fascio di protoni sul berillio).",
+        "fate": "La J/ψ vive circa 7 × 10⁻²¹ s e decade in adroni oppure, circa nel 12% dei casi, in una coppia di elettroni o di muoni."
+      },
+      "tauPair": {
+        "label": "Coppia tau–antitau",
+        "first": "Il gruppo di Martin Perl trovò il tau a SPEAR nel 1975 tramite eventi sconcertanti con solo un elettrone, un muone ed energia mancante.",
+        "fate": "Ogni tau decade in circa 0,3 ps, per esempio τ⁻ → μ⁻ + ν̄μ + ντ; i neutrini spiegano l'energia mancante."
+      },
+      "bottom": {
+        "label": "Bottom–antibottom (Υ)",
+        "first": "La Υ fu osservata nel 1977 al Fermilab dall'esperimento di Leon Lederman, come un picco nelle coppie di muoni da collisioni protone–nucleo vicino a 9,5 GeV.",
+        "fate": "La Υ decade in circa 10⁻²⁰ s; coppie b b̄ più energetiche si separano in mesoni B che vivono circa 1,5 ps."
+      },
+      "zBoson": {
+        "label": "Bosone Z",
+        "first": "Visto per la prima volta nel 1983 al collisore protone–antiprotone SppS del CERN (UA1, UA2). LEP (1989–2000) ne produsse poi milioni regolando le collisioni elettrone–positrone a 91,2 GeV.",
+        "fate": "Decade in circa 3 × 10⁻²⁵ s in una coppia fermione–antifermione; circa nel 20% dei casi in neutrini invisibili."
+      },
+      "wPair": {
+        "label": "Coppia W⁺W⁻",
+        "first": "I bosoni W singoli furono trovati nel 1983 al SppS del CERN. La fase a energia più alta di LEP (LEP2, dal 1996) produsse coppie di W e misurò come si accoppiano fra loro.",
+        "fate": "Ogni W decade in circa 3 × 10⁻²⁵ s in un leptone carico più un neutrino, oppure in due getti di quark."
+      },
+      "higgs": {
+        "label": "Bosone di Higgs (con una Z)",
+        "first": "Il massimo di LEP, 209 GeV, restò appena sotto i 216 GeV necessari per Z + H. Il Higgs fu scoperto a LHC nel 2012, prodotto soprattutto per fusione di gluoni.",
+        "fate": "Decade in circa 1,6 × 10⁻²² s, più spesso in b b̄; i rari decadimenti in γγ e in quattro leptoni diedero i segnali di scoperta più puliti."
+      },
+      "topPair": {
+        "label": "Coppia top–antitop",
+        "first": "Nessun collisore elettrone–positrone ha ancora raggiunto 345 GeV. I quark top furono scoperti nel 1995 al Tevatron del Fermilab in collisioni protone–antiprotone (CDF e DØ).",
+        "fate": "Ogni top decade in circa 5 × 10⁻²⁵ s in un quark bottom e un bosone W, prima di poter formare un adrone."
+      }
+    },
+    "presets": {
+      "radioactivity": { "label": "Decadimento radioattivo" },
+      "spear": { "label": "SPEAR (1974)" },
+      "lep1": { "label": "LEP alla Z (1989)" },
+      "lep2": { "label": "LEP2 (2000)" },
+      "tevatron": { "label": "Tevatron (p p̄)" },
+      "lhc": { "label": "LHC (p p, 2022)" }
     }
   }
 }

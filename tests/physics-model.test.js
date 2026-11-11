@@ -7,8 +7,8 @@ const vm = require('node:vm');
 const html = fs.readFileSync(path.join(__dirname, '..', 'elementaryparticles.html'), 'utf8');
 const modelSource = html.match(/<script id="physics-model">([\s\S]*?)<\/script>/)[1];
 const context = vm.createContext({});
-vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N };`, context);
-const { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N } = context.model;
+vm.runInContext(`${modelSource}\nthis.model = { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N, chargeThirds, formatChargeThirds, probeEnergy, COMPOSITION_LEVELS, COMPOSITES, compositeSummary, PRODUCTION_CHANNELS, productionThreshold, availableProductions, COLLIDER_PRESETS, generationChargeThirds };`, context);
+const { PARTICLES, selectParticles, massRatio, pairInteraction, PAIR_CHANNELS, addToQuantumState, PROCESSES, chargeBalance, DETECTOR_SIGNATURES, HISTORY_ANCHORS, DISCOVERY_TIMELINE, I18N, chargeThirds, formatChargeThirds, probeEnergy, COMPOSITION_LEVELS, COMPOSITES, compositeSummary, PRODUCTION_CHANNELS, productionThreshold, availableProductions, COLLIDER_PRESETS, generationChargeThirds } = context.model;
 const particle = id => PARTICLES.find(p => p.id === id);
 
 test('catalog distinguishes matter, carriers, and the scalar Higgs', () => {
@@ -16,6 +16,7 @@ test('catalog distinguishes matter, carriers, and the scalar Higgs', () => {
   for (const p of PARTICLES) {
     assert.equal(p.spin, ['quark', 'lepton'].includes(p.family) ? '1/2' : p.id === 'higgs' ? '0' : '1');
     assert.ok(p.example && p.massNote && p.interactions.length);
+    assert.ok(p.role && p.origin && p.fate, `${p.id} explains its role, origin, and fate`);
   }
   assert.equal(particle('higgs').family, 'scalar');
   assert.equal(particle('electron').charge, '−1');
@@ -173,4 +174,62 @@ test('history steps are distributed in reading order and every history link has 
     if (entry.predicted) assert.ok(entry.predicted < entry.observed);
   }
   assert.equal(DISCOVERY_TIMELINE.find(entry => entry.id === 'higgs').observed - 1964, 48);
+});
+
+test('composites add valence charges exactly and contrast binding with field energy', () => {
+  assert.equal(chargeThirds('+2/3'), 2);
+  assert.equal(chargeThirds('−1/3'), -1);
+  assert.equal(chargeThirds('−1'), -3);
+  assert.equal(chargeThirds('0'), 0);
+  const charges = { hydrogen: '0', helium4: '+2', proton: '+1', neutron: '0', lambda: '0', omega: '−1', pion: '+1', kaon: '+1', dmeson: '0', jpsi: '0', bmeson: '+1', upsilon: '0' };
+  assert.deepEqual(Object.keys(COMPOSITES).sort(), Object.keys(charges).sort());
+  for (const [key, charge] of Object.entries(charges)) {
+    const summary = compositeSummary(key);
+    assert.equal(formatChargeThirds(summary.chargeThirds), charge, key);
+    assert.ok(COMPOSITES[key].name && COMPOSITES[key].lifetime && COMPOSITES[key].note, key);
+    // Atoms and nuclei weigh less than their parts; hadrons weigh more than their valence quarks.
+    if (summary.bound) assert.ok(summary.massDifference < 0, `${key} is bound`);
+    else assert.ok(summary.massDifference > 0, `${key} has field energy`);
+    for (const part of summary.parts) if (!part.composite) assert.ok(particle(part.id), part.id);
+  }
+  assert.ok(Math.abs(compositeSummary('hydrogen').massDifference + 13.6e-6) < 1e-9, 'hydrogen binding is 13.6 eV');
+  assert.ok(Math.abs(compositeSummary('helium4').massDifference + 28.3) < 0.1, 'helium-4 binding is about 28.3 MeV');
+  assert.ok(compositeSummary('proton').partsShare < 0.02, 'valence quarks are about 1% of the proton mass');
+  assert.ok(compositeSummary('upsilon').partsShare > 0.8, 'heavy quarks dominate the Upsilon mass');
+  assert.equal(compositeSummary('pion').parts[1].symbol, 'd\u0304');
+  assert.throws(() => compositeSummary('nothing'), /Unknown composite/);
+});
+
+test('creation thresholds are rest-energy sums and match the historical energy frontier', () => {
+  const threshold = key => productionThreshold(PRODUCTION_CHANNELS.find(c => c.key === key));
+  assert.ok(Math.abs(threshold('electronPair') - 1.022) < 0.001);
+  assert.ok(Math.abs(threshold('muonPair') - 211.3) < 0.1);
+  assert.equal(threshold('charm'), COMPOSITES.jpsi.mass);
+  assert.equal(threshold('topPair'), 2 * particle('top').mass);
+  const thresholds = PRODUCTION_CHANNELS.map(productionThreshold);
+  assert.ok(thresholds.every((value, i) => i === 0 || value > thresholds[i - 1]), 'recipes are listed by threshold');
+  const lep2 = COLLIDER_PRESETS.find(p => p.key === 'lep2').energy;
+  const atLep2 = availableProductions(lep2).map(c => c.key);
+  assert.ok(atLep2.includes('wPair'), 'LEP2 made W pairs');
+  assert.ok(!atLep2.includes('higgs') && !atLep2.includes('topPair'), 'LEP2 was below Z + H and top pairs');
+  assert.equal(availableProductions(0.5).length, 0);
+  assert.equal(availableProductions(COLLIDER_PRESETS.at(-1).energy).length, PRODUCTION_CHANNELS.length);
+  for (const channel of PRODUCTION_CHANNELS) {
+    assert.equal(channel.symbols.length, channel.decays.length, channel.key);
+    assert.ok(channel.particles.every(id => particle(id)), channel.key);
+    assert.ok(!channel.composite || COMPOSITES[channel.composite], channel.key);
+    assert.ok(channel.label && channel.first && channel.fate, channel.key);
+  }
+});
+
+test('zoom ladder probes smaller layers with more energy; generations are charge-neutral', () => {
+  assert.equal(COMPOSITION_LEVELS.map(level => level.key).join(','), 'atom,nucleus,nucleon,elementary');
+  const energies = COMPOSITION_LEVELS.map(level => probeEnergy(level.size));
+  assert.ok(energies.every((value, i) => i === 0 || value > energies[i - 1]));
+  assert.ok(Math.abs(probeEnergy(1e-10) - 12398.4) < 1, 'an atom-sized wavelength is an X-ray of about 12.4 keV');
+  for (const level of COMPOSITION_LEVELS) {
+    assert.ok(level.name && level.inside && level.glue && level.breakIt && level.evidence && level.takeaway, level.key);
+    assert.ok(level.particles.every(id => particle(id)), level.key);
+  }
+  for (const generation of [1, 2, 3]) assert.equal(generationChargeThirds(generation), 0, `generation ${generation}`);
 });
